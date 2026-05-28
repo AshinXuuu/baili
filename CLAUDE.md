@@ -32,7 +32,7 @@
 ```
 
 ### GitHub
-- **仓库**：`git@github.com:AshinXuuu/baili.git`（待用户创建）
+- **仓库**：`git@github.com:AshinXuuu/baili.git`（已上线，SSH，public）
 - **主分支**：`main`
 
 ### 部署
@@ -60,7 +60,8 @@ SITE_URL="https://baili.xxcode.work"
 | № | 理论 | 提出者 | 年份 | 领域 | 文件 | 状态 |
 |---|---|---|---|---|---|---|
 | 001 | 康德拉季耶夫长波 | Kondratieff | 1925 | 金融·经济 | `lessons/001-kondratieff.html` | ✅ |
-| 002 | （待定） | | | | `lessons/002-...html` | ⏳ **下一篇** |
+| 002 | 反脆弱 Antifragility | Nassim Taleb | 2012 | 复杂系统·哲学 | `lessons/002-antifragility.html` | ✅ |
+| 003 | （待定） | | | | `lessons/003-...html` | ⏳ **下一篇** |
 
 **判断下一篇文件名**：
 ```bash
@@ -68,9 +69,39 @@ ls lessons/ | sed -E 's/^([0-9]+).*/\1/' | sort -n | tail -1
 # 加 1 得到下一篇编号，3 位数零填充
 ```
 
+### 推荐顺序（重量级先行，定时任务严格按此表执行）
+
+下一篇就从这里**自上而下**找第一个未完成的，做完后在 CLAUDE.md 标 ✅。
+排序逻辑：跨学科影响 × 思想深度 × 实操价值 × 历史地位 — **重量级先行**。
+
+| 日序 | 编号 | 理论 | 提出者 | 年份 | 领域 | 状态 |
+|---|---|---|---|---|---|---|
+| 1 | 001 | 康德拉季耶夫长波 | Kondratieff | 1925 | 经济·长周期 | ✅ |
+| 2 | 002 | 反脆弱 Antifragility | Nassim Taleb | 2012 | 复杂系统·哲学 | ✅ |
+| 3 | 003 | 第二序思维 Second-Order Thinking | Howard Marks | 2011 | 决策·投资 | ⏳ 下一篇 |
+| 4 | 004 | 黑天鹅 Black Swan | Nassim Taleb | 2007 | 风险·认识论 | 待 |
+| 5 | 005 | 古德哈特定律 Goodhart's Law | Charles Goodhart | 1975 | 管理·指标 | 待 |
+| 6 | 006 | 库恩范式 Paradigm Shift | Thomas Kuhn | 1962 | 科学哲学 | 待 |
+| 7 | 007 | 创新者窘境 Innovator's Dilemma | Clay Christensen | 1997 | 商业战略 | 待 |
+| 8 | 008 | 凯利公式 Kelly Criterion | John Kelly | 1956 | 数学·决策 | 待 |
+| 9 | 009 | 米尔格拉姆服从实验 | Stanley Milgram | 1961 | 心理·伦理 | 待 |
+| 10 | 010 | 香农熵 Shannon Entropy | Claude Shannon | 1948 | 信息论 | 待 |
+| 11 | 011 | 沉没成本谬误 | 行为经济学派 | — | 行为经济 | 待 |
+| 12 | 012 | 邓宁-克鲁格效应 | Dunning & Kruger | 1999 | 心理 | 待 |
+| 13 | 013 | 汉隆剃刀 Hanlon's Razor | 民间格言 | 20c | 判断·人际 | 待 |
+| 14 | 014 | 奥卡姆剃刀 Occam's Razor | William of Ockham | 14c | 哲学·科学 | 待 |
+| 15 | 015 | Lollapalooza Effect | Charlie Munger | 1995 | 投资·心理 | 待 |
+| 16 | 016 | 帕累托法则 80/20 | Vilfredo Pareto | 1896 | 管理·分布 | 待 |
+| 17 | 017 | 邓巴数字 Dunbar's Number | Robin Dunbar | 1992 | 社会学 | 待 |
+| 18 | 018 | 海因里希法则 1:29:300 | Herbert Heinrich | 1931 | 安全·风险 | 待 |
+| 19 | 019 | 默顿自我实现预言 | Robert Merton | 1948 | 社会学 | 待 |
+| 20 | 020 | 帕金森定律 | C. Northcote Parkinson | 1955 | 组织·效率 | 待 |
+| 21 | 021 | 达尔文 vs 拉马克进化 | Darwin / Lamarck | 19c | 生物·演化 | 待 |
+| — | … | （后续题材见下表，做完上表再开） | | | | |
+
 ### 后续题材池（随时补充）
 
-每日生成应优先从这个池子里挑——已经做过基础调研、能写出深度内容的。
+上表 21 条做完后再开。也作为 ad-hoc 备用。
 
 | 候选 | 领域 | 备注 |
 |---|---|---|
@@ -226,4 +257,4 @@ PYEOF
 
 ---
 
-最后更新：2026-05-27（首课 001 康波周期完成，待用户部署）
+最后更新：2026-05-28（№002 反脆弱 Antifragility · Nassim Taleb 2012）
