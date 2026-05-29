@@ -61,7 +61,8 @@ SITE_URL="https://baili.xxcode.work"
 |---|---|---|---|---|---|---|
 | 001 | 康德拉季耶夫长波 | Kondratieff | 1925 | 金融·经济 | `lessons/001-kondratieff.html` | ✅ |
 | 002 | 反脆弱 Antifragility | Nassim Taleb | 2012 | 复杂系统·哲学 | `lessons/002-antifragility.html` | ✅ |
-| 003 | （待定） | | | | `lessons/003-...html` | ⏳ **下一篇** |
+| 003 | 第二序思维 Second-Order Thinking | Howard Marks | 2011 | 决策·投资 | `lessons/003-second-order-thinking.html` | ✅ |
+| 004 | （待定） | | | | `lessons/004-...html` | ⏳ **下一篇** |
 
 **判断下一篇文件名**：
 ```bash
@@ -78,8 +79,8 @@ ls lessons/ | sed -E 's/^([0-9]+).*/\1/' | sort -n | tail -1
 |---|---|---|---|---|---|---|
 | 1 | 001 | 康德拉季耶夫长波 | Kondratieff | 1925 | 经济·长周期 | ✅ |
 | 2 | 002 | 反脆弱 Antifragility | Nassim Taleb | 2012 | 复杂系统·哲学 | ✅ |
-| 3 | 003 | 第二序思维 Second-Order Thinking | Howard Marks | 2011 | 决策·投资 | ⏳ 下一篇 |
-| 4 | 004 | 黑天鹅 Black Swan | Nassim Taleb | 2007 | 风险·认识论 | 待 |
+| 3 | 003 | 第二序思维 Second-Order Thinking | Howard Marks | 2011 | 决策·投资 | ✅ |
+| 4 | 004 | 黑天鹅 Black Swan | Nassim Taleb | 2007 | 风险·认识论 | ⏳ 下一篇 |
 | 5 | 005 | 古德哈特定律 Goodhart's Law | Charles Goodhart | 1975 | 管理·指标 | 待 |
 | 6 | 006 | 库恩范式 Paradigm Shift | Thomas Kuhn | 1962 | 科学哲学 | 待 |
 | 7 | 007 | 创新者窘境 Innovator's Dilemma | Clay Christensen | 1997 | 商业战略 | 待 |
@@ -257,4 +258,4 @@ PYEOF
 
 ---
 
-最后更新：2026-05-28（№002 反脆弱 Antifragility · Nassim Taleb 2012）
+最后更新：2026-05-29（№003 第二序思维 Second-Order Thinking · Howard Marks 2011）
