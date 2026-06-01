@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№005 古德哈特定律 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 管理 · 指标</span>
+    <span class="lesson-no">№ 005</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 005 · MEASUREMENT &amp; INCENTIVES</div>
+    <h1 class="lesson-title">古德哈特定律</h1>
+    <div class="lesson-title-en">Goodhart's Law · when a measure becomes a target, it ceases to be a good measure</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>查尔斯·古德哈特</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1975</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>管理 · 指标 · 激励</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《货币管理的问题：英国经验》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一条货币政策的"反讽"</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1970 年代的英国，正陷在滞胀的泥潭里——通胀一度逼近 25%。当时方兴未艾的<strong>货币主义</strong>给出药方：通胀本质是货币现象，只要央行盯住货币供应量（M3 等总量指标）的增速，就能驯服物价。英格兰银行采纳了这套思路，把某个货币总量当成调控的<em>靶子</em>。</p>
+
+    <p>结果出乎意料：<em>一旦央行把某个货币指标设为目标并据此收放银根，这个指标与通胀之间原本稳定的统计关系，就开始失灵</em>。银行与企业绕开被监管的口径、创造出新的信用形式，使被盯住的那条曲线"变了形"。</p>
+
+    <p>当时任职于英格兰银行的经济学家<strong>查尔斯·古德哈特</strong>（Charles Goodhart，1936– ，后为伦敦政经学院教授）在 1975 年一篇关于英国货币管理的论文里，用一句冷峻的话点破了这个现象。这句话后来被无数次引用、改写，成了管理学、教育学、数据科学共同的"<strong>护身咒</strong>"——古德哈特定律。</p>
+
+    <p class="muted">耐人寻味的是，古德哈特本人最初只是描述货币统计的一个技术性麻烦。他大概没想到，这条"定律"日后会被用来解释从苏联计划经济到硅谷 KPI、从高考到 KOL 粉丝数的几乎一切"指标异化"。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">GOODHART · 1975</div>
+      <div class="theorem-body">
+        "<em>任何被观察到的统计规律性，一旦因调控目的而被施加压力，便倾向于崩溃。</em>"<br><br>
+        <span class="muted">（Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes.）</span>
+      </div>
+      <div class="theorem-cite">——《货币管理的问题：英国经验》（Problems of Monetary Management: The UK Experience, 1975）</div>
+    </div>
+
+    <p>注意古德哈特原话的精确之处：他说的是"<strong>统计规律性</strong>"，而非"指标"；说的是"<strong>施加调控压力</strong>"，而非简单地"测量"。也就是说——<em>问题不出在观察，而出在"把观察当方向盘去拧"</em>。当一条相关关系只是被记录时，它是诚实的；当它被当作扳机、当作奖惩的依据时，被测量的人就有了改写它的动机。</p>
+
+    <p>二十多年后，英国人类学家<strong>玛丽莲·斯特拉森</strong>（Marilyn Strathern）在 1997 年的论文中给出了那句流传最广的通俗版："<em>When a measure becomes a target, it ceases to be a good measure</em>——当一个度量变成目标，它就不再是一个好的度量。"今天人们口中的"古德哈特定律"，多半指的是斯特拉森这句更利落的概括。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 路灯、地图与代理人</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>剥去术语，古德哈特定律讲的是一件人人都见过的事：<strong>指标只是真实目标的"影子"，可一旦你开始追逐影子，人们就会把影子做得很好看，而真实目标被悄悄抛在身后</strong>。</p>
+
+    <p>三个譬喻可以叠加理解它：</p>
+
+    <ul>
+      <li><strong>地图不是疆域</strong>——指标（地图）是对现实（疆域）的简化。平时拿地图导航没问题，可一旦你开始"为了让地图好看而改造疆域"，地图就再也不能反映疆域了。</li>
+      <li><strong>体温计被攥在手心</strong>——体温计本来诚实地反映体温，可如果"体温达标才发奖金"，病人就会去焐热体温计。读数升高了，病却没好。</li>
+      <li><strong>代理人有自己的算盘</strong>——你委托别人去做某事，只能用可观测的指标来考核他（委托-代理）。而他会精确地优化"被考核的那个数字"，而不是你心里真正想要的那件事。</li>
+    </ul>
+
+    <p>关键的转折点在于"<strong>施压</strong>"二字。测量本身无害；把测量结果绑上重大奖惩、并公开宣告，才会触发<em>操纵</em>。被考核者不必是坏人——他们只是<em>理性地</em>对激励作出反应。这正是古德哈特定律最阴冷的地方：<strong>它不需要任何人作恶，系统就会自动跑偏</strong>。</p>
+
+    <div class="quote-inline">
+      "<strong>你考核什么，就会得到什么——但往往不是你真正想要的那个东西。</strong>数字会变得漂亮，而漂亮数字背后的现实，可能正在腐烂。"
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">玛丽莲·斯特拉森</span>
+          <span class="comm-tag">STRATHERN · 1997</span>
+        </div>
+        <p>人类学家斯特拉森在研究英国大学的"评估文化"时，提炼出了那句最广为流传的版本。她观察到：当科研评估（如 RAE 排名）从"衡量学术质量的尺子"变成"高校争抢的目标"，学者们便开始为指标而写作——拆分论文、灌水引用、追逐可量化的产出，而非追求真知。</p>
+        <p>她的贡献在于把古德哈特从货币学搬进了<em>一切被审计、被排名的社会领域</em>，让这条定律获得了跨学科的生命。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">唐纳德·坎贝尔</span>
+          <span class="comm-tag">CAMPBELL'S LAW · 1976</span>
+        </div>
+        <p>社会心理学家坎贝尔几乎同时、独立地提出了"<em>坎贝尔定律</em>"：<strong>"任何量化的社会指标，被用于社会决策越多，它就越容易受到腐化压力，越容易扭曲它本想监测的社会过程。"</strong></p>
+        <p>坎贝尔的版本更强调"<em>腐化与扭曲</em>"的社会后果，是教育评估（如美国标准化考试舞弊）领域引用最多的理论。它与古德哈特定律常被并称为"同一硬币的两面"。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">曼海姆 &amp; 加拉布兰特</span>
+          <span class="comm-tag">MANHEIM &amp; GARRABRANT · 2018</span>
+        </div>
+        <p>两位研究者在论文《古德哈特定律的变体分类》中，把这条笼统的格言切成<em>四种机制</em>，让它从"金句"变成可分析的工具：<strong>回归型</strong>（指标与目标只是相关，优化指标会脱靶）、<strong>极值型</strong>（在极端区间相关关系失效）、<strong>因果型</strong>（错把相关当因果去干预）、<strong>对抗型</strong>（被考核者主动钻空子）。</p>
+        <p>这一分类在 AI 对齐领域被反复引用——因为"训练目标"与"真实意图"之间的偏差，正是古德哈特定律在机器学习里的化身。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">杰里·穆勒</span>
+          <span class="comm-tag">JERRY MULLER · 2018</span>
+        </div>
+        <p>历史学家穆勒在《指标的暴政》（<em>The Tyranny of Metrics</em>）中，把古德哈特定律放进了对"<em>度量崇拜</em>"的整体批判。他指出现代组织有一种迷信：凡事可测量、可排名、可挂钩奖惩，就能改善。结果是医生挑轻病人做手术以保住"成功率"、警察压低立案数以美化"治安指标"、教师只教考点。</p>
+        <p>穆勒的解药不是放弃测量，而是<em>"用判断力补充指标，而非用指标取代判断力"</em>——这是对古德哈特定律最务实的回应。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 当数字开始说谎</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">英国货币供应量目标的崩塌</span>
+          <span class="case-when">1979 – 1986</span>
+        </div>
+        <p>这是古德哈特定律的"出生现场"。撒切尔政府上台后推行"中期金融战略"，把广义货币 £M3 的增速设为硬性目标以遏制通胀。可一旦 £M3 成为靶子，银行通过表外业务、金融创新规避口径，使 £M3 与通胀、与名义 GDP 的关系迅速失稳。央行被迫不断修订口径，最终于 1986 年前后<em>放弃了对 £M3 的盯住</em>。</p>
+        <div class="case-insight">古德哈特定律不是事后总结的笑话，而是一次<strong>实时的政策失败</strong>。它诞生于一个最讲究数据的领域——货币经济学，这让它格外有分量。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">苏联计划经济的"那一根大钉子"</span>
+          <span class="case-when">1930s – 1980s</span>
+        </div>
+        <p>苏联国家计划委员会（Gosplan）以实物指标考核工厂。若按<em>数量</em>下达钉子产量指标，工厂就生产海量无用的小钉子；若改按<em>重量</em>考核，工厂便造出一根巨大无比、毫无用处的钉子来凑吨位。1955 年苏联讽刺杂志《鳄鱼》（Крокодил）刊载的那幅"一根巨钉吊在车间里"的漫画，成了计划指标异化最著名的图像。</p>
+        <div class="case-insight">无论用哪个单一指标，被考核者都能<em>精确地满足该指标而背叛其本意</em>。这说明问题不在"选错了指标"，而在"用单一指标施压"这件事本身。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">河内灭鼠悬赏 · 鼠尾农场</span>
+          <span class="case-when">1902</span>
+        </div>
+        <p>法属殖民当局为治理河内鼠患，按<em>每条鼠尾</em>发放赏金。市民很快发现：只需剪下鼠尾领赏、再放老鼠回下水道继续繁殖，赏金便源源不断；更有人专门<em>养殖老鼠</em>以割尾。结果城里出现大量"无尾老鼠"，鼠群不减反增。历史学者迈克尔·万恩在《老鼠、稻米与种族：河内大灭鼠》（2003）中详细记录了这一幕。</p>
+        <div class="case-insight">"鼠尾数"本是"灭鼠成效"的代理，一旦它变成赏金目标，人们优化的就是<em>鼠尾产量</em>而非<em>老鼠减少</em>——这就是著名的"<strong>眼镜蛇效应</strong>"，古德哈特定律最生动的民间版本。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">富国银行的 350 万个假账户</span>
+          <span class="case-when">2016 曝光</span>
+        </div>
+        <p>美国富国银行（Wells Fargo）长期以"交叉销售率"为核心考核指标，对员工层层加压（口号"Eight is great"——人均八个产品）。在指标重压下，员工在客户不知情的情况下私开了多达约 <em>350 万个虚假账户与信用卡</em>。2016 年事发，银行被罚 1.85 亿美元，CEO 辞职，品牌信誉重创。</p>
+        <div class="case-insight">"交叉销售率"本是"客户关系深度"的代理。当它成为唯一的、高压的目标，员工优化的便是<em>开户数字</em>而非客户价值——指标漂亮，业务腐烂，正是古德哈特定律的标准剧本。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">NHS 急诊"四小时目标"的游戏</span>
+          <span class="case-when">2000s – 2010s</span>
+        </div>
+        <p>英国国民医疗服务体系（NHS）设定硬指标：95% 的急诊病人须在 <em>4 小时内</em>得到处置。指标本意是缩短候诊。但在重压下，部分医院出现了"做数字"的行为——让救护车在院外排队、不让病人正式"进入"急诊计时；或在临近 4 小时时仓促转走病人以避免超时记录。</p>
+        <div class="case-insight">指标改善了"被记录的等待时间"，却未必改善"真实的就医体验"。这提示：<em>当指标可被流程操纵时，它衡量的就从"现实"滑向了"对指标的应付"</em>。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>古德哈特定律近年被引用得太顺口，以至于沦为"凡 KPI 皆恶"的反智借口。真正用过它的人，必须知道它<em>不</em>成立、或被滥用的地方：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 并非所有指标都会崩坏</strong>当指标与真实目标<em>因果紧密、且几乎无操纵空间</em>时，它依然可靠。短跑成绩就是速度本身，体重计读数就是体重——这类"目标即指标"的场景，古德哈特定律基本不适用。它主要作用于"<em>代理指标</em>"。
+      </div>
+      <div class="critique-item">
+        <strong>② 它无法被量化或预测</strong>定律只说"倾向于崩溃"，却不告诉你<em>多大压力、多久、崩坏多少</em>。它是一个定性的警示，而非可计算的模型——用它做精确预测是误用。
+      </div>
+      <div class="critique-item">
+        <strong>③ 把锅全甩给"指标"会掩盖真正的失败</strong>富国银行的根源不只是"测量了交叉销售"，更是<em>畸形的激励、恐惧文化与失职的管理层</em>。把问题简化为"指标的错"，反而放过了该负责的人。
+      </div>
+      <div class="critique-item">
+        <strong>④ 取消测量不是解药，往往更糟</strong>"无指标管理"会退回到拍脑袋、靠关系、凭印象。证据显示放弃测量常导致更隐蔽的低效。真正的课题不是<em>要不要测</em>，而是<em>如何设计抗操纵的指标体系</em>。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 不区分类型就会变成口头禅</strong>曼海姆把它拆成回归／极值／因果／对抗四型，正是因为<em>不同机制有不同解法</em>。笼统一句"古德哈特定律"既不能诊断问题、也不能开药方，只是显得聪明而已。
+      </div>
+    </div>
+
+    <p class="mt-24">所以正确的姿势是：<strong>把它当作"指标设计的体检清单"</strong>——每当你要把一个数字挂上重大奖惩，先问一句"如果有人只想把这个数字做漂亮，他会怎么钻空子？"<em>能提前想到操纵路径，就已经赢了一半。</em></p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">坎贝尔定律</div>
+        <div class="conn-name-en">Campbell's Law · 1976</div>
+        <div class="conn-rel">∥ 孪生定律</div>
+        <div class="conn-desc">社会科学版的古德哈特。强调指标被用于决策越多，越会腐化它本想监测的过程。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">卢卡斯批判</div>
+        <div class="conn-name-en">Lucas Critique · 1976</div>
+        <div class="conn-rel">⟶ 同源上游</div>
+        <div class="conn-desc">宏观经济版。历史数据中的关系会随政策改变而改变——人们对规则有预期反应。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">眼镜蛇效应</div>
+        <div class="conn-name-en">Cobra Effect</div>
+        <div class="conn-rel">⊂ 具象子集</div>
+        <div class="conn-desc">激励引发反常行为的著名案例族（蛇赏、鼠尾赏），是古德哈特的民间叙事。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">委托-代理问题</div>
+        <div class="conn-name-en">Principal-Agent Problem</div>
+        <div class="conn-rel">⟸ 机制基础</div>
+        <div class="conn-desc">信息不对称下，代理人优化"被考核指标"而非委托人真实意图——古德哈特的微观引擎。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">麦克纳马拉谬误</div>
+        <div class="conn-name-en">McNamara Fallacy</div>
+        <div class="conn-rel">⟹ 互补盲区</div>
+        <div class="conn-desc">只重视可量化者、无视不可量化者，最终把不可量化的当成不存在。度量崇拜的另一面。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">替代效应（绩效心理）</div>
+        <div class="conn-name-en">Surrogation</div>
+        <div class="conn-rel">⟷ 认知机制</div>
+        <div class="conn-desc">人会在心理上用"代理指标"替换掉"真实战略目标"，连决策者自己都遗忘了初衷。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">路灯效应</div>
+        <div class="conn-name-en">Streetlight Effect</div>
+        <div class="conn-rel">⟺ 平行偏误</div>
+        <div class="conn-desc">只在"容易测量"的地方找答案，如同醉汉只在路灯下找钥匙——与指标异化同根。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>古德哈特定律不能让你扔掉所有指标——现代组织离不开度量。但它能让你<em>设计出更难被操纵的指标体系</em>，并在自己身上识别"为数字而活"的陷阱。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">团队管理</div>
+        <div class="usage-text">用"<em>北极星指标 + 护栏指标</em>"组合，而非单一 KPI。考核交付速度时，配上质量与返工率作制衡；考核增长时，配上留存与投诉率。<strong>让"做漂亮一个数字"必然牺牲另一个数字</strong>，操纵成本就高了。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">招聘与晋升</div>
+        <div class="usage-text">别用单一量化分数决定一个人的去留。指标用于<em>筛掉明显不合格者</em>，最终判断交给结构化但有人参与的评估。古德哈特提醒：一旦"某个分数=晋升"，人们就会优化分数而非能力。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">学习与自我管理</div>
+        <div class="usage-text">警惕把"<em>代理指标</em>"当成目标本身：刷题数 ≠ 真懂，打卡天数 ≠ 真练，粉丝数 ≠ 真影响，读完本数 ≠ 真读。<strong>定期回到"我真正想要的能力／改变是什么"</strong>，别被自己设的小红花骗了。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">投资与决策</div>
+        <div class="usage-text">宏观与公司指标都是代理。GDP、PMI、月活、GMV 一旦成为"被管理层盯住要做高的目标"，就可能失真。看数据时多问一句：<em>这个数字有没有被为它优化过？背后的真实情况是否在恶化？</em></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">指标设计本身</div>
+        <div class="usage-text">上线任何考核指标前，做一次"<em>红队推演</em>"：假设一个聪明而懒惰的人只想把这个数刷好看，他会怎么钻空子？把想到的操纵路径堵上，或干脆换指标。<strong>预演操纵，是抗古德哈特最便宜的保险。</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我现在每天在优化的那个数字（绩效、收入、粉丝、打卡、绩点……），是<em>真实目标</em>，还是只是它的代理？这两者最近一次背离是什么时候？</div>
+      <div class="q">在我管理或参与的系统里，有没有哪个 KPI 已经被"做漂亮"了，而它本想守护的东西其实正在变差？如果有人想操纵它，会从哪里下手？</div>
+      <div class="q">如果取消我最看重的那个指标，我会用什么来判断"事情是否真的在变好"？——这个问题的答案，往往才是我真正该追的目标。</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">C. Goodhart《Problems of Monetary Management: The UK Experience》</span>
+        <span class="further-meta">1975（后收入《Monetary Theory and Practice》, Macmillan, 1984）— 定律的原始出处</span>
+      </li>
+      <li>
+        <span class="further-title">Marilyn Strathern《Improving Ratings: Audit in the British University System》</span>
+        <span class="further-meta">European Review, 5(3): 305–321, 1997 — 那句通俗版"measure becomes a target"的来源</span>
+      </li>
+      <li>
+        <span class="further-title">Donald T. Campbell《Assessing the Impact of Planned Social Change》</span>
+        <span class="further-meta">Evaluation and Program Planning, 1979 — 孪生的"坎贝尔定律"原文</span>
+      </li>
+      <li>
+        <span class="further-title">D. Manheim &amp; S. Garrabrant《Categorizing Variants of Goodhart's Law》</span>
+        <span class="further-meta">arXiv:1803.04585, 2018 — 把定律切成四型的现代分析框架</span>
+      </li>
+      <li>
+        <span class="further-title">Jerry Z. Muller《The Tyranny of Metrics》</span>
+        <span class="further-meta">Princeton University Press, 2018 — 对"度量崇拜"的系统批判，案例丰富</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Goodhart's law</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Goodhart%27s_law" target="_blank">en.wikipedia.org/wiki/Goodhart's_law</a> — 含各版本表述、变体分类与案例综述</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="004-black-swan.html">
+      <small>← PREVIOUS</small>
+      №004 黑天鹅
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next" href="#">
+      <small>NEXT →</small>
+      （明日 12:30 自动生成）
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;005&nbsp;·&nbsp;古德哈特定律&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
