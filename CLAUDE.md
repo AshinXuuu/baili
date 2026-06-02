@@ -65,7 +65,8 @@ SITE_URL="https://baili.xxcode.work"
 | 004 | 黑天鹅 Black Swan | Nassim Taleb | 2007 | 风险·认识论 | `lessons/004-black-swan.html` | ✅ |
 | 005 | 古德哈特定律 Goodhart's Law | Charles Goodhart | 1975 | 管理·指标 | `lessons/005-goodharts-law.html` | ✅ |
 | 006 | 库恩范式 Paradigm Shift | Thomas Kuhn | 1962 | 科学哲学 | `lessons/006-paradigm-shift.html` | ✅ |
-| 007 | （待定） | | | | `lessons/007-...html` | ⏳ **下一篇** |
+| 007 | 创新者窘境 Innovator's Dilemma | Clay Christensen | 1997 | 商业战略 | `lessons/007-innovators-dilemma.html` | ✅ |
+| 008 | 凯利公式 Kelly Criterion | John Kelly | 1956 | 数学·决策 | `lessons/008-...html` | ⏳ **下一篇** |
 
 **判断下一篇文件名**：
 ```bash
@@ -86,8 +87,8 @@ ls lessons/ | sed -E 's/^([0-9]+).*/\1/' | sort -n | tail -1
 | 4 | 004 | 黑天鹅 Black Swan | Nassim Taleb | 2007 | 风险·认识论 | ✅ |
 | 5 | 005 | 古德哈特定律 Goodhart's Law | Charles Goodhart | 1975 | 管理·指标 | ✅ |
 | 6 | 006 | 库恩范式 Paradigm Shift | Thomas Kuhn | 1962 | 科学哲学 | ✅ |
-| 7 | 007 | 创新者窘境 Innovator's Dilemma | Clay Christensen | 1997 | 商业战略 | ⏳ 下一篇 |
-| 8 | 008 | 凯利公式 Kelly Criterion | John Kelly | 1956 | 数学·决策 | 待 |
+| 7 | 007 | 创新者窘境 Innovator's Dilemma | Clay Christensen | 1997 | 商业战略 | ✅ |
+| 8 | 008 | 凯利公式 Kelly Criterion | John Kelly | 1956 | 数学·决策 | ⏳ 下一篇 |
 | 9 | 009 | 米尔格拉姆服从实验 | Stanley Milgram | 1961 | 心理·伦理 | 待 |
 | 10 | 010 | 香农熵 Shannon Entropy | Claude Shannon | 1948 | 信息论 | 待 |
 | 11 | 011 | 沉没成本谬误 | 行为经济学派 | — | 行为经济 | 待 |
@@ -261,4 +262,4 @@ PYEOF
 
 ---
 
-最后更新：2026-06-01（№006 库恩范式 Paradigm Shift · Thomas Kuhn 1962）
+最后更新：2026-06-02（№007 创新者窘境 Innovator's Dilemma · Clay Christensen 1997；硬盘/DEC/柯达/纽柯钢铁/Netflix 五案例 + 勒波雷《颠覆机器》反驳。下一篇 008 凯利公式）
