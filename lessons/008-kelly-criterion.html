@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№008 凯利公式 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 数学 · 决策</span>
+    <span class="lesson-no">№ 008</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 008 · MATH &amp; DECISION</div>
+    <h1 class="lesson-title">凯利公式</h1>
+    <div class="lesson-title-en">Kelly Criterion · how much to bet when you have an edge</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>约翰·拉里·凯利</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1956</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>信息论 · 资金管理</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原典</dt><dd>《信息率的一种新解释》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一个物理学家在电话公司里的灵感</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1956 年，贝尔实验室一位德州出身的物理学家<strong>约翰·拉里·凯利</strong>（John Larry Kelly Jr.，1923–1965）发表了一篇看似与赌博毫不相干的论文。他的同事里有一位刚刚改写了人类通信史的人——<em>克劳德·香农</em>（Claude Shannon），信息论的奠基者。香农 1948 年证明：一条有噪声的信道，存在一个最大可靠传输速率，叫"信道容量"。</p>
+
+    <p>凯利读懂了香农，并问了一个奇怪的问题：<strong>如果一个赌徒能通过一条"有噪声的电话线"提前听到赛马结果——但听得不完全清楚（有时听错）——他应该怎样下注，才能让财富增长得最快？</strong></p>
+
+    <p>这个问题表面是赌马，骨子里是信息论：<em>赌徒掌握的"边缘信息"（edge），恰好对应香农的"信道容量"</em>。凯利推导出一个公式，告诉赌徒每一把该押上全部资金的<strong>多大比例</strong>。这个比例后来被称作"<strong>凯利公式</strong>"——一个把"信息"直接翻译成"该下多大注"的桥梁。</p>
+
+    <p class="muted">凯利本人没有把它用在投资上，39 岁因脑溢血猝逝，留下的论文一度无人问津。真正让它名扬天下的，是一个读懂了它的数学家——爱德华·索普。而它"复利增长最优"的特性，让它在半个世纪后成为对冲基金、职业赌徒、量化交易员共同的圣经。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">KELLY · 1956</div>
+      <div class="theorem-body">
+        赌徒应当使其资本对数的<em>期望值</em>最大化……在每一次下注中，他下注的比例应等于其<em>优势</em>（the edge）除以<em>赔率</em>（the odds）。<br><br>
+        以这种方式下注的赌徒，其资本的<em>长期增长率</em>将以概率 1 超过任何其他下注策略——无论后者短期看起来多么诱人。
+      </div>
+      <div class="theorem-cite">——《信息率的一种新解释》(A New Interpretation of Information Rate, Bell System Technical Journal, 1956)</div>
+    </div>
+
+    <p>用现代记号写出来，对一个赔率为 <strong>b 比 1</strong>、获胜概率为 <strong>p</strong>、失败概率 <strong>q = 1−p</strong> 的赌注，最优下注比例为：</p>
+
+    <div class="quote-inline">
+      <strong>f* = (b·p − q) / b = p − q / b</strong><br>
+      <span class="muted">f* = 该押上的资金比例 · b = 净赔率 · p = 胜率 · q = 1−p</span>
+    </div>
+
+    <p>三层意思藏在这条短公式里：第一，<strong>只有当 b·p &gt; q（期望为正、你真有优势）时，f* 才大于 0</strong>——没有优势就不该下注；第二，它最大化的不是钱的<em>期望值</em>，而是钱的<em>对数的期望值</em>，也就是<strong>长期复合增长率</strong>；第三，它<em>天然厌恶归零</em>——因为 log(0) = −∞，凯利公式永远不会让你押上会把本金清零的注。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 期望最大 ≠ 增长最快</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>凯利公式回答的，不是"<em>该不该赌</em>"，而是"<em>既然该赌，押多少</em>"——这是一个被绝大多数人忽略的、决定生死的第二问题。</p>
+
+    <p>举个具体例子。假设有个游戏：抛硬币，正面你赢 1 倍（押 1 得 2），反面输光本注，而这枚硬币被动过手脚，<strong>正面概率 60%</strong>。这是个稳赚的游戏，你该每把押多少？</p>
+
+    <ul>
+      <li><strong>押 100%（全押）</strong>——期望收益最高，但只要输一次就归零。玩得越久，破产概率越接近 100%。</li>
+      <li><strong>押 1%（太保守）</strong>——永不破产，但财富爬得像蜗牛，白白浪费了 60% 的巨大优势。</li>
+      <li><strong>凯利解：f* = p − q/b = 0.6 − 0.4/1 = 0.2</strong>——<em>每把押 20%</em>。这是让长期增长率最大的唯一比例，多一分则波动吞掉收益，少一分则增长不足。</li>
+    </ul>
+
+    <p>关键的反直觉之处在这里：<strong>让"每一把的期望钱数"最大的策略（全押），恰恰会让"长期的你"几乎必然破产</strong>。因为财富是<em>连乘</em>的，不是连加的——一次归零，前面所有的胜利全部清零。凯利公式的天才，就是它瞄准了连乘世界里真正重要的那个量：增长率。</p>
+
+    <div class="quote-inline">
+      "<strong>要长期赢，先得活下来；要活下来，就不能押得让自己可能归零。</strong>凯利公式是把这句俗话，写成了一个精确的数字。"
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">爱德华·索普</span>
+          <span class="comm-tag">EDWARD THORP · 1962</span>
+        </div>
+        <p>麻省理工数学家索普是把凯利公式从论文里"捞出来"用于实战的第一人。他先用它在 21 点赌桌上验证——配合算牌，赌徒可以获得对庄家的微小优势，再用凯利公式决定每手的下注比例。成果写进畅销书《击败庄家》（<em>Beat the Dealer</em>, 1962），逼得拉斯维加斯改了规则。</p>
+        <p>他随后把同一套思想搬进华尔街，创办<em>普林斯顿-纽波特合伙基金</em>（1969–1988），用凯利式仓位管理做可转债套利，<strong>近 20 年几乎没有亏损年份，年化约 19%</strong>。索普是凯利公式"知行合一"的活证据。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">保罗·萨缪尔森</span>
+          <span class="comm-tag">SAMUELSON · 1979</span>
+        </div>
+        <p>诺贝尔经济学奖得主萨缪尔森是凯利公式最猛烈的批评者。他坚持认为：<em>对数效用并非唯一理性的偏好</em>——一个风险厌恶程度不同的人，最优下注比例就该不同，凭什么所有人都该用凯利？</p>
+        <p>他甚至写了一篇<strong>全用单音节英文单词</strong>的论文来挖苦（"Why we should not make mean log of wealth big though years to act are long", 1979），故意证明这个深刻的反驳可以讲得连小学生都懂。这场"凯利 vs 期望效用"之争，至今没有完全平息。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">威廉·庞德斯通</span>
+          <span class="comm-tag">POUNDSTONE · 2005</span>
+        </div>
+        <p>科普作家庞德斯通在《财富公式》（<em>Fortune's Formula</em>, 2005）中第一次把凯利、香农、索普、黑帮、华尔街串成一部传奇史。他点出凯利公式的迷人之处：<em>它同时属于信息论、赌博学、投资学三个世界，且在三个世界里是同一条公式</em>。</p>
+        <p>但他也诚实记录了学界的撕裂——一边是索普这样的实战派奉若神明，一边是萨缪尔森这样的理论派斥为"谬误"，<strong>这本书本身就是一场未决辩论的现场速记</strong>。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">实务派 · 分数凯利</span>
+          <span class="comm-tag">FRACTIONAL KELLY</span>
+        </div>
+        <p>真正用凯利的人，几乎没人用"满凯利"。原因是满凯利的<em>波动极其残暴</em>——理论上你有一半概率会在某个时点遭遇资产腰斩。于是实务界发展出"<strong>分数凯利</strong>"：只押凯利结果的 1/2 或 1/4。</p>
+        <p>数学上，半凯利只损失约 1/4 的增长率，却能砍掉约一半的波动——<em>用一点增长换大量安稳，对真实世界的人是更优交易</em>。索普本人在股市里用的，也远比满凯利保守。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 公式如何在真实世界下注</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">起点 · 有噪声的赛马电话线</span>
+          <span class="case-when">1956 · 贝尔实验室</span>
+        </div>
+        <p>凯利论文里的原始设定：一个赌徒能从一条<em>有噪声的私人电话线</em>提前听到赛马结果，但偶尔会听错。信息越清晰（噪声越小），他能押的比例越高、增长越快。凯利证明：<strong>最优增长率恰好等于香农信道容量</strong>——信息量与该下多大注，是同一个数。</p>
+        <div class="case-insight">这是全篇最惊艳的一步：把抽象的"信息比特"换算成具体的"该押的钱"。凯利让"知道得更多"第一次有了精确的金钱价格。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">索普 · 从21点赌桌到对冲基金</span>
+          <span class="case-when">1961 – 1988</span>
+        </div>
+        <p>索普带着算牌法和凯利公式走进内华达赌场，证明 21 点可以被战胜；又把同一套"有优势才下注、按凯利定仓位"的纪律搬到华尔街。普林斯顿-纽波特基金 19 年间几乎无亏损年，年化约 19%。他晚年自传《战胜一切市场的人》（2017）回顾了这条从赌桌到资本市场的完整路径。</p>
+        <div class="case-insight">索普的核心心法不是"算得准"，而是"<em>仓位定得对</em>"。同样的优势，仓位错了照样破产；仓位对了，微小优势也能滚成巨富。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">比尔·格罗斯 · 算牌客成了债券之王</span>
+          <span class="case-when">1966 → PIMCO</span>
+        </div>
+        <p>"债券之王"比尔·格罗斯年轻时是个职业 21 点玩家，正是读了索普的《击败庄家》入门。他后来公开说：<em>赌桌教会他的"分散下注、控制单注规模、永不押到可能破产"，正是日后管理 PIMCO 上万亿美元债券组合的底层纪律</em>。</p>
+        <div class="case-insight">凯利的精神可以脱离公式存活。格罗斯未必每天算 f*，但"绝不让任何一注大到能毁掉自己"的本能，就是凯利思维的肌肉记忆。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">巴菲特与芒格 · 集中下重注</span>
+          <span class="case-when">1963 · 美国运通</span>
+        </div>
+        <p>1963 年"色拉油丑闻"重创美国运通股价，巴菲特判断这是暂时性危机、公司根基未损，于是把合伙基金<strong>约 40% 的资金</strong>押了进去——一个惊人的集中度。芒格多次表示：<em>当优势足够大、确定性足够高时，理性的人就该下重注，而不是教科书式地分散</em>。这与凯利"优势越大、押得越多"完全同构。</p>
+        <div class="case-insight">巴菲特从不写 f* 这个公式，但他的"集中投资于少数高确定性机会"，本质就是手算的凯利。芒格干脆说过：聪明人在机会来时就该下大注。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">反面教材 · LTCM 的"超凯利"豪赌</span>
+          <span class="case-when">1998 · 长期资本管理公司</span>
+        </div>
+        <p>云集诺奖得主的长期资本管理公司（LTCM），把数十亿美元的资本撬动成上万亿的头寸，杠杆高达 25 倍以上——远远<em>超过任何凯利比例</em>。它的模型假设利差必然收敛，却没给"俄罗斯违约"这种肥尾留余地。1998 年俄债违约，几周内基金净值蒸发殆尽，险些拖垮全球金融系统。</p>
+        <div class="case-insight">LTCM 不是输在没优势，而是输在<strong>押得远超凯利上限</strong>。凯利公式的另一半警告常被忽略：<em>押过头（over-betting）会让增长率由正转负，最终走向必然破产</em>——它给的不只是下限，更是一道不可逾越的上限。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>凯利公式优雅得近乎完美，但它的前提极其苛刻。不了解下面这些裂缝，盲用凯利比不用更危险：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 你必须知道真实的 p 和 b</strong>赌场里概率是已知的，市场里却<em>永远是估计的</em>。一旦高估了自己的胜率，凯利会让你<strong>系统性地押过头</strong>——而过头一点点，长期增长率就由正翻负。现实中"估错概率"比"算错公式"致命得多。
+      </div>
+      <div class="critique-item">
+        <strong>② 满凯利的波动令常人无法忍受</strong>理论最优不等于心理可承受。满凯利下，资产腰斩是大概率会发生的"正常事件"。<em>能算出最优仓位，不代表你扛得住中途 −50% 的回撤而不割肉</em>——这正是分数凯利存在的理由。
+      </div>
+      <div class="critique-item">
+        <strong>③ 萨缪尔森之诘：对数效用不是天条</strong>凯利暗设了"人就该最大化财富对数"。但一个临近退休、输不起的人，和一个年轻、可重来的人，<em>合理的风险偏好本就不同</em>。把凯利当成放之四海皆准的"理性"，是一种偷换。
+      </div>
+      <div class="critique-item">
+        <strong>④ 只对"可无限重复的独立赌注"成立</strong>凯利的最优是<em>长期渐近</em>意义上的——要赌足够多次、每次独立同分布才显灵。<strong>人生中那些一锤定音、不可重来的大决定（婚姻、移民、All in 创业），并不满足这个前提</strong>，硬套凯利是张冠李戴。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 现实赌注相互关联、且有肥尾</strong>公式假设单一、可无限分割、彼此独立的赌注。真实组合里头寸高度<em>相关</em>，"看似分散"可能在危机中一起崩塌；而黑天鹅式的肥尾，会击穿凯利"不会归零"的承诺。LTCM 就死在这两条上。
+      </div>
+    </div>
+
+    <p class="mt-24">所以使用凯利公式的正确姿势是：<strong>把它当作"仓位的上限护栏"，而非"精确的下注指令"</strong>。它最大的价值不是告诉你押 20%，而是提醒你<em>"押 80% 必死、没有优势别下注"</em>——守住这两条，就已经赢过绝大多数人。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">香农信息论</div>
+        <div class="conn-name-en">Shannon Information Theory</div>
+        <div class="conn-rel">⟶ 因果上游</div>
+        <div class="conn-desc">凯利公式直接脱胎于信道容量。最优增长率 = 你掌握的信息量，二者是同一个数。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">伯努利对数效用</div>
+        <div class="conn-name-en">Bernoulli Log Utility · 1738</div>
+        <div class="conn-rel">⟸ 思想先驱</div>
+        <div class="conn-desc">圣彼得堡悖论中，伯努利提出人对财富的效用是对数的。凯利最大化的正是对数财富。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">几何平均最大化</div>
+        <div class="conn-name-en">Geometric Mean Criterion</div>
+        <div class="conn-rel">∥ 同体系</div>
+        <div class="conn-desc">拉坦内（Latané, 1959）独立提出"最大化几何平均收益"，与凯利在数学上等价。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">期望效用理论</div>
+        <div class="conn-name-en">Expected Utility Theory</div>
+        <div class="conn-rel">⟷ 张力对照</div>
+        <div class="conn-desc">萨缪尔森用它质疑凯利：对数只是众多效用函数之一，不该被当作唯一理性。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">赌徒破产问题</div>
+        <div class="conn-name-en">Gambler's Ruin</div>
+        <div class="conn-rel">⟸ 反面背景</div>
+        <div class="conn-desc">押过头的必然结局。凯利公式正是为了避开"长期必然破产"而生。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">反脆弱 · 杠铃策略</div>
+        <div class="conn-name-en">Antifragility · Barbell</div>
+        <div class="conn-rel">⟹ 互补</div>
+        <div class="conn-desc">塔勒布与凯利共享一条铁律：先保证活下来（不归零），再谈增长。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">黑天鹅 · 肥尾</div>
+        <div class="conn-name-en">Black Swan · Fat Tails</div>
+        <div class="conn-rel">⚠ 警示边界</div>
+        <div class="conn-desc">凯利"不会归零"的承诺，建立在概率分布已知之上。肥尾会击穿这一假设。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">风险平价 · 仓位管理</div>
+        <div class="conn-name-en">Risk Parity · Position Sizing</div>
+        <div class="conn-rel">⟶ 应用下游</div>
+        <div class="conn-desc">现代量化交易的仓位算法，大多是凯利在多资产、相关性约束下的工程化变体。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>凯利公式不教你怎么找到优势，但它教你：<em>找到优势之后，别把它败在仓位上</em>。这是绝大多数人输钱的真正原因。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">投资仓位</div>
+        <div class="usage-text">永远<em>别用满凯利</em>——按 1/4 到 1/2 凯利下注，用一点增长率换可承受的波动。优势越确定，仓位越重；优势模糊，就该轻仓甚至空仓。<strong>把凯利当上限护栏，不当下注指令。</strong></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">创业与押注</div>
+        <div class="usage-text">人生大决定多是"不可重复的单注"，凯利的<em>渐近最优</em>在此失效。原则反过来用：<strong>无论机会多诱人，都不要押到一旦失败就再也无法回到牌桌</strong>。留住下注权，比赢这一把更重要。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">风险铁律</div>
+        <div class="usage-text">记住 log(0) = −∞：<em>任何让你可能归零的赌注，期望增长率都是负无穷</em>。所以第一条永远是"避免毁灭性损失"，第二条才是"最大化收益"。顺序不能颠倒。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">决策心法</div>
+        <div class="usage-text">下注前先问 b·p 是否大于 q——<strong>没有正期望，f* = 0，最优解就是"不下注"</strong>。对大多数机会，理性的答案是 pass。耐心等到真正有优势的那一把，再重手出击。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">认知校准</div>
+        <div class="usage-text">凯利最危险的输入是"高估自己的胜率"。<em>把估计的 p 主动打个折再代入</em>，是对抗过度自信、避免系统性押过头的实用护身符。宁可保守，不可乐观。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我当下最重的那一注（一只股票、一份工作、一段关系），如果它彻底失败，我还能不能回到牌桌？我是不是押得超过了凯利上限？</div>
+      <div class="q">我下注的"优势"是真实存在的，还是我高估的胜率？如果把我估的概率打个七折，这一注还值得下吗？</div>
+      <div class="q">面对眼前的机会，我是因为它真有正期望而下注，还是只是因为"手痒、怕错过"？这一把，f* 到底是大于零，还是其实应该 pass？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">J. L. Kelly Jr.《A New Interpretation of Information Rate》</span>
+        <span class="further-meta">Bell System Technical Journal, vol. 35, 1956 — 原始论文，仅十余页，公式由此而生</span>
+      </li>
+      <li>
+        <span class="further-title">Edward O. Thorp《Beat the Dealer》</span>
+        <span class="further-meta">Random House, 1962 — 算牌 + 凯利公式实战，逼赌场改规则的传奇之书</span>
+      </li>
+      <li>
+        <span class="further-title">Edward O. Thorp《A Man for All Markets》</span>
+        <span class="further-meta">Random House, 2017（中译《战胜一切市场的人》）— 索普自传，从赌桌到对冲基金</span>
+      </li>
+      <li>
+        <span class="further-title">William Poundstone《Fortune's Formula》</span>
+        <span class="further-meta">Hill &amp; Wang, 2005（中译《财富公式》）— 凯利、香农、索普与华尔街的传奇史</span>
+      </li>
+      <li>
+        <span class="further-title">P. Samuelson《Why we should not make mean log of wealth big...》</span>
+        <span class="further-meta">Journal of Banking &amp; Finance, 1979 — 全单音节单词的反凯利檄文，理论派立场</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Kelly criterion</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Kelly_criterion" target="_blank">en.wikipedia.org/wiki/Kelly_criterion</a> — 含完整推导、分数凯利与争议综述</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="007-innovators-dilemma.html">
+      <small>← PREVIOUS</small>
+      №007 创新者窘境
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next" href="#">
+      <small>NEXT →</small>
+      （明日 12:30 自动生成）
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;008&nbsp;·&nbsp;凯利公式&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
