@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№010 香农熵 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 信息论</span>
+    <span class="lesson-no">№ 010</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 010 · INFORMATION THEORY</div>
+    <h1 class="lesson-title">香农熵</h1>
+    <div class="lesson-title-en">Shannon Entropy · information is the resolution of uncertainty</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>克劳德·香农</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1948</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>信息论 · 通信</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《通信的数学理论》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 给"信息"称重</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1948 年，贝尔实验室一位 32 岁的工程师<strong>克劳德·艾尔伍德·香农</strong>（Claude Elwood Shannon，1916–2001）在《贝尔系统技术杂志》上分两期发表了一篇 79 页的论文——《通信的数学理论》（<em>A Mathematical Theory of Communication</em>）。这篇文章几乎是凭空开创了一整门学科：<strong>信息论</strong>。</p>
+
+    <p>在此之前，"信息"是个模糊的、文学性的词。电报、电话、无线电工程师们每天都在传输信息，却没人能回答一个最基础的问题：<em>一条消息到底含有"多少"信息？信息能像重量、长度一样被度量吗？</em></p>
+
+    <p>香农的天才在于，他先做了一件极反直觉的事——<strong>把"意义"彻底剥离</strong>。一条消息说的是"我爱你"还是一串随机乱码，在他眼里信息量可能完全相同。他要度量的不是消息的<em>价值</em>，而是消息<em>消除了多少不确定性</em>。由此他定义了一个量，并借统计力学之名，称它为<strong>熵</strong>（entropy）。</p>
+
+    <p class="muted">"熵"这个名字据传来自冯·诺依曼的建议。香农回忆，冯·诺依曼对他说：叫它熵吧——理由有二，一是你的公式和统计力学里的熵长得一模一样；二是"<em>没人真正搞懂熵是什么，所以辩论时你永远占上风</em>"。这半是玩笑的命名，日后引发了几十年关于"信息熵与热力学熵是否同一回事"的争论。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">SHANNON · 1948</div>
+      <div class="theorem-body">
+        通信的根本问题，是在一点<em>精确或近似地</em>复现在另一点选定的消息。这些消息往往是<em>有意义的</em>……但消息的语义层面与工程问题无关。重要的是：实际的消息，是从一个<em>可能消息的集合</em>中选出的一个。<br><br>
+        若一个事件发生的概率为 p，则它携带的信息量为 <strong>−log p</strong>；一个信源平均每个符号的信息量，即为<br>
+        <strong>H = −Σ p<sub>i</sub> log p<sub>i</sub></strong><br>
+        以 2 为底时，单位为<em>比特</em>（bit）。H 度量了该信源的不确定性、选择的自由度、或曰<em>熵</em>。
+      </div>
+      <div class="theorem-cite">——《通信的数学理论》（1948）</div>
+    </div>
+
+    <p>这段定义里藏着三块基石：第一，<strong>信息的本质是"从一堆可能性里做选择"</strong>——可能性越多、越均匀，选择越难，信息量越大；第二，<strong>小概率事件携带更多信息</strong>（−log p 随 p 变小而增大），意外才是信息；第三，<strong>语义被明确排除在外</strong>——香农反复强调，工程上"信息"与"意义"是两码事。这第三点，是后世最常被误解、也最值得反复咀嚼的一句。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 信息是被消除的"惊讶"</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>剥去公式，香农熵讲的其实是一句大白话：<strong>信息，就是不确定性的减少量</strong>。一条消息告诉你的东西如果你早就知道，它的信息量是零；它越出乎你的意料，信息量越大。</p>
+
+    <p>用"猜数字"来体会最直接。我心里想了一个 1 到 64 之间的整数，你来猜。最笨的办法是一个个问"是 1 吗？是 2 吗？"；聪明的办法是<em>二分法</em>——"大于 32 吗？""大于 16 吗？"每一问都把可能性砍掉一半。64 种可能，恰好 6 次<em>是／否</em>就能锁定答案。这个"6"，就是 <strong>log₂64 = 6 比特</strong>——一个均匀分布在 64 种可能里的信源的熵。</p>
+
+    <ul>
+      <li><strong>一个比特</strong>，就是一次"答案为是或否、且两者各半"的提问所消除的不确定性。抛一枚均匀硬币，结果含 1 比特信息。</li>
+      <li><strong>越均匀，熵越高</strong>。均匀硬币（½/½）熵为 1 比特；一枚永远朝上的假币（1/0）熵为 0——结果毫无悬念，信息量为零。</li>
+      <li><strong>越意外，单条信息越重</strong>。"明天太阳照常升起"几乎零信息；"明天日食"信息量巨大——因为它罕见。</li>
+    </ul>
+
+    <p>所以香农熵既是<em>不确定性</em>的度量，也是<em>压缩极限</em>的度量：一个信源的熵 H，就是"平均每个符号最少需要多少比特才能无损表示"的下界。<strong>冗余越多的东西越好压，纯随机的东西压不动</strong>——因为后者每个比特都已是满载的信息。</p>
+
+    <div class="quote-inline">
+      "信息是对<strong>惊奇</strong>的度量，不是对<strong>意义</strong>的度量。一页写满随机字符的纸，香农熵比一页莎士比亚还高——这正是这个理论最深刻、也最容易被误读的地方。"
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">诺伯特·维纳</span>
+          <span class="comm-tag">NORBERT WIENER · 1948</span>
+        </div>
+        <p>就在香农论文发表的同年，维纳出版《控制论》（<em>Cybernetics</em>），独立从另一条路逼近了信息的度量。他把信息看作"<em>负熵</em>"（negentropy）——系统对抗混乱、维持秩序的能力。<strong>"信息就是信息，既不是物质也不是能量。"</strong>这句名言出自维纳。</p>
+        <p>香农与维纳路径不同：维纳关心反馈与控制，香农关心传输与编码。但二人共同把"信息"从哲学词汇变成了可计算的物理量，奠定了整个信息时代的语言。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">沃伦·韦弗</span>
+          <span class="comm-tag">WARREN WEAVER · 1949</span>
+        </div>
+        <p>韦弗为香农论文撰写了通俗导读，二者合成单行本《通信的数学理论》（1949）。他提出通信的<em>三个层次</em>：技术层（符号能否准确传输）、语义层（符号能否传达意图）、效果层（意图能否改变行为）。</p>
+        <p>韦弗坦言：香农只解决了<strong>第一层</strong>，但他乐观地认为第一层的数学会"出乎意料地"照亮后两层。这个区分至今提醒我们：能精确传输的，未必就被理解；能被理解的，未必能改变什么。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">E.T. 杰恩斯</span>
+          <span class="comm-tag">E.T. JAYNES · 1957</span>
+        </div>
+        <p>物理学家杰恩斯在《信息论与统计力学》（<em>Physical Review</em>, 1957）中给出了惊人一击：他证明<strong>统计力学可以从信息论中重新推导出来</strong>。热力学熵不过是"在已知约束下，对微观状态最大无知"的香农熵。</p>
+        <p>由此他提出"<em>最大熵原理</em>"——在缺乏信息时，应选择满足已知约束、同时熵最大（即假设最少、最不武断）的那个概率分布。这成为现代统计推断与机器学习的一块基石。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">罗尔夫·兰道尔</span>
+          <span class="comm-tag">ROLF LANDAUER · 1961</span>
+        </div>
+        <p>IBM 物理学家兰道尔把信息熵牢牢钉回了物理世界。他提出<em>兰道尔原理</em>：<strong>擦除 1 比特信息，至少要耗散 k·T·ln2 的热量</strong>。信息不是抽象的，处理它要付出真实的能量代价。</p>
+        <p>这条原理最终解开了困扰物理学近百年的"<em>麦克斯韦妖</em>"悖论——妖看似能凭信息违反热力学第二定律，但它记录与擦除信息所付的熵代价，恰好补平了账。<strong>"信息是物理的"</strong>，兰道尔如是说。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 熵如何塑造现实</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">摩尔斯电码的直觉</span>
+          <span class="case-when">1838</span>
+        </div>
+        <p>早在香农一百年前，萨缪尔·摩尔斯设计电码时就凭直觉踩中了熵的核心：<em>给最常用的字母分配最短的码</em>。英文里出现频率最高的 E 是一个"点"，罕见的 Q、Z 则是长长的点划组合。摩尔斯据说是跑到印刷厂数铅字盒里每个字母的存量来估算频率的。</p>
+        <div class="case-insight">这正是香农信源编码定理的雏形——高频低信息的符号用短码，低频高信息的符号用长码，整体逼近熵下界。一个工程直觉，等了 110 年才被数学证明为最优方向。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">哈夫曼编码 · 学生胜过老师</span>
+          <span class="case-when">1951</span>
+        </div>
+        <p>麻省理工的研究生<strong>大卫·哈夫曼</strong>被导师罗伯特·法诺出了道期末难题：找出最优的前缀编码。法诺自己（与香农）只找到了近似解。哈夫曼苦思后想放弃，却在丢笔记的瞬间灵光乍现——<em>从频率最低的两个符号开始，自底向上合并成树</em>。1952 年他发表的哈夫曼编码，被证明是最优的。</p>
+        <div class="case-insight">哈夫曼编码至今仍活在 JPEG、MP3、ZIP、PNG 里。一个被逼到墙角的学生，给出了逼近香农熵极限的具体算法——理论与工程在这里完美会合。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">香农亲测英语的熵</span>
+          <span class="case-when">1951</span>
+        </div>
+        <p>香农在《印刷英语的预测与熵》（1951）中做了个朴素实验：让人逐字母猜一段被遮住的英文，根据猜中难度估算英语的熵。结论是英语每个字母约携带 <em>1 比特</em>有效信息，而 26 个字母理论上可达 4.7 比特——<strong>英语约有 75% 是冗余的</strong>。</p>
+        <div class="case-insight">"u cn rd ths wtht vwls"（你能读懂这句没有元音的话）正是冗余的体现。冗余看似浪费，却是抗噪与纠错的本钱——这一洞见直接通向下一个案例。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">旅行者号 · 逼近香农极限</span>
+          <span class="case-when">1977 – 至今</span>
+        </div>
+        <p>1977 年发射的旅行者号探测器，要把信号从数十亿公里外传回地球，功率微弱到以"皮瓦"计，淹没在宇宙噪声里。靠的正是香农<em>有噪信道编码定理</em>所许诺的纠错码——里德-所罗门码叠加卷积码，给数据加上精心设计的冗余，使误码可在接收端被修复。</p>
+        <div class="case-insight">香农 1948 年证明：只要传输速率低于<em>信道容量</em> C，就存在编码方案让错误率趋近于零。这曾被认为不可思议。半个世纪的编码进步（直到 1990 年代的 Turbo 码、LDPC 码）才真正逼近这条理论极限——今天 5G、Wi-Fi、深空通信都站在它之上。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">大语言模型的"困惑度"</span>
+          <span class="case-when">2018 – 至今</span>
+        </div>
+        <p>今天训练语言模型用的<em>交叉熵损失</em>，本质就是香农熵的直系后裔。模型对下一个词预测得越准，交叉熵越低；衡量模型好坏的"<em>困惑度</em>"（perplexity）= 2 的交叉熵次方，正是"模型平均面对多少种等可能选择"的度量。</p>
+        <div class="case-insight">"压缩即智能"的当代论断（一个能极致压缩文本的模型，必然理解了文本的结构）直接源自香农：熵是压缩的下界，逼近这个下界，就意味着抓住了数据中所有的规律。从摩尔斯到 GPT，是同一条线。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>香农熵是 20 世纪最坚实的理论之一，几乎没有"被证伪"的余地。但它有清晰的<em>适用边界</em>，越界使用就会出错——下面几条尤其要记牢：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 熵度量惊奇，不度量意义</strong>这是最根本、也最常被违反的一条。香农本人明确把语义排除在外。<em>一段随机噪声的熵比一首诗高，但显然毫无价值</em>。把"信息量大"等同于"重要"或"有价值"，是对这个理论最普遍的误用。
+      </div>
+      <div class="critique-item">
+        <strong>② 需要已知概率分布</strong>公式 H=−Σp·log p 要求你先知道每个事件的概率 p。但现实中分布常常未知、且随时间漂移（非平稳）。<em>对一次性的、独一无二的事件，"概率"本身就难以定义</em>，熵也就无从谈起。
+      </div>
+      <div class="critique-item">
+        <strong>③ 与热力学熵"形似"但须谨慎</strong>冯·诺依曼的命名埋下了几十年混乱。二者数学形式相同、在杰恩斯框架下深刻相通，但<em>把信息熵和热力学熵不加区分地混为一谈，会推出大量似是而非的玄学结论</em>。它们是类比，不是等同。
+      </div>
+      <div class="critique-item">
+        <strong>④ 只管平均，不管个体</strong>香农熵是<em>整个信源的平均</em>不确定性。它说不出"这一条具体消息"的复杂度——那是柯尔莫哥洛夫复杂度（算法信息论）要回答的问题。两套理论互补，但不可替代。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 假设信源与字母表是良定义的</strong>"把世界切成离散符号"这个前提，对文本、信号很自然，对许多真实现象（一幅画的信息？一个决定的信息？）却相当勉强。<em>切分方式一变，熵就变</em>——它度量的始终是你的模型，而非世界本身。
+      </div>
+    </div>
+
+    <p class="mt-24">所以用香农熵的正确姿势是：<strong>当你能把问题表述成"从一组已知概率的可能性中做选择"时，它精确无比；一旦涉及意义、价值、或一次性事件，就该换工具</strong>。混淆"惊奇"与"意义"，是信息时代最昂贵的认知错误之一。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">热力学熵</div>
+        <div class="conn-name-en">Thermodynamic Entropy · Boltzmann</div>
+        <div class="conn-rel">⟶ 同源类比</div>
+        <div class="conn-desc">玻尔兹曼 S=k·logW 与香农 H 数学同形。杰恩斯证明前者是后者的特例。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">柯尔莫哥洛夫复杂度</div>
+        <div class="conn-name-en">Kolmogorov Complexity</div>
+        <div class="conn-rel">⟹ 互补 · 个体版</div>
+        <div class="conn-desc">单条消息的"最短程序长度"。香农管平均，柯氏管个体，二者深层相通。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">兰道尔原理 / 麦克斯韦妖</div>
+        <div class="conn-name-en">Landauer's Principle</div>
+        <div class="conn-rel">⟷ 物理桥接</div>
+        <div class="conn-desc">擦 1 比特至少耗 kT·ln2 热。把信息熵钉回物理世界，解开麦妖悖论。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">互信息</div>
+        <div class="conn-name-en">Mutual Information</div>
+        <div class="conn-rel">∥ 同体系</div>
+        <div class="conn-desc">两变量共享的信息量。"知道X能减少多少对Y的不确定"，特征选择的核心。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">KL散度 / 交叉熵</div>
+        <div class="conn-name-en">KL Divergence · Cross-Entropy</div>
+        <div class="conn-rel">⟸ 机器学习对应</div>
+        <div class="conn-desc">两个分布的"信息距离"。今天几乎所有分类模型的损失函数都是它。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">最大熵原理</div>
+        <div class="conn-name-en">Maximum Entropy · Jaynes</div>
+        <div class="conn-rel">⟹ 推断方法</div>
+        <div class="conn-desc">无信息时选熵最大（假设最少）的分布。从统计力学到自然语言处理。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">贝叶斯更新</div>
+        <div class="conn-name-en">Bayesian Updating</div>
+        <div class="conn-rel">⟷ 互补视角</div>
+        <div class="conn-desc">"信息=消除不确定"的另一面：每条证据按其信息量更新先验。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">奥卡姆剃刀</div>
+        <div class="conn-name-en">Occam's Razor</div>
+        <div class="conn-rel">⟺ 哲学对照</div>
+        <div class="conn-desc">"最短描述优先"=最小熵编码。信息论给了古老剃刀一个量化版本。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>香农熵不只是工程师的工具。它给了我们一副重新看待"信息"的眼镜——而在一个信息过载的时代，这副眼镜价值连城。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">高效提问</div>
+        <div class="usage-text">学会问"<em>信息量最大</em>"的问题——像二分法，每问消除一半不确定性。诊断问题、调试代码、做尽调时，<strong>优先问那些无论答案是是是否都能大幅缩小范围的问题</strong>，而不是反复确认你已经倾向相信的事。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">学习排序</div>
+        <div class="usage-text">从你<em>最不确定</em>的地方学起，信息增益最大。已经八成懂的内容再读，熵接近零、收获寥寥；硬啃那两成最困惑的，才是单位时间收益最高的学习。<strong>追着困惑走，别追着舒适走</strong>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">沟通与冗余</div>
+        <div class="usage-text">香农告诉我们：<em>冗余是抗噪的代价，不是浪费</em>。重要的信息要在嘈杂环境里重复、换说法、给上下文——这正是"纠错码"的人际版。但也要警惕：<strong>全是冗余的沟通（车轱辘话）信息量为零</strong>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">对抗信息过载</div>
+        <div class="usage-text">区分"<em>惊奇度</em>"与"<em>价值</em>"。新闻、推送、热搜专门制造高熵的意外感来攫取注意力，但<strong>高信息量 ≠ 高重要性，最随机的噪声熵恰恰最高</strong>。真正稀缺的不是信息，是判断信息价值的能力。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">写作与表达</div>
+        <div class="usage-text">可预测的内容信息量低——<em>意外性才承载信息</em>。陈词滥调让读者零惊讶、零收获；好的表达在"可理解"与"出乎意料"之间走钢丝。<strong>每一句都该让读者知道一点他原本不知道的东西</strong>，否则就是冗余。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我今天接收的海量信息里，有多少真正<em>消除了不确定性</em>，又有多少只是已知事物的冗余重复、徒增焦虑？</div>
+      <div class="q">我提问、做决策、找信息时，是问在了"能最大消除不确定性"的地方（像二分法），还是在反复确认我早已倾向相信的答案？</div>
+      <div class="q">我有没有把"<em>信息量大</em>"误当成"<em>重要</em>"——被最意外、最刺激、其实熵最高的噪声，悄悄夺走了注意力？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">C. E. Shannon《A Mathematical Theory of Communication》</span>
+        <span class="further-meta">Bell System Technical Journal, 1948 — 开创信息论的原始论文，公开可读</span>
+      </li>
+      <li>
+        <span class="further-title">Shannon &amp; Weaver《The Mathematical Theory of Communication》</span>
+        <span class="further-meta">University of Illinois Press, 1949 — 含韦弗导读的单行本，入门首选</span>
+      </li>
+      <li>
+        <span class="further-title">James Gleick《The Information: A History, a Theory, a Flood》</span>
+        <span class="further-meta">Pantheon, 2011 — 信息史最佳科普（中译《信息简史》）</span>
+      </li>
+      <li>
+        <span class="further-title">Cover &amp; Thomas《Elements of Information Theory》</span>
+        <span class="further-meta">Wiley, 1991/2006 — 信息论标准教科书，严谨深入</span>
+      </li>
+      <li>
+        <span class="further-title">E. T. Jaynes《Information Theory and Statistical Mechanics》</span>
+        <span class="further-meta">Physical Review, 1957 — 把统计力学接回信息论的奠基论文</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Entropy (information theory)</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)" target="_blank">en.wikipedia.org/wiki/Entropy_(information_theory)</a> — 公式、性质与延伸链接</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="009-milgram-obedience.html">
+      <small>← PREVIOUS</small>
+      №009 米尔格拉姆服从实验
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next" href="#">
+      <small>NEXT →</small>
+      （明日 12:30 自动生成）
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;010&nbsp;·&nbsp;香农熵&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
