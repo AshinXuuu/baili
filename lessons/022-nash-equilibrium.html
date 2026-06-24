@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№022 纳什均衡 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 数学 · 博弈论</span>
+    <span class="lesson-no">№ 022</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 022 · GAME THEORY</div>
+    <h1 class="lesson-title">纳什均衡</h1>
+    <div class="lesson-title-en">Nash Equilibrium · the standoff where no one can do better alone</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>约翰·纳什</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1950</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>博弈论 · 经济学</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《非合作博弈》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一篇 27 页的博士论文</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>在纳什之前，博弈论已经诞生。1944 年，数学家<strong>约翰·冯·诺依曼</strong>（John von Neumann）与经济学家<strong>奥斯卡·摩根斯坦</strong>（Oskar Morgenstern）合著《博弈论与经济行为》（<em>Theory of Games and Economic Behavior</em>），把"理性人之间的策略互动"第一次变成了一门数学。但他们的利器主要管用于一类很窄的局面——<em>两人零和博弈</em>：一方所得恰是另一方所失，你死我活，没有合作余地。</p>
+
+    <p>真实世界远比这复杂：参与者常常多于两人，输赢也并非此消彼长——可以双赢，也可以共输。1950 年，一位 21 岁的普林斯顿研究生<strong>约翰·福布斯·纳什</strong>（John Forbes Nash Jr., 1928–2015）在一篇仅 27 页的博士论文里，给出了一个惊人普适的答案：<strong>无论多少个参与者、无论是否零和，只要博弈是有限的，就一定存在至少一个"稳定点"。</strong></p>
+
+    <p>这个稳定点后来以他命名——<strong>纳什均衡</strong>。它的存在性证明，巧妙地借用了不动点定理（角谷 / 布劳威尔）。据说冯·诺依曼初见此果，曾不屑地说"这不过是个不动点定理"。但历史的评价完全相反：正是这一步，把博弈论从一门关于"对抗"的窄学问，拓展成了一门关于<em>一切策略互动</em>的通用语言。</p>
+
+    <p class="muted">纳什中年罹患精神分裂症，沉寂三十年，又奇迹般康复。1994 年，他与泽尔滕、海萨尼共获诺贝尔经济学奖；2015 年获数学界的阿贝尔奖，归途车祸离世。他的传奇被写成传记《美丽心灵》（1998），并拍成同名电影。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">NASH · 1950–51 · 均衡点的定义</div>
+      <div class="theorem-body">
+        一组策略（每个参与者各执其一）构成一个<strong>均衡点</strong>，当且仅当：在<em>其余所有人的策略保持不变</em>的前提下，<em>没有任何一个参与者能够通过单独改变自己的策略而获得更高的收益</em>。<br><br>
+        定理：每一个有限博弈，<em>至少存在一个</em>（可能是混合策略的）均衡点。
+      </div>
+      <div class="theorem-cite">——纳什《Non-Cooperative Games》（Annals of Mathematics, 1951）；存在性首发于 PNAS, 1950</div>
+    </div>
+
+    <p>读懂这句定义，关键在"<strong>单独</strong>"二字。纳什均衡不要求这组策略对集体最好，也不要求参与者彼此满意——它只要求一种<em>脆弱的稳定</em>：在别人都按兵不动时，<strong>你独自反悔也占不到便宜</strong>。于是谁都没有动机率先改变，局面就这样僵在那里。它描述的不是"理想的结果"，而是"<em>能停下来的结果</em>"。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 谁都不想第一个动</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>剥去数学，纳什均衡就是<strong>一种"谁先动谁吃亏"的僵局</strong>。想象一条满是车的马路：大家都靠右行驶。这是一个纳什均衡——只要别人都靠右，你一个人改靠左，立刻车毁人亡。没有人愿意单方面改变，于是"靠右"自我维持。注意，"都靠左"同样是一个均衡：均衡讲的是<em>稳定</em>，不是<em>唯一</em>，也不是<em>正确</em>。</p>
+
+    <p>最颠覆直觉的一点是：<strong>每个人都做了对自己最有利的选择，合起来却可能是所有人都不想要的结局。</strong>这正是纳什与亚当·斯密"看不见的手"的分野——斯密说个体追逐私利会无意间成就公益；纳什证明，在许多结构里，个体的理性会把所有人<em>锁死</em>在一个糟糕的角落里出不来。</p>
+
+    <div class="quote-inline">
+      "纳什均衡回答的不是'大家应该怎么做'，而是'在所有人都精明算计、谁也不肯让步时，事情会僵在哪里'。它是一面照见<strong>集体困境</strong>的镜子：很多时候，问题不出在某个坏人身上，而出在博弈的结构里。"
+    </div>
+
+    <p>也因此，纳什均衡既是诊断，也是钥匙。一旦你看清"我们困在一个糟糕的均衡里"，下一个问题就有了着落：<em>怎样改变规则、改变收益、改变重复的次数，把大家从坏均衡撬到好均衡去？</em>这正是后来"机制设计"整门学问的起点。</p>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">托马斯·谢林</span>
+          <span class="comm-tag">SCHELLING · 1960</span>
+        </div>
+        <p>纳什证明了均衡"存在"，却没说当有<em>好几个</em>均衡时，人们会落到哪一个。谢林在《冲突的策略》里补上这块：现实中人们靠<strong>"焦点"（focal point，后称谢林点）</strong>来不约而同地协调——两个失散的人会在大钟下、正午相见，因为这是彼此都料到对方会想到的"自然之选"。</p>
+        <p>他还点出博弈论一个反直觉的真理：<strong>主动捆住自己的手，反而能赢。</strong>把方向盘扔出窗外的司机，会迫使对面让路——<em>可信的承诺</em>胜过灵活。他凭此影响了整个核威慑理论，2005 年获诺奖。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">约翰·梅纳德·史密斯</span>
+          <span class="comm-tag">MAYNARD SMITH · 1982</span>
+        </div>
+        <p>这位英国生物学家把纳什搬进了大自然，提出"<strong>进化稳定策略</strong>"（ESS）。震撼之处在于：<em>动物不会算计，基因不懂数学</em>，可一旦某种行为策略普及到"任何变异者都无法入侵"，它就是一个纳什均衡——只不过这里替代"理性"的是<strong>自然选择</strong>。</p>
+        <p>他的"鹰鸽博弈"解释了为何动物冲突常点到为止：一个全是好斗"鹰"的种群会自相残杀，于是温和的"鸽"反能渗入，最终稳定在某个鹰鸽比例上。<strong>均衡不需要聪明，只需要时间。</strong></p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">罗伯特·阿克塞尔罗德</span>
+          <span class="comm-tag">AXELROD · 1984</span>
+        </div>
+        <p>如果囚徒困境的均衡是"互相背叛"，那现实世界里的合作从何而来？阿克塞尔罗德办了一场<strong>重复囚徒困境的计算机竞赛</strong>，征集各路策略捉对厮杀。结果，最简单的"<strong>一报还一报</strong>"（Tit-for-Tat，由拉波波特提交）夺冠：第一回合合作，此后<em>对方上回怎么待我，我这回就怎么待他</em>。</p>
+        <p>它的秘诀是"善良、可激怒、宽容、清晰"。结论震动了社会科学：<strong>只要博弈会重复、未来足够重要，合作就能在一群自私者中自发涌现并稳定下来</strong>——重复，改变了均衡。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">泽尔滕 &amp; 海萨尼</span>
+          <span class="comm-tag">SELTEN &amp; HARSANYI · 1965–67</span>
+        </div>
+        <p>与纳什共享 1994 诺奖的两人，各自为均衡"打补丁"。<strong>泽尔滕</strong>发现有些纳什均衡靠"<em>空洞的威胁</em>"撑着，经不起推敲，于是提出"<strong>子博弈完美均衡</strong>"，要求每一步都得是当下真正的最优——剔除了那些没人会真去执行的虚张声势。</p>
+        <p><strong>海萨尼</strong>则处理了"<em>信息不完全</em>"：现实中你常不知道对手的底牌（成本、偏好、强弱）。他把这种不确定性转化为可计算的"<strong>贝叶斯博弈</strong>"，让纳什均衡能用于拍卖、谈判、保险等一切"看不透对方"的场合。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 五个真实的僵局</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">囚徒困境</span>
+          <span class="case-when">兰德公司 · 1950</span>
+        </div>
+        <p>两名同伙被分别审讯：都沉默，各判 1 年；都招供，各判 5 年；一方招供另一方沉默，招供者释放、沉默者重判 10 年。对每个人，无论对方怎么选，<em>招供都更划算</em>——于是唯一的纳什均衡是<strong>双双招供，各判 5 年</strong>，明明"都沉默"对两人都更好。</p>
+        <div class="case-insight">此局由数学家弗勒德与德雷舍 1950 年在兰德公司的实验中提出，塔克随后用"囚徒"故事将它戏剧化。它是纳什均衡最著名的化身：<strong>个体理性 ≠ 集体最优</strong>，一句话讲清了纳什与斯密的分歧。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">美苏核军备竞赛</span>
+          <span class="case-when">冷战 · 1950s–80s</span>
+        </div>
+        <p>两个超级大国，各自面对"造核弹还是不造"。无论对方怎么选，自己造都更"安全"——于是均衡是<strong>双方疯狂扩军</strong>，把全人类置于毁灭边缘，虽然"都不造"对双方都更好。这是一场国家级的囚徒困境。</p>
+        <div class="case-insight">"相互确保摧毁"（MAD）本身是一个恐怖的纳什均衡：谁先动手都将同归于尽，于是谁都不敢先动。谢林的"可信威慑"理论正脱胎于此——稳定，竟建立在<em>双方都无法全身而退</em>之上。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">OPEC 的减产配额</span>
+          <span class="case-when">石油市场 · 反复上演</span>
+        </div>
+        <p>产油国想抬油价，须共同减产。但对每一国，<em>偷偷多产</em>总更赚——别人减产时我多卖享高价，别人也多产时我至少不吃亏。于是纳什均衡是<strong>人人超产、油价崩塌</strong>。1986 年、2014–16 年、2020 年的几轮价格战，都是这一困境的现实爆发。</p>
+        <div class="case-insight">卡特尔的脆弱由博弈结构注定：协议靠"集体最优"维系，均衡却指向"各自背叛"。维持高价需要监督、惩罚与反复博弈——这正是阿克塞尔罗德"重复促成合作"的反面教材。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">FCC 频谱拍卖</span>
+          <span class="case-when">美国 · 1994</span>
+        </div>
+        <p>美国联邦通信委员会要把无线电频谱卖给运营商。怎么设计规则，才能既卖出高价、又让频段落到最能用好它的人手里？FCC 请来博弈论学者（米尔格罗姆、威尔逊等），<strong>把竞拍者的策略反应算进规则本身</strong>，设计出"同步多轮拍卖"。</p>
+        <div class="case-insight">这是博弈论从"解释僵局"走向"设计博弈"的里程碑：首轮拍卖即为政府筹得逾 70 亿美元。<strong>改变规则，就能改变均衡。</strong>主导该设计的米尔格罗姆与威尔逊于 2020 年获诺贝尔经济学奖。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">两党为何都往中间靠</span>
+          <span class="case-when">霍特林 1929 / 唐斯 1957</span>
+        </div>
+        <p>海滩上两个冰淇淋摊，为多揽客，会一步步挪向沙滩正中央并排而立——这是霍特林的经典模型。把"位置"换成"政纲"，就解释了为何两党制下，<em>对立的政党在竞选中纲领越来越像</em>：都向"中间选民"靠拢，谁偏离谁丢票。</p>
+        <div class="case-insight">两党都挤在中间，是一个纳什均衡——任一方单独走极端都会输掉中间选民。它揭示了选举趋同的结构性根源，也解释了选民"两个候选人没差别"的普遍抱怨。这是纳什均衡跨入政治学的范例。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>纳什均衡是 20 世纪最有力的分析工具之一，但把它当成"现实必然如此"的预言，会一再翻车。诚实的边界是这样的：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 多重均衡：它不告诉你会落到哪一个</strong>很多博弈有<em>不止一个</em>纳什均衡（靠左 / 靠右都行），理论只说"这些都稳定"，却无法预测现实选哪个。要补上谢林的"焦点"、历史习俗、沟通等理论之外的东西——<em>均衡的存在性强，选择性弱</em>。
+      </div>
+      <div class="critique-item">
+        <strong>② 它假设了不存在的"完全理性"</strong>纳什均衡预设每个人都极致精明，且<em>知道别人也极致精明，且知道别人知道……</em>（理性的共同知识）。真人会算错、会犯傻、会讲情义。最后通牒博弈中，人们宁愿两败俱伤也要惩罚不公的分配，公然违背理论预测——行为博弈论由此而生。
+      </div>
+      <div class="critique-item">
+        <strong>③ 均衡 ≠ 好结果，别混淆"稳定"与"应该"</strong>囚徒困境的均衡是双输。纳什均衡是一个<em>描述稳定性</em>的概念，不是<em>评判优劣</em>的概念。把"这是纳什均衡"听成"这是合理的、该接受的"，是最常见也最危险的误读——许多坏均衡恰恰需要被打破。
+      </div>
+      <div class="critique-item">
+        <strong>④ 混合策略的现实感存疑</strong>纳什的存在性证明常依赖"<em>混合策略</em>"——以精确概率随机出招（如点球该按 38% 概率射左角）。可现实中人真会在脑中掷这么精准的骰子吗？"因为你无所谓，所以你随机"的行为故事，心理学上相当勉强。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 它是静态的，不讲"怎么走到那里"</strong>纳什均衡只描述终点的稳定，对<em>人们如何抵达均衡</em>只字不提。面对一个全新的、一次性的、无从学习的博弈，没有任何理由相信参与者第一次就能落在均衡上。它是均衡的"快照"，不是过程的"录像"。
+      </div>
+    </div>
+
+    <p class="mt-24">所以正确姿势是：把纳什均衡当作<strong>一副诊断眼镜</strong>——它让你看清"我们为什么会卡在这里、谁都不敢先动"，从而去寻找改变结构的杠杆；而不是当作一台预测机，更不是把任何僵局都合理化为"理性的必然"。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">博弈论</div>
+        <div class="conn-name-en">Game Theory</div>
+        <div class="conn-rel">⟵ 母体 / 上游</div>
+        <div class="conn-desc">冯·诺依曼与摩根斯坦奠基的学科，纳什均衡是其中最核心的"解概念"。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">囚徒困境</div>
+        <div class="conn-name-en">Prisoner's Dilemma</div>
+        <div class="conn-rel">★ 核心实例</div>
+        <div class="conn-desc">纳什均衡最著名的化身，一句话说清"个体理性导致集体非理性"。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">公地悲剧</div>
+        <div class="conn-name-en">Tragedy of the Commons</div>
+        <div class="conn-rel">⟴ 多人版本</div>
+        <div class="conn-desc">哈丁 1968 提出。多人囚徒困境——人人理性放牧，终致草场枯竭。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">进化稳定策略</div>
+        <div class="conn-name-en">ESS</div>
+        <div class="conn-rel">⟹ 生物学版</div>
+        <div class="conn-desc">梅纳德·史密斯把纳什均衡搬进自然——不靠理性，靠自然选择达成稳定。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">谢林点 / 焦点</div>
+        <div class="conn-name-en">Focal Point</div>
+        <div class="conn-rel">⊕ 选择均衡</div>
+        <div class="conn-desc">当存在多重均衡时，人们靠"自然之选"协调到同一个上。补纳什之缺。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">子博弈完美 / 贝叶斯均衡</div>
+        <div class="conn-name-en">Refinements</div>
+        <div class="conn-rel">⊢ 精炼</div>
+        <div class="conn-desc">泽尔滕、海萨尼为纳什均衡剔除空洞威胁、纳入不完全信息。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">看不见的手</div>
+        <div class="conn-name-en">Invisible Hand</div>
+        <div class="conn-rel">⟷ 对照 / 限定</div>
+        <div class="conn-desc">斯密说私利成就公益；纳什证明许多结构里私利反把众人锁死——是对前者的边界标注。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">第二序思维</div>
+        <div class="conn-name-en">Second-Order Thinking</div>
+        <div class="conn-rel">⟴ 互补（见 №003）</div>
+        <div class="conn-desc">博弈的本质是"预判对手的预判"。纳什均衡是第二序思维推到尽头的数学形态。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>纳什均衡真正的用处，不是让你算出精确概率，而是给你一种<em>看穿互动结构的眼力</em>——在动手之前，先问"别人会如何反应，我们会僵在哪里"。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">谈判博弈</div>
+        <div class="usage-text">别只想自己要什么，先推演<em>对方的最优反应</em>。谈判高手算的是"在我这样出牌后，对方会怎么回，那一步对我又意味着什么"。预判而非空想，才接近博弈的真相。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">商业竞争</div>
+        <div class="usage-text">价格战往往是一场囚徒困境——人人降价，人人受损。<strong>识别出"我们困在坏均衡里"，才谈得上跳出来</strong>：靠差异化退出价格维度、靠重复博弈与默契建立信任、靠改变支付结构（长期合约、忠诚计划）改写规则。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">承诺与威慑</div>
+        <div class="usage-text">谢林的洞见：<em>有时自断退路反而更强</em>。破釜沉舟、公开立军令状、签下不可撤销的合同——主动放弃灵活性，把"我一定会这么做"变得可信，能逼对手让步。但威胁必须可信，空洞的恫吓会被一眼识破。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">设计机制</div>
+        <div class="usage-text">想改变人的行为，<em>别空喊口号，去改收益结构</em>。改变规则就改变均衡——拍卖怎么设计、奖金怎么发、KPI 怎么定，都会把人推向不同的稳定点。这是管理者与制度设计者最该掌握的杠杆。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">识别困境</div>
+        <div class="usage-text">当你和对方都"很理性"却双双受损，别急着怪人品——<strong>问题多半出在博弈结构，而非某个坏人</strong>。跳出局内，想办法改结构（引入第三方监督、把一次性博弈变成重复博弈、改变信息透明度），比互相指责有用得多。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我此刻陷入的僵局，究竟是某个人的恶意造成的，还是博弈的<em>结构</em>注定每个理性人都会这么选？如果是后者，能改的是结构而非人。</div>
+      <div class="q">在我的决策里，我有没有真正推演过对手的最优反应——还是只在一厢情愿地假设"对方会配合我"？</div>
+      <div class="q">我和对方明明都更想要那个"双赢"的结果，却一再滑向双输。是什么让我们谁都不敢先迈出合作的第一步？怎样才能让这一步变得"可信"？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">John Nash《Non-Cooperative Games》</span>
+        <span class="further-meta">Annals of Mathematics, 1951 — 纳什均衡的原始论文（博士论文精炼版）</span>
+      </li>
+      <li>
+        <span class="further-title">von Neumann &amp; Morgenstern《Theory of Games and Economic Behavior》</span>
+        <span class="further-meta">Princeton University Press, 1944 — 博弈论的奠基之作</span>
+      </li>
+      <li>
+        <span class="further-title">Thomas Schelling《The Strategy of Conflict》</span>
+        <span class="further-meta">Harvard University Press, 1960 — 焦点、可信承诺与威慑，博弈论的策略经典</span>
+      </li>
+      <li>
+        <span class="further-title">Robert Axelrod《The Evolution of Cooperation》</span>
+        <span class="further-meta">Basic Books, 1984 — 重复囚徒困境竞赛与"一报还一报"</span>
+      </li>
+      <li>
+        <span class="further-title">John Maynard Smith《Evolution and the Theory of Games》</span>
+        <span class="further-meta">Cambridge University Press, 1982 — 进化稳定策略，纳什均衡的生物学版</span>
+      </li>
+      <li>
+        <span class="further-title">Sylvia Nasar《A Beautiful Mind》</span>
+        <span class="further-meta">Simon &amp; Schuster, 1998 — 纳什传记，附维基条目 <a href="https://en.wikipedia.org/wiki/Nash_equilibrium" target="_blank">Nash equilibrium</a></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="021-darwin-lamarck.html">
+      <small>← PREVIOUS</small>
+      №021 达尔文 vs 拉马克
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;022&nbsp;·&nbsp;纳什均衡&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
