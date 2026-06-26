@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№023 贝叶斯定理 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 概率 · 推断</span>
+    <span class="lesson-no">№ 023</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 023 · PROBABILITY &amp; INFERENCE</div>
+    <h1 class="lesson-title">贝叶斯定理</h1>
+    <div class="lesson-title-en">Bayes' Theorem · how new evidence should reshape belief</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>托马斯·贝叶斯（理查德·普莱斯整理）</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1763（身后发表）</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>数学 · 概率 · 认识论</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《机遇论中一个问题的解》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一位牧师抽屉里的遗稿</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p><strong>托马斯·贝叶斯</strong>（Thomas Bayes，约 1701–1761）是英格兰一位长老会牧师，业余研究数学，生前是英国皇家学会会员，却几乎没发表过数学论文。这条以他命名、后来重塑了整个统计学与人工智能的定理，他活着时一行都没有公开。</p>
+
+    <p>他真正想解决的，是一个当时被称为"<strong>逆概率</strong>"（inverse probability）的难题。<em>正向</em>的概率好算：已知一枚硬币是均匀的，问连抛十次全是正面的概率多大——从"原因"推"结果"。但现实里我们面对的恰恰相反：只看见了结果（十次全是正面），要反推原因（这枚硬币到底均不均匀、偏到什么程度）。<strong>从effect 倒推 cause，从观测倒推真相——这才是科学、医学、法庭、投资每天真正在做的事</strong>。</p>
+
+    <p>贝叶斯死后，他的朋友、同为牧师的数学家<strong>理查德·普莱斯</strong>（Richard Price）整理遗稿时发现了这篇手稿，认为意义重大，于 1763 年提交英国皇家学会，以《机遇论中一个问题的解》（<em>An Essay towards solving a Problem in the Doctrine of Chances</em>）为题发表。普莱斯在引言里说，这套方法甚至可以用来回应休谟对"神迹"的质疑——即如何从有限的证言去评估一件罕见之事的可信度。</p>
+
+    <p class="muted">真正让这条定理长出血肉的，是法国人<strong>拉普拉斯</strong>。他在 1774 年独立重新发现了同样的思想，并把它一般化、推广到天文学、人口统计、误差理论——是拉普拉斯而非贝叶斯，写出了我们今天所用的公式形态。所以有人说，"贝叶斯定理"更准确的名字应该是"拉普拉斯定理"。一条定理，挂错了名字两百多年。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <p>贝叶斯没有写下今天课本上那个简洁公式。他用的是一个<em>台球桌</em>的思想实验：先把一个白球随机滚到桌面某处（位置未知），再不断滚动其他球，只告诉你它们落在白球的左边还是右边——问：能否据此反推那个白球的位置？这正是"由观测反推未知参数"的原型。普莱斯在提交时写道：</p>
+
+    <div class="theorem">
+      <div class="theorem-label">BAYES &amp; PRICE · 1763</div>
+      <div class="theorem-body">
+        他的目的，是要寻求一种方法：当我们对某一未知事件，<em>只知道它在多次试验中发生了若干次、失败了若干次</em>，由此去估计"它单次发生的概率落在任意两个可指定的程度之间"的可能性有多大。<br><br>
+        换成今天的语言，这条定理说的是：<br>
+        <strong>后验概率 ＝ （似然 × 先验概率）／ 证据的总概率</strong><br>
+        P(H | E) ＝ P(E | H) · P(H) ／ P(E)
+      </div>
+      <div class="theorem-cite">——《机遇论中一个问题的解》（1763，普莱斯整理提交）</div>
+    </div>
+
+    <p>读懂这个公式只需认清四个角色：<strong>H</strong> 是你关心的假设（病了／硬币偏了／嫌疑人有罪），<strong>E</strong> 是你新看到的证据（检测阳性／十连正面／现场指纹）。<strong>P(H)</strong> 是看到证据<em>之前</em>你对假设的信念，叫<em>先验</em>；<strong>P(H|E)</strong> 是看到证据<em>之后</em>更新过的信念，叫<em>后验</em>；<strong>P(E|H)</strong> 是"假如假设为真，这个证据有多容易出现"，叫<em>似然</em>。<strong>整条定理只做一件事：把先验，乘上证据带来的信息，变成后验</strong>——它是一台"信念更新机"。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 别忘了"原本有多少"</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>剥掉公式，贝叶斯定理的灵魂只有一句话：<strong>新证据不会推翻旧信念，只会按比例修正它</strong>。一个再惊人的检测结果，也要先乘上"这件事原本有多罕见"，才知道它真正意味着什么。最经典的一课，是体检报告：</p>
+
+    <div class="quote-inline">
+      某种癌症在人群中的患病率是 <strong>0.1%</strong>（每一千人里有一个真的病了）。有一种筛查，准确率高达 <strong>99%</strong>——病人测出阳性的概率 99%，健康人测出阴性的概率也 99%。现在你测出了<strong>阳性</strong>。请问：你真的患癌的概率是多大？
+    </div>
+
+    <p>绝大多数人——<em>包括很多医生</em>——脱口而出"99%"。错。正确答案是约 <strong>9%</strong>。算一遍就懂：假设一万人来检测，真正患病的只有 10 人，其中 9.9 人测出阳性；而健康的 9990 人里，有 1% 即约 <strong>100 人</strong>会被误报为阳性。于是所有阳性者共约 110 人，其中真病的只有约 9.9 人——<strong>9.9 ÷ 110 ≈ 9%</strong>。</p>
+
+    <p>为什么直觉错得这么离谱？因为人脑只盯着"检测多准"（似然），却<em>忘了"原本有多少病人"（先验）</em>。当一件事足够罕见，哪怕一个很准的信号，被海量"健康但误报"的人稀释后，也变得不那么可靠。这种系统性的错误，心理学称作"<strong>基础比率忽视</strong>"（base rate neglect）。贝叶斯定理就是治这个病的解药：<strong>看到任何惊人证据，先问一句"这件事原本有多大概率"</strong>。</p>
+
+    <div class="quote-inline">
+      "贝叶斯思维的精髓不是算得多精，而是<strong>记得要把先验乘进去</strong>。一个忘了基础比率的聪明人，会比记得它的笨人错得更自信。"
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">皮埃尔-西蒙·拉普拉斯</span>
+          <span class="comm-tag">LAPLACE · 1774 / 1812</span>
+        </div>
+        <p>真正的奠基者。拉普拉斯在《论事件的原因的概率》（1774）独立重写并一般化了贝叶斯的思想，又在巨著《概率分析理论》（1812）里把它发展为完整体系，用来计算行星质量、修正天文观测误差、估算法国人口。他著名的"<em>日出问题</em>"——根据太阳已连续升起的天数，估计它明天还会升起的概率——正是贝叶斯更新的范例。</p>
+        <p>他留下一句概率论的座右铭：<em>"概率论，归根结底不过是把常识化成了计算。"</em></p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">罗纳德·费希尔 &amp; 频率学派</span>
+          <span class="comm-tag">FREQUENTISTS · 20c</span>
+        </div>
+        <p>进入 20 世纪，统计学的主流却<em>掉头反对</em>贝叶斯。以费希尔（R.A. Fisher）、奈曼（Neyman）、皮尔逊（Pearson）为代表的"<em>频率学派</em>"认为：概率只能定义为"长期频率"，而贝叶斯那个凭空设定的"先验"太主观——<strong>你凭什么说硬币偏的先验是 50%？换个人就换个数</strong>。</p>
+        <p>于是显著性检验、p 值、置信区间成了正统，贝叶斯被贬为"不科学"，在课堂里沉寂了近半个世纪。这场"频率派 vs 贝叶斯派"之争，是统计学史上最深的裂痕。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">德·菲内蒂 &amp; 萨维奇</span>
+          <span class="comm-tag">SUBJECTIVE BAYES · 1937 / 1954</span>
+        </div>
+        <p>意大利数学家<em>布鲁诺·德·菲内蒂</em>用一句惊世骇俗的话为贝叶斯辩护——《概率论》开篇即写：<strong>"概率并不存在。"</strong>他的意思是：概率不是世界的客观属性，而是<em>理性主体的信念程度</em>。他用"荷兰赌"（Dutch book）论证：如果你的信念不满足概率公理，赌徒就能设一组赌局让你必输——<strong>主观概率也必须自洽</strong>。</p>
+        <p>萨维奇（L.J. Savage）在《统计学的基础》（1954）把它公理化，使"主观贝叶斯"成为决策论的根基。先验主观，不是缺陷，而是诚实。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">E. T. 杰恩斯</span>
+          <span class="comm-tag">JAYNES · 2003</span>
+        </div>
+        <p>物理学家杰恩斯在身后出版的《概率论：科学的逻辑》里给贝叶斯最雄辩的现代辩护：借考克斯定理（Cox's theorem）证明，<em>任何满足基本一致性要求的"合理信念系统"，在数学上必然等价于概率论</em>。也就是说——<strong>贝叶斯推断不是统计学的一个流派，而是逻辑在不确定性下的唯一自然延伸</strong>。</p>
+        <p>他还把"最大熵原理"接到贝叶斯先验的选择上，与信息论（见 <a href="010-shannon-entropy.html">№010 香农熵</a>）打通：在一无所知时，应选熵最大、即假设最少的先验。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 从破译密码到打捞残骸</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">图灵破解恩尼格玛</span>
+          <span class="case-when">1939–1945</span>
+        </div>
+        <p>二战期间，<em>艾伦·图灵</em>在布莱切利园破译德军 Enigma 密码时，发明了一套被称作 "Banburismus" 的方法：把每一条线索当作证据，<strong>累加它支持某个猜测的"证据权重"</strong>，直到后验概率高到可以下注。他甚至为此自创了信息单位——"ban"（及其十分之一"deciban"）。他的助手 I.J. 古德后来指出，这本质上就是<em>序贯贝叶斯推断</em>。</p>
+        <div class="case-insight">这套方法在战后被列为机密数十年。换句话说，贝叶斯定理在被学院主流嫌弃的年代，正悄悄在最高机密的战场上拯救生命——理论的冷宫与实战的王座，常常同时发生。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">体检阳性的真相</span>
+          <span class="case-when">当代医学日常</span>
+        </div>
+        <p>德国心理学家<em>吉仁泽</em>（Gerd Gigerenzer）做过著名调查：拿乳腺癌筛查的真实数字去问执业医生"阳性者真患病的概率"，<strong>大多数人答错，且高估数倍</strong>。问题正是基础比率忽视——筛查针对的是低患病率人群，假阳性的绝对数会淹没真阳性。</p>
+        <div class="case-insight">吉仁泽给出的解药很贝叶斯也很朴素：把概率换成"自然频率"来想（"一千人里……"），医生的正确率立刻飙升。这说明：贝叶斯思维可以训练，关键是换一种表述，逼自己把先验摆上台面。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">莎莉·克拉克冤案</span>
+          <span class="case-when">1999–2003 · 英国</span>
+        </div>
+        <p>律师莎莉·克拉克的两个婴儿先后猝死，1999 年她被控谋杀。控方专家梅多（Roy Meadow）作证："一个家庭连续两次婴儿猝死的概率是<em>七千三百万分之一</em>"，陪审团据此定罪。但这个数字错得离谱——它<strong>假设两次死亡相互独立</strong>（忽视了同一家庭可能存在共同的遗传或环境因素），更犯了"<em>检察官谬误</em>"：把"无辜却发生两次猝死的概率"偷换成了"发生两次猝死却无辜的概率"。</p>
+        <div class="case-insight">英国皇家统计学会公开抗议这一误用。2003 年定罪被撤销，但克拉克已蒙冤四年，出狱后于 2007 年去世。把 P(证据|无辜) 当成 P(无辜|证据)——这个贝叶斯定理一眼就能纠正的混淆，是会要人命的。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">法航 447 残骸搜寻</span>
+          <span class="case-when">2009–2011 · 大西洋</span>
+        </div>
+        <p>2009 年法航 447 航班坠入大西洋，黑匣子定位信标失效，两年三轮搜索一无所获。2011 年，海军作战研究公司 Metron 用<em>贝叶斯搜索理论</em>重做：把洋流、声呐失败、历史失事数据等所有线索折成一张<strong>概率热力图</strong>，并用每次未找到的结果反过来更新地图。新图把搜索重心移到了之前被忽略的区域——<strong>残骸在一周内被找到</strong>。</p>
+        <div class="case-insight">这套方法可追溯到 1968 年海军用贝叶斯搜索定位失踪核潜艇"天蝎号"。它的精髓是把"没找到"也当作证据：每一次扑空都在压低该区域的后验概率，逼概率向真相聚拢。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">垃圾邮件过滤器</span>
+          <span class="case-when">2002 · 互联网</span>
+        </div>
+        <p>2002 年，程序员<em>保罗·格雷厄姆</em>发表《一个反垃圾邮件的方案》（<em>A Plan for Spam</em>），提出用"<strong>朴素贝叶斯</strong>"分类器过滤垃圾邮件：统计每个词在垃圾邮件和正常邮件中出现的频率（似然），再根据一封新邮件里的词组合，更新它"是垃圾"的后验概率。</p>
+        <div class="case-insight">效果惊人，准确率轻松超过 99%，且能随用户标记不断自学习。这条 18 世纪牧师的定理，就这样成了你邮箱里每天默默工作的卫兵——贝叶斯也是现代机器学习与垃圾识别的第一块基石。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>贝叶斯定理在数学上无懈可击——它就是概率公理的直接推论。它真正的争议，全在"<em>怎么用</em>"上：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 先验从哪来</strong>这是频率学派两百年来最尖锐的一刀。后验 ＝ 似然 × <em>先验</em>，可那个先验若是凭空拍脑袋设的，<em>garbage in, garbage out</em>——结论再精确也只是把主观偏见洗成了数字。在数据稀少时，先验主宰结论，这是贝叶斯最脆弱的地方。
+      </div>
+      <div class="critique-item">
+        <strong>② 算不动</strong>公式优美，可现实中"证据的总概率 P(E)"往往是一个<em>高维积分</em>，几百年里无法手算。贝叶斯长期是"美丽但不可计算"的理论，直到 1990 年代<em>马尔可夫链蒙特卡洛（MCMC）</em>等算法与算力到位，它才真正大规模落地——它的复兴一半是数学，一半是计算机。
+      </div>
+      <div class="critique-item">
+        <strong>③ 顽固的先验会放大偏见</strong>如果一个人先验极强、又只肯小幅更新，那么再多反证也撼不动他——<em>这在数学上"正确"，在认识上却成了确认偏误的精致版</em>。贝叶斯能让你理性，也能让顽固变得"有理有据"。
+      </div>
+      <div class="critique-item">
+        <strong>④ 想不到的，更新不到</strong>贝叶斯只能在你<em>预先列出的假设空间内</em>重新分配信念。如果真相是一个你从未设想过的假设，它的先验是零，无论多少证据都乘不出后验——这正是<a href="004-black-swan.html">№004 黑天鹅</a>的盲区：你无法朝一个从未想到的方向更新。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 最危险的误用：概率谬误</strong>把 P(证据|假设) 错当成 P(假设|证据)，是法庭、医学、媒体里反复出现的致命混淆（"检察官谬误"）。莎莉·克拉克案就是血的代价。<em>贝叶斯定理本是纠正它的工具，可一旦被半懂的人拿去当幌子，反而成了冤案的帮凶</em>。
+      </div>
+    </div>
+
+    <p class="mt-24">所以用贝叶斯的正确姿势是：<strong>把它当作一副"思维的纪律"，而非一台"真理的计算器"</strong>——它逼你把信念量化、把先验摆上台面、随证据诚实更新；但它给不出你没想到的假设，也救不了一个被错设的先验。<em>它让你更新得更理性，却不替你决定从哪里出发。</em></p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">频率学派概率</div>
+        <div class="conn-name-en">Frequentist Probability</div>
+        <div class="conn-rel">⟷ 根本对照</div>
+        <div class="conn-desc">概率＝长期频率（客观）vs 概率＝信念程度（贝叶斯）。统计学最深的分歧。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">香农熵</div>
+        <div class="conn-name-en">Shannon Entropy · №010</div>
+        <div class="conn-rel">∥ 同源互通</div>
+        <div class="conn-desc">KL 散度／交叉熵度量"更新前后信念的差距"；最大熵给贝叶斯选先验。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">黑天鹅</div>
+        <div class="conn-name-en">Black Swan · №004</div>
+        <div class="conn-rel">⟸ 边界盲区</div>
+        <div class="conn-desc">假设空间外、先验为零的事件，贝叶斯无法朝它更新——更新机器的死角。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">奥卡姆剃刀</div>
+        <div class="conn-name-en">Occam's Razor · №014</div>
+        <div class="conn-rel">⟹ 内含机制</div>
+        <div class="conn-desc">"贝叶斯奥卡姆因子"——复杂模型把概率摊得太薄，自动受罚，简单者胜出。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">第二序思维</div>
+        <div class="conn-name-en">Second-Order Thinking · №003</div>
+        <div class="conn-rel">⟹ 互补</div>
+        <div class="conn-desc">都在对抗"被表面证据牵着走"：先想原本有多大概率，再想之后会怎样。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">凯利公式</div>
+        <div class="conn-name-en">Kelly Criterion · №008</div>
+        <div class="conn-rel">⟶ 决策下游</div>
+        <div class="conn-desc">贝叶斯给出概率，凯利据此决定下注比例——信念到行动的接力。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">珀尔贝叶斯网络</div>
+        <div class="conn-name-en">Bayesian Networks · Pearl 1988</div>
+        <div class="conn-rel">⟶ 现代延伸</div>
+        <div class="conn-desc">把贝叶斯更新铺成因果图谱，奠定专家系统与因果推断（珀尔 2011 图灵奖）。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">大数定律</div>
+        <div class="conn-name-en">Law of Large Numbers</div>
+        <div class="conn-rel">∥ 概率基石</div>
+        <div class="conn-desc">数据足够多时，后验会被似然主导、压过先验——贝叶斯与频率派在此握手言和。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>贝叶斯定理不是用来算题的，是用来<em>校准信念</em>的。它教你怎样面对一个本质上不确定的世界——既不固执，也不轻信。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">更新观点</div>
+        <div class="usage-text">把信念当成概率而非"是非"：<em>给每个判断标一个心里的可信度，遇到证据按比例调整</em>。理想姿态是"<strong>强观点，弱持有</strong>"——敢下判断，也随时准备被新证据改写，而不是非黑即白、一锤定音。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">看体检与筛查</div>
+        <div class="usage-text">收到一个吓人的阳性结果，<em>先别崩溃，先问基础比率</em>：这病在我这个人群里原本多罕见？罕见病的初筛阳性，假阳性往往远多于真阳性。<strong>正确反应是复查确诊，而不是当场宣判</strong>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">评估信息</div>
+        <div class="usage-text">判断一条新闻／爆料是否可信，要把"<em>信源的可靠度</em>"当先验乘进去：同一句话，出自常年准确的来源和出自标题党，后验天差地别。<strong>一个惊人但孤立的说法，先验就该压得很低</strong>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">投资与创业</div>
+        <div class="usage-text">把投资逻辑写成"假设 + 证据"，<em>用新数据持续更新论点，而不是锚定在第一印象</em>。最危险的不是判断错，是错了还不更新。<strong>愿意因证据改主意，是贝叶斯型投资者最大的优势</strong>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">识别概率谬误</div>
+        <div class="usage-text">听到任何"这事偶然发生的概率只有几百万分之一"，立刻警觉：<em>说话人是不是把 P(证据|无辜) 当成了 P(无辜|证据)？</em> 这两者天差地别。<strong>学会一眼认出检察官谬误，能让你不被唬人的大数字带偏</strong>。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我最近一次"看到证据就改变看法"，是真的按比例更新，还是只挑了支持原有立场的证据、把先验当成了结论？</div>
+      <div class="q">对我正坚信的某个判断，<em>需要出现什么样的证据，我才愿意放弃它</em>？如果答案是"没有任何证据能让我改变"，那它已经不是信念，而是信仰。</div>
+      <div class="q">我有没有把某个"原本极罕见"的可能性，因为一个看似有力的信号就当真了——却忘了先乘上它的基础比率？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">T. Bayes &amp; R. Price《An Essay towards solving a Problem in the Doctrine of Chances》</span>
+        <span class="further-meta">Philosophical Transactions, 1763 — 一切的起点，普莱斯整理提交的原始论文</span>
+      </li>
+      <li>
+        <span class="further-title">P.-S. Laplace《Théorie analytique des probabilités》</span>
+        <span class="further-meta">1812 — 拉普拉斯把贝叶斯思想发展成完整体系的奠基之作</span>
+      </li>
+      <li>
+        <span class="further-title">E. T. Jaynes《Probability Theory: The Logic of Science》</span>
+        <span class="further-meta">Cambridge University Press, 2003 — 贝叶斯最雄辩的现代辩护，"概率即逻辑的延伸"</span>
+      </li>
+      <li>
+        <span class="further-title">Sharon Bertsch McGrayne《The Theory That Would Not Die》</span>
+        <span class="further-meta">Yale University Press, 2011 — 贝叶斯两百年沉浮史，从恩尼格玛到搜寻潜艇，极好读</span>
+      </li>
+      <li>
+        <span class="further-title">Judea Pearl《Probabilistic Reasoning in Intelligent Systems》</span>
+        <span class="further-meta">Morgan Kaufmann, 1988 — 贝叶斯网络的开山之作，AI 与因果推断的源头</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Bayes' theorem</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank">en.wikipedia.org/wiki/Bayes'_theorem</a> — 含推导、例子与历史综述</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="022-nash-equilibrium.html">
+      <small>← PREVIOUS</small>
+      №022 纳什均衡
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;023&nbsp;·&nbsp;贝叶斯定理&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
