@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№025 熵增与热力学第二定律 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 物理 · 热力学</span>
+    <span class="lesson-no">№ 025</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 025 · PHYSICS · THERMODYNAMICS</div>
+    <h1 class="lesson-title">熵增与热力学第二定律</h1>
+    <div class="lesson-title-en">Entropy &amp; the Second Law · why time only runs forward</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>奠基者</dt><dd>卡诺 / 克劳修斯 / 玻尔兹曼</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1824 / 1865 / 1877</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>物理 · 热力学 · 统计力学</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>核心式</dt><dd>S = k log W</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 从一台蒸汽机里长出的宇宙定律</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1824 年，法国青年工程师<strong>萨迪·卡诺</strong>（Sadi Carnot，1796–1832）出版了一本薄薄的小册子《论火的动力》（<em>Réflexions sur la puissance motrice du feu</em>）。他想回答一个极其实用的问题：<em>一台蒸汽机，最多能把多少热变成功？</em></p>
+
+    <p>卡诺的答案震动了后世：<strong>无论机器设计得多么精巧，热都不可能 100% 转化为功</strong>——总有一部分热，必须从高温流向低温白白耗散掉。而且这个流向是单向的：热自发地从热的地方流向冷的地方，从不反过来。卡诺 36 岁死于霍乱，生前几乎无人理解他。</p>
+
+    <p>三十年后，德国物理学家<strong>鲁道夫·克劳修斯</strong>（Rudolf Clausius，1822–1888）把卡诺的洞见提炼成一条普适定律，并在 1865 年为这个"不可逆的耗散倾向"造了一个新词——<strong>熵</strong>（Entropie，源自希腊语 τροπή"转变"，他刻意造得与"能量 Energie"押韵，以示二者同等基本）。同一年，英国的<strong>开尔文勋爵</strong>（William Thomson）已据此推演出一个令人不寒而栗的结论：宇宙终将走向<em>"热寂"</em>——所有温差被抹平，一切归于死寂的均匀。</p>
+
+    <p class="muted">真正把熵讲透的是奥地利人<strong>路德维希·玻尔兹曼</strong>（Ludwig Boltzmann，1844–1906）。他用概率重新解释了熵，写下 <em>S = k log W</em>。这个公式后来被刻在他维也纳的墓碑上。玻尔兹曼生前因这套"原子论"饱受主流物理学界攻击，1906 年在抑郁中自缢——而几年后，原子的真实性被实验彻底证实。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">CLAUSIUS · 1865</div>
+      <div class="theorem-body">
+        宇宙的能量是恒定的；宇宙的熵趋向于一个极大值。<br>
+        <em>（Die Energie der Welt ist konstant. Die Entropie der Welt strebt einem Maximum zu.）</em><br><br>
+        在一个孤立系统中，熵永不减少：可逆过程中保持不变，不可逆过程中持续增加，直至达到平衡态的极大值。
+      </div>
+      <div class="theorem-cite">——克劳修斯《热的力学理论》（1865）</div>
+    </div>
+
+    <p>这两句话，是热力学第二定律最经典的表述。第一句说能量守恒（第一定律）——能量既不会凭空产生也不会消失；第二句才是第二定律的灵魂——<strong>能量的"总量"虽不变，但它的"可用性"在持续下降</strong>。每一次转化，都有一部分能量被永久地"贬值"为无法再做功的废热。</p>
+
+    <p>而玻尔兹曼给出了它的微观本质：</p>
+
+    <div class="theorem">
+      <div class="theorem-label">BOLTZMANN · 1877</div>
+      <div class="theorem-body">
+        S = k · log W<br><br>
+        一个宏观状态的熵 S，正比于实现它的<em>微观排列方式的数目 W</em> 的对数（k 为玻尔兹曼常数）。一个状态对应的微观排列越多，它的熵就越高，也就越"可能"被自然选中。
+      </div>
+      <div class="theorem-cite">——玻尔兹曼，统计力学的熵定义</div>
+    </div>
+
+    <p>这一步是革命性的：<strong>熵不再是某种神秘的"耗散物质"，而是一个数数游戏</strong>——数一数有多少种微观方式能实现你看到的宏观样子。整齐的状态实现方式极少（熵低），混乱的状态实现方式天文数字般多（熵高）。所以系统自发滑向高熵，<em>不是被什么力推着，而纯粹是因为高熵状态压倒性地更多、更可能</em>。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 为什么打碎的杯子不会自己复原</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>剥去公式，第二定律说的是一件你每天都在见证的事：<strong>这个世界有一个偏向，事情总是朝着"更乱、更平、更凉"的方向走，而且回不去</strong>。</p>
+
+    <ul>
+      <li><strong>一滴墨水</strong>滴进清水，会自己扩散成均匀的灰——但一杯灰水永远不会自己重新聚成一滴墨。</li>
+      <li><strong>一杯热咖啡</strong>放在桌上会慢慢变凉，把热散给房间——但房间的热永远不会自己重新汇回杯子把咖啡烫开。</li>
+      <li><strong>一只摔碎的杯子</strong>不会自己拼回去；<strong>一个房间</strong>不打理只会越来越乱；<strong>一座无人维护的房子</strong>只会朽坏，绝不会自己变新。</li>
+    </ul>
+
+    <p>这些"单向"的过程，就是熵增。为什么单向？用玻尔兹曼的数数法看就懂了：<em>墨水聚成一滴</em>只有极少数微观排列能实现（熵低），<em>墨水散成一片</em>则有几乎无穷多种排列能实现（熵高）。系统乱跑乱撞，撞进"高熵"区域的概率压倒性地大——<strong>不是有人故意把它弄乱，而是"乱"的方式实在太多了</strong>。</p>
+
+    <p>这就给了时间一个方向——物理学家叫它<strong>"时间之箭"</strong>。微观的物理定律其实是<em>时间对称</em>的（一段台球碰撞的录像正放倒放都合理），但宏观世界却分明有过去和未来。<strong>区分过去与未来的，正是熵——过去永远是熵更低的那一端</strong>。一段杯子摔碎的录像倒放你一眼就能看穿，靠的就是这条定律。</p>
+
+    <div class="quote-inline">
+      "<strong>有序是一种昂贵的、需要持续供能才能维持的稀有状态；混乱则是免费的、自动发生的默认结局。</strong>不维护，就退化——这不是悲观，这是物理。"
+    </div>
+
+    <p>但要立刻补一句关键的话：第二定律只对<strong>孤立系统</strong>（与外界无能量交换）成立。<em>局部的熵完全可以减少</em>——你能把乱房间收拾整齐，冰箱能把内部变冷——但代价是你消耗了能量、向外界排放了更多的熵，<strong>使"系统 + 环境"的总熵仍然增加</strong>。降低局部的熵，从来不是免费的。</p>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">阿瑟·爱丁顿</span>
+          <span class="comm-tag">EDDINGTON · 1928</span>
+        </div>
+        <p>英国天体物理学家爱丁顿在《物理世界的本质》中为第二定律写下科学史上最有名的辩护词之一：<em>"熵总是增加的定律，我认为在所有自然定律中占据着至高无上的地位……如果有人指出你心爱的宇宙理论与麦克斯韦方程不符，那也许是麦克斯韦方程错了；但如果你的理论被发现违反热力学第二定律，我无法给你任何希望——它只能在最深的耻辱中崩溃。"</em></p>
+        <p>正是爱丁顿创造了<strong>"时间之箭"</strong>（arrow of time）这个词，把熵增与时间的单向性永久地绑在了一起。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">麦克斯韦 & 兰道尔</span>
+          <span class="comm-tag">MAXWELL'S DEMON · 1867 → 1961</span>
+        </div>
+        <p>1867 年，<strong>麦克斯韦</strong>设想了一个"小妖"：它守在两个气室之间的小门旁，只放快分子去一边、慢分子去另一边，于是不费功就制造出温差——<em>仿佛凭空降低了熵，推翻了第二定律</em>。这个"麦克斯韦妖"困扰了物理学界近一个世纪。</p>
+        <p>谜底由 IBM 的<strong>罗尔夫·兰道尔</strong>（1961）与<strong>查尔斯·贝内特</strong>揭开：小妖要分拣，必须<em>测量并记住</em>分子的信息；而当它<em>擦除</em>记忆腾出空间时，每抹掉一比特信息，至少要付出 <em>kT·ln2</em> 的熵代价。<strong>信息不是免费的，信息就是物理</strong>——这把热力学熵与香农的信息熵焊在了一起（见 <a href="010-shannon-entropy.html">№010 香农熵</a>）。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">埃尔温·薛定谔</span>
+          <span class="comm-tag">SCHRÖDINGER · 1944</span>
+        </div>
+        <p>量子力学奠基人之一薛定谔在小书《生命是什么》中追问：<em>生命这种高度有序的结构，凭什么能在一个熵不断增加的宇宙里维持自己？</em>他的答案是：<strong>生命以"负熵"为食</strong>（feeds on negative entropy）。</p>
+        <p>生物体不是第二定律的例外，恰恰是它的仆人——我们吃下低熵的食物（有序的化学键），排出高熵的废物与热量，<em>把熵不断地倾倒给环境</em>，从而在体内维持那一小片珍贵的有序。<strong>活着，就是一场持续不断地对抗熵增的战斗，而死亡就是这场战斗的终止——达到与环境的热平衡</strong>。这本小书后来直接启发了 DNA 的发现者。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">伊利亚·普里高津</span>
+          <span class="comm-tag">PRIGOGINE · 1977 诺贝尔奖</span>
+        </div>
+        <p>比利时物理化学家普里高津更进一步，提出<strong>"耗散结构"</strong>理论（1977 年因此获诺贝尔化学奖）。他指出：在<em>远离平衡态</em>、且有持续能量流过的开放系统中，混乱不但不会胜出，反而能自发地<strong>涌现出新的、更高级的有序</strong>——旋涡、对流花纹、生命、城市、市场。</p>
+        <p>他的名著叫《从混沌到有序》（<em>Order Out of Chaos</em>, 1984）。这是对"熵增=一切走向死寂"这一悲观叙事的重要修正：<em>只要有能量流过，秩序就能在耗散中诞生</em>。宇宙既在走向热寂，也在沿途盛开出无数转瞬即逝的有序之花。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 从发动机到宇宙尽头</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">为什么没有永动机</span>
+          <span class="case-when">1824 起</span>
+        </div>
+        <p>卡诺证明：任何热机的效率都有一个无法逾越的上限，由高低温之差决定。现实中的火力发电厂热效率约 <em>33–45%</em>，汽车内燃机更低——<strong>超过一半的能量，注定以废热形式散失</strong>。无数想造"第二类永动机"（把环境的热全部变成功）的人，撞的全是同一堵墙：第二定律。</p>
+        <div class="case-insight">第二定律最朴素的工程含义就是"天下没有免费的午餐"：每一次能量转换都要交"熵税"，效率有铁打的上限，废热无法清零。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">宇宙的热寂</span>
+          <span class="case-when">1852</span>
+        </div>
+        <p>开尔文 1852 年把第二定律外推到整个宇宙：如果熵永远增加，那么终有一天所有的温差都被抹平，没有任何热能再可用来做功，宇宙陷入永恒、均匀、死寂的<strong>"热寂"</strong>（heat death）。恒星熄灭，结构瓦解，时间之箭抵达终点。</p>
+        <div class="case-insight">这是人类第一次从一条物理定律里推出"宇宙有结局"。它也是 19 世纪末弥漫欧洲的悲观主义思潮的科学源头之一——熵，第一次有了哲学的重量。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">麦克斯韦妖与信息的代价</span>
+          <span class="case-when">1867 → 1929 → 1961</span>
+        </div>
+        <p>麦克斯韦妖的百年公案，最终由<strong>西拉德</strong>（Leó Szilárd，1929，把妖简化为单分子引擎，首次指出"测量"与熵有关）和<strong>兰道尔</strong>（1961，证明擦除信息必然耗散 kT·ln2 的热）破解。妖没有违反第二定律——它把熵从气体转移到了自己的"记忆"里，而清空记忆时连本带利还了回去。</p>
+        <div class="case-insight">这桩公案的副产品，是发现了"信息就是物理"。今天每一块芯片的发热下限、每一次计算的能耗，都受兰道尔原理约束——一条 19 世纪的热学定律，成了 21 世纪计算的底层天花板。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">生命：一座逆流而上的有序孤岛</span>
+          <span class="case-when">薛定谔 1944</span>
+        </div>
+        <p>一粒种子长成大树，一个受精卵长成人——这些都是局部熵的<em>剧烈下降</em>，看似违反第二定律。但秘密在于：<strong>地球不是孤立系统</strong>。太阳每天倾泻下低熵的高能光子，地球把它们用过后，以高熵的红外辐射散回太空。生命，就建在这条巨大的"熵流"之上。</p>
+        <div class="case-insight">所以"进化产生有序，违反了热力学第二定律"是一个流传甚广的错误——它忘了地球是开放系统，头顶有一颗持续供能的太阳。生命降低自身的熵，靠的是把更多的熵推给宇宙。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">冰箱：可以逆流，但要付费</span>
+          <span class="case-when">日常</span>
+        </div>
+        <p>热不会自发从冷流向热——可冰箱和空调偏偏在做这件"违反直觉"的事。秘诀是它们<em>消耗电能做功</em>，把内部的热"泵"到外部。结果是冰箱内部熵降了一点点，但压缩机、电厂发电、散热口加起来，<strong>整个链条排放的总熵远多于省下的那一点</strong>。</p>
+        <div class="case-insight">这是第二定律最实用的生活注脚：你永远可以在局部制造秩序与凉爽，但必须从别处借能量，并把更大的混乱推给环境。降熵不是不可能，而是不免费。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>第二定律地位崇高，但它的"地基"和"用法"都有需要诚实说清的地方：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 它是统计规律，不是绝对禁令。</strong>玻尔兹曼把熵增解释成"概率问题"，代价是——熵<em>原则上可以减少</em>，只是概率小到天文数字。<strong>洛施密特可逆性佯谬</strong>与<strong>策梅洛复现佯谬</strong>当年正是抓住这一点质问玻尔兹曼：微观定律可逆、且系统终会复现初态，凭什么熵单调增？答案是"几乎永远不会，但不是绝不"。第二定律是"压倒性可能"，不是"逻辑必然"。
+      </div>
+      <div class="critique-item">
+        <strong>② "熵 = 混乱"只是个粗糙的比喻。</strong>熵的严格定义依赖于你如何划分"宏观态"，而"看起来乱不乱"是主观的。有些直觉上"很乱"的状态熵其实不高，有些"很整齐"的状态熵反而很高。<em>把熵简单等同于"脏乱差"，会在很多场合误导你</em>。
+      </div>
+      <div class="critique-item">
+        <strong>③ 只对孤立系统严格成立，最常被误用于开放系统。</strong>"生命/进化/文明产生了有序，所以违反第二定律"是流传最广的误用——它忽略了地球、生物、社会全是<em>开放系统</em>，有持续的能量输入。在开放系统里，局部降熵完全合法，毫不稀奇。
+      </div>
+      <div class="critique-item">
+        <strong>④ 时间之箭的源头仍是未解之谜。</strong>如果熵总在增加，那么<em>过去必然熵极低</em>——一路回推，宇宙诞生之初的熵低得离奇。为什么大爆炸是一个如此低熵的起点？这个"过去假设"（Past Hypothesis）至今没有公认的解释。第二定律解释了箭<em>飞行的方向</em>，却没解释箭<em>最初为何被拉满</em>。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 类比到社会、组织、人生时要格外小心。</strong>"组织会熵增""关系会熵增""万物归于混乱"——这些类比有启发性，但<em>社会系统不是封闭的热力学系统</em>，没有可严格度量的"社会熵"。把懒惰、放任、不作为，统统用"热力学必然"来合理化，是对这条定律最廉价的滥用。<strong>它该提醒你去供能维护，而不该成为你不维护的借口。</strong>
+      </div>
+    </div>
+
+    <p class="mt-24">正确的姿势是：<strong>把第二定律当作一条关于"代价"的铁律</strong>——任何秩序的创造与维持都要付出能量代价，任何转换都有不可回收的损耗。<em>它不预言你一定失败，它只是告诉你：免费的、永久的有序，从来不存在。</em></p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">香农信息熵</div>
+        <div class="conn-name-en">Shannon Entropy · №010</div>
+        <div class="conn-rel">⟷ 同源互通</div>
+        <div class="conn-desc">同一个 −Σp·log p 公式。兰道尔原理用 kT·ln2 把信息熵与热力学熵焊死：擦除信息即生热。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">时间之箭</div>
+        <div class="conn-name-en">Arrow of Time</div>
+        <div class="conn-rel">⟶ 直接产物</div>
+        <div class="conn-desc">爱丁顿命名。宏观时间方向的物理根据就是熵增——过去永远是熵更低的一端。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">麦克斯韦妖</div>
+        <div class="conn-name-en">Maxwell's Demon</div>
+        <div class="conn-rel">⟸ 经典诘难</div>
+        <div class="conn-desc">看似推翻第二定律的思想实验，最终在信息与擦除的代价中被化解。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">耗散结构</div>
+        <div class="conn-name-en">Dissipative Structures</div>
+        <div class="conn-rel">⟹ 重要修正</div>
+        <div class="conn-desc">普里高津：远离平衡的开放系统能"从混沌中生出有序"。秩序在熵流中盛开。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">卡诺循环</div>
+        <div class="conn-name-en">Carnot Cycle</div>
+        <div class="conn-rel">⟵ 历史源头</div>
+        <div class="conn-desc">第二定律最初的胚胎。热机效率的理论上限，由此定律生根。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">宇宙热寂</div>
+        <div class="conn-name-en">Heat Death</div>
+        <div class="conn-rel">⟶ 终点外推</div>
+        <div class="conn-desc">开尔文把第二定律外推到宇宙尺度，得出"万物终归均匀死寂"。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">玻尔兹曼大脑</div>
+        <div class="conn-name-en">Boltzmann Brain</div>
+        <div class="conn-rel">⟺ 统计悖论</div>
+        <div class="conn-desc">由"熵涨落可逆转"推出的诡异思想实验：随机涨落更可能先造出一个孤立大脑而非整个有序宇宙。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">复杂系统涌现</div>
+        <div class="conn-name-en">Emergence</div>
+        <div class="conn-rel">⟷ 平行视角</div>
+        <div class="conn-desc">生命、市场、城市皆为开放系统中的有序涌现，是耗散结构思想的延伸。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>第二定律不在实验室里，它就在你的房间、你的身体、你的事业里每天上演。把它读懂，是为了知道该往哪里持续供能。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">维护一切</div>
+        <div class="usage-text">关系、技能、健康、组织、代码、房屋——<em>所有有序的系统不主动维护就会自发劣化</em>。这不是你的错，是物理默认值。<strong>把"定期供能维护"写进日程</strong>：复习、复盘、体检、沟通、重构。不退步本身就需要持续做功。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">保持开放</div>
+        <div class="usage-text">孤立系统必然熵死，开放系统才能逆生长。<em>把自己当成开放系统去经营</em>——持续吸收新信息、新能量、新关系。闭门造车、信息茧房、拒绝反馈，就是亲手把自己封成一个走向热寂的孤岛。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">承认不可逆</div>
+        <div class="usage-text">时间之箭单向，有些事做了就回不去——说出的话、错过的窗口、流逝的信任。<em>与其幻想"复原"，不如把精力放在"接受现状、向前重建"</em>。沉没的已沉没（见 <a href="011-sunk-cost-fallacy.html">№011 沉没成本</a>），只问下一步往哪走。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">为秩序定价</div>
+        <div class="usage-text">任何整洁、稳定、卓越，都是反熵的成果，<em>都标着能量价格</em>。当你羡慕别人自律的身材、整洁的系统、稳固的团队，记住那背后是持续的供能。<strong>想要哪种秩序，就先算清要为它持续付多少能量，再决定要不要</strong>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">警惕宿命论</div>
+        <div class="usage-text">最危险的误用是把"熵增必然"当成放任的免罪符——"反正一切都会乱，努力有什么用？"<em>错。第二定律恰恰说明：只要持续供能，局部秩序完全可以长久维持</em>。它不是叫你躺平，而是告诉你逆熵需要纪律。看清代价，然后心甘情愿地付。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我生活里有哪些系统正在悄悄熵增——一段疏于联系的关系、一项荒废的技能、一个失修的身体？我有没有在持续向它供能维护？</div>
+      <div class="q">我是不是在用"反正都会变乱""熵增是必然"，为自己的放任和懒惰找一个看似高级的借口？</div>
+      <div class="q">此刻的我，更像一个还在主动吸收新能量、新信息的<em>开放系统</em>，还是一个停止交换、正在走向热寂的<em>孤立系统</em>？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Sadi Carnot《Réflexions sur la puissance motrice du feu》</span>
+        <span class="further-meta">1824 — 热力学的开山小册子，第二定律的胚胎</span>
+      </li>
+      <li>
+        <span class="further-title">R. Clausius《The Mechanical Theory of Heat》</span>
+        <span class="further-meta">英译本 1867 — "熵"一词与"宇宙的熵趋向极大"出处</span>
+      </li>
+      <li>
+        <span class="further-title">Erwin Schrödinger《What is Life?》</span>
+        <span class="further-meta">Cambridge University Press, 1944 — "生命以负熵为食"，启发了 DNA 的发现</span>
+      </li>
+      <li>
+        <span class="further-title">Prigogine &amp; Stengers《Order Out of Chaos》</span>
+        <span class="further-meta">Bantam, 1984 — 耗散结构，对"熵增=死寂"叙事的重要修正</span>
+      </li>
+      <li>
+        <span class="further-title">Peter Atkins《The Second Law》</span>
+        <span class="further-meta">Scientific American Library, 1984 — 面向大众的最佳科普，图文并茂</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Second law of thermodynamics / Entropy</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Second_law_of_thermodynamics" target="_blank">en.wikipedia.org/wiki/Second_law_of_thermodynamics</a> — 含历史脉络与各种表述</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="024-central-limit-theorem.html">
+      <small>← PREVIOUS</small>
+      №024 中心极限定理
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;025&nbsp;·&nbsp;熵增与热力学第二定律&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
