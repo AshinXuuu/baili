@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№027 路径依赖 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 经济 · 技术演化</span>
+    <span class="lesson-no">№ 027</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 027 · PATH DEPENDENCE</div>
+    <h1 class="lesson-title">路径依赖</h1>
+    <div class="lesson-title-en">Path Dependence · why history gets locked in</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>保罗·大卫 / 布莱恩·阿瑟</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1985 / 1989</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>演化经济学 · 技术锁定</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>关键词</dt><dd>QWERTY · 锁定 · 收益递增</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一把"明明不顺手却人人都用"的键盘</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1985 年，斯坦福经济史学家<strong>保罗·大卫</strong>（Paul A. David）在《美国经济评论》上发表了一篇只有几页、却改变了经济学一个分支的短文——《克丽奥与 QWERTY 经济学》（<em>Clio and the Economics of QWERTY</em>）。克丽奥是希腊神话里的历史女神，大卫用她的名字是要说一件主流经济学长期忽略的事：<strong>历史是有惯性的，起点会决定终点</strong>。</p>
+
+    <p>他举的例子就是你手边这把键盘。今天几乎全世界都在用 QWERTY 排列——左上角那一排字母念出来是"Q-W-E-R-T-Y"。这个排列是 1870 年代打字机发明人<em>克里斯托弗·肖尔斯</em>（Christopher Latham Sholes）定下的，相传是为了把常一起出现的字母拆开、<em>放慢</em>打字速度，以免机械打字杆相互卡住。换句话说，它最初的设计目标之一恰恰是"别太快"。</p>
+
+    <p>可是机械卡键的问题，在电子时代早就不存在了。1936 年<em>奥古斯特·德沃夏克</em>（August Dvorak）设计了一套据称更省力、更快的排列。但一百多年过去，QWERTY 纹丝不动，德沃夏克键盘至今只是极客的小众玩具。<strong>一个未必最优的方案，因为"先到了、铺开了"，就把整个世界锁死在自己身上。</strong>这就是路径依赖。</p>
+
+    <p class="muted">几乎同时，圣塔菲研究所的经济学家<strong>布莱恩·阿瑟</strong>（W. Brian Arthur）从另一条路抵达同一结论。他用"收益递增"（increasing returns）的数学，证明了在某些市场里，<em>领先者会越领先</em>，最终把系统锁进一个由早期偶然事件决定的结局——而这个结局未必是最好的那个。两人合力，让"历史重要"（history matters）第一次有了严格的经济学骨架。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">PAUL DAVID · 1985</div>
+      <div class="theorem-body">
+        QWERTY 的故事告诉我们，在某些条件下，<em>看似微不足道的、偶然的历史事件</em>，会对最终结果产生重大且不可逆的影响。一旦一种技术因为<em>技术上的相互关联、规模经济、以及投资的准不可逆性</em>而取得领先，竞争就可能被锁定在它身上——<strong>哪怕事后看来，另一条路本可以更好</strong>。<br><br>
+        我们身处的，是一个"<em>受历史支配</em>"（history-dependent）的世界。
+      </div>
+      <div class="theorem-cite">——《克丽奥与 QWERTY 经济学》（1985）</div>
+    </div>
+
+    <p>大卫点出了锁定发生的三个条件，值得记牢：第一，<strong>技术的相互关联</strong>——打字员、键盘、教材、习惯彼此咬合，动一个要动全套；第二，<strong>规模经济与正反馈</strong>——用的人越多，配套越全，新人越要跟着用；第三，<strong>投资的准不可逆</strong>——千百万人已经把"肌肉记忆"投进了 QWERTY，重学的代价高到没人愿付。三者一旦同时出现，<em>系统就会自己把自己焊死</em>。</p>
+
+    <div class="quote-inline">
+      阿瑟把这种机制叫做"<strong>锁定</strong>（lock-in）"：不是某个强权按住了你，而是<em>每个人各自的理性选择叠加起来</em>，把所有人一起按在了同一条轨道上。
+    </div>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 一条被踩出来的山间小路</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>把"路径依赖"四个字拆开想——它讲的真的就是"<strong>路</strong>"。</p>
+
+    <p>山坡上本没有路。第一个人随意走了一条线，未必是最短最好的，只是当时碰巧那么走了。第二个人看见有点痕迹，顺着走；第三个、第四个，于是痕迹越踩越深，长成了一条小路。等到它成了"路"，再想改道就难了——你一个人横穿草丛，又慢又费力，还会被人当怪人。<strong>于是大家继续走那条未必最优的老路，仅仅因为它"已经在那儿了"。</strong></p>
+
+    <p>路径依赖说的就是这件事在技术、制度、组织、人生里反复上演：<em>早期一个偶然的小选择，被正反馈不断放大，最后变成谁也绕不开的结构</em>。它有三层意思层层递进——</p>
+
+    <ul>
+      <li><strong>历史重要</strong>——终点不只由"哪个方案最好"决定，还由"先发生了什么"决定。换个起点，可能就是另一个世界。</li>
+      <li><strong>正反馈放大</strong>——领先带来更多配套、更多用户、更多学习，于是更领先。强者愈强，是锁定的发动机。</li>
+      <li><strong>锁定且难逆</strong>——到了某一步，即使出现更好的方案，<em>切换的集体成本</em>也高到没人能单独发动，系统就卡死在原地。</li>
+    </ul>
+
+    <div class="quote-inline">
+      路径依赖最反直觉、也最该记住的一句："<strong>赢家未必是最好的，只是最早卡住位置的。</strong>"——所以别把"它胜出了"自动读成"它最优"。
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">保罗·大卫</span>
+          <span class="comm-tag">PAUL DAVID · 1985</span>
+        </div>
+        <p>大卫是把"路径依赖"带进经济史的人。他坚持一个对当时主流的挑战：标准经济学假设市场总会收敛到唯一的、有效率的均衡，仿佛历史可以被"洗掉"；但 QWERTY 证明，<em>有些市场有多个可能的终点，落到哪一个取决于早期的偶然</em>。</p>
+        <p>他的名言是"<strong>history matters</strong>"——历史不是无关紧要的背景噪声，它会被结构记住、放大、固化成今天的约束。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">布莱恩·阿瑟</span>
+          <span class="comm-tag">W. BRIAN ARTHUR · 1989</span>
+        </div>
+        <p>阿瑟在《竞争性技术、收益递增与历史事件造成的锁定》（1989）里给了路径依赖数学引擎。传统经济学建立在"<em>收益递减</em>"上（越多越不值钱，于是系统稳定）；阿瑟指出，技术世界常是"<strong>收益递增</strong>"（越多越值钱），这会让微小的早期领先被无限放大。</p>
+        <p>他归纳了四种自我强化机制：<em>高昂的前期投入、学习效应、协调效应、适应性预期</em>。在收益递增下，市场是"<em>非遍历的</em>"（nonergodic）——结果依赖于走过的路，而且可能锁进一个次优技术。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">道格拉斯·诺斯</span>
+          <span class="comm-tag">DOUGLASS NORTH · 1990</span>
+        </div>
+        <p>诺斯（1993 年诺贝尔经济学奖）把路径依赖从技术搬到了<strong>制度</strong>。在《制度、制度变迁与经济绩效》（1990）里他问：为什么有些国家几百年陷在低效的制度里出不来？</p>
+        <p>答案也是锁定——一套制度一旦建立，既得利益、组织、观念会围着它长出来并自我加固，<em>纠错变得极其昂贵</em>。于是历史的岔路口选错一次，可能让一个社会"穷上几个世纪"。诺斯让人看到：路径依赖不只决定你用哪把键盘，还可能决定你生在富国还是穷国。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">利博维茨 &amp; 马戈利斯</span>
+          <span class="comm-tag">LIEBOWITZ &amp; MARGOLIS · 1990</span>
+        </div>
+        <p>最有力的反对者。两位经济学家在《钥匙的寓言》（<em>The Fable of the Keys</em>, 1990）里逐条考证 QWERTY 故事，发现那些"德沃夏克键盘快得多"的实验<em>证据薄弱、甚至可能由德沃夏克本人主持，利益相关</em>——QWERTY 未必真的更差。</p>
+        <p>他们把路径依赖分三度：<em>一度</em>（事后也不后悔）、<em>二度</em>（当时无法预见，不算失败）、<em>三度</em>（确有可补救的低效却没被补救，这才是真正的"市场失灵"）。而他们论证：能套上"次优锁定"的三度案例，<strong>其实非常罕见</strong>——因为只要存在更好的方案，逐利的企业就有动力去打破它。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 五条被锁住的轨道</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">QWERTY 键盘</span>
+          <span class="case-when">1870s – 至今</span>
+        </div>
+        <p>肖尔斯 1870 年代为机械打字机定下排列；雷明顿公司大规模生产、配套培训教材，打字学校批量教出 QWERTY 打字员。等到机械卡键问题随电子化消失、德沃夏克 1936 年推出"更优"排列时，全世界的手指和教材已经焊死在 QWERTY 上。</p>
+        <div class="case-insight">这是路径依赖的"创世神话"。但请记住第六节——它也是被质疑最多的案例：QWERTY 究竟"差"在哪、差多少，至今没有定论。一个理论的招牌例子同时是它最大的软肋。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">VHS 击败 Betamax</span>
+          <span class="case-when">1976 – 1988</span>
+        </div>
+        <p>索尼 Betamax（1975）画质常被认为更好，但 JVC 的 VHS（1976）录制时间更长、授权更开放。录像带出租店为了节省货架，倾向只备一种制式——片源越多的制式吸引越多用户，用户越多片源越多。<em>正反馈一旦启动，"更好"输给了"更多"</em>，到 1980 年代末 Betamax 出局。</p>
+        <div class="case-insight">教科书级的网络效应锁定：决定胜负的不是产品本身的某项指标，而是"互补品（片源）—用户"的相互吸引。先达到临界规模者赢家通吃。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">轻水反应堆的锁定</span>
+          <span class="case-when">1950s – 至今</span>
+        </div>
+        <p>经济学家罗宾·考恩（Robin Cowan, 1990）的经典研究：核电站本有多种堆型可选，但<em>轻水堆</em>之所以主宰全球，很大程度上是因为美国海军上将<em>里科弗</em>急于造核潜艇、选了轻水堆，由此积累的工程经验、监管框架、人才训练把民用核电也一并拖上了这条轨道。</p>
+        <div class="case-insight">考恩论证：若按技术潜力，气冷堆等设计当年或许更值得发展。一个出于军事时间表的偶然选择，可能把整个产业锁进一条并非技术最优的路——这是比键盘更"重"的锁定。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">硅谷为什么是硅谷</span>
+          <span class="case-when">1956 – 至今</span>
+        </div>
+        <p>1956 年肖克利把半导体实验室开在了帕洛阿尔托（一说为照顾母亲），"叛逆八人帮"出走创立仙童，再裂变出英特尔等一连串公司。人才、风投、律所、客户在此越聚越密，<em>每一家新公司都让下一家更想来这里</em>。今天想复制硅谷的地方无数，却没人能把这条已被踩深的路搬走。</p>
+        <div class="case-insight">阿瑟"收益递增"的地理版：产业集聚是典型的正反馈锁定。起点可能只是一个人的家庭住址，终点却是一个谁也撼不动的全球中心。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">制度的路径依赖</span>
+          <span class="case-when">诺斯视角</span>
+        </div>
+        <p>诺斯指出，殖民时代埋下的产权与法治安排，会被后来的精英、组织、习俗反复加固，使一个社会长期卡在某种制度里。哪怕所有人都知道换一套更好，<em>谁先动谁吃亏</em>，于是低效制度可以稳定地延续几代人——这正是"为什么穷国难以变富"的一种解释。</p>
+        <div class="case-insight">制度锁定提醒我们：路径依赖不是技术宅的趣谈，它是宏观命运的一部分。改革之所以难，常常不是因为没人知道方向，而是因为旧路已被踩得太深、转换成本太高。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>路径依赖是个迷人的框架，也正因为迷人，特别容易被滥用。下面几条是它被认真反驳的地方——读完才算真正"用过"这个理论：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 招牌案例 QWERTY 本身就被证伪过</strong>利博维茨与马戈利斯《钥匙的寓言》考证发现，"德沃夏克快得多"的关键实验证据薄弱、利益相关。<em>如果连旗舰例子都站不稳，"次优锁定无处不在"的叙事就该打折</em>。这是对路径依赖最致命的一击。
+      </div>
+      <div class="critique-item">
+        <strong>② "次优"几乎无法被证明</strong>要说锁定是"坏的"，你得同时证明：另一条路真的更好，<em>而且</em>切换确实被堵死了。可历史只跑了一遍，没走过的那条路是什么样，全靠想象。<em>事后说"本可以更好"，常常是幸存者偏差加马后炮</em>。
+      </div>
+      <div class="critique-item">
+        <strong>③ 三度之分：多数锁定其实"不算失败"</strong>利博维茨与马戈利斯提醒：当时选了、事后也不后悔（一度），或当时无法预见（二度），都不是市场失灵。只有"明知更优、能换却没换"的<em>三度</em>才是真问题——而逐利动机会让这种情况相当罕见。
+      </div>
+      <div class="critique-item">
+        <strong>④ 易沦为万能的事后解释</strong>任何"延续至今的东西"都能被贴上"路径依赖"的标签，框架因此有不可证伪的危险。<em>严谨的用法必须指明具体的正反馈机制</em>——是谁、因为什么、如何被锁住——而不是一句"历史如此"打发。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 别把它读成宿命论</strong>路径会被踩深，但路径也会被打断。标准之争会翻盘（智能手机一夜改写功能机霸权）、巨头能强行换轨、监管可以重定规则。<em>那条"罗马战车车辙决定了今天铁轨标准轨距"的著名链条，多半是以讹传讹的传说</em>。夸大"锁定"，只会让人误以为改变不可能。
+      </div>
+    </div>
+
+    <p class="mt-24">所以使用路径依赖的正确姿势是：<strong>把它当作一副"看见结构的眼镜"，而不是一句认命的咒语</strong>。它帮你认出"我们为什么卡在这条路上、谁在替它加固"，从而找到撬动的杠杆——<em>看清锁定，正是为了在还来得及的时候换一条更好的轨道</em>。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">收益递增</div>
+        <div class="conn-name-en">Increasing Returns</div>
+        <div class="conn-rel">⟶ 因果引擎</div>
+        <div class="conn-desc">阿瑟的核心机制。越多越值钱，于是早期领先被无限放大，是锁定的发动机。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">网络效应</div>
+        <div class="conn-name-en">Network Effects</div>
+        <div class="conn-rel">∥ 主要锁定机制</div>
+        <div class="conn-desc">用户越多价值越大，VHS、社交平台皆此。路径依赖最常见的正反馈来源。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">转换成本 / 锁定</div>
+        <div class="conn-name-en">Switching Costs / Lock-in</div>
+        <div class="conn-rel">⟷ 同体机制</div>
+        <div class="conn-desc">让你"想换换不动"的个体层面阻力，是宏观锁定的微观砖块。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">创新者窘境</div>
+        <div class="conn-name-en">Innovator's Dilemma · №007</div>
+        <div class="conn-rel">⟹ 互补 · 内链</div>
+        <div class="conn-desc">在位巨头被自己成功的路径锁住，看不见也转不动新轨道，于是被颠覆。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">自我实现的预言</div>
+        <div class="conn-name-en">Self-Fulfilling Prophecy · №019</div>
+        <div class="conn-rel">⟺ 平行机制 · 内链</div>
+        <div class="conn-desc">"大家都觉得它会赢"的预期，会引导行动把它真的推成赢家——正反馈的另一种面孔。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">沉没成本谬误</div>
+        <div class="conn-name-en">Sunk Cost Fallacy · №011</div>
+        <div class="conn-rel">⟸ 个体投影 · 内链</div>
+        <div class="conn-desc">已投入太多而不愿换轨，是路径依赖在一个人心里的小型版本。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">制度变迁</div>
+        <div class="conn-name-en">Institutional Change · North</div>
+        <div class="conn-rel">⟶ 宏观延伸</div>
+        <div class="conn-desc">诺斯把锁定搬到制度层面，解释为何低效安排能延续几代人。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">非遍历性</div>
+        <div class="conn-name-en">Nonergodicity</div>
+        <div class="conn-rel">⟷ 数学根基</div>
+        <div class="conn-desc">结果取决于走过的具体路径、不会被"洗掉"——路径依赖的数学本质。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>路径依赖不能让你预测哪条路会赢，但它能让你在关键岔路口多一分清醒——而岔路口的选择，往往比此后多年的努力更决定命运。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">技术与平台选择</div>
+        <div class="usage-text">进入一个生态前先问：<em>它会不会把我锁住、转换成本有多高</em>。做产品则反过来——先发优势的真正价值，不在"早"，而在能否趁早<strong>制造锁定</strong>（标准、数据、网络）。要赢标准之争，押"会赢的"而非"最好的"。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">职业与技能</div>
+        <div class="usage-text">早期的赛道选择会被复利放大，既可能滚成优势，也可能把你锁进衰退行业。定期做一次"<em>清零测试</em>"：如果今天从头开始，我还会选这条路吗？<strong>越早换轨越便宜，越晚越难</strong>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">组织与流程</div>
+        <div class="usage-text">流程一旦定型就会自我加固，围着它长出岗位、系统、既得利益。<em>改革要趁路还浅时动手</em>；等它踩成深沟，转换成本会高到无人敢碰。看到"我们一直都这么做"，就该警觉锁定。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">人生关键节点</div>
+        <div class="usage-text">城市、专业、第一份工作、伴侣——这些早期小选择经正反馈放大，常比之后的勤奋更左右走向。<strong>把精力多花在"选岔路口"上</strong>。但别陷入决定论：路径能被打断，关键节点永远还有下一个。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">看待现状</div>
+        <div class="usage-text">当你想不通"为什么大家都在用这个明明不好的东西"，先别怪人蠢——多半是锁定。<em>识别出是结构而非人品的问题</em>，你才会去找真正的杠杆：补贴切换、统一标准、引入外力，而不是空喊"它该被淘汰"。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我现在所处的行业、所用的工具、所在的城市，有多少是我<em>主动选的</em>，又有多少只是"路已经在那儿了"顺着走的？</div>
+      <div class="q">如果今天一切清零、从头开始，我还会做同样的选择吗？若不会，是什么<em>转换成本</em>把我锁在了原地——它真的搬不动，还是我高估了它？</div>
+      <div class="q">我正在为自己、为团队踩出哪条"深沟"？它在帮我滚成优势，还是在悄悄把未来的我锁死？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Paul A. David《Clio and the Economics of QWERTY》</span>
+        <span class="further-meta">American Economic Review, 1985 — 路径依赖的开山短文，几页纸读完</span>
+      </li>
+      <li>
+        <span class="further-title">W. Brian Arthur《Increasing Returns and Path Dependence in the Economy》</span>
+        <span class="further-meta">University of Michigan Press, 1994 — 收益递增与锁定的数学奠基（含 1989 名篇）</span>
+      </li>
+      <li>
+        <span class="further-title">Douglass C. North《Institutions, Institutional Change and Economic Performance》</span>
+        <span class="further-meta">Cambridge University Press, 1990 — 把路径依赖带进制度经济学的经典</span>
+      </li>
+      <li>
+        <span class="further-title">S. J. Liebowitz &amp; S. E. Margolis《The Fable of the Keys》</span>
+        <span class="further-meta">Journal of Law and Economics, 1990 — 对 QWERTY 神话最有力的反驳，必读的反面</span>
+      </li>
+      <li>
+        <span class="further-title">Robin Cowan《Nuclear Power Reactors: A Study in Technological Lock-In》</span>
+        <span class="further-meta">Journal of Economic History, 1990 — 轻水反应堆锁定的经典案例研究</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Path dependence</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Path_dependence" target="_blank">en.wikipedia.org/wiki/Path_dependence</a> — 含案例、批评与争议综述</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="026-tragedy-of-the-commons.html">
+      <small>← PREVIOUS</small>
+      №026 公地悲剧
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;027&nbsp;·&nbsp;路径依赖&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
