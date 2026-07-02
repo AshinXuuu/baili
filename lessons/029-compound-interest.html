@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№029 复利 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 金融 · 数学 · 增长</span>
+    <span class="lesson-no">№ 029</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 029 · COMPOUND INTEREST</div>
+    <h1 class="lesson-title">复利</h1>
+    <div class="lesson-title-en">Compound Interest · the quiet math that turns time into money</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>古已有之 · 伯努利 / 维特</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>约公元前2000 · 1613 · 1683</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>金融 · 数学 · 增长</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>关键词</dt><dd>利滚利 · 指数 · 72法则</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一件太老又太新的东西</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>复利不是谁"发明"的，它老得几乎和文字一样。<strong>巴比伦</strong>的泥板（约公元前 2000 年）上已经有"<em>利上生利</em>"的算题——苏美尔人管它叫 <em>ṣibat ṣibtim</em>，字面就是"利息的利息"，并用它算牲畜、谷物借出后逐年翻滚的欠数。人类懂得"钱能生钱、而生出的钱又能再生钱"，比懂得地球是圆的要早得多。</p>
+
+    <p>让它从算命式的口诀变成一门可计算的学问，靠的是几位数学家。1202 年，<strong>斐波那契</strong>在《计算之书》（<em>Liber Abaci</em>）里放进了复利算题；1494 年，意大利修士<strong>卢卡·帕乔利</strong>在《算术、几何、比及比例集成》里写下了那条流传至今的心算口诀——"<strong>72 法则</strong>"：用 72 除以年利率，约等于本金翻倍所需的年数。1613 年，英国人<strong>理查德·维特</strong>出版《关于购买与交换年金的算术问题》，被公认为<em>第一本完全献给复利的著作</em>，还附上了详尽的复利表。</p>
+
+    <p class="muted">流传最广的那句"<em>复利是世界第八大奇迹</em>"，常被安到爱因斯坦头上——但从没有任何可靠出处，几乎可以肯定是后人伪托（这一点我们在"反例"里还会再算一次账）。真正的奇迹不在名人名言里，而在下面这条朴素得让人低估的曲线里。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">复利公式 · 与 72 法则</div>
+      <div class="theorem-body">
+        本金 <em>P</em>，每期利率 <em>r</em>，经过 <em>n</em> 期后，本利和为：<br><br>
+        <strong>A = P · (1 + r)ⁿ</strong><br><br>
+        与"单利"（A = P·(1 + r·n)，只在本金上生息）不同，复利让<em>每一期的利息都并入本金，一起参与下一期的生息</em>。于是增长不是一条斜线，而是一条<strong>指数曲线</strong>。<br><br>
+        <strong>72 法则</strong>：本金翻一倍所需的年数 ≈ 72 ÷ 年利率(%)。年息 7%，约 10 年翻倍；年息 3%，约 24 年翻倍。
+      </div>
+      <div class="theorem-cite">——公式为通用形式；72 法则最早见于帕乔利《Summa de arithmetica》1494；系统化见维特《Arithmeticall Questions》1613</div>
+    </div>
+
+    <p>那个 <em>(1 + r)ⁿ</em> 里藏着全部魔力：<strong>n 在指数的位置上</strong>。单利让时间线性地加，复利让时间指数地乘。同样年息 10%，单利下 100 元 50 年后是 600 元；复利下却是约 <strong>11740 元</strong>——差了近二十倍，差别全在"利息也去生息"这一件小事上。</p>
+
+    <div class="quote-inline">
+      一句话记住复利：<strong>它奖励的不是"多大一笔钱"，而是"多长一段时间"。</strong>——时间才是复利里最贵、也最容易被浪费的那个变量。
+    </div>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 一分钱翻一个月</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>做个选择题：给你两个月薪，一个是每月固定 300 万元，另一个是第一天 1 分钱、之后每天翻一倍、连翻 30 天。多数人凭直觉选前者。可后者：第 30 天当天就是 2²⁹ 分 ≈ <strong>536 万元</strong>，整月累计约 <strong>1073 万元</strong>——碾压前者。这就是复利与直觉最深的冲突：<em>人脑是线性的，复利是指数的</em>。</p>
+
+    <p>更古老的版本是<strong>棋盘与麦粒</strong>：第一格放 1 粒麦，第二格 2 粒，逐格翻倍，到第 64 格要放 2⁶³ 粒。全盘合计 2⁶⁴−1 ≈ <em>1.8×10¹⁹</em> 粒——比人类有史以来种出的所有麦子还多。国王以为自己答应了一件小事，其实答应了一件天文数字。</p>
+
+    <p>指数曲线有个欺骗性的形状：<strong>前面长得几乎是平的，让人误以为没用；直到某个拐点，它突然像火箭一样竖起来</strong>（金融里叫"曲棍球杆"）。复利的绝大部分收获，都发生在最后那一小段——这正是"越早开始越好"的数学原因：早开始的钱，才熬得到那段陡峭。三层意思要分清——</p>
+
+    <ul>
+      <li><strong>利息也生息</strong>——复利与单利的全部区别，就在于让赚到的钱留在里面继续滚，而不是取走。</li>
+      <li><strong>时间是主杠杆</strong>——公式里 r 是底数、n 是指数；提高一点利率不如多给几年时间来得猛。</li>
+      <li><strong>它也会反向运转</strong>——同一条曲线，用在债务、通胀、费用上，就成了"利滚利地吞噬你"。复利没有立场，方向由你站在哪一边决定。</li>
+    </ul>
+
+    <div class="quote-inline">
+      最该记住的一句：<strong>复利的秘密不是"高回报"，而是"不中断"。</strong>——真正杀死复利的，往往不是收益率低，而是中途把它打断。
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">雅各布·伯努利</span>
+          <span class="comm-tag">JACOB BERNOULLI · 1683</span>
+        </div>
+        <p>瑞士数学家伯努利追问了一个复利的极限问题：如果不是一年结一次息，而是半年、每月、每天、每一瞬间地"连续复利"，最后会滚到多大？他发现，把 (1 + 1/n)ⁿ 里的 n 推向无穷，结果并不会爆炸，而是<strong>收敛到一个常数 ≈ 2.71828</strong>。</p>
+        <p>这个常数，就是后来以欧拉命名的自然对数底 <strong>e</strong>。换句话说，<em>数学中最重要的常数之一，正是从"利息的利息"里长出来的</em>。复利不只是理财口诀，它连着整座微积分与增长理论的地基。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">约翰·梅纳德·凯恩斯</span>
+          <span class="comm-tag">J. M. KEYNES · 1930</span>
+        </div>
+        <p>凯恩斯在《我们后代的经济前景》（1930）里用复利讲了一个惊人的账：1580 年，德雷克掠夺回来的约 4 万英镑财宝被伊丽莎白一世投资出去。他估算，这笔钱若按当时的复利滚到 1930 年，恰好约等于<em>整个英国当年的全部海外投资</em>。</p>
+        <p>凯恩斯借此说明：几百年不间断的复利，其力量足以解释一国财富的量级。但他也是清醒的——他真正想论证的是，复利驱动的资本积累终将让人类"衣食无忧"，从而把注意力从赚钱转向<strong>如何好好生活</strong>。复利是手段，不是目的。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">阿尔伯特·巴特利特</span>
+          <span class="comm-tag">ALBERT BARTLETT · 1978</span>
+        </div>
+        <p>物理学家巴特利特把复利的目光从钱移到了人口与资源。他那句名言流传极广："<strong>人类最大的缺陷，是无法理解指数函数。</strong>"在著名演讲《算术、人口与能源》里他反复演示：任何以固定百分比"复利式"增长的东西——人口、用电、消耗——翻倍时间都短得惊人。</p>
+        <p>他的贡献是把复利<em>翻到了阴暗面</em>：同一条曲线，用在储蓄上是福音，用在消耗有限资源上就是灾难。"每年增长 7% 听起来温和"，但那意味着每 10 年翻一倍——没有什么能在有限的世界里永远这样翻下去。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">杰里米·西格尔</span>
+          <span class="comm-tag">JEREMY SIEGEL · 1994</span>
+        </div>
+        <p>沃顿商学院的西格尔在《股市长线法则》（<em>Stocks for the Long Run</em>）里，用两个世纪的美国数据把复利落到了投资上：扣除通胀后，股票的长期年化真实回报稳定在约 <strong>6.5%–7%</strong>，远高于债券与黄金，且时间越长越稳。</p>
+        <p>他的核心论点是——<em>在足够长的期限里，复利让股票几乎必然跑赢</em>，短期的剧烈波动会被时间抚平。这为"长期持有、别择时"的指数投资哲学提供了数据地基，也把复利从"神话"拉回了"可验证的历史规律"。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 五段利滚利的账</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">棋盘上的麦粒</span>
+          <span class="case-when">古印度传说</span>
+        </div>
+        <p>相传象棋发明者向国王讨赏：棋盘第一格放 1 粒麦，往后逐格翻倍。国王欣然应允，以为不过一袋粮，直到大臣算出总数 <em>2⁶⁴−1</em> ≈ 1.8×10¹⁹ 粒——倾全国之力也赔不起。这是复利最古老的寓言。</p>
+        <div class="case-insight">翻倍的可怕不在单次，而在"次数"。任何以固定倍率反复叠加的东西，起步都朴实无华，几十步之后就冲上天文数字——这正是人脑最难凭直觉把握的。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">富兰克林的两千英镑遗嘱</span>
+          <span class="case-when">1790 – 1990</span>
+        </div>
+        <p>本杰明·富兰克林 1790 年去世时，在遗嘱里给<em>波士顿</em>和<em>费城</em>各留下约 1000 英镑，指定借给年轻工匠生息、先滚 100 年、再滚 100 年。两百年后的 1990 年，这两笔小钱分别累积到<strong>数百万美元</strong>（波士顿约 450 万、费城约 200 万），用于设立技校与奖学金。</p>
+        <div class="case-insight">富兰克林把复利当成一场跨越两个世纪的实验，亲手证明了它。代价是——见证结果的人，得等两百年。时间是复利的燃料，也是它对个人最残酷的门槛。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">长期股市的复利</span>
+          <span class="case-when">1926 – 今</span>
+        </div>
+        <p>据西格尔与标普长期数据，美国大盘股名义年化回报约 10%。这意味着 1926 年投入的 1 美元，若股息全部再投入、一路不动，到今天已滚成<em>上万美元</em>——其中绝大部分增值发生在后半程那段陡峭的曲棍球杆上。真正难的不是选股，而是<strong>几十年不中断</strong>。</p>
+        <div class="case-insight">复利对投资者的要求近乎反人性：在漫长的平坦期里忍住不取、不动、不被恐慌与贪婪打断。收益率是配角，"活得够久且不打断"才是主角。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">通货膨胀：反向的复利</span>
+          <span class="case-when">长期</span>
+        </div>
+        <p>复利也会啃食购买力。按 72 法则，年通胀 3% 时，钱的实际价值约每 <strong>24 年腰斩</strong>一次；通胀 6%，则 12 年腰斩。把现金压在床垫下"图安全"的人，正被一条看不见的反向复利曲线悄悄抽走财富——每年只丢一点点，几十年却是一半。</p>
+        <div class="case-insight">复利是把双刃剑：它对资产是加法的奇迹，对现金却是减法的侵蚀。"不投资"从来不是零风险，而是把自己交给通胀的反向复利。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">信用卡债务：复利的另一面</span>
+          <span class="case-when">现代</span>
+        </div>
+        <p>把复利公式里的"你"从债主换成债户，福音就变成陷阱。信用卡年化利率常达 18%–24%，且利滚利。若只还"最低还款额"，本金几乎不动，利息不断并入本金再生息——一笔小额欠款能拖成还上数年的重担。发薪日贷款更甚，折算年化常达三位数。</p>
+        <div class="case-insight">复利站在债主那边，日夜为他工作。高息债务是"反向复利"最凶狠的化身——它不奖励耐心，而惩罚拖延。对这类债，最好的投资就是尽快还清。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>复利被讲得太神，以至于成了理财鸡汤的万能咒。可它是一个<em>数学模型</em>，模型有假设，假设有边界。下面几条是它被现实反复修正、甚至反噬的地方——读完才算真拿得住这把双刃剑：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① "爱因斯坦名言"几乎肯定是伪托</strong>那句"复利是第八大奇迹、懂它的人赚它、不懂的人付它"，遍查爱因斯坦文献都无出处，普遍认定为后人附会的营销话术。<em>用名人背书一个数学事实，本身就是不该有的思维捷径</em>——复利的力量不需要爱因斯坦担保。
+      </div>
+      <div class="critique-item">
+        <strong>② 它假设"利率恒定且为正"</strong>公式里的 r 是一个固定正数，现实里收益率却上下波动、甚至为负。更阴险的是<em>波动拖累</em>：先跌 50% 再涨 50%，你不是回本，而是只剩 75%；跌一半要涨一倍才回本。<em>几何平均总是低于算术平均</em>，账面"平均年化"常常骗人。
+      </div>
+      <div class="critique-item">
+        <strong>③ 时间尺度常长到不现实</strong>富兰克林要等 200 年，"基督诞生时存一便士就能买下地球"这类算例，靠的都是常人活不到的时间。<em>真实的人只有几十年投资期，中途还免不了买房、育儿、失业而被迫取用</em>——一次中断，就把最陡的那段未来砍掉了。
+      </div>
+      <div class="critique-item">
+        <strong>④ 指数增长必然撞上极限</strong>没有什么能永远复利：细菌撞上培养皿的边界，经济撞上资源与人口，庞氏骗局（庞兹 1920、马多夫 2008）靠"稳定高复利"的承诺吸金，最终必然崩塌。<em>现实中的增长几乎都是先陡后平的 S 形曲线，而非一路向上的 J 形</em>。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 名义复利掩盖了通胀、税与费</strong>动人的"复利终值"多是名义值。扣掉通胀、资本利得税，再扣掉每年的管理费，实际所得小得多。<em>费用本身也是反向复利</em>：一只每年多收 1% 费用的基金，几十年下来能悄悄吃掉三成以上的最终收益。复利放大收益，也同样放大成本。
+      </div>
+    </div>
+
+    <p class="mt-24">所以用复利的正确姿势是：<strong>把它当作一条关于"时间×不中断"的纪律，而不是一句"钱会自己变多"的安慰</strong>。真正要做的，是<em>尽早开始、压低费用、别被打断、并对一切"稳定高复利"的承诺保持警觉</em>——因为若那种复利为真，它很快就会大到吞下整个市场。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">指数增长</div>
+        <div class="conn-name-en">Exponential Growth</div>
+        <div class="conn-rel">⟶ 数学母体</div>
+        <div class="conn-desc">复利是指数函数最切身的一种化身。理解 (1+r)ⁿ，就理解了一切固定倍率的叠加。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">自然常数 e</div>
+        <div class="conn-name-en">Euler's Number</div>
+        <div class="conn-rel">⟹ 极限产物</div>
+        <div class="conn-desc">把复利结算推向"每一瞬间"，(1+1/n)ⁿ 就收敛到 e≈2.71828——伯努利从利息里发现它。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">72 法则</div>
+        <div class="conn-name-en">Rule of 72</div>
+        <div class="conn-rel">⟶ 心算工具</div>
+        <div class="conn-desc">72÷利率≈翻倍年数。复利最实用的口袋公式，让指数增长可以心算。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">马太效应</div>
+        <div class="conn-name-en">Matthew Effect</div>
+        <div class="conn-rel">⟷ 社会投影</div>
+        <div class="conn-desc">"凡有的还要加给他"——优势的累积就是复利的社会版，微小的起点差被时间放大成鸿沟。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">帕累托 / 幂律</div>
+        <div class="conn-name-en">Pareto / Power Law · №016</div>
+        <div class="conn-rel">⟷ 结果分布 · 内链</div>
+        <div class="conn-desc">增长率的微小差异经复利放大，最终把财富压成极端不均的幂律尾巴。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">网络效应</div>
+        <div class="conn-name-en">Network Effects · №028</div>
+        <div class="conn-rel">⟷ 另一种正反馈 · 内链</div>
+        <div class="conn-desc">网络效应让价值随人数超线性膨胀，与复利同属"越大越快"的自我放大家族。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">逻辑斯蒂 S 曲线</div>
+        <div class="conn-name-en">Logistic Growth</div>
+        <div class="conn-rel">⟶ 现实约束</div>
+        <div class="conn-desc">对照反题：现实增长撞上极限后由 J 形转为 S 形，复利终究不能永远持续。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">庞氏骗局</div>
+        <div class="conn-name-en">Ponzi Scheme</div>
+        <div class="conn-rel">⟶ 欺诈化身</div>
+        <div class="conn-desc">用"稳定高复利"的承诺吸金、拆东补西——一切违背复利极限的诱惑都以此收场。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>复利不只是理财公式，它是一种看待"时间与积累"的世界观。凡是能日积月累、且让积累参与下一轮积累的东西，都在复利。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">投资理财</div>
+        <div class="usage-text">时间是最大杠杆，所以<strong>尽早开始，越早越好</strong>——晚开始十年，往往要用双倍本金去追。让收益留在里面复投（股息、利息别取走），死死压低费用（费用是反向复利），并把"别中断"当成第一纪律：真正杀死复利的，多是恐慌时的一次清仓。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">债务管理</div>
+        <div class="usage-text">复利站在债主那边日夜工作。<strong>高息债务是最该优先消灭的"负资产"</strong>——还清一笔 20% 的信用卡，等于稳赚 20% 的无风险回报，远胜多数投资。警惕"只还最低额"的温柔陷阱，那正是让利息反复利滚利的设计。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">学习与技能</div>
+        <div class="usage-text">能力也复利。<em>每天进步 1%，一年是 1.01³⁶⁵ ≈ 37 倍</em>；每天退步 1%，一年只剩 0.03。关键在于让今天学到的成为明天的地基（知识互相钩连、技能彼此复用），而不是学了就忘、每次从零开始。小而不断，胜过大而一曝十寒。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">健康与关系</div>
+        <div class="usage-text">信任、口碑、人脉、身体，都是复利资产——也都会反向复利。<strong>每一次守约都在为信任账户复投，每一道小裂痕都在利滚利地侵蚀它</strong>。把长期资产当复利来经营：持续小额投入，别指望临时抱佛脚，也别让小损耗悄悄累积成崩塌。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">识别骗局</div>
+        <div class="usage-text">听到"稳定的高回报、月月复利"，先做一道题：这样的复利若为真，多久会大到吞下整个市场？<strong>可持续的复利必然温和且有波动，宣称既高又稳又不断的，几乎注定是庞氏</strong>。用复利的极限意识，反过来给一切诱惑做压力测试。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我有没有把"时间"这个最大的杠杆白白浪费掉——那些该早点开始的事（储蓄、学习、锻炼），是不是一年年被我推迟，把最陡的那段未来提前砍掉了？</div>
+      <div class="q">我身上有没有正在<em>反向复利</em>的东西——一笔高息债、一项每年侵蚀收益的费用、一道被忽视的小裂痕，正日夜利滚利地吞噬我？</div>
+      <div class="q">当有人向我承诺"稳定的高回报"时，我是否算过那道极限题——若这样的复利能长久为真，它早该大到吞下整个世界，可它并没有？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Richard Witt《Arithmeticall Questions, touching the Buying or Exchanging of Annuities》</span>
+        <span class="further-meta">1613 — 公认第一本完全献给复利的著作，附早期复利表</span>
+      </li>
+      <li>
+        <span class="further-title">Luca Pacioli《Summa de arithmetica, geometria, proportioni et proportionalità》</span>
+        <span class="further-meta">1494 — "72 法则"最早的印刷记载</span>
+      </li>
+      <li>
+        <span class="further-title">John Maynard Keynes《Economic Possibilities for our Grandchildren》</span>
+        <span class="further-meta">1930 — 用德雷克财宝复利算出英国海外投资量级的著名一节</span>
+      </li>
+      <li>
+        <span class="further-title">Jeremy J. Siegel《Stocks for the Long Run》</span>
+        <span class="further-meta">McGraw-Hill, 1994 — 两个世纪数据下的股票长期复利</span>
+      </li>
+      <li>
+        <span class="further-title">Albert A. Bartlett《Forgotten Fundamentals of the Energy Crisis》</span>
+        <span class="further-meta">American Journal of Physics, 1978 — 把复利式增长翻到人口与资源的阴暗面</span>
+      </li>
+      <li>
+        <span class="further-title">Morgan Housel《The Psychology of Money》</span>
+        <span class="further-meta">Harriman House, 2020 — 论"不中断"才是复利真正的秘诀</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Compound interest / e (mathematical constant)</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Compound_interest" target="_blank">en.wikipedia.org/wiki/Compound_interest</a> — 含公式、历史与批评综述</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="028-network-effects.html">
+      <small>← PREVIOUS</small>
+      №028 网络效应
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;029&nbsp;·&nbsp;复利&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
