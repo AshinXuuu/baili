@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№031 规模法则 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 生物 · 城市 · 复杂系统</span>
+    <span class="lesson-no">№ 031</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 031 · SCALING &amp; COMPLEXITY</div>
+    <h1 class="lesson-title">规模法则</h1>
+    <div class="lesson-title-en">Scaling Laws · why an elephant is not a blown-up mouse</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>克莱伯 / 韦斯特</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1932 / 2017</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>生物 · 城市 · 复杂系统</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>关键文献</dt><dd>《规模》Scale</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 为什么世上没有巨人</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1638 年，被软禁在佛罗伦萨郊外的<strong>伽利略</strong>写下了他最后一部巨著《关于两门新科学的对话》。书里他问了一个看似天真的问题：<em>为什么不能有一个身高十倍于常人的巨人？</em></p>
+
+    <p>他的回答是数学的：如果把一个人等比例放大十倍，他的<em>体积和重量会变成 1000 倍</em>（长度的三次方），而支撑体重的骨头横截面只变成 <em>100 倍</em>（长度的二次方）。于是巨人对自己骨头的压强是常人的十倍——他会被自己压垮。伽利略甚至画了一根能撑起巨人的腿骨，粗得畸形丑陋。这就是<strong>平方-立方定律</strong>：尺寸变化时，<em>面积按 L²、体积按 L³ 变，二者永远不同步</em>。</p>
+
+    <p>这是人类第一次意识到：<strong>放大一个东西，它的各种性质不会一起等比例变大</strong>。三百年后，瑞士出生的生理学家<strong>马克斯·克莱伯</strong>（Max Kleiber，1893–1976）在加州大学戴维斯分校研究牲畜的能量代谢时，把这条直觉变成了一条精确、普适、震撼的定律——生物学称这类"尺寸变、比例也随之变"的现象为<em>异速生长</em>（allometry）。</p>
+
+    <p class="muted">克莱伯本是农学家，研究"喂一头牛要多少饲料"这样朴素的问题。可当他把老鼠、猫、狗、羊、牛、大象的代谢率画在一张双对数图上时，一条跨越六个数量级、近乎完美的直线跳了出来——一条至今没有人能彻底解释、却处处应验的直线。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">KLEIBER'S LAW · 1932</div>
+      <div class="theorem-body">
+        一个动物的<em>基础代谢率</em>（维持生命每天消耗的能量），并不与它的<em>体重成正比</em>，而是与体重的 <em>3/4 次方</em>成正比：<br><br>
+        <strong>B ∝ M<sup>3/4</sup></strong><br><br>
+        也就是说，体重每翻十倍，代谢率只增大约 5.6 倍（10<sup>0.75</sup>），而不是十倍。<em>越大的动物，每一公斤身体消耗的能量反而越少</em>——大象的每一克肉，比老鼠的每一克肉"节能"得多。
+      </div>
+      <div class="theorem-cite">——Max Kleiber《Body size and metabolism》（Hilgardia, 1932）</div>
+    </div>
+
+    <p>这条式子里藏着三层意思，是整个"规模法则"家族的根：第一，<strong>缩放遵循的是幂律 Y ∝ X<sup>b</sup>，不是线性关系</strong>；第二，<strong>那个指数 b 才是灵魂</strong>——它决定了"变大"到底是变省还是变费；第三，<strong>3/4 这个数出奇地稳定</strong>，从细菌到蓝鲸、跨越 21 个数量级都大致成立，暗示背后有某种深层的、与具体物种无关的普适约束。</p>
+
+    <p>更惊人的是，同一个 <em>1/4 家族</em>的指数支配着生命的方方面面：心率 ∝ M<sup>-1/4</sup>（越大的动物心跳越慢），寿命 ∝ M<sup>1/4</sup>（越大的动物活得越久）。两者相乘，抵消掉了体重——<strong>几乎所有哺乳动物一生的心跳总数都是同一个数：约 15 亿次</strong>。老鼠心跳飞快活三年，大象心跳徐缓活七十年，但它们"用完"的心跳配额一样多。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 三种"变大"的方式</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>剥去数学，规模法则说的其实是一件极朴素的事：<strong>当一个系统变大时，它的各种属性会以不同的速度变化</strong>。而"以多快的速度"，全看那个指数 b 落在 1 的哪一边：</p>
+
+    <ul>
+      <li><strong>b &lt; 1 · 次线性（越大越省）</strong>——每单位规模的成本随体量下降。这是<em>规模经济</em>。代谢率的 3/4、城市基础设施（加油站、道路、电缆）的约 0.85 都属于此。大象比老鼠省，大城市每人摊到的马路比小城市短。<em>大，是一种效率。</em></li>
+      <li><strong>b = 1 · 线性（等比放大）</strong>——翻倍就是翻倍，最朴素也最少见。请一个工人干一天的活，两个工人干半天——世界很少这么听话。</li>
+      <li><strong>b &gt; 1 · 超线性（越大越快）</strong>——每单位规模的产出随体量<em>上升</em>，这是<em>报酬递增</em>。城市的工资、专利、GDP 按约 1.15 次方缩放：城市规模翻倍，人均产出不是不变，而是<em>多出约 15%</em>。但同一个 1.15 也作用在犯罪、疾病、拥堵上——<strong>大城市让你更富，也让你更快、更累、更危险。</strong></li>
+    </ul>
+
+    <p>所以"大象是放大的老鼠吗"？不是。如果真把老鼠等比放大到大象那么重，它的骨头会碎、心脏会因散热不及而烧毁、腿细得撑不住身体。<strong>自然界每一次"变大"，都被迫重新设计</strong>：腿更粗、心跳更慢、代谢更省。规模不是简单的缩放，规模会改变事物的本质。</p>
+
+    <div class="quote-inline">
+      "同一条数学曲线，既画出了大象为什么长寿，也画出了纽约为什么既是创新之都又是犯罪之城。<strong>尺寸一变，一切都变——只是变的速度各不相同。</strong>"
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">达西·汤普森</span>
+          <span class="comm-tag">D'ARCY THOMPSON · 1917</span>
+        </div>
+        <p>苏格兰博物学家汤普森在传世名著《论生长与形态》（<em>On Growth and Form</em>, 1917）里，第一次系统主张：<em>生物的形态不是纯由自然选择雕琢，而是被物理与数学的缩放规律强力约束</em>。为什么昆虫可以有纤细的腿、大象必须有柱子般的腿？为什么小生物能靠表面张力"站"在水上、大生物一入水就沉？</p>
+        <p>他的回答都指向同一件事——<strong>尺寸本身就是一种设计力量</strong>。这本书启发了后世无数生物学家、工程师乃至建筑师，是规模思想的源头活水。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">韦斯特 · 布朗 · 恩奎斯特</span>
+          <span class="comm-tag">WBE MODEL · 1997</span>
+        </div>
+        <p>克莱伯定律成立了六十年，却没人能解释<em>为什么偏偏是 3/4</em>。1997 年，物理学家<strong>杰弗里·韦斯特</strong>（Geoffrey West）联手生态学家<strong>詹姆斯·布朗</strong>、<strong>布莱恩·恩奎斯特</strong>在《科学》发表了著名的 WBE 模型：答案藏在<em>供养身体的分形网络</em>里——血管、气管这样反复分叉、填满三维身体的运输网络，在数学上被优化时，必然逼出 3/4 这个指数。</p>
+        <p>这是把生命的普适规律<strong>还原为几何与物理的第一次严肃尝试</strong>。分形网络，成了连接老鼠、大象与森林的隐形骨架。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">路易斯·贝当古</span>
+          <span class="comm-tag">BETTENCOURT · 2007</span>
+        </div>
+        <p>物理学家贝当古与韦斯特把目光从生物转向<em>城市</em>。2007 年他们在 PNAS 用全球数百座城市的数据证明：城市也遵循精确的缩放律，而且分成两族——<em>物质基础设施按约 0.85 次线性缩放</em>（省），<em>社会经济产出（工资、专利、GDP、也包括犯罪与传染病）按约 1.15 超线性缩放</em>（涨）。</p>
+        <p>一句话：<strong>城市每翻一倍，每个人平均多创造约 15% 的财富，也多承受约 15% 的犯罪</strong>——好与坏由同一个指数驱动，无法只要前者。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">杰弗里·韦斯特</span>
+          <span class="comm-tag">《SCALE》· 2017</span>
+        </div>
+        <p>韦斯特在集大成之作《规模》（<em>Scale</em>, 2017）里把生物、城市、公司串成一张网。最尖锐的洞见是<em>公司更像生物而非城市</em>：公司的营收、利润随规模<strong>次线性</strong>缩放，效率随年龄递减，因此像有机体一样<em>有内在的死亡曲线</em>——半数上市公司会在约十年内消失。</p>
+        <p>而城市因为超线性、能不断自我更新，<strong>几乎不死</strong>。"为什么公司会死而城市不死"，成了这本书最令人难忘的一问。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例 · 从鼩鼱到神经网络</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">鼩鼱到蓝鲸的一条直线</span>
+          <span class="case-when">1932</span>
+        </div>
+        <p>克莱伯把体重相差上亿倍的动物——最小的鼩鼱到最大的蓝鲸——的代谢率画在双对数图上，它们几乎全部落在斜率 0.75 的同一条直线上。这条"生命的直线"是二十世纪生物学最优美的实证规律之一。</p>
+        <div class="case-insight">它的震撼在于普适：无论心脏、体温、栖息地多么不同，一条纯数学的直线就把整个哺乳动物界串了起来。规律强到让人怀疑背后有某种物理必然，而非生物偶然。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">伽利略的巨人与工程师的桥</span>
+          <span class="case-when">1638 – 今</span>
+        </div>
+        <p>平方-立方定律不只是生物学玩具。它是为什么<em>没有蚂蚁大小的大象、也没有大象大小的蚂蚁</em>；是为什么把一座小桥的图纸等比放大十倍，桥会自重压垮；是为什么昆虫能扛起体重几十倍的东西、而人不能。工程师造任何东西，都要为"放大后自重失控"重新配比。</p>
+        <div class="case-insight">缩放不可外推——小尺度成立的设计，放大后常常崩溃。模型飞机能飞不代表同样构型的巨机能飞。"在小处行得通"从来不是"在大处行得通"的证明。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">城市的 1.15：财富与犯罪同源</span>
+          <span class="case-when">2007</span>
+        </div>
+        <p>贝当古-韦斯特的城市数据揭示了一个残酷的对称：把一座城市的人口从 100 万增到 200 万，人均专利、人均工资、人均 GDP 各涨约 15%，而人均严重犯罪、艾滋病例、通勤时间也涨约 15%。大城市是创新引擎，也是压力锅——<em>二者是同一枚硬币</em>。</p>
+        <div class="case-insight">这解释了为什么人们既涌向大城市又抱怨大城市。你无法只留下超线性的好处而甩掉超线性的代价——它们由同一个指数生成。选择城市，本质是选择这条曲线上的一个点。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">公司会死，城市不死</span>
+          <span class="case-when">20 世纪至今</span>
+        </div>
+        <p>韦斯特团队分析数万家美国上市公司，发现它们的规模缩放呈次线性，效率随规模递减，最终像有机体一样步入死亡——上市公司的"半衰期"约十年，多数以被并购或破产退场。标普 500 成分股的平均在榜年限，也从数十年缩短到二十年以下。</p>
+        <div class="case-insight">"大到不能倒"在缩放律面前是幻觉。公司越大越难维持超线性创新，官僚成本超线性膨胀。反倒是城市因为持续吸纳异质人口、不断自我更新，几乎从不消亡——底特律衰而不亡即是一例。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">AI 的规模法则</span>
+          <span class="case-when">2020 – 2022</span>
+        </div>
+        <p>规模思想在人工智能里意外重生。2020 年 OpenAI 的<strong>贾里德·卡普兰</strong>等人发表《神经语言模型的规模法则》，发现模型的预测误差随算力、数据、参数量的增加，沿着干净的<em>幂律</em>下降；2022 年 DeepMind 的 Chinchilla 论文校正了最优配比。正是这几条幂律曲线，让"把模型做大"从赌博变成了可预测的工程，直接点燃了大模型军备竞赛。</p>
+        <div class="case-insight">同一套幂律语言，跨越了生物代谢与硅基智能——这正是规模法则最迷人处。但它也埋着次线性的暗示：误差按幂律下降意味着每一次翻倍的收益在递减，纯靠"更大"终会撞上回报递减的墙。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>规模法则优美，但优美最容易让人放松警惕。下面几条是它被认真质疑的地方——读完才算真正"用过"它：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 那个指数远没有传说中普适——3/4 还是 2/3？</strong>早在 1883 年，<em>马克斯·鲁布纳</em>就用"表面积散热"论证代谢率应按 2/3 缩放。克莱伯的 3/4 与鲁布纳的 2/3 之争至今未息，大量数据集落在二者之间，且随类群（鸟、哺乳、植物）而变。<em>把 3/4 当成一条铁律，是最常见的过度自信。</em>
+      </div>
+      <div class="critique-item">
+        <strong>② WBE 模型的推导被指循环与理想化</strong>科兹沃夫斯基与科纳热夫斯基（Kozłowski &amp; Konarzewski, 2004）等批评：分形网络模型为了得出 3/4，暗中假设了它想证明的东西，且真实血管网并不严格分形。<em>能拟合，不等于机制为真。</em>
+      </div>
+      <div class="critique-item">
+        <strong>③ 城市缩放"是什么"清楚，"为什么"含糊</strong>超线性是稳健的统计规律，但驱动机制仍在争论；而且<em>城市边界怎么划，指数就怎么变</em>（可变面元问题 MAUP）。数据点的散布也很大——1.15 是趋势线，不是每座城市的命运。
+      </div>
+      <div class="critique-item">
+        <strong>④ 幂律常常是"眼睛在双对数纸上看出来的"</strong>克劳塞特、沙利齐与纽曼（Clauset, Shalizi &amp; Newman, 2009）证明：许多被宣称的幂律经严格统计检验并不成立，对数坐标下几乎什么都像直线。<em>看见一条斜线就喊"幂律"，是本领域的头号自欺</em>（与 №016 帕累托的教训同源）。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 把生物类比套到公司与社会是危险的过度比附</strong>"城市是有机体""公司会新陈代谢"是有洞见的隐喻，但社会系统有意志、有制度、有政策干预，并非纯受物理缩放支配。<em>用"缩放律"为裁员、摊大饼或宿命论背书，是把描述性规律偷换成规范性借口。</em>
+      </div>
+    </div>
+
+    <p class="mt-24">所以使用规模法则的正确姿势是：<strong>把它当一副"追问指数"的眼镜</strong>——遇到"变大"就问一句：这东西随规模是变省（b&lt;1）还是变费（b&gt;1）？好处和代价哪个涨得快？<em>能让你不把"小处成功"当"大处必成"、不把生物比喻当社会铁律，就已经够回本了。</em></p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">幂律与帕累托</div>
+        <div class="conn-name-en">Power Law · №016</div>
+        <div class="conn-rel">⟶ 数学母体</div>
+        <div class="conn-desc">规模法则就是幂律的一种。也共享同一个陷阱：双对数纸上什么都像直线，须严格检验。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">分形</div>
+        <div class="conn-name-en">Fractals</div>
+        <div class="conn-rel">⟸ 机制根源</div>
+        <div class="conn-desc">WBE 模型正是用分形的运输网络推出 3/4。自相似的分叉结构，是缩放律的几何引擎。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">复利 / 指数增长</div>
+        <div class="conn-name-en">Compound Growth · №029</div>
+        <div class="conn-rel">⟷ 根本对照</div>
+        <div class="conn-desc">指数按 X 变、幂律按 X<sup>b</sup> 变——两种截然不同的增长形态，最易被混为一谈。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">网络效应</div>
+        <div class="conn-name-en">Network Effects · №028</div>
+        <div class="conn-rel">∥ 超线性回响</div>
+        <div class="conn-desc">城市的超线性产出与网络的越大越值钱同族——都是"报酬递增"在不同系统里的化身。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">涌现</div>
+        <div class="conn-name-en">Emergence</div>
+        <div class="conn-rel">⟺ 平行视角</div>
+        <div class="conn-desc">城市 1.15 是无人设计的整体属性，从千万个体互动中"长出来"——典型的涌现现象。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">熵与代谢约束</div>
+        <div class="conn-name-en">Entropy · №025</div>
+        <div class="conn-rel">⟸ 物理底座</div>
+        <div class="conn-desc">代谢缩放的深层约束，最终指向散热、能量流与热力学——规模受物理定律封顶。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">邓巴数字</div>
+        <div class="conn-name-en">Dunbar's Number · №017</div>
+        <div class="conn-rel">⟷ 组织尺度</div>
+        <div class="conn-desc">组织超过某规模，协调成本超线性膨胀而须拆分——缩放律的人类社群版。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">报酬递增 / 递减</div>
+        <div class="conn-name-en">Increasing / Diminishing Returns</div>
+        <div class="conn-rel">⟶ 指数的两面</div>
+        <div class="conn-desc">b&gt;1 即报酬递增、b&lt;1 即规模经济——"那个指数"正是这对老概念的精确刻度。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>规模法则不会告诉你某件事的指数具体是多少，但它会逼你问对问题：变大之后，什么涨得比规模快，什么涨得比规模慢？</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">职业杠杆</div>
+        <div class="usage-text">分清你的产出是<em>线性</em>的（用小时换钱，规模翻倍靠人翻倍）还是<em>超线性</em>的（代码、内容、资本、影响力——做一次，规模越大边际越省）。<strong>把精力尽量挪到 b&gt;1 的活儿上</strong>，这是"睡后收入"背后的真正数学。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">组织管理</div>
+        <div class="usage-text">团队变大，产出很难线性增长，而沟通、审批、内耗常<em>超线性</em>膨胀。别指望"人手翻倍产出翻倍"。<strong>到某个规模就拆小团队</strong>（呼应邓巴数字），用结构对抗缩放带来的复杂度税。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">投资与企业</div>
+        <div class="usage-text">警惕"越大越安全"的错觉——韦斯特的数据说公司像有机体一样有死亡曲线。<em>大公司的护城河是超线性创新，而非体量本身</em>。当一家巨头只靠规模而非持续创新维持，它已在滑向次线性的老年。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">居住选择</div>
+        <div class="usage-text">大城市的 1.15 是笔明账：<em>更高的机会、工资、密度带来的碰撞</em>，同时是<em>更贵、更挤、更累、更高的犯罪与孤独</em>。搬去大城市，就是在这条曲线上换位置——想清楚你要它的哪一半、扛不扛得住另一半。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">判断与思维</div>
+        <div class="usage-text">有人拿一张双对数直线跟你讲"规律"，先问两件事：<em>这是真幂律还是眼睛看出来的？指数到底多少？</em>再问：<em>小规模验证过的东西，凭什么放大后还成立？</em>——缩放不可随意外推，是最省钱的一课。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我正在做的事，产出是随投入"线性"增长，还是能"超线性"放大？我能不能把更多精力挪到 b&gt;1 的地方？</div>
+      <div class="q">我所在的组织或城市，规模翻倍时，好处（产出）和坏处（内耗、拥堵、成本）——哪一个涨得更快？我承受的是哪一半？</div>
+      <div class="q">当我用"公司像有机体""社会像系统"这类缩放类比时，哪里是真洞见，哪里是把描述性规律偷偷当成了宿命的借口？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Geoffrey West《Scale》</span>
+        <span class="further-meta">Penguin Press, 2017 — 规模思想的集大成之作，生物·城市·公司一网打尽，首选</span>
+      </li>
+      <li>
+        <span class="further-title">Max Kleiber《Body size and metabolism》</span>
+        <span class="further-meta">Hilgardia 6(11), 1932 — 3/4 幂律的原始论文；另见其科普专著《The Fire of Life》(1961)</span>
+      </li>
+      <li>
+        <span class="further-title">West, Brown &amp; Enquist《A General Model for the Origin of Allometric Scaling Laws in Biology》</span>
+        <span class="further-meta">Science, 1997 — WBE 分形网络模型的奠基论文</span>
+      </li>
+      <li>
+        <span class="further-title">Bettencourt, Lobo, Helbing, Kühnert &amp; West《Growth, innovation, scaling, and the pace of life in cities》</span>
+        <span class="further-meta">PNAS, 2007 — 城市超线性缩放的实证经典</span>
+      </li>
+      <li>
+        <span class="further-title">D'Arcy Thompson《On Growth and Form》</span>
+        <span class="further-meta">Cambridge University Press, 1917 — 缩放与形态学的思想源头，博物学名著</span>
+      </li>
+      <li>
+        <span class="further-title">Clauset, Shalizi &amp; Newman《Power-law distributions in empirical data》</span>
+        <span class="further-meta">SIAM Review, 2009 — 冷静的方法论解毒剂，教你如何严格检验幂律</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Allometry / Kleiber's law</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Kleiber%27s_law" target="_blank">en.wikipedia.org/wiki/Kleiber's_law</a> — 含完整争议综述与数据</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="030-maslow-hierarchy.html">
+      <small>← PREVIOUS</small>
+      №030 马斯洛需求层次
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;031&nbsp;·&nbsp;规模法则&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
