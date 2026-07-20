@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№044 双曲贴现 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 行为经济学 · 自我控制</span>
+    <span class="lesson-no">№ 044</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 044 · BEHAVIORAL ECONOMICS</div>
+    <h1 class="lesson-title">双曲贴现</h1>
+    <div class="lesson-title-en">Hyperbolic Discounting · why "later" always loses to "now"</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>乔治·安斯利</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1975</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>行为经济学 · 决策 · 自我控制</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《似是而非的奖赏》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 未来为什么总是打不过现在</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>经济学处理"现在还是以后"这个问题，长期用的是一个干净的模型：<strong>贴现效用</strong>。它由保罗·萨缪尔森在 1937 年写下——未来的好处要在心里打个折，越远折得越狠，而这个折扣率是一条<em>指数</em>曲线：每往后推一天，价值就乘上一个固定的系数。指数贴现有一个优美的性质叫"<em>时间一致性</em>"：今天做的长远计划，到了明天你仍然愿意执行，因为你对"隔一天"的折扣，无论从哪天算起都一样。</p>
+
+    <p>问题是，真人的耐心不是这个形状。心理学家<em>理查德·赫恩斯坦</em>在 1961 年研究鸽子啄食时发现了"匹配律"——动物对奖赏的反应与奖赏的即时价值成比例。顺着这条线，1975 年，精神病学家<strong>乔治·安斯利</strong>（George Ainslie）在《心理学公报》发表《似是而非的奖赏》，点破了关键一步：如果把匹配律用到"现在的小奖赏 vs 以后的大奖赏"的选择上，那条折扣曲线不是指数，而是一条<strong>双曲线</strong>——近处陡得吓人，远处几乎压平。</p>
+
+    <p>这一字之差，后果惊人。双曲线意味着人的耐心<em>不一致</em>：站得远看，你分得清大小、愿意等；可一旦诱惑近在眼前，那条陡峭的曲线把眼前的小奖赏瞬间放大，压过了远处的大奖赏——你于是推翻了自己昨天的计划。1997 年，经济学家<strong>大卫·莱布森</strong>用一个可计算的"准双曲"模型把它请进了主流经济学，泰德·奥多诺霍与马修·拉宾（后者见 №043）则在 1999 年给它起了个更传神的名字：<strong>现时偏差</strong>（present bias）。</p>
+
+    <p class="muted">一句话：指数贴现描述的是一个说到做到的理性人；双曲贴现描述的是我们每个人——计划时是圣人，临场时是俗人。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">GEORGE AINSLIE · 1975</div>
+      <div class="theorem-body">
+        一个奖赏的当前价值，不是随时间<em>指数</em>衰减，而是随延迟按<strong>双曲线</strong>衰减：<br><br>
+        · 指数贴现：<em>V = A · δ<sup>D</sup></em>（每推迟一期，乘同一折扣，耐心恒定）；<br>
+        · 双曲贴现：<em>V = A / (1 + k·D)</em>（延迟越短，折得越狠；延迟拉长后，几乎不再敏感）。<br><br>
+        双曲线的致命特征是<strong>偏好反转</strong>：两个奖赏一大一小、一远一近，当二者都还遥远时，人偏好那个更大的；可随着时间流逝、小奖赏逼近眼前，那条陡峭的近端会把它的价值猛地抬高，<em>反超</em>大奖赏——于是人临时变卦，扑向眼前的小甜头。
+      </div>
+      <div class="theorem-cite">——《Specious Reward: A Behavioral Theory of Impulsiveness and Impulse Control》, Psychological Bulletin 82 (1975), pp. 463–496</div>
+    </div>
+
+    <p>整套理论的骨架就在"偏好反转"四个字里。指数曲线不会相交，所以理性人不会变卦；双曲曲线会在近端<strong>交叉</strong>，所以真人会。安斯利由此得出一个深刻的推论：<em>冲动与自制，不是"意志强弱"的道德问题，而是同一个人在不同时刻、被不同陡峭度的曲线支配的结果</em>。今天决心减肥的你，和深夜面对蛋糕的你，是被两条曲线支配的两个人——他们对同一块蛋糕的估价，天差地别。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 一个说话不算数的自己</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>把双曲贴现压成一句话：<strong>我们对"眼前"和"稍后"的差别极度敏感，对"很久"和"更久"的差别几乎麻木</strong>。</p>
+
+    <p>做个思想实验。问一群人：<em>今天拿 100 元，还是一周后拿 110 元？</em>多数人选今天——多等一周只多 10 块，不值。再问同一群人：<em>一年后拿 100 元，还是一年零一周后拿 110 元？</em>这回多数人愿意多等那一周——反正都要等一年了，多一周算什么。可这两个问题里，"多等一周换 10 块"的交易<strong>一模一样</strong>。人的答案却翻了个个儿——因为那一周若<em>紧贴现在</em>，就落在双曲线最陡的地方，代价被放大；若<em>远在一年之后</em>，就落在曲线的平坦段，几乎无感。</p>
+
+    <p>这就是<em>现时偏差</em>：只要诱惑还没到眼前，我们都是理性的长期规划者，会存钱、会锻炼、会早睡；可当"现在"这一刻真的来临，那条陡峭的近端会把即时享受的分量猛地拉高，把我们昨天的计划撕碎。<strong>问题不在于我们不知道什么对自己好，而在于"现在的我"和"未来的我"根本谈不拢——前者永远在借后者的钱花</strong>。</p>
+
+    <div class="quote-inline">
+      "拖延、贪嘴、刷手机、透支——它们看起来是不同的毛病，其实是同一条曲线：当奖赏近在眼前，它在心里的分量会被暴涨，暴涨到足以压垮一个你本来真心想守的承诺。"
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">乔治·安斯利</span>
+          <span class="comm-tag">GEORGE AINSLIE · 1992</span>
+        </div>
+        <p>安斯利本人把这条曲线推到了它的哲学尽头。在《微观经济学》（<em>Picoeconomics</em>, 1992）里，他提出一个惊人的图景：一个人的内心不是铁板一块，而是<em>不同时段的自我在相互博弈</em>——现在的我想抽这根烟，未来的我想要健康的肺，他们是一场谈判里对立的两方。</p>
+        <p>由此他解释了"意志力"到底是什么：<strong>意志力不是硬扛，而是"现在的我"和"未来的我"缔结的一系列私人契约</strong>——把单次选择捆成规则（"我从不在工作日喝酒"），一旦破例，破的就不只是这一次，而是整套自律的信誉。人靠给自己立规矩，来对抗那条会临阵反悔的曲线。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">大卫·莱布森</span>
+          <span class="comm-tag">DAVID LAIBSON · 1997</span>
+        </div>
+        <p>莱布森在《金蛋与双曲贴现》（<em>Golden Eggs and Hyperbolic Discounting</em>, QJE 1997）里，用一个可计算的"<em>准双曲</em>"模型（俗称 β-δ 模型）把安斯利的洞见请进了主流经济学。β 是一记"现在 vs 未来"的额外折扣，δ 是常规的长期折扣——一个 β 就干净地刻画出"当下被特别偏爱"。</p>
+        <p>他最重要的推论是：<strong>一个知道自己会变卦的人，会主动去寻找"承诺装置"来捆住未来的自己</strong>。标题里的"金蛋"就是个隐喻——把财富放进一个流动性差、想取要提前一期才能拿到的"illiquid"资产里，恰恰因为它<em>不方便</em>，才帮人管住了乱花钱的手。<em>不方便，有时是一种自我保护</em>。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">沃尔特·米歇尔</span>
+          <span class="comm-tag">WALTER MISCHEL · 1972</span>
+        </div>
+        <p>心理学家米歇尔从个体差异的角度切入。他 1960–70 年代在斯坦福做的"棉花糖实验"名震天下：让四岁孩子面对一颗棉花糖，告诉他们如果能忍住不吃、等大人回来，就能得到两颗。有的孩子几秒就投降，有的能熬过十几分钟。</p>
+        <p>米歇尔的贡献不在"忍住的孩子更成功"这个（后来大受质疑的）结论，而在他发现<strong>抵抗诱惑靠的不是硬扛，而是"转移注意"的技巧</strong>——能等的孩子会唱歌、会转身、会把棉花糖想象成一朵云。他称之为"热系统"与"冷系统"：把眼前灼热的诱惑，用冷静的想象降温。<em>对付那条陡峭的曲线，最有效的办法往往不是意志，而是别去盯着它看</em>。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">洛温斯坦 &amp; 奥多诺霍</span>
+          <span class="comm-tag">LOEWENSTEIN &amp; O'DONOGHUE · 2002</span>
+        </div>
+        <p>乔治·洛温斯坦、泰德·奥多诺霍与谢恩·弗雷德里克在《时间贴现与时间偏好：一篇批判性综述》（JEL 2002）里，给这个领域泼了一盆冷静的水。他们梳理了几十年的实证，发现所谓"贴现率"是个<em>大杂烩</em>。</p>
+        <p>他们指出：人们在实验里表现出的"没耐心"，其实混进了太多东西——对未来的不确定、对通胀的预期、对"等待本身"的煎熬、以及"想到马上就有"的那份雀跃。<strong>把这些揉成一个单一的折扣系数 k，是一种方便的虚构</strong>。洛温斯坦另有名论"热-冷共情鸿沟"：冷静时的你，根本想象不到饥饿、愤怒、欲望上头时的你会怎么选——这才是承诺屡屡失守的深层原因。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">偏好反转：多等一周的两种命运</span>
+          <span class="case-when">思想实验</span>
+        </div>
+        <p>"今天 100 还是一周后 110"多数人选今天；"一年后 100 还是一年零一周后 110"同一批人却愿意等。两笔交易的实质——用一周换 10 块——<strong>完全相同</strong>，答案却相反。安斯利与雷克林在鸽子、大鼠身上做出了同样的反转：当两个奖赏都还远时选大的，逼近时改选近的小的。</p>
+        <div class="case-insight">这是双曲贴现最纯粹的指纹。指数曲线不会相交，理性人不会变卦；真人会，因为诱惑逼近眼前时，那条陡峭的近端把小奖赏的分量猛地抬了上来。你昨天的计划，输给了今天的曲线。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">花钱不去健身房</span>
+          <span class="case-when">2006</span>
+        </div>
+        <p>德拉维尼亚与马尔门迪耶 2006 年发表于《美国经济评论》的研究，追踪了三家美国健身房 7752 名会员三年的合同选择与到店记录。发现：选月费 70 美元以上包月卡的人，平均每月只去 4.3 次——<em>折合每次超过 17 美元</em>，而他们本可以用 10 美元一次的次卡。整个会员期，这些人平均白扔约 600 美元。</p>
+        <div class="case-insight">办卡时的你，是那个乐观的长期规划者，坚信"以后天天来"；每一个具体的今天，那条陡峭的曲线又让"现在歇一天"轻松胜出。为一个从不兑现的未来预付费——这是现时偏差最昂贵、也最日常的账单。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">四岁孩子与一颗棉花糖</span>
+          <span class="case-when">1960s–70s</span>
+        </div>
+        <p>米歇尔的斯坦福棉花糖实验：忍住不吃眼前这颗、等一会儿就能得两颗。有孩子几秒破功，有孩子熬过十余分钟。它成了"延迟满足"最出名的图像——把一颗即时的甜头压下去，去换一份更大却更远的奖赏，正是每天与双曲曲线的短兵相接。</p>
+        <div class="case-insight">但真正的启示在方法而非天赋：能等的孩子不是意志更硬，而是会<em>转移注意</em>——唱歌、遮眼、把糖想成云。对付眼前的诱惑，"别盯着它"往往比"咬牙扛住"管用。（注意：这个实验后来的预测力遭到严重质疑，见反例②。）</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">"明天多存点"</span>
+          <span class="case-when">2004</span>
+        </div>
+        <p>塞勒与贝纳茨的"Save More Tomorrow"计划（JPE 2004）是双曲贴现最漂亮的一次"以毒攻毒"。人们总说要多存养老金，却总不肯从<em>这个月</em>的工资里多扣——因为当下的痛太真切。方案的巧思是：让员工预先承诺，把<strong>未来每次加薪</strong>的一部分自动转入养老账户。</p>
+        <div class="case-insight">"未来的痛"落在曲线的平坦段，几乎无感，所以人乐意签字；等加薪真到来、扣款自动执行，人又懒得去取消（默认项的惯性）。它不跟现时偏差硬碰，而是<em>顺着它的性子</em>，把牺牲挪到人不心疼的那一端——储蓄率因此翻了几倍。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">把自己绑上桅杆</span>
+          <span class="case-when">古典 / 2006</span>
+        </div>
+        <p>荷马史诗里，尤利西斯明知海妖歌声会让他失控，便预先命水手把自己<em>绑在桅杆上</em>、并用蜡封住众人的耳朵——用现在的清醒，锁死未来的疯狂。这就是"承诺装置"的原型。阿什拉夫、卡兰与殷 2006 年在菲律宾做的田野实验（QJE，标题直接叫《把尤利西斯绑上桅杆》）证明它真有用：银行推出一种<em>取款受限</em>的储蓄账户，选择它的人，储蓄额显著上升。</p>
+        <div class="case-insight">理性人不需要这种账户——一个耐心恒定的人，何必花钱买"不方便"？正因为人知道未来的自己会变卦，才主动去买一副镣铐。<strong>承诺装置的存在本身，就是双曲贴现最有力的证据</strong>：我们都在偷偷防着那个即将背叛计划的自己。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>双曲贴现直觉上太顺、故事讲得太好，正因如此，越要诚实地划出它的边界：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① "双曲"未必是唯一解释，指数派仍在反击</strong>安徒生、哈里森、劳与鲁特斯特伦等人的田野实验发现：一旦把"效用本身是弯的"（对钱的边际效用递减）等因素分离出来单独控制，测得的贴现曲线<em>更接近指数</em>。也就是说，很多看似"双曲"的没耐心，可能是别的机制假扮的。<em>形状之争远未定论</em>。
+      </div>
+      <div class="critique-item">
+        <strong>② 棉花糖实验的预测力被大幅推翻</strong>沃茨、邓肯与全 2018 年用一个更大、更多元的样本重做了棉花糖实验（<em>Psychological Science</em>）。一旦控制住家庭背景、早期认知能力与成长环境，"忍住的孩子更成功"的相关性<em>缩水了三分之二</em>，很多长期效应干脆消失。<em>能不能等，很大程度上是家境的镜子，而非某种天生的自控基因</em>——把它当命运预言，是误读。
+      </div>
+      <div class="critique-item">
+        <strong>③ "现时偏差"是个大杂烩</strong>洛温斯坦等人指出：实验里测到的"贴现率"，混进了对未来的不确定、对通胀的预期、对等待的煎熬、对即得的雀跃……<em>把这些揉成一个干净的系数 k，是一种方便的虚构</em>。用它解释一切，就有了"事后都说得通、事前难预测"的味道。
+      </div>
+      <div class="critique-item">
+        <strong>④ 参数极不稳定，几乎难以证伪</strong>不同研究、不同方法测出的贴现率，能差<em>好几个数量级</em>——从年化百分之几到百分之几百。一个连自己的数值都锁不定的参数，很难说是一条精确的自然律。它更像一副看问题的透镜，而非一台可标定的仪器。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 最危险的是从"描述"滑向"操纵"与"放纵"</strong>发薪日贷款、免费试用后自动续费、"先享受后付款"、一键下单——太多设计正是<em>冲着人的现时偏差</em>去的。把"人本来就短视"从一句<em>观察</em>偷换成一句<em>许可</em>，既可以给这些陷阱背书，也可以给自己的放纵开脱（"我就是管不住自己"）。<em>描述人性的弱点，不等于就该去利用它，更不是纵容它的借口</em>。
+      </div>
+    </div>
+
+    <p class="mt-24">所以用双曲贴现的正确姿势是：<strong>把它当一副看清"为什么我总是说话不算数"的眼镜，而不是一条精确公式，更不是操纵他人或纵容自己的说明书</strong>。它最实用的地方，是让你在临场变卦的前一秒意识到：此刻替我做决定的，不是我，是那条陡峭的曲线——于是我可以提前给未来的自己，绑上一根桅杆。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">贴现效用理论</div>
+        <div class="conn-name-en">Discounted Utility</div>
+        <div class="conn-rel">⟵ 被修正的正统</div>
+        <div class="conn-desc">萨缪尔森 1937 年的指数贴现模型，假设耐心恒定、时间一致。双曲贴现正是作为它的<em>描述性</em>修正而生。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">现时偏差</div>
+        <div class="conn-name-en">Present Bias</div>
+        <div class="conn-rel">＝ 核心组件</div>
+        <div class="conn-desc">奥多诺霍与拉宾给这条曲线起的名字：当下被系统性地特别偏爱，莱布森 β-δ 模型里那个 β 就是它。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">时间不一致性</div>
+        <div class="conn-name-en">Time Inconsistency</div>
+        <div class="conn-rel">⟹ 直接后果</div>
+        <div class="conn-desc">今天订的计划，明天的自己不愿执行——偏好反转的宏观版本，也是承诺装置存在的理由。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">承诺装置</div>
+        <div class="conn-name-en">Commitment Device</div>
+        <div class="conn-rel">⟹ 解药</div>
+        <div class="conn-desc">尤利西斯的桅杆、取款受限的账户、自动扣款——用现在的清醒，锁死未来的冲动。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">复利</div>
+        <div class="conn-name-en">Compound Interest · №029</div>
+        <div class="conn-rel">⟷ 天生的对头</div>
+        <div class="conn-desc">复利奖励的正是"延迟满足"，而双曲贴现恰恰是延迟满足的心理天敌。看不见远处的复利曲线，就存不下钱。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">前景理论</div>
+        <div class="conn-name-en">Prospect Theory · №043</div>
+        <div class="conn-rel">∥ 同门</div>
+        <div class="conn-desc">同属卡尼曼-塞勒的行为经济学纲领：一个刻画人在盈亏面前如何变形，一个刻画人在时间面前如何变形。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">热-冷共情鸿沟</div>
+        <div class="conn-name-en">Hot-Cold Empathy Gap</div>
+        <div class="conn-rel">⟸ 深层机制</div>
+        <div class="conn-desc">洛温斯坦：冷静的你想象不到冲动的你。承诺屡屡失守，正因为立约的是"冷"的自我，违约的是"热"的自我。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">助推 / 选择架构</div>
+        <div class="conn-name-en">Nudge</div>
+        <div class="conn-rel">⟹ 应用下游</div>
+        <div class="conn-desc">"明天多存点"、默认自动续保——顺着现时偏差的性子设计选择架构，把牺牲挪到人不心疼的那一端。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>双曲贴现给普通人的核心启示只有一句：<strong>别指望临场的意志力，去替昨天那个清醒的自己撑腰；要在清醒时，就把未来的自己绑好。</strong></p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">储蓄与养老</div>
+        <div class="usage-text">别靠"这个月省一点"的自律，那是跟最陡的曲线硬拼。学"明天多存点"：设自动扣款、把加薪的一部分预先划走、把长期资金放进取用不便的账户。<em>让存钱在你还没感觉到"痛"之前就已经发生</em>——现时偏差最怕的就是"默认"。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">习惯与自律</div>
+        <div class="usage-text">远期的奖赏（健康、学位、身材）太远太平，压不过眼前的诱惑。破解之道是<em>缩短反馈回路</em>：把大而远的目标切成小而近的即时反馈，给自己造一个"现在就有"的甜头。再配上承诺装置——公开承诺、找人监督、用 StickK 押钱，把破例的代价拉到眼前来。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">对抗拖延</div>
+        <div class="usage-text">拖延不是懒，是"未来的痛"被折得太轻、"现在开工的累"被放得太大。把"写完这篇报告"换成"现在只写开头五分钟"，让第一步小到那条曲线拦不住。<em>把远处的大任务，翻译成近处的小动作</em>——你骗不过曲线，但可以把它要吞的东西切小。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">识别被设计的陷阱</div>
+        <div class="usage-text">免费试用后自动续费、"先享受后付款"、一键下单、限时秒杀——很多都是冲着你的现时偏差来的。看见"现在几乎不用付出、代价推到以后"的结构，就该警觉：这是不是有人在利用我对"眼前"的敏感？<em>给冲动加一道延迟（加购物车放一晚再决定），就是在给曲线降温</em>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">决策与自省</div>
+        <div class="usage-text">重大选择临场变卦时，先认出来：此刻替我做主的，是"现在的我"还是"未来的我"？别用"我就是自控差"来给放纵开脱——那是把一句观察当成了许可。真正管用的不是更狠地自责，而是<strong>用规则和结构代替意志力</strong>：立不可破例的规矩，提前绑好桅杆。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我最近一次"说好了却没做到"（早睡、存钱、锻炼、少刷手机），是意志不够，还是当"现在"真的来临时，那条陡峭的曲线把眼前的诱惑放大到了我昨天想象不到的程度？</div>
+      <div class="q">对于我真正在乎的长期目标，我是在靠临场的自律硬扛，还是已经给未来的自己装好了"桅杆"（自动扣款、不可破例的规矩、有人监督、取用不便的设计）？</div>
+      <div class="q">我最近做的哪个"现在几乎不用付出、代价推到以后"的决定（分期、续费、先享后付、熬夜），其实是别人替我的现时偏差设好的框？如果给它加一道延迟再决定，我还会这么选吗？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">George Ainslie《Specious Reward: A Behavioral Theory of Impulsiveness and Impulse Control》</span>
+        <span class="further-meta">Psychological Bulletin 82 (1975), pp. 463–496 — 双曲贴现的原始论文</span>
+      </li>
+      <li>
+        <span class="further-title">David Laibson《Golden Eggs and Hyperbolic Discounting》</span>
+        <span class="further-meta">Quarterly Journal of Economics 112 (1997), pp. 443–477 — 准双曲 β-δ 模型，把它请进主流经济学</span>
+      </li>
+      <li>
+        <span class="further-title">Frederick, Loewenstein &amp; O'Donoghue《Time Discounting and Time Preference: A Critical Review》</span>
+        <span class="further-meta">Journal of Economic Literature 40 (2002), pp. 351–401 — 最诚实的一篇批判性综述</span>
+      </li>
+      <li>
+        <span class="further-title">George Ainslie《Breakdown of Will》</span>
+        <span class="further-meta">Cambridge University Press, 2001 — 意志、内在博弈与自我契约的通俗展开</span>
+      </li>
+      <li>
+        <span class="further-title">Thaler &amp; Benartzi《Save More Tomorrow: Using Behavioral Economics to Increase Employee Saving》</span>
+        <span class="further-meta">Journal of Political Economy 112 (2004) — "以毒攻毒"的养老金方案</span>
+      </li>
+      <li>
+        <span class="further-title">Watts, Duncan &amp; Quan《Revisiting the Marshmallow Test》</span>
+        <span class="further-meta">Psychological Science 29 (2018) — 大样本重做，削弱了棉花糖实验的预测神话</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Hyperbolic discounting</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Hyperbolic_discounting" target="_blank">en.wikipedia.org/wiki/Hyperbolic_discounting</a> — 公式、模型与争议综述</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="043-prospect-theory.html">
+      <small>← PREVIOUS</small>
+      №043 前景理论
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;044&nbsp;·&nbsp;双曲贴现&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
