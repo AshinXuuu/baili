@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№048 混沌理论与蝴蝶效应 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 复杂系统 · 混沌</span>
+    <span class="lesson-no">№ 048</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 048 · CHAOS &amp; COMPLEXITY</div>
+    <h1 class="lesson-title">混沌理论与蝴蝶效应</h1>
+    <div class="lesson-title-en">Chaos Theory · deterministic, yet unpredictable</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>爱德华·洛伦兹</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1963</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>复杂系统 · 数学 · 气象</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《确定性的非周期流》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一串被截短的数字</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1961 年冬天，麻省理工的气象学家<strong>爱德华·洛伦兹</strong>（Edward Lorenz，1917–2008）在一台笨重的 Royal McBee LGP-30 计算机上跑一个把大气简化成十二个方程的天气模型。为了省时间，他想从中途重启一段模拟，便把上一次打印出来的中间值手工敲了回去——<em>0.506</em>，而机器内部实际存的是 <em>0.506127</em>。</p>
+
+    <p>他去喝了杯咖啡。回来时屏幕上的天气已经<strong>面目全非</strong>：两条本该重合的曲线先是几乎贴在一起，然后毫厘之差被迅速撑开，几个"模拟月"之后完全不像同一个世界。那个被舍掉的<em>千分之一</em>，吞掉了全部预测。</p>
+
+    <p>洛伦兹意识到，这不是机器故障，而是这类方程的<strong>本性</strong>：它们完全确定——没有一丝随机成分——却对初始条件极端敏感，以致长期行为在实践上无法预测。1963 年他把这一发现写成论文《确定性的非周期流》（<em>Deterministic Nonperiodic Flow</em>）。这篇后来被引数万次的文章，当时发在一本气象学期刊上，沉睡了近十年。</p>
+
+    <p class="muted">其实敏感依赖的幽灵，早在 1890 年代就被<em>庞加莱</em>在三体问题里瞥见过。而"混沌"（chaos）这个词，1975 年由数学家李天岩与<em>詹姆斯·约克</em>在论文《周期三则混沌》（<em>Period Three Implies Chaos</em>）中正式带进数学。真正让全世界记住它的，是洛伦兹 1972 年一场演讲的标题：<strong>"巴西一只蝴蝶扇动翅膀，会在得克萨斯掀起一场龙卷风吗？"</strong>——"蝴蝶效应"由此得名（标题实为同事 Philip Merilees 代拟）。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">LORENZ · 1963</div>
+      <div class="theorem-body">
+        当前状态的两个几乎无法区分的差异，最终可能演变成两个<em>相差甚远</em>的状态。因此，如果观测中存在任何误差——而在任何真实系统中，这种误差都不可避免——那么对<em>足够遥远的未来</em>做出可接受的预测，很可能是<em>不可能的</em>。<br><br>
+        这样的系统是完全<em>确定性</em>的：没有随机项，方程一旦给定初值就唯一地决定了全部未来。不可预测，并非因为无规律，而恰恰源于规律本身。
+      </div>
+      <div class="theorem-cite">——《确定性的非周期流》（1963），文意转述</div>
+    </div>
+
+    <p>这段话里藏着三个判断，是全部混沌理论的根：第一，<strong>确定 ≠ 可预测</strong>——一个毫无随机成分的系统照样可以不可预测；第二，<strong>放大误差的是系统本身</strong>，任何真实测量都有误差，而这类系统会把它指数级撑大；第三，<strong>不可预测有时限</strong>——原文说的是"足够遥远的未来"，短期仍然算得准。这三点，后面每一节都会回来。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 站在山脊上的一滴雨</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>把一滴雨放在连绵山脉的最高<strong>山脊线</strong>上。它究竟流进大西洋还是太平洋，取决于它落点向左还是向右偏了<em>一毫米</em>。落点几乎一样的两滴雨，命运可以隔着半个地球。<strong>山脊放大差异，山谷抹平差异</strong>——混沌系统就是处处是山脊的地形。</p>
+
+    <p>数学上给这条山脊一个名字：<strong>李雅普诺夫指数</strong>（λ）。它衡量两条起点极近的轨道以多快的速度分离。λ&gt;0，误差就随时间<em>指数增长</em>——今天差一毫米，明天差一厘米，后天差一米。有限的测量精度，撑不过有限的时间。</p>
+
+    <p>于是"蝴蝶效应"该被这样正确地理解：它<strong>不是说蝴蝶"造成"了龙卷风</strong>（那是把它读成因果鸡汤），而是说——在这样一个系统里，<em>连一只蝴蝶扇翅这么小的扰动，都足以在足够长的时间后，改变整个大气是否走向某场龙卷风的那条岔路</em>。换言之：最小的不确定，也会吞掉最远的预测。</p>
+
+    <p>但混沌的另一半魔力在于：它<strong>不是一团散沙般的随机</strong>。洛伦兹的方程画出来，是一只永远绕着两个"翅膀"飞、却从不重复同一条路径的美丽图案——<strong>奇异吸引子</strong>。轨道被牢牢约束在一个有界的、分形结构的集合上，既不收敛到一点，也不飞向无穷，也不周而复始。<em>混沌住在秩序与随机之间</em>：局部不可测，整体有形状。</p>
+
+    <div class="quote-inline">
+      "混沌的三个印记：<strong>确定性</strong>（规律唯一）、<strong>对初值敏感</strong>（差之毫厘谬以千里）、<strong>有界而非周期</strong>（既不发散也不重复）。三者齐备，才叫混沌——不是乱，是被规律逼出来的乱。"
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">亨利·庞加莱</span>
+          <span class="comm-tag">POINCARÉ · 1890</span>
+        </div>
+        <p>比洛伦兹早七十年，庞加莱在研究"三体问题"（三个天体在引力下如何运动）时就撞见了这只幽灵：三体运动没有简洁的解析解，而且轨道对初始条件敏感得可怕。</p>
+        <p>他在《科学与方法》（1908）里几乎写下了蝴蝶效应的定义：<em>"初始条件的微小差异，可能在最终现象中产生极大的差异……预测变得不可能。"</em> 他是思想上的源头，只是那个时代没有计算机把这份敏感"画"出来给世人看。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">罗伯特·梅</span>
+          <span class="comm-tag">ROBERT MAY · 1976</span>
+        </div>
+        <p>生态学家罗伯特·梅在《自然》上发表《非常简单的数学模型可以有非常复杂的动力学》，用一条一维种群方程 <em>x → r·x·(1−x)</em>（逻辑斯蒂映射）证明：<strong>方程简单，动力学不必简单</strong>。</p>
+        <p>随着繁殖率 r 增大，种群数量先稳定、再周期振荡（2、4、8……倍周期分岔）、最终跌入混沌。他由此警告：生态种群的剧烈波动<em>未必来自外部随机干扰，可能就是内在确定性规律的产物</em>——并呼吁把这种思维写进教科书。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">米切尔·费根鲍姆</span>
+          <span class="comm-tag">FEIGENBAUM · 1978</span>
+        </div>
+        <p>物理学家费根鲍姆在洛斯阿拉莫斯用一台掌上计算器发现：无论哪一类系统，只要它通过"倍周期分岔"走向混沌，相邻分岔点的间距比都收敛到<em>同一个常数</em> δ≈<strong>4.6692</strong>。</p>
+        <p>这就是<strong>普适性</strong>（universality）：混沌的入口处藏着一条精确的普适定律，与系统的具体细节无关。费根鲍姆把混沌从"奇观"变成了有可测常数、可被物理学严肃对待的科学。<em>最乱的门口，站着最精确的守卫。</em></p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">吕埃勒 &amp; 塔肯斯</span>
+          <span class="comm-tag">RUELLE &amp; TAKENS · 1971</span>
+        </div>
+        <p>数学物理学家大卫·吕埃勒与弗洛里斯·塔肯斯在研究湍流时，为混沌运动收敛到的那个古怪集合起了个名字——<strong>奇异吸引子</strong>（strange attractor）。</p>
+        <p>"吸引子"是系统长期停留的地方；"奇异"是说它有<em>分形</em>结构、无穷精细、维数常常不是整数。轨道被吸进这个有界的分形集合，永不重复却永不逃离。他们给了混沌一副<strong>可以看见的几何形状</strong>，把它从时间序列变成了空间图案。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">洛伦兹的天气与那只蝴蝶</span>
+          <span class="case-when">1961–1963</span>
+        </div>
+        <p>0.506 与 0.506127 之差，让同一套确定方程演出两种天气。把这套方程的轨迹画在三维空间里，得到的正是那只举世闻名的、双翼交叠的<strong>洛伦兹吸引子</strong>——蝴蝶的形状，纯属巧合，却成了混沌最好的标志。</p>
+        <div class="case-insight">这是"确定却不可预测"第一次被人亲眼看见。洛伦兹后来说：这意味着长期天气预报，从原理上就是不可能的——不是我们不够聪明，是大气本身如此。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">天气预报的"可预测视界"</span>
+          <span class="case-when">当代 · 集合预报</span>
+        </div>
+        <p>为什么天气预报总在两周左右失效？因为大气的李雅普诺夫时间大约就是这么长。今天的气象台不再给一条确定预报，而是撒一把<em>初值略有不同</em>的模拟——<strong>集合预报</strong>（ensemble forecast）——看它们何时分岔。曲线越早散开，说明这几天越"混沌"、越不可信。</p>
+        <div class="case-insight">集合预报是人类对混沌的诚实妥协：既然测不准初值，就干脆同时算很多个略微不同的初值，用它们的"离散程度"来量化不确定性本身。承认混沌，反而让预报更可用。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">三体问题与太阳系的命运</span>
+          <span class="case-when">1890s → 数值时代</span>
+        </div>
+        <p>庞加莱证明三体运动没有封闭解；现代长时间数值积分（如 Laskar 的工作）进一步显示，<strong>太阳系本身是弱混沌的</strong>：行星轨道在数千万年尺度上的细节无法预测，水星甚至有极小概率在几十亿年内轨道失稳。</p>
+        <div class="case-insight">连"钟表般精密"的太阳系，长期也不可精确预测。牛顿定律没有错，混沌不是牛顿的对立面——它恰恰是确定性定律自己生出来的极限。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">种群数量的内在混沌</span>
+          <span class="case-when">1970s · 生态学</span>
+        </div>
+        <p>罗伯特·梅的逻辑斯蒂映射说明：某些昆虫、鱼群逐年剧烈起落，未必是天灾或外部随机所致。<em>只要繁殖率足够高</em>，一条简单确定的方程就会自己产生看似杂乱、实则由规律逼出的混沌波动。</p>
+        <div class="case-insight">这改写了"波动 = 外部冲击"的默认假设。看到剧烈起伏，先别急着找外因——系统内部的非线性反馈，可能就足以制造混沌。诊断错了，药就开反了。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">双摆 · 桌面上的确定性混沌</span>
+          <span class="case-when">经典演示</span>
+        </div>
+        <p>一根摆下面再挂一根摆，就是<strong>双摆</strong>。它完全服从牛顿方程，没有一丝随机；可你无论多小心地把它抬到"同一"高度松手，两次运动几乎立刻分道扬镳，无法重复。</p>
+        <div class="case-insight">双摆是混沌最平易近人的实物证明：确定的规律 + 无法被消除的初始误差 = 不可重复的运动。它就摆在很多科学馆里，用最简单的两根杆子，演示着最深的道理。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>混沌是被误用最狠的科学词之一。下面几条讲的是它<em>并不主张什么</em>——读完才算真正用过这把刀：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 混沌 ≠ 随机</strong>这是头号误读。混沌系统有严格的确定方程、有短期可预测性、有奇异吸引子这样的隐藏秩序。随机是"没有规律"，混沌是"有规律却把误差放大到测不准"。把二者混为一谈，等于把一台加密机误认成一堆噪声。
+      </div>
+      <div class="critique-item">
+        <strong>② 蝴蝶效应被熬成鸡汤与宿命论</strong>"一个微笑改变世界""一切早已注定"——都是滥用。真正的陈述是关于<em>误差放大</em>的精确命题：绝大多数微小扰动会被系统耗散掉、根本不放大；只有在敏感方向上、在足够长时间里，小扰动才主宰结局。它讲的是不可预测，不是"任何小事必然掀起大浪"。
+      </div>
+      <div class="critique-item">
+        <strong>③ 敏感依赖 ≠ 不可控</strong>1990 年 Ott、Grebogi、Yorke 提出"混沌控制"（OGY 方法）：正因为系统对小扰动极敏感，<em>用极小、及时的干预就能把它稳定到想要的轨道上</em>。混沌可被驾驭——用巧劲，不是用蛮力。敏感是双刃的。
+      </div>
+      <div class="critique-item">
+        <strong>④ 长期测不准 ≠ 完全测不准</strong>混沌系统有"可预测视界"：视界之内相当准（天气三五天很可靠），视界之外才失效。把"两周后测不准"读成"什么都测不准"，是把有限时限夸大成无限虚无。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 判定真混沌很难，且极易被滥用于社会系统</strong>要证明一个系统真混沌，需正的李雅普诺夫指数、低维吸引子等硬证据；现实中噪声常被误认成混沌，高维随机与低维混沌难分。更别把它硬套到社会、人生、股市——这些多半不是"低维确定性方程"，用混沌为"努力无用/一切随机"背书，是双重误读。
+      </div>
+    </div>
+
+    <p class="mt-24">所以使用混沌理论的正确姿势是：<strong>把它当一副分辨"哪些事测得准、哪些事本质测不准"的眼镜</strong>，而不是替长期精确预测背书、也不是给放任与虚无找借口。<em>最深的一课只有六个字：确定，不等于可测。</em></p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">非线性动力学</div>
+        <div class="conn-name-en">Nonlinear Dynamics</div>
+        <div class="conn-rel">⟶ 因果母体</div>
+        <div class="conn-desc">混沌是非线性系统的一种典型行为。线性系统永不混沌——放大与叠加成正比，误差不会指数爆炸。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">奇异吸引子 / 分形</div>
+        <div class="conn-name-en">Strange Attractor · Fractal</div>
+        <div class="conn-rel">∥ 几何化身</div>
+        <div class="conn-desc">混沌轨道栖息在分形结构的有界集合上。分形的自相似，是混沌在空间里的显影。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">涌现</div>
+        <div class="conn-name-en">Emergence · №041</div>
+        <div class="conn-rel">⟷ 姊妹现象</div>
+        <div class="conn-desc">都是"简单规则生复杂行为"。区别：涌现是向上生成新层次的秩序，混沌是横向放大微小差异。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">海森堡不确定性原理</div>
+        <div class="conn-name-en">Uncertainty Principle · №047</div>
+        <div class="conn-rel">⚠ 根本对照</div>
+        <div class="conn-desc">混沌 = 确定系统"算不准"（知识极限）；量子 = 系统本就"没定"（本体极限）。一个是山脊放大误差，一个是没有确定的初值可测。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">黑天鹅</div>
+        <div class="conn-name-en">Black Swan · №004</div>
+        <div class="conn-rel">⟹ 对照</div>
+        <div class="conn-desc">黑天鹅是"没料到"的认识论盲区；混沌是"内生地测不准"。前者靠稳健应对，后者靠承认视界。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">李雅普诺夫指数</div>
+        <div class="conn-name-en">Lyapunov Exponent</div>
+        <div class="conn-rel">⟵ 度量工具</div>
+        <div class="conn-desc">量化轨道分离速度。λ&gt;0 是混沌的数学判据，也给出"可预测视界"的时间尺度。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">逻辑斯蒂增长</div>
+        <div class="conn-name-en">Logistic Map</div>
+        <div class="conn-rel">⟷ 最简样本</div>
+        <div class="conn-desc">一维种群方程 x→rx(1−x)。r 增大即经倍周期分岔坠入混沌，是理解混沌的第一块砖。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">自组织临界</div>
+        <div class="conn-name-en">Self-Organized Criticality</div>
+        <div class="conn-rel">⟺ 平行视角</div>
+        <div class="conn-desc">复杂系统自发趋向临界态，小扰动引发大小不一的雪崩——另一种"小因大果"的机制。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>混沌不会告诉你明天的具体天气。但它能让你分清什么该努力预测、什么该干脆放弃预测——这本身就是稀缺的判断力。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">预测与规划</div>
+        <div class="usage-text">先判断你面对的系统有没有"可预测视界"。视界之内做<em>精细规划</em>，视界之外别为"精确的长期预测"买单——做<strong>情景与集合</strong>（几种可能各留一手），而非一条确定的点预测。天气、经济、五年计划都适用。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">找杠杆点</div>
+        <div class="usage-text">敏感依赖是双刃的：系统里存在少数"山脊方向"，一个小干预会被指数放大。找到那个杠杆点，可以<em>四两拨千斤</em>。但同时警惕——你自己也可能正是那只被放大的初始误差。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">接受不可控</div>
+        <div class="usage-text">有些系统长期不可预测，<em>不是你不够聪明，是它本质如此</em>。把精力从"精确预测未来"转向"提高韧性、缩短反馈、快速适应"。测不准的世界里，反脆弱比预测力更值钱（↗ №002）。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">分清混沌与噪声</div>
+        <div class="usage-text">面对剧烈波动先问一句：这是<em>外部随机噪声</em>，还是<em>系统内在的确定性混沌</em>？两者对策相反——噪声要平滑过滤，内生混沌则要去调参数、改结构、断掉放大它的反馈回路。诊断错了方向全错。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">用巧劲控混沌</div>
+        <div class="usage-text">一个乱系统未必要用大力去压。混沌控制的智慧是：<em>小而及时</em>的干预，卡在临界点上，就能把它稳定住（OGY）。管理团队、调市场、治心律，都胜过一味加码的猛药。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我正在为哪个"长期精确预测"付出代价——那个目标，是不是落在天气般的可预测视界之外？</div>
+      <div class="q">我把生活里的波动当成外部随机噪声，还是系统内在的确定性混沌？如果是后者，我该改的是<em>结构</em>而不是<em>运气</em>。</div>
+      <div class="q">我的系统里，哪一处是那只"蝴蝶"——一个小到被我忽略、却正被指数放大的初始条件？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Edward Lorenz《Deterministic Nonperiodic Flow》</span>
+        <span class="further-meta">Journal of the Atmospheric Sciences, 1963 — 混沌理论的开山论文</span>
+      </li>
+      <li>
+        <span class="further-title">Henri Poincaré《Science and Method》</span>
+        <span class="further-meta">1908（英译本）— 三体问题与敏感依赖的思想源头</span>
+      </li>
+      <li>
+        <span class="further-title">Robert May《Simple mathematical models with very complicated dynamics》</span>
+        <span class="further-meta">Nature, 1976 — 逻辑斯蒂映射，把混沌带进生态学</span>
+      </li>
+      <li>
+        <span class="further-title">Ruelle &amp; Takens《On the Nature of Turbulence》</span>
+        <span class="further-meta">Communications in Mathematical Physics, 1971 — "奇异吸引子"命名之作</span>
+      </li>
+      <li>
+        <span class="further-title">James Gleick《Chaos: Making a New Science》</span>
+        <span class="further-meta">Viking, 1987 — 最经典的混沌科普，讲透洛伦兹、费根鲍姆、May 群像</span>
+      </li>
+      <li>
+        <span class="further-title">Steven Strogatz《Nonlinear Dynamics and Chaos》</span>
+        <span class="further-meta">Addison-Wesley, 1994 — 想动手学的最佳教科书</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Chaos theory</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Chaos_theory" target="_blank">en.wikipedia.org/wiki/Chaos_theory</a> — 数学、历史与应用综述</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="047-uncertainty-principle.html">
+      <small>← PREVIOUS</small>
+      №047 海森堡不确定性原理
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;048&nbsp;·&nbsp;混沌理论与蝴蝶效应&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
