@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№050 控制论 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 科学 · 系统</span>
+    <span class="lesson-no">№ 050</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 050 · SCIENCE &amp; SYSTEMS</div>
+    <h1 class="lesson-title">控制论</h1>
+    <div class="lesson-title-en">Cybernetics · the science of feedback, control &amp; self-regulation</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>诺伯特·维纳</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1948</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>科学 · 系统 · 复杂系统</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《控制论》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一门在高射炮旁诞生的科学</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>二战期间，麻省理工的数学家<strong>诺伯特·维纳</strong>（Norbert Wiener，1894–1964，四岁读书、十八岁拿到哈佛博士的神童）接了一个战时任务：设计能自动瞄准的高射炮。敌机飞得越来越快，炮手必须<em>预判</em>飞机未来的位置。维纳与工程师<em>朱利安·比奇洛</em>造出一台"预测器"，却撞见一个怪现象——机器为了对准目标而不断修正，可修正一旦过头，就朝反方向再修正，来回摆动、越摆越大，直到失控。</p>
+
+    <p>维纳意识到，这个"来回摆动"的毛病，和某些神经系统受损的病人惊人地相似：他们伸手去拿杯子，手却会越纠越偏、抖个不停。他去请教墨西哥生理学家<strong>阿图罗·罗森布鲁斯</strong>，两人恍然大悟——<em>机器的自动瞄准、动物的伸手取物、恒温器的开关，背后是同一套机制：反馈</em>。目标、感知、比较、纠正，如此循环。这套机制既在钢铁里，也在血肉里。</p>
+
+    <p>1943 年，罗森布鲁斯、维纳与比奇洛合写《行为、目的与目的论》，大胆宣称：<strong>"有目的的行为"不必是灵魂的神秘属性，它可以被负反馈机械地解释</strong>。1948 年，维纳把这套想法扩展成一本书——《控制论：或关于在动物和机器中控制和通信的科学》（<em>Cybernetics: or Control and Communication in the Animal and the Machine</em>）。一门横跨机器、生命与社会的新学问自此立名。</p>
+
+    <p class="muted">"控制论"（cybernetics）一词，维纳取自希腊语 <em>kybernetes</em>——"舵手"。掌舵的人不断根据船的偏航来打舵，正是反馈的古老原型。（更早，安培曾用"cybernétique"指治理之学，柏拉图也用同源词论掌舵与治国。）思想的先声还有 1868 年麦克斯韦的《论调速器》，那是第一篇用数学分析反馈稳定性的论文——只是当年没人把它看成一门统一的科学。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">NORBERT WIENER · 1948</div>
+      <div class="theorem-body">
+        当我们希望一个机构或有机体<em>朝某个目标行动</em>时，就必须把它实际达到的状态<em>反馈</em>回来，与目标作比较，用这个"差"去驱动下一步的纠正。<br><br>
+        这种<strong>反馈控制</strong>，在动物的神经系统、在自动机器、在社会组织里是同一回事。控制与通信的问题，无论出现在机器中还是在活体中，本质上是<em>同一个问题</em>——都是关于<em>信息</em>如何被传递、反馈与利用，以对抗那使世界趋于混乱的倾向。
+      </div>
+      <div class="theorem-cite">——综合《控制论》（1948）与《人有人的用处》（1950），文意转述</div>
+    </div>
+
+    <p>三个词是全部理论的地基：<strong>反馈</strong>——把结果送回输入端；<strong>负反馈</strong>——用"差距"去<em>缩小</em>差距，让系统自动收敛到目标（恒温器、体温、瞄准）；<strong>正反馈</strong>——用偏差去<em>放大</em>偏差，让系统失控奔逃（啸叫、挤兑、爆炸、指数增长）。维纳的赌注是：<em>无论对象是动物、机器还是社会，只要它能"朝目标自我调节"，就一定藏着一个负反馈回路</em>——而"目的"这个曾被认为最玄的东西，就住在这个回路里。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 一台恒温器里的全部秘密</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>把控制论讲清楚，只需一台<strong>恒温器</strong>。你设定 22°C（这叫<em>目标值</em>），温度计不停测量房间的实际温度（<em>传感器</em>），控制器把两者相减得到"差"，差为正就关暖气、为负就开暖气（<em>执行器</em>），房间温度因此变化，又被测回来……如此循环。没有人守着房间，房间却能<strong>自己</strong>稳定在 22°C，还能顶住开窗、来客这些"扰动"。这就是<em>负反馈</em>：偏差自己驱动着把偏差抹平。</p>
+
+    <p>控制论最革命的一击，是把这台恒温器和一个<em>够得着杯子</em>的手放在一起看：手也在不停地"测量当前手的位置—与杯子作比较—修正",瞄准的高射炮如此,追捕猎物的动物如此,追平库存的工厂亦如此。<strong>"有目的地朝某处去",从此不再需要一个神秘的意图,只需要一个负反馈回路。</strong>维纳等于说:目的,是回路的性质,不是灵魂的特权。</p>
+
+    <p>反过来，<strong>正反馈</strong>是同一台机器的阴面：麦克风离音箱太近，一点点声音被放大、再被拾取、再放大，几秒内就变成刺耳的啸叫；储户听说银行要倒，纷纷取钱，银行真的更危险，于是更多人来取——偏差喂养偏差，直到系统崩掉或撞上天花板。<em>负反馈给系统以稳定，正反馈给系统以爆发；分清一个回路是哪一种，往往就看懂了它的命运。</em></p>
+
+    <div class="quote-inline">
+      "控制的关键不是<strong>力量</strong>，而是<strong>信息</strong>。舵手不必比大海更强，他只需不断知道船偏了多少，再打一点舵。——一个系统能否自我调节，取决于它能否<em>感知自己的偏差</em>并据此行动。"
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">罗森布鲁斯 &amp; 比奇洛</span>
+          <span class="comm-tag">1943 · 目的的机械解释</span>
+        </div>
+        <p>控制论真正的火种。生理学家罗森布鲁斯、数学家维纳与工程师比奇洛合写《行为、目的与目的论》，用一句话点燃了整场革命：<strong>凡是"有目的的行为"，都可归结为受负反馈引导的行为</strong>。</p>
+        <p>猫扑向老鼠、导弹追踪飞机、人伸手取物——差别只在实现方式，机制却是同一个。这篇论文把千百年来被视为玄学的"目的性"，第一次拉进了工程与生理可以共用的语言里。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">W·罗斯·艾什比</span>
+          <span class="comm-tag">ASHBY · 1956</span>
+        </div>
+        <p>把控制论写成定律的人。艾什比在《控制论导论》中提出<strong>必要多样性定律</strong>（Law of Requisite Variety）：<em>只有多样性才能吸收多样性</em>——一个调节器要压住多少种扰动，自身就必须拥有至少同样多的应对花样。</p>
+        <p>这是一条冷峻的下限：面对一个变化多端的环境，一套僵硬、只会一招的控制系统必然失败。想稳住复杂，你自己就得足够复杂——它后来成了管理、生态、组织设计里反复被引用的铁律。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">沃伦·麦卡洛克</span>
+          <span class="comm-tag">McCULLOCH · 1943–53</span>
+        </div>
+        <p>把控制论接进大脑的人。神经生理学家麦卡洛克与皮茨 1943 年提出<strong>形式神经元模型</strong>——把神经元想象成一个个做逻辑判断的开关，脑因此可被看作一台由反馈回路织成的信息机器。</p>
+        <p>他还主持了传奇的<em>梅西会议</em>（1946–1953），把维纳、香农、冯·诺依曼、贝特森、米德聚到一桌。这批人埋下的种子，日后长成了神经网络、人工智能与认知科学——控制论是它们共同的祖辈。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">斯塔福德·比尔</span>
+          <span class="comm-tag">STAFFORD BEER · 1972</span>
+        </div>
+        <p>把控制论搬进组织的人，"管理控制论"之父。比尔认为企业与国家也是活的系统，能不能存活，取决于它有没有健全的反馈回路。他的<strong>可行系统模型</strong>（VSM）用神经系统作蓝本，为组织画出感知、协调、纠偏、应变的层级。</p>
+        <p>1971–73 年，他在智利阿连德政府里主持了野心惊人的 <em>Cybersyn 工程</em>——想用电传网络与一间"作战室"给整个国民经济装上实时反馈神经（见案例四）。这既是控制论最壮丽的落地，也是它最深警示的现场。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">瓦特调速器与麦克斯韦的方程</span>
+          <span class="case-when">1788 / 1868</span>
+        </div>
+        <p>1788 年，瓦特给蒸汽机装上<strong>离心调速器</strong>：转速一快，两个飞球被甩高，连杆关小进汽阀，转速便降回来——机器<em>自己</em>稳住了转速。八十年后，麦克斯韦在《论调速器》里第一次用微分方程分析它<em>为什么有时会稳、有时会失稳震荡</em>，被公认为反馈控制理论的开山之作。</p>
+        <div class="case-insight">工业革命的心脏里早就跳动着一个负反馈回路，只是当时没人给它命名。控制论做的，是把散落在蒸汽机、身体、大脑里的同一台机器，认了出来。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">高射炮预测器：控制论的产房</span>
+          <span class="case-when">1940–43 · MIT</span>
+        </div>
+        <p>维纳与比奇洛为高射炮造预测器时，撞见了负反馈的<strong>阴暗面</strong>：修正若太猛、反馈若太慢，系统会来回超调、越摆越大而失稳。这个"震荡"，正是他们把机器与神经病人联系起来的钥匙。</p>
+        <div class="case-insight">控制论不是从"反馈多美妙"起步，而是从"反馈会失控"起步。负反馈不是万灵药——增益、时滞没设计好，稳定的回路照样能自己抖成一团。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">体内稳态：身体的自动驾驶</span>
+          <span class="case-when">1926 / 1932 · 坎农</span>
+        </div>
+        <p>哈佛生理学家<em>沃尔特·坎农</em>创造了"<strong>稳态</strong>"（homeostasis）一词，并在《躯体的智慧》中揭示：体温、血糖、血压、酸碱度……都由无数负反馈回路悄悄维持在窄窄的区间里。你发烧会出汗，血糖高会分泌胰岛素——身体从不需要你下令。</p>
+        <div class="case-insight">生命本身就是一大套反馈回路的合奏。控制论最深的洞见之一，是"活着"与"自我调节"几乎是同义词：能顶住扰动、守住自己那套变量的系统，才配叫有机体。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">智利 Cybersyn：一个国家的神经系统</span>
+          <span class="case-when">1971–73 · 圣地亚哥</span>
+        </div>
+        <p>斯塔福德·比尔为阿连德政府建造 <strong>Cybersyn</strong>：用全国的电传打字机每天回传工厂数据，汇入一台主机，投影到一间未来感十足的"作战室"，让决策者近乎实时地看见经济的偏差并纠偏。这是把整个国家当成一个可反馈调节的活系统。1973 年 9 月的军事政变随阿连德之死一起终结了它。</p>
+        <div class="case-insight">Cybersyn 是控制论最壮丽的野心，也是最深的警示：它证明了"给社会装上反馈神经"在技术上可行，也让人不安地看见——同一套回路，既能服务自治，也能滑向集中监控。工具中性，用途不中性。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">啸叫、挤兑与失控的冰盖</span>
+          <span class="case-when">正反馈的三张脸</span>
+        </div>
+        <p>麦克风凑近音箱，声音被放大—拾取—再放大，几秒就成刺耳<strong>啸叫</strong>；储户恐慌取钱，银行更危险，于是更多人取钱，酿成<strong>挤兑</strong>；北极冰盖融化，裸露的深色海水吸更多热，冰化得更快——<strong>反照率反馈</strong>。三件事同构：偏差喂养偏差。</p>
+        <div class="case-insight">这些都是正反馈失控的样子。认出一个回路是正反馈，就知道它不会自己停下——要么撞上天花板，要么需要外力踩下刹车（存款保险、逆周期调控），给它装一个负反馈来兜住。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>控制论气魄宏大——大到承诺过了头。诚实地看它的边界：</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① "帝国式扩张"之后的消退</strong>第一代控制论野心太大，想用"反馈"一统机器、生命、心智与社会。这个大一统的承诺没能兑现，1970 年代后它被人工智能、信息论、认知科学、系统论逐块分食，"cybernetics"一词在英语学界几乎退场。它没有错，但它更像一门<em>共同的祖语</em>，而非一台能解一切的机器——把万物都叫作反馈回路，等于什么也没多说。
+      </div>
+      <div class="critique-item">
+        <strong>② 目标一旦模糊或可被操纵，回路就失灵</strong>负反馈的前提是"目标可测、偏差可算、纠正可行"。可现实里的目标常常说不清，或者一旦被设成考核指标就被人钻空子——负反馈于是忠实地把系统锁死在一个<em>错的</em>目标上（这正是古德哈特定律 №005 的病：把可测的代理当目标）。控制论给了调节的语言，却给不出"该调向何方"的答案。
+      </div>
+      <div class="critique-item">
+        <strong>③ 稳定的回路依然难设计</strong>时滞、增益、非线性——负反馈设计不当就震荡、超调乃至失稳（维纳的高射炮就是活证）。而反馈一旦非线性又足够强，系统还会坠入混沌（№048），确定的规则照样算不准。"有反馈"离"能稳住"隔着一整门控制工程。
+      </div>
+      <div class="critique-item">
+        <strong>④ 把人和社会简化成"可调节的机器"是机械论的傲慢</strong>人有意志、目标会变、会反抗被调控；社会不是恒温器。把治理想象成"调参数"，容易滑向技术官僚的自负——Cybersyn 的争议、无处不在的算法监控，都提醒：一旦"控制"压过了"自治"，工具就换了性质。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 观察者也在回路里（二阶控制论的自我修正）</strong>第一代控制论默认有一个站在系统<em>之外</em>的观察者，客观地"控制"着系统。海因茨·冯·福尔斯特等人指出：观察者本身就在系统<em>之内</em>——你的观测与干预改变了被观测的对象（呼应海森堡 №047 的观察者、古德哈特的度量）。所谓"从外部控制"，常常是一种幻觉：你也在你想调节的那个回路里。
+      </div>
+    </div>
+
+    <p class="mt-24">所以用控制论的正确姿势是：<strong>把它当一副"看见回路"的眼镜</strong>，而不是控制万物的按钮。<em>遇到任何"稳得可疑"或"正在失控"的东西，就问六个问题：反馈在哪？是负是正？增益多大？时滞多长？目标是谁定的、可被操纵吗？——还有，我这个观测者，是不是也已经站在回路里了。</em></p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">负反馈与正反馈</div>
+        <div class="conn-name-en">Feedback Loops</div>
+        <div class="conn-rel">⟶ 核心机制</div>
+        <div class="conn-desc">控制论的原子。负反馈给稳定、正反馈给爆发——所有回路的命运几乎都写在它是哪一种里。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">稳态</div>
+        <div class="conn-name-en">Homeostasis · Cannon</div>
+        <div class="conn-rel">∥ 生物化身</div>
+        <div class="conn-desc">体温、血糖、血压由无数负反馈守住。生命就是一大套反馈回路的合奏，"活着"近乎"能自我调节"。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">系统动力学</div>
+        <div class="conn-name-en">System Dynamics · Forrester</div>
+        <div class="conn-rel">⟶ 直系后裔</div>
+        <div class="conn-desc">福雷斯特把反馈回路建成可模拟的存量-流量模型，用来解释增长的极限、供应链的牛鞭效应。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">香农熵</div>
+        <div class="conn-name-en">Shannon Entropy · №010</div>
+        <div class="conn-rel">⟷ 同源姊妹</div>
+        <div class="conn-desc">维纳与香农同时代、互相砥砺。信息是控制的燃料——没有对偏差的测量，就没有纠偏；反馈即是逆熵。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">混沌理论</div>
+        <div class="conn-name-en">Chaos Theory · №048</div>
+        <div class="conn-rel">⟹ 对照 / 亲缘</div>
+        <div class="conn-desc">非线性反馈是混沌的引擎。控制论求"稳住回路"，混沌讲"回路何以失稳测不准"，两者互为背面。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">古德哈特定律</div>
+        <div class="conn-name-en">Goodhart's Law · №005</div>
+        <div class="conn-rel">⟹ 误用警示</div>
+        <div class="conn-desc">负反馈忠实地朝"目标"收敛——若目标是个会被操纵的可测代理，回路便把系统锁死在错的地方。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">自我实现的预言</div>
+        <div class="conn-name-en">Self-Fulfilling Prophecy · №019</div>
+        <div class="conn-rel">∥ 社会正反馈</div>
+        <div class="conn-desc">信念→行动→现实→强化信念，是社会里的正反馈回路。挤兑、股市狂热都是它在滚雪球。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">二阶控制论</div>
+        <div class="conn-name-en">Second-Order Cybernetics</div>
+        <div class="conn-rel">⟳ 自我修正</div>
+        <div class="conn-desc">冯·福尔斯特：观察者也在系统内。研究"观察系统的系统"，把控制论的镜子转向了拿镜子的人。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>控制论最实用的地方，是让你不再盯着"某个人"，而是去找"那个回路"——是什么在维持这份稳定，又是什么在喂养这场失控。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">管理与组织</div>
+        <div class="usage-text">把团队当反馈回路来设计：明确目标（set point）、装好传感器（真实、及时的指标）、能纠偏（授权与流程）。最狠的一招是<em>缩短反馈回路</em>——从下单到看见结果的时间越短，纠偏越准。但记住必要多样性：越复杂的局面，越需要多样的应对，别用一招管天下。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">个人习惯与自控</div>
+        <div class="usage-text">减肥、存钱、写作都是负反馈：定目标、常测量（体重秤、账本、字数）、据差纠偏。让测量高频而低摩擦，回路才转得动。同时警惕正反馈螺旋——越焦虑越拖延、越拖延越焦虑；识别它、从任一环打断它，别等它撞墙。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">产品与运营</div>
+        <div class="usage-text">"构建—测量—学习"就是一个负反馈闭环，监控告警是给系统装的自动纠偏。而病毒式增长、网络效应是正反馈——它不会自己停，既要在冷启动时点燃它，也要在过热时给它装阻尼（限流、风控），免得啸叫。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">政策与经济</div>
+        <div class="usage-text">宏观调控就是一台巨大的调速器，难点全在<em>时滞与增益</em>：货币政策见效慢，手重了就超调震荡（一放就热、一收就冷）。泡沫是正反馈，需要逆周期的负反馈去兜。别指望"精准调到某个点"，先求别把回路调成来回摆动。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">思维方式</div>
+        <div class="usage-text">遇到"稳得可疑"的现象，先假设有个负反馈在暗中维持它；遇到"正在失控"，先找那个正反馈螺旋，而不是急着怪某个人。分清目标、传感器、执行器、增益、时滞——再问一句：我这个想"控制"它的人，是不是也已经在回路里了。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我生活里哪一份"稳定"，其实是一个我从没注意到的负反馈回路在默默维持？而哪一场"失控"，是一个正反馈螺旋（越焦虑越拖延、越拖延越焦虑）在自我放大？</div>
+      <div class="q">我用来纠偏的那些"传感器"——KPI、体重秤、他人的评价——测的真是我在乎的目标，还是一个会被我悄悄操纵、于是把我锁死在错方向上的代理？</div>
+      <div class="q">我以为自己站在系统<em>之外</em>冷静地"控制"它，可我的每一次观测与干预，是不是本身就改变了这个系统、早已把我卷进了它的回路？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Norbert Wiener《Cybernetics: or Control and Communication in the Animal and the Machine》</span>
+        <span class="further-meta">MIT Press, 1948 — 控制论奠基之作</span>
+      </li>
+      <li>
+        <span class="further-title">Norbert Wiener《The Human Use of Human Beings》（人有人的用处）</span>
+        <span class="further-meta">Houghton Mifflin, 1950 — 维纳写给大众的控制论与社会</span>
+      </li>
+      <li>
+        <span class="further-title">W. Ross Ashby《An Introduction to Cybernetics》</span>
+        <span class="further-meta">Chapman &amp; Hall, 1956 — 必要多样性定律的出处</span>
+      </li>
+      <li>
+        <span class="further-title">Rosenblueth, Wiener &amp; Bigelow《Behavior, Purpose and Teleology》</span>
+        <span class="further-meta">Philosophy of Science, 1943 — 用负反馈解释"目的"的火种论文</span>
+      </li>
+      <li>
+        <span class="further-title">Stafford Beer《Brain of the Firm》</span>
+        <span class="further-meta">Allen Lane, 1972 — 管理控制论与可行系统模型（VSM）</span>
+      </li>
+      <li>
+        <span class="further-title">Eden Medina《Cybernetic Revolutionaries》</span>
+        <span class="further-meta">MIT Press, 2011 — 智利 Cybersyn 工程的完整历史</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Cybernetics</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Cybernetics" target="_blank">en.wikipedia.org/wiki/Cybernetics</a> — 源流、梅西会议与二阶控制论</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="049-self-determination-theory.html">
+      <small>← PREVIOUS</small>
+      №049 自我决定论
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;050&nbsp;·&nbsp;控制论&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
