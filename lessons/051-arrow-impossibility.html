@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№051 阿罗不可能定理 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 经济 · 政治</span>
+    <span class="lesson-no">№ 051</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 051 · SOCIAL CHOICE</div>
+    <h1 class="lesson-title">阿罗不可能定理</h1>
+    <div class="lesson-title-en">Arrow's Impossibility Theorem · why there is no perfect way to add people up</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>肯尼斯·阿罗</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1950 / 1951</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>经济 · 政治 · 社会选择</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《社会选择与个人价值》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一个本想证明"可以"的年轻人</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1940 年代末，二十多岁的<strong>肯尼斯·阿罗</strong>（Kenneth J. Arrow，1921–2017）在兰德公司做暑期研究。冷战博弈论正热，人们把国家当成理性玩家来推演，于是有人向他提出一个看似技术性的问题：<em>一个国家的"效用函数"是什么？</em>国家不是人，它由千百万个各有偏好的人组成——那么，把这些人的偏好合成一个"社会的偏好"，该怎么合？</p>
+
+    <p>阿罗本来打算写下几条谁都不会反对的最低要求，然后构造出一个满足它们的加总规则。结果他越推越不对劲：<strong>那几条"谁都不会反对"的要求，彼此不相容</strong>。唯一能同时满足它们的，是把某一个人的排序直接当作社会的排序——也就是<em>独裁</em>。1950 年，这个结果以《社会福利概念中的一个困难》为题发表于《政治经济学杂志》（JPE 58 卷第 4 期，328–346 页）；1951 年扩写成书《社会选择与个人价值》。<strong>一门新学问——社会选择理论——就此立名。</strong></p>
+
+    <p class="muted">这条思路的先声在十八世纪。1785 年，法国数学家兼革命者<strong>孔多塞侯爵</strong>在《论分析方法在多数决定之概率上的应用》中发现了著名的<em>孔多塞悖论</em>：三个理性的人，各自的偏好都井井有条，可多数决的结果却会转成一个圈——甲胜乙、乙胜丙、丙又胜甲。同代的<em>博尔达</em>则提出用计分排序来替代简单多数，两人在法国科学院争了很多年。此后一个半世纪，这个悖论被当作一件古怪的趣闻。阿罗做的，是证明它<strong>不是意外，而是宿命</strong>。</p>
+
+    <p>1972 年，阿罗与英国经济学家希克斯共获诺贝尔经济学奖，时年 51 岁，至今仍是该奖最年轻的得主。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">KENNETH ARROW · 1950 / 1951</div>
+      <div class="theorem-body">
+        设备选项<strong>至少有三个</strong>。若一个"社会福利函数"要把每个人的偏好排序，聚合成一个完备而传递的<em>社会排序</em>，并同时满足下列条件——<br><br>
+        <strong>① 无限制定义域</strong>：任何人抱有任何一种（自洽的）偏好排序，规则都得给出结果；<br>
+        <strong>② 帕累托一致</strong>：若所有人都认为 A 优于 B，社会排序也必须认为 A 优于 B；<br>
+        <strong>③ 无关选项的独立性（IIA）</strong>：社会对 A 与 B 谁更优的判断，只能取决于各人对 A 与 B 的相对排序，与第三个选项 C 无关；<br>
+        <strong>④ 非独裁</strong>：不存在某个人，其个人排序总是自动成为社会排序。<br><br>
+        ——<strong>这样的函数不存在。</strong>换言之，凡满足 ①②③ 的规则，必定是独裁。
+      </div>
+      <div class="theorem-cite">——《社会福利概念中的一个困难》(JPE, 1950) 与《社会选择与个人价值》(Wiley, 1951 / 1963 二版)，文意转述</div>
+    </div>
+
+    <p class="muted">一个常被略过的细节：1951 年初版用的条件是"正相关"与"公民主权"，1963 年第二版才简化成今天教科书上的<em>帕累托一致</em>。阿罗自己一直在打磨这几块砖——这也提醒我们，定理的锋利来自条件的措辞，讨论它必须回到条件本身。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 三个室友点外卖</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>三个室友要点一份外卖，可选川菜（A）、日料（B）、火锅（C）。甲的排序是 A&gt;B&gt;C，乙是 B&gt;C&gt;A，丙是 C&gt;A&gt;B。三个人都很理性，各自的排序都不打架。现在用最朴素的办法——两两投票，少数服从多数：</p>
+
+    <p>A 对 B，甲与丙都选 A，<strong>A 胜</strong>；B 对 C，甲与乙都选 B，<strong>B 胜</strong>；那按理 A 应该胜 C 吧？可 C 对 A，乙与丙都选 C，<strong>C 胜</strong>。<em>A 胜 B、B 胜 C、C 又胜 A</em>——多数决转出了一个圈。这就是孔多塞悖论：<strong>每个人的偏好都是传递的，"社会的偏好"却不传递。</strong>谁是赢家，完全取决于你先投哪一场；掌握议程的人，等于提前掌握了结果。</p>
+
+    <p>阿罗定理的力量在于：这不是"多数决这个方法笨"。<em>你换任何方法都逃不掉</em>——只要你坚持那四条要求。而四条里最强、最容易被忽视的是第三条<strong>无关选项的独立性</strong>：社会认为川菜比日料好，这个判断不该因为菜单上多了一道火锅而翻转。听起来天经地义，可它实际上禁止了规则使用任何"强度"信息——它只准你看"谁排在谁前面"，不准你看"领先多少"。<strong>一旦不许比较强度，能用的信息就少到只剩下把某个人的排序抄下来。</strong></p>
+
+    <div class="quote-inline">
+      阿罗证明的不是"我们还没找到好办法"，而是"<strong>这几条看起来天经地义的要求，本身彼此不相容</strong>"。所以问题不在投票，也不在人心：它是<em>加总</em>这件事的形状。人可以有意志，"人民的意志"却未必是一个良定义的东西。
+    </div>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">邓肯·布莱克</span>
+          <span class="comm-tag">DUNCAN BLACK · 1948</span>
+        </div>
+        <p>比阿罗早两年，苏格兰经济学家布莱克在《论群体决策的原理》中找到了第一道逃生门：<strong>如果所有人的偏好是"单峰"的</strong>——大家把选项排在同一条轴上（比如支出从少到多、政策从左到右），每个人有一个最偏好的点，离它越远越不喜欢——那么多数决不但不会转圈，还会稳定地选出<em>中位选民</em>最偏好的那一项。</p>
+        <p>这就是<strong>中位选民定理</strong>。它说明阿罗的"不可能"是<em>最坏情况下</em>的不可能：只要放弃"无限制定义域"，承认现实中的分歧常常落在一条轴上，投票立刻恢复理智。代价是——世界并不总能被压进一条轴。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">阿马蒂亚·森</span>
+          <span class="comm-tag">AMARTYA SEN · 1970</span>
+        </div>
+        <p>最深的一层批评来自森的《集体选择与社会福利》：阿罗的困境，很大程度上源于他<strong>只允许序数信息、禁止人际比较</strong>——只知道"甲更喜欢 A"，不知道"甲有多喜欢"，更不许问"甲的在乎与乙的在乎孰轻孰重"。可现实的伦理判断从来离不开这类比较（饥民的一碗饭与富人的一碗饭）。<em>把信息基础放宽，不可能性就松动。</em></p>
+        <p>但森同年又添了一道新墙：《帕累托自由主义的不可能性》证明，<strong>连"帕累托原则"与"每人对自己私事有最小决定权"都不能同时成立</strong>。他因社会选择与福利经济学获 1998 年诺奖——他的贡献恰恰是让这门学问从"不可能"走向"在什么条件下可能"。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">吉巴德 &amp; 萨特斯韦特</span>
+          <span class="comm-tag">1973 / 1975 · 操纵定理</span>
+        </div>
+        <p>阿罗管"聚合的逻辑"，这对孪生定理管"投票的诚实"。吉巴德（1973，《计量经济学》）与萨特斯韦特（1975，《经济理论杂志》）各自独立证明：<strong>当备选项在三个以上时，唯一"无法被策略性操纵"的投票规则，同样是独裁</strong>——任何非独裁的规则，都存在某种情形，让你谎报偏好比说实话更有利。</p>
+        <p>这一击封死了最诱人的退路。你可以为了绕开阿罗而放弃 IIA、改用计分或排序复选，但换来的规则几乎必然可被操纵：<em>策略投票不是选民的道德问题，是规则的结构性质。</em></p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">威廉·莱克</span>
+          <span class="comm-tag">WILLIAM RIKER · 1982</span>
+        </div>
+        <p>政治学对阿罗最重要的一次消化。莱克在《自由主义对抗民粹主义》中说：定理击垮的是<strong>民粹主义式的民主观</strong>——那种认为投票能读出一个客观存在的"人民意志"、当选者因此获得执行它的神圣授权的想法。既然聚合出的"社会偏好"随规则与议程而变，这个"意志"就并不稳固。</p>
+        <p>但莱克坚持，<strong>自由主义式的民主观毫发无损</strong>：民主的价值不在于精确表达人民意志，而在于它能<em>周期性地、和平地把统治者赶下台</em>。这是一种否定性的、可纠错的价值——恰恰不需要"完美加总"来支撑。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">孔多塞的圈</span>
+          <span class="case-when">1785 · 巴黎</span>
+        </div>
+        <p>孔多塞在《论分析方法在多数决定之概率上的应用》中给出了那个致命的三人三选项例子：个体偏好完全传递，多数决的结果却首尾相接成环。他与博尔达为"该用两两比较还是计分排序"争论多年，谁也没能说服谁——因为，如阿罗一个半世纪后所证，<strong>他们争的问题没有完美答案</strong>。</p>
+        <div class="case-insight">最早的裂缝往往被当成趣闻收着。阿罗的贡献是把这条裂缝从"某个方法的瑕疵"升级为"任何方法的边界"——一个一次性的、结构性的不可能。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">佛罗里达的 537 票与"剧透者"</span>
+          <span class="case-when">2000 · 美国大选</span>
+        </div>
+        <p>小布什以佛罗里达州 537 票之差赢得全国大选。同一州，绿党候选人拉尔夫·纳德拿到约 9.7 万票。争论至今未休，但结构本身很清楚：<strong>一个几乎不可能当选的第三人进场，改变了前两人的相对胜负</strong>——这正是"无关选项独立性"在现实中失效的样子。</p>
+        <div class="case-insight">所谓"剧透效应"（spoiler effect）不是道德故事，而是计票规则的性质。指责选民"浪费选票"，是在怪罪玩家没有配合规则的缺陷。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">2002 年法国：被挤掉的第二名</span>
+          <span class="case-when">2002 · 法国总统大选</span>
+        </div>
+        <p>第一轮，左翼选票被多位候选人分散，总理若斯潘以微弱差距落后于极右翼的让-马里·勒庞，无缘第二轮，当晚宣布退出政坛。第二轮成了希拉克对勒庞——左翼选民大规模含泪票投希拉克，最终希拉克以约 82% 的空前比例当选。</p>
+        <div class="case-insight">同一批选民、同一批候选人，若换一套计票规则，进入第二轮的人就完全不同。"民意"在这里不是被测量出来的，而是被规则<em>算</em>出来的。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">伯灵顿：孔多塞赢家落选</span>
+          <span class="case-when">2009–2010 · 佛蒙特州</span>
+        </div>
+        <p>伯灵顿市用排序复选制（IRV）选市长。民主党人安迪·蒙特罗尔在两两对决中<strong>同时击败另外两名主要对手</strong>（对共和党的赖特 56:44、对进步党的基斯 54:46），是标准的<em>孔多塞赢家</em>；可他第一选择票偏少，在中间轮次被淘汰，最终当选的是基斯。一年后，选民公投废除了 IRV。</p>
+        <div class="case-insight">教科书级的现场：多数人明确更想要的那个人，被规则的中间步骤淘汰了。也提醒改革者——一套规则在理论上再优雅，只要一次"结果不像话"，公众的耐心就会用完。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">奥斯卡为什么改了计票法</span>
+          <span class="case-when">2009 起 · 最佳影片</span>
+        </div>
+        <p>2009 年，美国电影艺术与科学学院把最佳影片提名从 5 部扩到 10 部，同时把计票改为<strong>排序复选制</strong>：评委排序，逐轮淘汰末位并转移选票。动机很直白——提名一多，简单多数会让一部只被小圈子狂热支持的片子以两成票胜出；排序复选则偏向那部"没多少人把它排第一，但几乎没人讨厌"的电影。</p>
+        <div class="case-insight">规则不是中立的容器，它自带价值取向：简单多数奖励"最强烈的少数"，排序复选奖励"最广的可接受"。改规则就是改赢家——这句话在颁奖礼上和在议会里同样成立。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>阿罗定理在数学上无可辩驳（它是被严格证明的定理，不存在"反例"），可它被引用时的样子，往往和它证明的东西相去甚远。所以这一节写的是：<strong>它并不主张什么</strong>。</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 最大的误读：它没有说"民主不可能"</strong>它说的是"不存在同时满足那四条的完美聚合规则"，不是"任何规则都一样烂"，更不是"投票毫无意义"。多数决、排序复选、赞成投票、计分投票各有各的病，但它们的病并不相同、也并非同等严重。阿罗本人终身是民主的坚定支持者——他指出的是理想加总方式的不存在，不是集体决策的破产。<em>从"没有完美"跳到"所以怎样都行"，是给犬儒主义披上了定理的外衣。</em>
+      </div>
+      <div class="critique-item">
+        <strong>② 那四条并非同样"天经地义"——尤其是 IIA</strong>无关选项独立性听着无害，实则极强：它禁止规则使用任何强度信息，只准看两两之间的相对次序。<em>放弃它</em>，博尔达计分、赞成投票、计分投票、多数判定就都回到桌面上，而且相当好用。定理的真正教益不是"无路可走"，而是"你必须明确<strong>牺牲哪一条</strong>，并为这个牺牲负责"。
+      </div>
+      <div class="critique-item">
+        <strong>③ 只用序数、禁止人际比较，是把伦理问题藏进了技术假设（森）</strong>一旦允许强度与人际比较——功利主义式的加总、罗尔斯式的看最差者——不可能性就消解。但这不是白捡的：强度如何度量？谁来比较？自报的强度极易被夸大。所以这条出路是<em>把难题换了个地方</em>，而不是取消它。诚实的说法是：加总必然要引入价值判断，问题只是你把它放在明处还是暗处。
+      </div>
+      <div class="critique-item">
+        <strong>④ 它是"最坏情况"的定理，不是"每次投票都会崩"</strong>布莱克证明，只要偏好是单峰的（分歧落在一条轴上），多数决就有稳定赢家。现实中大量议题——预算多少、税率高低、政策左右——正是这种形状。<em>循环与悖论确实存在，但它们不是常态，而是特定偏好结构下才被触发的故障。</em>把定理当成"投票总在骗人"，是把可能性当成了必然性。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 逃出去也逃不远：操纵与无穷回归</strong>吉巴德-萨特斯韦特定理表明，你为绕开 IIA 而选用的任何非独裁规则，几乎必然可被策略性谎报操纵。更麻烦的是元层次的问题：<em>究竟该采用哪套投票规则，本身又是一次集体选择</em>——它同样受阿罗定理的约束。想靠"选一个更好的规则"来彻底解决问题，会掉进无穷回归。
+      </div>
+    </div>
+
+    <p class="mt-24">所以用阿罗定理的正确姿势是：<strong>把它当一副"看见规则"的眼镜</strong>，而不是给"民主没用""众口难调所以别费劲"背书的口号。<em>看见任何一次集体决定，都先问三句：用的是哪套规则？这套规则牺牲了哪一条要求？如果换一套，赢家会不会换人——如果会，那么此刻的"共识"，有多少是人的意志，有多少是规则的产物。</em></p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">孔多塞悖论</div>
+        <div class="conn-name-en">Condorcet Paradox · 1785</div>
+        <div class="conn-rel">⟵ 思想先声</div>
+        <div class="conn-desc">多数决可以转圈：个体偏好传递，社会偏好却不传递。阿罗把这条一百六十年的裂缝证明成了一堵墙。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">中位选民定理</div>
+        <div class="conn-name-en">Median Voter Theorem · Black</div>
+        <div class="conn-rel">⟶ 逃生门</div>
+        <div class="conn-desc">放弃"无限制定义域"：偏好单峰时多数决稳定收敛到中位选民。也解释了为何两党政纲总往中间靠。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">吉巴德-萨特斯韦特定理</div>
+        <div class="conn-name-en">Gibbard–Satterthwaite</div>
+        <div class="conn-rel">⟷ 孪生不可能</div>
+        <div class="conn-desc">非独裁的规则必可被策略操纵。阿罗封死"完美聚合"，它封死"诚实投票"，两道墙夹出同一个房间。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">帕累托自由主义的不可能性</div>
+        <div class="conn-name-en">Impossibility of a Paretian Liberal · Sen</div>
+        <div class="conn-rel">∥ 另一条不可能</div>
+        <div class="conn-desc">连"全体一致优先"与"私事自决"都不能兼容。社会选择理论的第二堵墙，指向权利与效率的冲突。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">机制设计</div>
+        <div class="conn-name-en">Mechanism Design · Hurwicz / Maskin / Myerson</div>
+        <div class="conn-rel">⟶ 直系后裔</div>
+        <div class="conn-desc">既然完美规则不存在，就退一步问：给定约束，什么规则最不坏？把"设计游戏"变成一门工程（2007 诺奖）。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">哥德尔不完备定理</div>
+        <div class="conn-name-en">Incompleteness · №040</div>
+        <div class="conn-rel">∥ 平行的墙</div>
+        <div class="conn-desc">两条同样气质的定理：极限不是能力不足，而是系统的形状。一个划出证明的边界，一个划出加总的边界。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">纳什均衡</div>
+        <div class="conn-name-en">Nash Equilibrium · №022</div>
+        <div class="conn-rel">⟶ 策略层</div>
+        <div class="conn-desc">投票是博弈：一旦规则可被操纵，选民就会按预期结果而非真实偏好下注，"含泪票"是均衡而非软弱。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">古德哈特定律</div>
+        <div class="conn-name-en">Goodhart's Law · №005</div>
+        <div class="conn-rel">⟹ 同族机制</div>
+        <div class="conn-desc">规则一旦成为目标就被扭曲。策略投票正是古德哈特在投票箱里的化身：被度量的偏好不再是真实的偏好。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>这条定理最实用的地方，是让你停止追问"大家到底想要什么"，转而去看"我们是用什么规则问出这个答案的"。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">团队决策与投票</div>
+        <div class="usage-text">别把投票结果当成"团队的真实意愿"——它一半取决于计票规则、一半取决于议程顺序。<em>先把规则定下来并公开，再收集意见</em>；谁能决定"先投哪一场""要不要加一个选项"，谁就握着一半的结果。事后改规则，等于事后改赢家。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">该收排序，还是该收打分</div>
+        <div class="usage-text">如果你在乎"有多想要"而不只是"更想要谁"，就别只收排序——用打分、预算分配（每人 100 分自由分配）、或"可接受/不可接受"的赞成投票。代价是这些方法对策略性打分敏感，所以配上匿名、一次性提交、事后公开分布，把操纵的收益压下去。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">识别"剧透效应"</div>
+        <div class="usage-text">一个警报信号：<em>加进来一个几乎没人选的新选项，原有两个选项的胜负却翻转了</em>。这说明起作用的不是偏好而是规则。评审、选品、招聘定级里都常见——发现它，就该回头检查计分方式，而不是相信那个翻转。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">排优先级与"循环"</div>
+        <div class="usage-text">给几个方案做两两比较，若出现 A 胜 B、B 胜 C、C 又胜 A 的圈，别硬逼团队排出"唯一最优先"——那个圈说明诸位在用不同维度打分。此时正确的动作是把维度拆开明说（成本 / 风险 / 收益各排一次），或干脆分批做，而不是靠再投一轮来碾出一个假共识。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">面对分歧的心态</div>
+        <div class="usage-text">有些僵局不是因为谁蠢或谁坏，而是结构上不存在一个能同时满足所有合理要求的加总方式。承认这一点，就能把力气从"找到那个绝对正确的答案"转向<em>"设计一个大家愿意接受、并且可以纠错的程序"</em>——莱克那句话值得记住：可贵的不是选出完美的人，而是能把错的人换掉。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我最近参与的那次"集体决定"，若换一套计票规则或换一个议程顺序，结果会不会不同？如果会，我们当时称之为"共识"的东西，究竟是谁的意志？</div>
+      <div class="q">当我说"大家都想要 A"时，我是在陈述一个可验证的事实，还是在把一套我恰好选中的加总方式，说成客观的民意？</div>
+      <div class="q">我的内心也有几个各执一词的"选民"——安稳、野心、责任、好奇。它们的偏好也会转圈。那么我以为的"我真正想要的"，会不会同样只是某一次议程顺序的产物？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Kenneth J. Arrow《Social Choice and Individual Values》</span>
+        <span class="further-meta">Wiley, 1951（2nd ed. 1963）— 社会选择理论的奠基之作</span>
+      </li>
+      <li>
+        <span class="further-title">Kenneth J. Arrow《A Difficulty in the Concept of Social Welfare》</span>
+        <span class="further-meta">Journal of Political Economy 58(4), 1950, pp.328–346 — 定理首次发表</span>
+      </li>
+      <li>
+        <span class="further-title">Marquis de Condorcet《Essai sur l'application de l'analyse à la probabilité des décisions rendues à la pluralité des voix》</span>
+        <span class="further-meta">Paris, 1785 — 孔多塞悖论的源头</span>
+      </li>
+      <li>
+        <span class="further-title">Duncan Black《On the Rationale of Group Decision-making》</span>
+        <span class="further-meta">Journal of Political Economy 56(1), 1948 — 单峰偏好与中位选民定理</span>
+      </li>
+      <li>
+        <span class="further-title">Amartya Sen《Collective Choice and Social Welfare》</span>
+        <span class="further-meta">Holden-Day, 1970 — 信息基础的批评；同年另有《The Impossibility of a Paretian Liberal》(JPE 78)</span>
+      </li>
+      <li>
+        <span class="further-title">William H. Riker《Liberalism Against Populism》</span>
+        <span class="further-meta">W. H. Freeman, 1982 — 阿罗定理的政治哲学后果</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Arrow's impossibility theorem</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem" target="_blank">en.wikipedia.org/wiki/Arrow's_impossibility_theorem</a> — 条件的精确表述与各种逃生路径</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="050-cybernetics.html">
+      <small>← PREVIOUS</small>
+      №050 控制论
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;051&nbsp;·&nbsp;阿罗不可能定理&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
