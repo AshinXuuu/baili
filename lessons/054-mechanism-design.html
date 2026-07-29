@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№054 机制设计 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 经济 · 制度</span>
+    <span class="lesson-no">№ 054</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 054 · ECONOMICS</div>
+    <h1 class="lesson-title">机制设计</h1>
+    <div class="lesson-title-en">Mechanism Design · reverse game theory: designing the rules, not playing them</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>列奥尼德·赫维茨</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1960 / 1972</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>经济 · 制度 · 激励</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《论信息分散的系统》</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 一场意识形态争吵，被翻译成了一道工程题</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1930 到 1940 年代，经济学界打了一场后来被称为"社会主义计算大辩论"的仗。米塞斯与哈耶克说：中央计划者算不出资源该怎么配，因为需要的知识<em>分散在千百万人手里</em>，而且大多说不清楚、传不上去；兰格与勒纳反驳：只要把价格当作参数来调，计划者一样可以算。哈耶克 1945 年那篇《知识在社会中的运用》把话说到了尽头——问题不在算力，在<strong>知识根本不在一个地方</strong>。</p>
+
+    <p>两边都很有道理，但谁也说服不了谁，因为这场架吵的是立场，没有共同的度量衡。</p>
+
+    <p>把它变成一道技术题的人叫<strong>列奥尼德·赫维茨</strong>（Leonid Hurwicz，1917–2008）。他生于莫斯科的一个波兰犹太家庭，在华沙长大，二战爆发后一路流亡，最终落脚明尼苏达大学。他的做法是把"市场"和"计划"都还原成同一种东西——<strong>资源配置过程</strong>：一套规定了"谁向谁传什么信息、然后按什么规则出结果"的程序。一旦这样看，两者就可以放在同一张桌子上比较：谁传的信息更少？谁的结果更接近有效率？</p>
+
+    <p>1960 年，他在《资源配置过程中的最优性与信息效率》里搭好了这套语言。但真正的一刀落在 1972 年的《论信息分散的系统》：他指出，前面所有的比较都漏掉了一件要命的事——<strong>信息不是自己走上来的，是人报上来的，而人会算自己划不划算。</strong>于是他提出了那个后来支撑起整门学问的概念：<strong>激励相容</strong>（incentive compatibility）。</p>
+
+    <p class="muted">2007 年，赫维茨与埃里克·马斯金、罗杰·迈尔森共获诺贝尔经济学奖，表彰"奠定了机制设计理论的基础"。领奖那年他 90 岁，是当时最年长的诺奖得主，因身体原因在明尼阿波利斯以视频方式出席；不到一年后，2008 年 6 月去世。这场从哈耶克手里接过来的追问，他追了大半个世纪。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典 · 不要求人诚实，只让诚实划算</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <p>赫维茨的原文是高度形式化的，几乎全是符号。但它的内核可以毫无损失地说成一段人话：</p>
+
+    <div class="theorem">
+      <div class="theorem-label">HURWICZ 1960 / 1972</div>
+      <div class="theorem-body">
+        一切经济制度，都可以看作一个<strong>机制</strong>：它规定人们各自能发出什么信息（报价、申报、投票、排序），以及这些信息如何被汇总成一个结果（谁得到什么、谁付出什么）。<br><br>
+        既然每个人只知道自己那一份私人信息，而且只会按对自己有利的方式行动，那么一个机制要能用，就必须满足——<strong>激励相容</strong>：<em>如实地报出自己知道的东西，本身就是对自己最有利的做法。</em><br><br>
+        不满足这一条的机制，收上来的信息是假的；用假信息算出来的最优配置，只是纸面上的最优。
+      </div>
+      <div class="theorem-cite">——Hurwicz,《Optimality and Informational Efficiency in Resource Allocation Processes》(in Arrow, Karlin &amp; Suppes eds., Stanford University Press, 1960) 与《On Informationally Decentralized Systems》(in McGuire &amp; Radner eds., <em>Decision and Organization</em>, North-Holland, 1972)，文意转述</div>
+    </div>
+
+    <p>此后半个世纪，这门学问就被三条约束框住了。任何一个能真正落地的机制，必须同时过这三关：</p>
+
+    <p><strong>① 激励相容</strong>——说真话对自己划算。<strong>② 个人理性</strong>（又叫参与约束）——参加比不参加好，否则人不来。<strong>③ 可行性</strong>（预算平衡）——不用外面倒贴钱，机制自己收支得平。</p>
+
+    <p>任何一条单拿出来都不难。<em>难在同时。</em>这门学问几乎所有的漂亮结果和所有的坏消息，都是围绕"三条能不能同时满足"打转的。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 博弈论倒过来做</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>机制设计常被叫作<strong>"逆向的博弈论"</strong>（reverse game theory），这个别名比它的正名好懂得多。</p>
+
+    <p>博弈论（见 №022）问的是：<em>给定一套规则，聪明的自利者会怎么玩，最后停在哪个均衡？</em>机制设计把这句话整个掉过头来：<em>我想要某个结果——那我该设计什么规则，使得每个人各自只顾自己时，这个结果会自动被做出来？</em></p>
+
+    <p>一句话：<strong>博弈论解的是"怎么玩"，机制设计解的是"怎么定规矩"。</strong></p>
+
+    <p class="quote-inline">"你不能要求人诚实、无私、顾全大局。<br>你只能设计一套规则，让诚实成为对他自己最有利的做法。"</p>
+
+    <p>最小的样本是那个人人都会的分蛋糕办法：<strong>一人切，另一人先选。</strong>注意它做到了什么——它没有裁判，没有道德教育，没有事后追责；切的那个人自己就有充分动力切得公平，因为他吃的是剩下那块。这就是激励相容的极简版：<em>规则替公正干了活。</em></p>
+
+    <p>再看它的日常翻译。当你想让别人如实说话时，通常的做法是讲道理、讲信任、讲价值观。机制设计的问法完全不同，而且冷得多：</p>
+
+    <p><strong>我不问你诚不诚实，我问你说谎划不划算。</strong></p>
+
+    <p>如果在你的制度里，说谎的人拿得更多、报警的人挨罚、老实人吃亏，那么无论墙上贴多少条价值观，你收到的都会是漂亮的假话。这不是人心坏，这是<em>机制在按它被设计的样子运转</em>。</p>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">威廉·维克里</span>
+          <span class="comm-tag">1961 · 让说真话成为占优策略</span>
+        </div>
+        <p>比赫维茨提出"激励相容"还早十一年，哥伦比亚大学的<strong>威廉·维克里</strong>在《反投机、拍卖与竞争性密封投标》（<em>Journal of Finance</em> 16, 1961）里给出了这个思想最干净的一次演示：<strong>密封投标、出价最高者得标，但只付第二高的价。</strong></p>
+        <p>结果反直觉却极其牢固：在这个规则下，<em>如实报出自己心里的估值是占优策略</em>——不管别人怎么出，照实报都不吃亏。因为你出的价只决定"你是否赢"，不决定"你付多少"。虚报高了可能以超过自己心理价位的钱买下，虚报低了可能白白错失，两头都不划算。</p>
+        <p>这条思路后来被克拉克（1971）与格罗夫斯（1973）推广成 <strong>VCG 机制</strong>，成了整个领域的标准工具箱。<span class="muted">维克里 1996 年 10 月 8 日与米尔利斯共获诺奖，三天后因心脏病去世，年 82 岁——他几乎没来得及看见自己被承认。</span></p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">埃里克·马斯金</span>
+          <span class="comm-tag">1977 / 1999 · 别只证明有好均衡，要证明没坏均衡</span>
+        </div>
+        <p><strong>马斯金</strong>提出了一个更难对付的问题。设计者通常只做到这一步：证明"存在一个均衡，能给出我想要的结果"。可博弈往往有<em>多个</em>均衡——人们完全可能落到另一个同样稳定、但你根本不想要的那个上。</p>
+        <p>他的《纳什均衡与福利最优》（工作论文 1977，正式发表于 <em>Review of Economic Studies</em>, 1999）因此追问：什么样的社会目标是可以被<strong>实施</strong>（implement）的——即，<em>机制的每一个均衡都给出你想要的结果？</em>答案是那个后来以他命名的条件：<strong>马斯金单调性</strong>。它是必要条件，配上另几条也近乎充分。</p>
+        <p>实践含义极硬：一套规则上线之后，你要担心的不是"最好的情况会不会发生"，而是<strong>"最坏的那个稳定状态在哪里"</strong>。所有靠"大家应该会往好的方向配合"撑着的制度，都还没经过这一关。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">罗杰·迈尔森</span>
+          <span class="comm-tag">1979 / 1983 · 显示原理，以及那条坏消息</span>
+        </div>
+        <p>规则的空间是无穷大的——你可以设计任何形式的申报、竞价、投票、多轮讨价。<strong>迈尔森</strong>在《激励相容与讨价还价问题》（<em>Econometrica</em> 47, 1979）里给出了让这门学问变得可算的那把钥匙：<strong>显示原理</strong>（revelation principle）。</p>
+        <p>它说：<em>任何机制在均衡里能达成的结果，都可以由一个"让所有人直接如实申报"的机制达成。</em>于是设计者不必搜遍无穷的规则空间，只需在一个小得多的盒子里找最优——这是机制设计从哲学变成最优化问题的那一刻，也是 1981 年"最优拍卖设计"等一系列结果的地基。</p>
+        <p>但同一个人也给出了这门学问最重的一记闷棍。1983 年他与<strong>马克·萨特斯韦特</strong>合写的《双边交易的有效机制》（<em>Journal of Economic Theory</em> 29, pp.265–281）证明：<em>连一个买家对一个卖家、各自只知道自己估值这么简单的场景，都不存在同时满足激励相容、自愿参与、不靠外部补贴，且只要有正剩余就必定成交的机制。</em>详见第六节。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">阿尔文·罗斯</span>
+          <span class="comm-tag">2000s · 把黑板搬进医院</span>
+        </div>
+        <p>前三位把理论建起来，<strong>阿尔文·罗斯</strong>（2012 年与沙普利共获诺奖）把它变成了一门<strong>市场设计</strong>（market design）的工程学。他的主张直白：经济学家该像工程师一样工作——不满足于证明存在性，要去把一个坏掉的真实市场修好，然后看它跑不跑得动。</p>
+        <p>他和合作者重新设计了美国住院医师匹配系统、发起了肾脏配对交换、改写了波士顿与纽约的学校选择机制（见第五节）。</p>
+        <p>他对理论的补充也来自现场：真实的机制还要过<strong>四关</strong>——<em>厚度</em>（得有足够多人来）、<em>不拥挤</em>（多到能在有限时间里处理完）、<em>安全</em>（让人敢于说真话而不担心被反过来利用），以及<strong>不被社会厌恶</strong>（repugnance：有些交易哪怕互利也不被允许，比如买卖器官）。这四条在原始理论里一条都没有，却决定了现实中的生死。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">你向左我向右</span>
+          <span class="case-when">古代 · 分地与分蛋糕</span>
+        </div>
+        <p>《创世记》第十三章里，亚伯拉罕与侄子罗得的牧人因牧地起了争执。亚伯拉罕的解法不是评理，也不是仗着辈分先挑，而是提出一条规则：<em>"你向左，我就向右；你向右，我就向左。"</em>由罗得先划、亚伯拉罕后选——或者反过来，谁划谁不先选。</p>
+        <p>这就是 divide and choose，机制设计现存最古老的样本之一。它没有裁判，没有共同的估价标准，甚至不要求两人对"好地"的看法一致；它只做了一件事：<strong>把划分权和选择权拆给了不同的人。</strong></p>
+        <div class="case-insight">三千年前就有人明白：与其争论谁更公正，不如让规则替公正干活。<strong>把"决定怎么分"和"决定拿哪份"分开，是激励相容最原始、也最好用的一招</strong>——从分蛋糕到分家产到合伙散伙，至今没有更省事的替代品。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">可爱，却孤单的维克里拍卖</span>
+          <span class="case-when">1961–今</span>
+        </div>
+        <p>二价拍卖在理论上近乎完美：说真话是占优策略，配置有效率，参与者不用去猜别人。它也确实活在日常里——eBay 的代理竞价本质上就是二价：你设一个上限，系统只替你出到刚好压过对手所需的那一点。</p>
+        <p>可一到高价值的组合拍卖（一次卖多个互相关联的标的，比如频谱），几乎没有政府或公司敢用纯粹的 VCG。奥苏贝尔与米尔格罗姆 2004 年那篇标题就写着答案的论文——<strong>《可爱却孤单的维克里拍卖》</strong>——列出了理由：收入可能低得离谱；<em>输家串谋就能压低赢家付款而不改变配置</em>；容易诱使投标人拆分身份分别报价；一旦估值不是纯私人的（大家都在猜同一块频谱值多少钱），占优策略这个漂亮性质当场失效。</p>
+        <div class="case-insight">这是全篇最该记住的一条实践教训：<strong>一个机制在理论维度上完美，可能恰恰因为理论没考虑的那几个维度——收入、合谋、进入——在现实里无人敢用。</strong>好机制不是最优雅的那个，是在被人反复攻击之后仍然站得住的那个。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">两万名医生和一次算法改版</span>
+          <span class="case-when">1952 / 1998 · 美国住院医师匹配</span>
+        </div>
+        <p>二十世纪上半叶，美国医院抢住院医师抢到了荒唐的地步：为了抢在同行前面，录用要约一年比一年早，最后早到学生还没修完临床课、成绩单还没出来就被逼着当场答复。这是典型的市场<strong>抢跑</strong>（unraveling）——所有人都知道这样不好，但谁也不敢单方面往后退。</p>
+        <p>1952 年，全美住院医师匹配计划（NRMP）改用集中匹配来终结这场军备竞赛。1962 年，盖尔与沙普利发表<strong>延迟接受算法</strong>，给这类匹配提供了理论骨架：申请人依次向心仪单位申请，单位暂时保留最好的、拒掉其余，被拒者再申请下一家，直到没人再被拒——结果保证<em>稳定</em>（不存在一对彼此都更想要对方却没配上的组合）。</p>
+        <p>1990 年代，NRMP 陷入信任危机：申请人怀疑如实填报志愿会吃亏，双医生夫妻要配到同一座城市的需求也无法处理。<strong>罗斯与埃利奥特·佩兰森</strong>受托重新设计，改为申请人提议的版本并处理配对约束，1997 年通过、1998 年首次使用。今天每年约两万余名新医生由它分配去向。</p>
+        <div class="case-insight">一个市场坏掉的样子，往往不是价格错了，而是<strong>时间错了</strong>——大家越抢越早，直到在信息严重不足的时候被迫决定。机制设计在这里修的不是价格，是<em>时序与信任</em>：让"如实填报"变成安全的做法，抢跑就自己停了。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">当价格被法律禁用：肾脏交换</span>
+          <span class="case-when">2004– · 新英格兰与全美</span>
+        </div>
+        <p>一个常见的困境：你愿意给亲人捐一颗肾，但血型或抗体不相容，捐不了。另一处也有一对同样卡住的人。两对之间交叉配对，四个人可能全都得救。</p>
+        <p>问题在于，器官买卖在几乎所有国家都被法律与伦理明确禁止——这正是罗斯说的 <em>repugnance</em>：一桩双方自愿且互利的交易，社会就是不允许用钱来做。于是价格这个最强的配置工具被整个拿走了。</p>
+        <p>罗斯、<strong>坦丰·松梅兹</strong>与<strong>乌特库·温维尔</strong>在《肾脏交换》（<em>Quarterly Journal of Economics</em>, 2004）里给出替代方案：用匹配机制替代价格，把两两交换扩展到多方循环乃至由无偿捐献者引发的<strong>捐赠链</strong>。次年，他们在《美国经济评论》上报告了新英格兰肾脏交换清算所的实际运行。这套办法此后成为多国常规。</p>
+        <div class="case-insight">这是机制设计最有说服力的一次亮相：<strong>当"用钱解决"这条路被正当地封死时，它提供了另一条让互利交易发生的路。</strong>规则不只是效率工具，也是在道德约束之内把好事做成的手艺。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">同一年，同样的频谱：每人 650 欧元与 170 欧元</span>
+          <span class="case-when">2000 · 欧洲 3G 拍卖</span>
+        </div>
+        <p>2000 年，欧洲各国先后拍卖 3G 移动牌照。卖的东西高度相似，时间前后相差不过数月，结果却天差地别。按<strong>保罗·克莱姆佩勒</strong>的统计，六国的人均收入分别是：英国 650 欧元、德国 615、意大利 240、荷兰 170、奥地利 100、瑞士 20。</p>
+        <p>差别几乎全在设计。英国的设计者从一开始就盯着一个问题：<em>牌照数量若不多于在位运营商，新进入者根本不会来</em>，于是围绕"如何吸引进入"反复调整方案。荷兰则拿五张牌照对着五家在位运营商——唯一敢报名的新进入者很快在被广泛描述为掠夺性的压力下退出，最终成交额据估算不到赢家自己心中价值的三分之一。</p>
+        <p>克莱姆佩勒在《如何（不）办拍卖》（<em>European Economic Review</em>, 2002）里下了那句让理论家难堪的结论：<strong>拍卖设计中真正要紧的，往往不是那些精巧的理论，而是防合谋、防掠夺、防阻止进入这些老掉牙的竞争政策问题。</strong></p>
+        <p class="muted">对照组：十七年后，美国联邦通信委员会做了一次更大胆的双向工程——2017 年的广播频谱"激励拍卖"，用一场反向拍卖从电视台手里回购频谱、再正向拍给移动运营商，总额 198 亿美元，其中 100.5 亿付给出让频谱的广播商，逾 70 亿用于削减赤字。同一门学问，成败的分水岭不在数学有多深，在<em>有没有把"谁愿意来、来了会不会被欺负"想透</em>。</p>
+        <div class="case-insight">机制的成败常常不在数学层，而在<strong>"有几个人愿意来玩"</strong>这一层。一套在纸上无懈可击的规则，如果不能把足够多的、真正独立的参与者请进场，它算得再对也没有意义。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>这门学问最诚实的地方，是它最重要的一批结果都是<strong>不可能定理</strong>——由它自己人证出来的、关于自己能力边界的坏消息。</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 迈尔森-萨特斯韦特：连一对一的买卖都做不到完美</strong>设一个买家一个卖家，各自只知道自己的估值。你想要的机制是：说真话划算、双方都愿意参加、不靠外面补贴，而且<em>只要买家出价高于卖家成本就一定成交</em>。1983 年的定理证明：这样的机制不存在。原因干净得让人无话可说——<strong>为了让人说真话，就得让说真话有赚头，这笔"信息租金"只能从交易剩余里出</strong>；两个人、没有外部的钱，付完租金就不够了。于是任何可行的设计，都必须在"买价略高于卖价"的边缘留一条<em>不成交的缓冲带</em>。所以"设计得够聪明就没有摩擦"是幻觉：<strong>信息本身是要收租的。</strong>
+      </div>
+      <div class="critique-item">
+        <strong>② 假设强到不像真人</strong>标准模型默认：参与者是贝叶斯理性的、共享同一套关于彼此类型的先验分布、会算清楚、只在乎自己的收益。真实的人不这样算（见 №023），会犯错、会疲惫、也会在乎公平——最后通牒博弈里人宁可两败俱伤也要惩罚不公。二价拍卖在理论上说真话是<em>占优策略</em>，可实验室里仍有大量人系统性地出价偏离。<em>一个只有理性人才能用对的机制，不是一个好机制。</em>
+      </div>
+      <div class="critique-item">
+        <strong>③ 威尔逊批判：越"最优"，往往越脆</strong>罗伯特·威尔逊提出的这条方法论警告（常被称为 Wilson doctrine）说：好的机制不该依赖对参与者信念、类型分布、共同知识的精细假设——<strong>依赖越少，越经得起换环境</strong>。可经典机制设计求出的"最优机制"，恰恰常常是对某个特定分布高度定制的：分布估错一点，性质就崩。这催生了后来的<em>稳健机制设计</em>（Bergemann &amp; Morris, 2005），代价是放弃一部分理论上的最优。<em>现实里更该追求的通常不是最优，是不容易坏。</em>
+      </div>
+      <div class="critique-item">
+        <strong>④ 设计者本身是个没解决的问题</strong>整套理论的结构是"一个中立的设计者，为一群自利的参与者定规矩"。可现实里设计者也是人：监管者会被行业俘获，平台既当裁判又当运动员（自家商品在自家算法里排序），公司的考核规则由最了解怎么钻它的人来写。更根本的是——<strong>机制设计只回答"给定目标怎么达成"，答不了"目标该是什么"</strong>；而后一问，№051 已经证明没有完美答案。<em>它是一把好用的工具，工具从不保证握它的手是干净的。</em>
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 最危险的滥用：把它当"设了激励就万事大吉"的许可证</strong>"人性靠不住，那就用制度约束"——这话对，但常被用来给一套粗糙的 KPI 背书。规则一上线就会被逆向工程：指标一旦成为目标，就不再是好指标（见 №005）；被度量的人会反过来改造自己去迎合度量。荷兰的 3G 拍卖数学上没有错，现实里惨败。<em>把三条约束背下来很容易，把合谋、进入、公平感、政治可接受性、执行成本一起算进去，才是这门手艺真正难的地方。</em>
+      </div>
+    </div>
+
+    <p class="mt-24">所以用它的正确姿势是：<strong>把它当一副"看规则"的工程眼镜，而不是一台能算出好制度的机器。</strong>遇到任何"大家都该自觉一点"的呼吁，先问三句——<em>说真话对他划算吗？参加比不参加好吗？这套规则要不要有人在外面倒贴钱？</em>三句答不上来的地方，喊口号不会有结果。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">纳什均衡与博弈论</div>
+        <div class="conn-name-en">Nash Equilibrium · №022</div>
+        <div class="conn-rel">⟵ 逆运算</div>
+        <div class="conn-desc">博弈论给定规则求均衡，机制设计给定想要的均衡求规则。同一套数学，跑的方向相反。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">阿罗不可能定理</div>
+        <div class="conn-name-en">Arrow's Impossibility Theorem · №051</div>
+        <div class="conn-rel">⟵ 直系上游</div>
+        <div class="conn-desc">阿罗证明完美的聚合规则不存在；机制设计接着问"既然完美不存在，给定约束下什么规则最不坏"。它是从不可能定理里长出来的工程学。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">吉巴德-萨特斯韦特定理</div>
+        <div class="conn-name-en">Gibbard–Satterthwaite · 1973/1975</div>
+        <div class="conn-rel">⟷ 边界</div>
+        <div class="conn-desc">在纯投票的世界里，非独裁的规则几乎必定可被策略操纵。机制设计之所以还能做事，很大程度上是因为它允许<em>货币转移</em>——多了一个投票没有的自由度。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">显示原理</div>
+        <div class="conn-name-en">Revelation Principle · Myerson, 1979</div>
+        <div class="conn-rel">⟷ 核心工具</div>
+        <div class="conn-desc">把无穷的规则空间压缩到"直接说真话"的机制里去找最优。没有它，这门学问只能停在哲学。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">柠檬市场</div>
+        <div class="conn-name-en">Market for Lemons · №035</div>
+        <div class="conn-rel">⟵ 问题源</div>
+        <div class="conn-desc">签约前的隐藏信息。阿克洛夫诊断出病（买家分不清好坏），机制设计负责开药（怎样让卖家有动力自证）。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">道德风险</div>
+        <div class="conn-name-en">Moral Hazard · №036</div>
+        <div class="conn-rel">⟵ 问题源</div>
+        <div class="conn-desc">签约后的隐藏行动。免赔额、绩效工资、押金都是标准的机制设计答卷：让承担风险的人也留一份皮在游戏里。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">公地悲剧</div>
+        <div class="conn-name-en">Tragedy of the Commons · №026</div>
+        <div class="conn-rel">⟶ 应用对象</div>
+        <div class="conn-desc">个体理性汇成集体次优的经典结构。奥斯特罗姆给的是社区自治那条路，机制设计给的是同一条路的数学版：改收益结构，不改人。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">古德哈特定律</div>
+        <div class="conn-name-en">Goodhart's Law · №005</div>
+        <div class="conn-rel">⟷ 误用警示</div>
+        <div class="conn-desc">最该贴在每个机制设计者桌前的一句话：任何被拿来当目标的度量，都会被优化到失真。设计规则的人，必须先扮演一次钻空子的人。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">市场设计与拍卖理论</div>
+        <div class="conn-name-en">Market Design / Auction Theory</div>
+        <div class="conn-rel">⟹ 工程学化身</div>
+        <div class="conn-desc">从黑板走到现场的那一支：罗斯与沙普利（2012 诺奖）做匹配，米尔格罗姆与威尔逊（2020 诺奖）做拍卖。理论的价值最后由能不能修好一个真实市场来检验。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>这门学问的迁移价值几乎全在<strong>提问方式</strong>上：把"人应该怎样"换成"在这套规则里，这样做划不划算"。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">管理：想要真话，先算说真话的账</div>
+        <div class="usage-text">别问"怎么让团队诚实汇报进度"，问<strong>"如实汇报对他划算吗"</strong>。如果坏消息一报就挨骂、延期一说就背锅，你收到的永远是好消息，直到瞒不住的那天。可操作的两条：让报警者受益或至少免责（这是参与约束），让预测被事后校准并因准确而受奖（这是激励相容）。<em>一个到处是好消息的组织，通常不是运气好，是机制在筛。</em></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">分配与谈判：先定规则，再定归属</div>
+        <div class="usage-text">分家产、分股权、合伙散伙、拆分账单——争起来的地方几乎都是因为先看到了那块蛋糕。亚伯拉罕的办法至今好用：<strong>把"怎么分"和"拿哪份"交给不同的人。</strong>常见变体：一方报价、另一方选择买或卖（俗称"德州枪战"条款）；一方拟方案、另一方一票否决且否决后由第三方裁定。<em>规则要在知道自己会分到哪一份之前定下来，这是它唯一有效的时刻。</em></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">定价与竞标：把"报多少"和"付多少"解耦</div>
+        <div class="usage-text">维克里的直觉可以直接搬用：<strong>只要一个人报的价就是他要付的价，这套规则就在系统性地教人少报。</strong>把两者拉开（第二价、事后统一定价、按需求曲线定价），人才敢报真值。但同时记住第五节的教训：收入、合谋、进入这三件事，理论最爱忽略，现实最先崩——设计前先数一数，到底有几个真正独立的参与者会来。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">规则上线前，先找坏均衡</div>
+        <div class="usage-text">马斯金的问题该成为每次改制度前的必答题：<em>这套规则有没有另一个也很稳、但我完全不想要的状态？</em>做法很土但有效——自己扮演三种人各跑一遍：最想偷懒的人、最会算的人、抱团的两个人。<strong>凡是只有"大家都配合"才成立的规则，都还没经过这一关。</strong></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">判断制度：听到"要靠大家自觉"，基本可断定这里没有机制</div>
+        <div class="usage-text">反过来更有用：看到一个长期运转良好的制度，别急着夸参与者品德好，<strong>去找那个让诚实与尽责变得划算的结构在哪</strong>——通常是某处押金、某种重复博弈、某个可信的第三方、某条让人敢说话的免责条款。找到它，你就知道这套东西能不能被复制，以及它在哪一天会失效。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我最近一次抱怨"这些人怎么这么不自觉"，如果把问题换成"在这套规则里，自觉的人是不是吃亏"，答案会不会立刻不一样？</div>
+      <div class="q">我手上正在用的哪一套规则（考核、分成、评审、报销、排期），其实正在教人说谎？如果我是被它管的那个人，我会怎么钻它——这个答案我敢不敢摆到桌面上？</div>
+      <div class="q">我设计或默认接受的规则里，有没有一个我没料到的坏均衡，正稳稳地立在那儿？如果有一天所有人都开始"最优地"应对它，会发生什么？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Leonid Hurwicz《On Informationally Decentralized Systems》</span>
+        <span class="further-meta">in McGuire &amp; Radner eds., <em>Decision and Organization</em>, North-Holland, 1972 — 激励相容的出处，全篇形式化，读它是为了知道这门学问从哪一刀开始</span>
+      </li>
+      <li>
+        <span class="further-title">William Vickrey《Counterspeculation, Auctions, and Competitive Sealed Tenders》</span>
+        <span class="further-meta">Journal of Finance 16 (1961), pp.8–37 — 二价拍卖原论文，"让说真话成为占优策略"最干净的一次演示</span>
+      </li>
+      <li>
+        <span class="further-title">Roger Myerson《Incentive Compatibility and the Bargaining Problem》</span>
+        <span class="further-meta">Econometrica 47 (1979), pp.61–73 — 显示原理，机制设计从哲学变成最优化问题的那一篇</span>
+      </li>
+      <li>
+        <span class="further-title">Myerson &amp; Satterthwaite《Efficient Mechanisms for Bilateral Trading》</span>
+        <span class="further-meta">Journal of Economic Theory 29 (1983), pp.265–281 — 这门学问最重的一记闷棍：连一对一交易都不存在完美机制</span>
+      </li>
+      <li>
+        <span class="further-title">Alvin E. Roth《Who Gets What — and Why》</span>
+        <span class="further-meta">Houghton Mifflin Harcourt, 2015 — 市场设计的现场笔记，匹配、肾脏、学校选择，写给非专业读者，最好读的一本</span>
+      </li>
+      <li>
+        <span class="further-title">Paul Klemperer《How (Not) to Run Auctions: The European 3G Telecom Auctions》</span>
+        <span class="further-meta">European Economic Review 46 (2002), pp.829–845 — 同一年、相邻国家、天差地别的结果，理论家最该读的那份验尸报告</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Mechanism design</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Mechanism_design" target="_blank">en.wikipedia.org/wiki/Mechanism_design</a> — 概念谱系、主要定理与人物的索引</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="053-competitive-exclusion.html">
+      <small>← PREVIOUS</small>
+      №053 竞争排斥原理
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;054&nbsp;·&nbsp;机制设计&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
