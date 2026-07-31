@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№056 亲缘选择与汉密尔顿法则 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 生物 · 演化</span>
+    <span class="lesson-no">№ 056</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 056 · BIOLOGY</div>
+    <h1 class="lesson-title">亲缘选择与汉密尔顿法则</h1>
+    <div class="lesson-title-en">Kin Selection &amp; Hamilton's Rule · rB &gt; C，一条给"无私"记账的不等式</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>W. D. 汉密尔顿</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1964</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>生物 · 演化 · 社会行为</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>原著</dt><dd>《社会行为的遗传演化》Ⅰ、Ⅱ</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 达尔文自己说"这可能是致命的"</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>《物种起源》里，达尔文用一整章讲本能，然后在其中留下了一句极不寻常的自陈。他说，不育的工蜂是"一个特别的难题，起初在我看来是无法克服的，而且实际上<em>对我的整个理论可能是致命的</em>"。</p>
+
+    <p>难题很干净：自然选择的全部逻辑是"能留下更多后代的性状会扩散"。可一只工蜂终身不繁殖。它把一生的劳动献给别人的孩子，然后死去，不留下任何自己的后代。<strong>一个使携带者放弃全部繁殖的性状，按照那套逻辑，第一代就该被彻底清除。</strong>它却在蚂蚁、蜜蜂、黄蜂、白蚁身上反复出现，而且是地球上最成功的生物形态之一。</p>
+
+    <p>这个洞开了整整一百年。中间有过一些片段：费希尔与霍尔丹都算过类似的账，霍尔丹 1955 年在《新生物学》上讨论过"救一个落水亲属值不值"的问题，但没有把它推成一般理论。那句著名的酒馆名言——"我愿意为两个兄弟或八个表亲献出生命"——由梅纳德·史密斯在 1965 年霍尔丹的讣告中转述，<span class="muted">但它的真实性一直存疑；汉密尔顿本人 1976 年致信《新科学家》，公开怀疑过这个段子的来历。</span></p>
+
+    <p>真正把账算完的，是一个当时几乎无人问津的英国研究生。<strong>威廉·唐纳德·汉密尔顿</strong>（W. D. Hamilton，1936–2000）在伦敦读博期间几乎处于孤立状态：导师对他的题目兴趣寥寥，论文投出去也遭冷遇。1964 年，《理论生物学杂志》分两部分刊出了他的《社会行为的遗传演化》（第 7 卷，第 1–16 页与第 17–52 页）。</p>
+
+    <p>那篇论文做的事，是把达尔文的"个体留下多少后代"换成了另一个记账单位。<strong>不是问"我留下多少后代"，而是问"我体内这个基因的副本，总共多留下了多少份"</strong>——包括那些不在我身上、而在我亲属身上的副本。</p>
+
+    <p class="muted">"亲缘选择"这个名字不是汉密尔顿起的。它由约翰·梅纳德·史密斯在 1964 年《自然》上的一篇短文里造出，用来把它与当时流行的"群体选择"区分开。这个命名后来带来的麻烦，见第六节。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典 · 一条三个字母的不等式</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <p>汉密尔顿那两篇论文数学相当硬，但结论可以压缩成一行。它是整个社会演化理论里被引用最多的一行：</p>
+
+    <div class="theorem">
+      <div class="theorem-label">HAMILTON'S RULE, 1964</div>
+      <div class="theorem-body">
+        <strong>rB &gt; C</strong><br><br>
+        一个使携带者付出代价去帮助他者的性状，会被自然选择青睐，<em>当且仅当</em>：<br>
+        <strong>r</strong>（施行者与受益者之间的遗传相关系数）×
+        <strong>B</strong>（受益者获得的繁殖收益）
+        &gt; <strong>C</strong>（施行者付出的繁殖代价）。<br><br>
+        与之配套的核心概念是<strong>广义适合度</strong>（inclusive fitness）：衡量一个个体的演化成绩，不能只数它自己的后代，还要把它<em>对亲属繁殖所造成的影响</em>按相关系数折算后加进来。
+      </div>
+      <div class="theorem-cite">——W. D. Hamilton,《The Genetical Evolution of Social Behaviour》Ⅰ&amp;Ⅱ,<em>Journal of Theoretical Biology</em> 7 (1964), pp.1–16, 17–52。汉密尔顿原文写作 k &gt; 1/r（收益成本比须大于相关系数的倒数），与今天通行的 rB &gt; C 等价；此处为文意转述</div>
+    </div>
+
+    <p>三个字母各自都有陷阱，值得逐个钉住：</p>
+
+    <p><strong>C</strong> 与 <strong>B</strong> 都不是"好处"和"损失"的日常含义，而是<em>繁殖成功度</em>的增减。一只动物救了同伴却少生了两胎，C 就是两胎；同伴因此多养活三只幼崽，B 就是三只。这套账的货币单位不是快乐、不是资源，是<strong>后代</strong>。</p>
+
+    <p><strong>r</strong> 是最容易被读错的那一个，下一节专门处理。</p>
+
+    <p>而最要紧的一句是：<strong>这条法则的主语不是个体，是基因。</strong>一个让携带者为亲属牺牲的基因，完全可以借着亲属体内的自身副本传播开去——牺牲的是身体，传下去的是基因。个体的"无私"，在基因的账上是不折不扣的自利。</p>
+
+    <p class="muted">也正因如此，rB &gt; C 不是一句"应该为亲属牺牲"的道德劝告。它是一条<em>门槛</em>：说明什么样的帮助行为在演化上站得住，什么样的站不住。它描述的是已经发生的事，不是应该发生的事——这个区别在第六节⑤会变得非常重要。</p>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 两个兄弟，或者八个表亲</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>先把 r 的数字摆出来（有性生殖的二倍体动物，人类适用）：</p>
+
+    <p class="quote-inline">亲子、全同胞 → r = 1/2<br>祖孙、半同胞、叔侄甥舅 → r = 1/4<br>堂表兄弟姐妹 → r = 1/8</p>
+
+    <p>现在做那道著名的算术。假设我跳进河里救人，必死，C = 1（我损失自己全部的繁殖前景）。<strong>救一个兄弟</strong>：rB = 0.5 × 1 = 0.5 &lt; 1，不划算。<strong>救两个兄弟</strong>：0.5 × 2 = 1，恰好打平。<strong>救八个表亲</strong>：0.125 × 8 = 1，也恰好打平。</p>
+
+    <p>——那句酒馆名言之所以是"两个兄弟或八个表亲"，正因为它是 rB &gt; C 在 C = 1 时的解。这也是为什么汉密尔顿会怀疑那个段子：这道题的答案，跟他自己论文里的算法太像了。</p>
+
+    <p>接下来是全篇最该钉住的一处误读。<strong>r 不是"你们共享多少基因"。</strong>任意两个人类共享的基因超过 99%，任意两只果蝇之间也差不多——如果 r 是这个意思，那么全世界所有人的 r 都接近 1，法则会预言我们对陌生人也该拼命，这显然不成立。</p>
+
+    <p>r 的真正含义是：<strong>相对于所在群体的平均水平，你们额外多共享的那一份。</strong>它衡量的是"我身上这个基因，在对方身上也有一份副本"这件事，<em>超出随机相遇预期</em>的概率。所以 r 是一个相对量，参照系是群体基线——离开了"跟谁比"，r 这个数字没有意义。</p>
+
+    <p>这就带出了汉密尔顿真正的洞见：<strong>被选择的从来不是"亲属"，而是"相关性"。</strong>亲属关系只是相关性最常见、最可靠的来源，不是唯一来源。只要有某种机制让携带同一个基因的个体更容易碰到一起（同一个巢、同一片土壤、同一种气味），rB &gt; C 就照样运转——哪怕双方根本不是亲戚。这条缝隙后来长出了"绿胡子基因"这个奇特的东西，见案例⑤。</p>
+
+    <p>顺着这一步再往前，那个困了达尔文一百年的工蜂就解开了：<strong>它没有放弃繁殖，它只是换了一条投资渠道。</strong>与其自己产卵（每个后代 r = 1/2），不如去帮蜂后多养活一批同胞姐妹（在膜翅目的特殊遗传方式下，姐妹之间的 r 可达 3/4）——如果后一条路的 rB 更大，不育反而是那个基因最划算的选择。</p>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">罗伯特·特里弗斯</span>
+          <span class="comm-tag">1971 / 1976 · 补上另一条路，也给出最锋利的检验</span>
+        </div>
+        <p><strong>罗伯特·特里弗斯</strong>做了两件互相独立、分量都很重的事。</p>
+        <p>其一是补缺口。汉密尔顿解释了亲属间的帮助，但自然界里大量的合作发生在<em>非亲属</em>之间。特里弗斯 1971 年的《互惠利他的演化》（<em>Quarterly Review of Biology</em> 46, pp.35–57）给出了另一条路：只要互动会重复、只要对方能被认出、只要能记住谁欠谁，"我今天帮你、你将来帮我"本身就可以被选择。<strong>相关性不是合作的唯一燃料，重复才是另一种。</strong></p>
+        <p>其二是设计检验。1976 年他与霍普·黑尔在《科学》上（191, pp.249–263）做了一件更漂亮的事：<em>让理论说出一个具体的数字，然后去查它对不对。</em>在蚂蚁里，工蚁与姐妹的 r = 3/4，与兄弟的 r = 1/4，比值三比一；而蚁后与儿女的 r 都是 1/2，比值一比一。既然育幼的活是工蚁在干，若工蚁能左右投入方向，群体的雌雄投资比就该偏向 3 : 1，而不是蚁后偏好的 1 : 1。</p>
+        <p>多个物种的数据偏向了工蚁那一侧。<em>这是这套理论最强的一刻</em>：它不但解释了旧事实，还预言了一个此前没人去数的数字，然后被数据打中。<span class="muted">（后续研究发现例外与更复杂的情形，见反例①。）</span></p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">威斯特、格里芬与加德纳</span>
+          <span class="comm-tag">2007 · 把吵了四十年的词捋清楚</span>
+        </div>
+        <p><strong>斯图尔特·威斯特、阿什莉·格里芬与安迪·加德纳</strong>在《社会语义学》（<em>Journal of Evolutionary Biology</em> 20, 2007, pp.415–432）里做了一件不起眼却极有用的工作：把利他、合作、互惠、互利、群体选择这些被用滥了的词，按"对施行者与受益者各自适合度的正负影响"重新定义了一遍。</p>
+        <p>他们指出，这个领域里大量的"分歧"其实是语义混乱：同一个词在不同论文里指着不同的东西，于是双方吵了几十年却从未真正对上。</p>
+        <p>而他们最重要的结论是：<strong>亲缘选择与多层次群体选择在数学上是等价的</strong>——同一件事的两种记账方式，就像同一笔钱可以按部门记也可以按项目记，总数不会变。这句话本该终结那场旷日持久的争论；<em>但它没有</em>，因为真正的分歧不在数学而在"哪种记账更能给出可检验的预言"，这一点数据判不了。见反例③。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">休斯、奥德罗伊德、比克曼与拉特尼克斯</span>
+          <span class="comm-tag">2008 · 换掉招牌解释，救下核心方程</span>
+        </div>
+        <p>汉密尔顿最著名的应用是"单倍二倍性假说"：膜翅目的雄性由未受精卵发育（单倍体），导致姐妹之间的 r 高达 3/4——他用这个高相关性解释为什么真社会性在蚂蚁蜜蜂黄蜂里反复独立出现。这个解释漂亮到进了每一本教科书。</p>
+        <p>它也塌了。白蚁是二倍体，裸鼹鼠是哺乳动物，两者同样高度真社会；而许多单倍二倍的物种从未走上这条路。</p>
+        <p><strong>威廉·休斯等人</strong>2008 年在《科学》上（320, pp.1213–1216）给出了替代解释：他们重建了膜翅目真社会性各次起源处的祖先状态，发现<em>这些起源点的共同特征不是单倍二倍性，而是严格的单配制</em>——蜂后一生只与一只雄性交配。单配制保证了同胞之间 r = 1/2 而不会被稀释，于是"帮姐妹"与"自己生"的账刚好打平，任何一点额外的效率优势就足以把天平推向不育。</p>
+        <p class="muted">这一步之所以值得学，是因为它演示了理论该怎么被修：<strong>被推翻的是那个具体应用，不是 rB &gt; C 本身——恰恰相反，单配制假说是把相关性摆得更居中的一次修正。</strong></p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">诺瓦克、塔尔尼塔与威尔逊</span>
+          <span class="comm-tag">2010 · 最猛烈的一次正面攻击</span>
+        </div>
+        <p>2010 年 8 月，<strong>马丁·诺瓦克、科琳娜·塔尔尼塔</strong>与<strong>爱德华·威尔逊</strong>在《自然》上发表《真社会性的演化》（466, pp.1057–1062），直接主张：广义适合度理论"不是一个能够允许有用的数学分析的建设性理论"，四十多年来它承担的解释工作，用标准的自然选择模型就能做，而且做得更好。</p>
+        <p>这件事的分量，一半来自署名。<strong>爱德华·威尔逊</strong>——《社会生物学》的作者、把亲缘选择推广到整个学界的头号功臣之一——晚年公开转向了多层次选择。<em>一个理论最有名的传道者亲手宣布它不成立</em>，这在科学史上并不多见。</p>
+        <p>反击也同样罕见。次年三月，《自然》刊出一封由<strong>137 位社会演化研究者联署</strong>的回应（Abbot 等，471, pp.E1–E4），措辞极不客气：对方的论证"建立在对演化理论的误解和对经验文献的曲解之上"。诺瓦克一方随即再回应，坚持原判。</p>
+        <p class="muted">这场争论至今没有公认的裁决。把它写在这里而不是藏起来，是因为它恰恰是这一篇最该学的东西：<strong>一个被写进所有教科书、被无数科普当作定论的理论，在专业内部可能仍是敞开的。</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">谁在报警：贝氏地松鼠的三千小时</span>
+          <span class="case-when">1977 · 加州内华达山区</span>
+        </div>
+        <p>地松鼠发现地面捕食者时会尖声报警。这对它自己是纯粹的坏事——叫声等于告诉郊狼"我在这儿"。<strong>保罗·舍曼</strong>用三个夏天、约三千小时的野外观察，去查这份代价究竟买到了什么。</p>
+        <p>关键在于这个物种的一个人口学事实：<em>雌性终身留在出生地附近，雄性成年后扩散出去。</em>于是在任意一小片栖地里，周围的雌性多半是亲戚，周围的雄性多半不是。</p>
+        <p>结果与这条分界线严丝合缝：<strong>报警的绝大多数是雌性</strong>，而且当身边有后代或旁系亲属在场时，叫得明显更多。论文《裙带关系与报警叫声的演化》发表于《科学》197 (1977), pp.1246–1253。</p>
+        <div class="case-insight">这是野外第一批干净证据之一，它的说服力不在"松鼠会报警"，而在<strong>利他行为的分布，精确地跟着亲缘的分布走</strong>。同一个物种、同一种叫声，谁在叫取决于谁的周围坐着亲戚。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">三比一：一个理论敢报出的数字</span>
+          <span class="case-when">1976 · 蚁巢</span>
+        </div>
+        <p>特里弗斯与黑尔的检验之所以经典，是因为它把理论逼到了一个无处可躲的位置：<strong>如果 r 真的是自然选择的记账单位，那么工蚁与蚁后应该在"该多养儿子还是多养女儿"上发生系统性的利益冲突，而且冲突的方向和幅度可以被算出来。</strong></p>
+        <p>工蚁偏好雌雄投资比 3 : 1，蚁后偏好 1 : 1。谁说了算？干活的是工蚁。</p>
+        <p>他们统计多种蚂蚁的雌雄投资比例，结果整体偏向工蚁那一侧。后续研究更进一步：在工蚁能更准确判断亲缘结构的物种里，偏斜更明显；蚁后多次交配、姐妹关系被稀释的物种里，偏斜相应减弱。</p>
+        <div class="case-insight">这是"可证伪"的样子。一个理论如果只会解释已经发生的事，它很便宜；<strong>敢先报出一个具体数字、再去数，才是贵的。</strong>——同时也请记住反例①：这些数字的测量本身充满争议，例外始终存在。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">单倍二倍性假说的兴与衰</span>
+          <span class="case-when">1964 – 至今</span>
+        </div>
+        <p>这是本篇最值得学的一个案例，因为它讲的是<em>理论怎样被自己的招牌应用拖累</em>。</p>
+        <p>汉密尔顿用姐妹间 r = 3/4 解释真社会性为何在膜翅目一再出现，这个说法太顺手，以至于几十年里"亲缘选择"几乎与"单倍二倍性"划了等号。</p>
+        <p>然后反证一件件出现：白蚁是二倍体，却是最彻底的真社会昆虫之一；裸鼹鼠是哺乳动物，同样有不育阶层；而大量单倍二倍的膜翅目物种终生独居。休斯等人 2008 年提出单配制才是共同前提；到 2025 年前后，仍有大规模比较研究直接给出结论：<strong>没有证据表明单倍二倍性本身提高了真社会性的演化速率</strong>，此前观察到的关联很可能是"膜翅目内部转变率高"造成的统计假象。</p>
+        <div class="case-insight">分清"理论"与"理论最著名的那个应用"，是读任何学说都该有的基本功。<strong>招牌塌了，方程可以活着；反过来，招牌还立着，也不代表方程一定成立。</strong></div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">哺乳动物里的蚁巢：裸鼹鼠</span>
+          <span class="case-when">1981 · 肯尼亚 / 开普敦</span>
+        </div>
+        <p><strong>珍妮弗·贾维斯</strong>在《科学》上（212, 1981, pp.571–573）报告了一件当时几乎无法想象的事：一种东非的地下啮齿动物，过着跟蚂蚁一样的生活。她观察的四十只野外采集群体里，<em>只有一只雌性繁殖</em>，其余个体按体型分成两三个"阶层"，各自承担挖洞、觅食、护巢的工作，且世代重叠、合作育幼。</p>
+        <p>这个发现当时被顺理成章地接进亲缘选择：裸鼹鼠高度近交，群体内相关性被推得极高，于是"替姐妹干活"比"自己生"更划算。</p>
+        <p>后来的分子研究让画面复杂了：野生群体的相关性并不总是那么极端，而地下生活的物理约束（挖掘成本极高、单独开辟新领地几乎不可能）可能同样关键。<span class="muted">另一种真社会的达马拉兰鼹鼠，近交程度就低得多。</span></p>
+        <div class="case-insight">它既是这套理论的战果，也是它的边界样本：<strong>高相关性可以让不育变得划算，但相关性从来不是唯一的推手</strong>——生态约束（出去单干会死）常常同样有力。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">绿胡子：一个思想实验变成了真的</span>
+          <span class="case-when">1998 · 美国南部的火蚁</span>
+        </div>
+        <p>汉密尔顿曾指出，若某个基因能同时做三件事——产生一个可见标记、让携带者认出这个标记、并让携带者优待带标记的个体——它就能绕过亲属关系直接扩散。道金斯给这个假想物起了个名字：<strong>绿胡子基因</strong>。多年来它被当作纯粹的思想实验。</p>
+        <p>1998 年，<strong>洛朗·凯勒与肯尼斯·罗斯</strong>在《自然》上（394, pp.573–575）报告：红火蚁身上真有一个。在多蚁后型的蚁群里，所有产卵蚁后在 <em>Gp-9</em> 位点上都是杂合子；携带那个特定等位基因的工蚁，会凭气味识别并<strong>杀死所有不携带它的蚁后</strong>。</p>
+        <div class="case-insight">它证实了汉密尔顿的洞见——<strong>被选中的是相关性，不是亲缘</strong>；但它同时露出了这套逻辑最冷的一面：<em>基因的账可以既不站在个体一边，也不站在群体一边。</em>那些被杀的蚁后，是执行者自己蚁群的蚁后。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>这是本篇最长的一节，因为亲缘选择是一个<strong>核心争论至今敞开</strong>的理论——它既是现代演化生物学的支柱之一，又刚刚被自己阵营里最有名的人公开否定过。</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 三个字母，没有一个好测</strong>r、B、C 在黑板上很干净，落到野外就全是麻烦。B 与 C 要以<em>终生繁殖成功度</em>计量，意味着你得跟踪一只动物一辈子，还要知道"如果它当初没帮忙会怎样"——那是一个永远观察不到的反事实。r 也不是查族谱就能得出，它依赖于群体结构与基线，同一个亲缘关系在不同群体里数值并不相同。结果是：<strong>rB &gt; C 常常在事后被拟合，很少在事前被计算。</strong>这正是批评者最常用的一句话——一个几乎总能被凑平的不等式，解释力再强，预测力也有限。
+      </div>
+      <div class="critique-item">
+        <strong>② 最有名的那个应用已经倒了</strong>单倍二倍性假说曾经是这套理论最广为流传的招牌，如今被系统发育与比较分析的证据推翻（见案例③）。这件事的两层教训都要收下：一层是<em>核心方程可以在招牌倒下后继续成立</em>；另一层更不舒服——<strong>一个被写进教科书几十年、被无数科普复述的解释，可以是错的，而且错了很久没人拦住。</strong>凡是听到"科学早已证明"，这就是那个反例。
+      </div>
+      <div class="critique-item">
+        <strong>③ 2010 年的正面攻击，至今没有裁决</strong>诺瓦克、塔尔尼塔与威尔逊主张广义适合度理论既不必要也不好用；137 位研究者联署反驳，称其误解理论、曲解文献；双方各自再回应，然后僵住。麻烦在于这场争论的性质：既然威斯特等人已证明亲缘选择与多层次选择<em>数学上等价</em>，那么争的就不是"事实是什么"，而是<strong>"哪一种记账方式更能产生可检验的预言"</strong>——这是个方法论偏好问题，数据判不了。<em>对读者而言，诚实的表述是：这是一个仍在被专业内部激烈争论的框架，不是已经收工的定论。</em>
+      </div>
+      <div class="critique-item">
+        <strong>④ 相关性远不是合作的唯一来源</strong>把看到的每一次合作都归因于亲缘，是这个理论最常见的滥用。自然界里至少还有几条并行的路：<em>互惠</em>（特里弗斯，靠重复与记忆）；<em>共同利益</em>（合作对双方当下都有利，根本不需要牺牲）；<em>执法</em>——蜂群里工蜂会互相吃掉彼此偷产的卵，靠的是监督而非亲情；以及<strong>纯粹的胁迫</strong>（在不少物种里，"帮手"是被优势个体压着不许繁殖的）。看到互助先喊亲缘选择，跟看到石头就说是风化一样，多半是懒。
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 最危险的误用：从"是"滑到"应该"</strong>rB &gt; C 是一条关于基因频率变化的记账等式。<strong>它不含任何"应该"。</strong>但从它诞生那天起，就不断有人把它搬去为裙带、族群偏好、乃至"血浓于水"的政治主张背书——这是标准的自然主义谬误，而且滑得特别顺，因为这个理论恰好给"偏袒自己人"提供了一个听起来很科学的说法。三点足以拆掉它：其一，法则解释的是行为为何存在，不是它为何正当；其二，人类恰恰是这条法则最著名的<em>例外</em>制造者——我们为完全无关的陌生人捐钱、献血、赴死，这些行为没有一个能被 rB &gt; C 算出来；其三，把 r 的逻辑放大到"民族""种族"这种尺度，在遗传学上根本不成立，群体之间的相关性差异远小于群体内部。<span class="muted">附带一提，汉密尔顿本人晚年在若干社会议题上的看法也曾引发相当大的争议；他 2000 年为验证一个关于艾滋病起源的边缘假说赴刚果采样，归国后病逝，终年 63 岁。理论的锋利与提出者的判断，是两回事。</span>
+      </div>
+    </div>
+
+    <p class="muted"><strong>正确的姿势</strong>：把它当作一副<em>追问"这笔账是替谁记的"</em>的眼镜——看到任何自我牺牲，先问受益者是谁、施行者付出了什么、两者之间有什么把他们绑在一起；但绝不要把它当成一台能算出人该怎么活的机器，更不要让一条描述基因频率的不等式，去替任何偏袒或冷漠背书。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">广义适合度</div>
+        <div class="conn-name-en">Inclusive Fitness · Hamilton, 1964</div>
+        <div class="conn-rel">⟵ 核心概念</div>
+        <div class="conn-desc">把"我的后代"扩展成"我这份基因在世上的总副本数"。rB &gt; C 是它的判据，两者是同一个东西的两种写法——争论 2010 年起主要打在这个概念上。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">互惠利他</div>
+        <div class="conn-name-en">Reciprocal Altruism · Trivers, 1971</div>
+        <div class="conn-rel">⟷ 互补路径</div>
+        <div class="conn-desc">非亲属之间合作的另一条路：靠重复互动、身份识别与记忆，而不靠相关性。人类社会里的大多数合作走的是这条路，不是亲缘那条。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">多层次与群体选择</div>
+        <div class="conn-name-en">Multilevel / Group Selection</div>
+        <div class="conn-rel">⟷ 等价而对立</div>
+        <div class="conn-desc">数学上与亲缘选择等价（威斯特等，2007），却是 2010 年那场争论的另一方。分歧不在算出来的数，在哪种记账方式更好用——这类"同一件事的两本账"之争，在科学里比想象的常见。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">达尔文自然选择</div>
+        <div class="conn-name-en">Natural Selection · №021</div>
+        <div class="conn-rel">⟸ 因果上游</div>
+        <div class="conn-desc">工蜂是达尔文自陈"可能致命"的难题；汉密尔顿的解法没有推翻自然选择，只是换了记账单位。道金斯 1976 年的"自私的基因"正是这个视角的普及版。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">纳什均衡与演化稳定策略</div>
+        <div class="conn-name-en">Nash Equilibrium / ESS · №022</div>
+        <div class="conn-rel">⟷ 数学骨架</div>
+        <div class="conn-desc">合作与背叛的收益结构，正是博弈论的地盘；梅纳德·史密斯的演化稳定策略把纳什均衡搬进生物学。相关性 r 的作用，可以直接读成"改变了囚徒困境的收益矩阵"。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">公地悲剧</div>
+        <div class="conn-name-en">Tragedy of the Commons · №026</div>
+        <div class="conn-rel">⟷ 反面对照</div>
+        <div class="conn-desc">公地悲剧讲合作如何失败，亲缘选择讲它如何成功。两者指向同一个杠杆：<em>把个体收益与集体后果重新绑在一起</em>——自然界用相关性绑，人类社会用制度绑。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">机制设计</div>
+        <div class="conn-name-en">Mechanism Design · №054</div>
+        <div class="conn-rel">⟹ 人类版解法</div>
+        <div class="conn-desc">自然选择靠 r 让利他划算，机制设计靠规则让诚实划算。两者的句式完全相同：<strong>不要求参与者高尚，只让高尚的行为在账面上占优。</strong></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">涌现</div>
+        <div class="conn-name-en">Emergence · №041</div>
+        <div class="conn-rel">⟷ 尺度延伸</div>
+        <div class="conn-desc">当相关性高到一定程度，蚁群开始像一个"超个体"运作：单只蚂蚁近乎盲目，群体却能调温、筑路、分工。个体让渡繁殖权之处，正是新一层组织浮现之时。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>先声明一条边界：<strong>以下多数条目是类比，不是定理的推论。</strong>rB &gt; C 的适用对象是基因频率，不是公司、团队或人生选择。用它来看事情能带来一种特定的清醒——追问"这笔账替谁记"——但把它当成人类行为的计算器，就是本篇反例⑤警告的那种误用。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">看懂"无私"：先找那条绑带</div>
+        <div class="usage-text">遇到任何持续存在的自我牺牲，别停在"这人真好"或"这人图什么"这两个答案上。<em>持续存在</em>的利他，背后通常有某种把双方绑在一起的结构：血缘、重复往来、共同声誉、共同命运、或者监督与惩罚。找到那条绑带，你就能预测它什么时候会松——<strong>绑带断掉的地方，利他往往也就停了，而这跟人品无关。</strong></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">组织里的裙带：解释它，不等于接受它</div>
+        <div class="usage-text">家族企业与任人唯亲之所以在所有文化里普遍存在，这条法则给了一个不带道德色彩的解释——而这恰恰是它有用的地方：<strong>不要指望靠呼吁"要公正"来消除一个有结构性根源的现象。</strong>真正有效的是改账本：把评价标准外部化、把决策权与受益权分开、让偏袒在制度上不划算。这正是 №054 机制设计那一套；两篇合起来读，是"诊断"与"处方"的关系。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">团队协作的三个杠杆</div>
+        <div class="usage-text">rB &gt; C 提示了三条独立的路：<em>提高 B</em>（让帮忙这件事产生更大的实际价值——常常靠信息透明与工具，而非号召）；<em>降低 C</em>（让帮忙不再意味着牺牲自己的考核成绩，这一条最常被忽略，也最致命）；<em>提高"相关性"</em>——在人类组织里，r 的替代物是<strong>共同命运</strong>：长期绑定、共享收益、可预期的重复交往。<span class="muted">这是类比：真正的 r 是遗传学量，人的"相关性"是制度造出来的。</span></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">判断关于人性的宏大论断</div>
+        <div class="usage-text">这条法则同时能拆两种流行说法。有人用"演化让人自私"论证冷漠时，可以指出：<strong>同一套数学预言了大量真实的、彻底的自我牺牲</strong>——自私的是基因，不是个体，两者的行为可以完全相反。有人用"血浓于水"论证族群偏好时，可以指出：那是把描述当规范，而且在遗传学上算不出来。<em>凡是从一条演化事实直接跳到一个道德结论的论证，中间必有一步是偷的。</em></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">留意人类最反常的那一部分</div>
+        <div class="usage-text">最值得记住的，也许恰恰是这条法则<strong>算不到</strong>的东西：给素不相识的人捐款、为陌生人献血、替下一代人保护一片森林。这些行为在 rB &gt; C 里找不到位置，它们靠的是另一套装置——文化、制度、名声、想象力。<em>知道一个方程的边界在哪里，比记住它更要紧</em>：人类道德真正独特的部分，正好开始于它失效的地方。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我最近一次"无私"的付出，如果照 rB &gt; C 的问法拆开——受益者是谁、我实际付出了什么、我们之间被什么绑在一起——答案会让我意外吗？我更愿意相信哪个版本的自己？</div>
+      <div class="q">我所在的组织里，有没有一种利他行为是"做了没人记、不做没人罚"的？如果有，它现在靠谁在维持？那个人还能撑多久？</div>
+      <div class="q">我有没有用一条"科学事实"替自己的偏好背过书？——那次论证里，从"事情是这样"到"所以应该这样"的那一步，是谁替我迈的？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">W. D. Hamilton《The Genetical Evolution of Social Behaviour》Ⅰ &amp; Ⅱ</span>
+        <span class="further-meta">Journal of Theoretical Biology 7 (1964), pp.1–16, 17–52 — 原典，数学偏硬；第Ⅰ部分的引言部分可单独读</span>
+      </li>
+      <li>
+        <span class="further-title">W. D. Hamilton《Narrow Roads of Gene Land, Volume 1: Evolution of Social Behaviour》</span>
+        <span class="further-meta">W. H. Freeman / Spektrum, 1996 — 论文集加长篇自述，罕见地把"这些想法当年是在什么处境下想出来的"写了出来</span>
+      </li>
+      <li>
+        <span class="further-title">Robert Trivers《The Evolution of Reciprocal Altruism》</span>
+        <span class="further-meta">Quarterly Review of Biology 46 (1971), pp.35–57 — 非亲属合作的那条路，与汉密尔顿并列为社会演化的两块地基</span>
+      </li>
+      <li>
+        <span class="further-title">Trivers &amp; Hare《Haplodiploidy and the Evolution of the Social Insects》</span>
+        <span class="further-meta">Science 191 (1976), pp.249–263 — 三比一性比检验的原始出处，一次教科书级的"先预言再去数"</span>
+      </li>
+      <li>
+        <span class="further-title">Richard Dawkins《The Selfish Gene》</span>
+        <span class="further-meta">Oxford University Press, 1976 — 把基因视角讲透的普及经典；"绿胡子"这个名字也出自这里</span>
+      </li>
+      <li>
+        <span class="further-title">Nowak, Tarnita &amp; Wilson《The Evolution of Eusociality》</span>
+        <span class="further-meta">Nature 466 (2010), pp.1057–1062 — 最猛烈的一次攻击，务必与下一条对照着读</span>
+      </li>
+      <li>
+        <span class="further-title">Abbot 等 137 人《Inclusive fitness theory and eusociality》</span>
+        <span class="further-meta">Nature 471 (2011), pp.E1–E4 — 联署反驳，科学史上罕见的场面；两篇加起来才是这个领域的真实状态</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Kin selection</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Kin_selection" target="_blank">en.wikipedia.org/wiki/Kin_selection</a> — 概念谱系、主要争论与文献索引</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="055-universal-grammar.html">
+      <small>← PREVIOUS</small>
+      №055 普遍语法
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;056&nbsp;·&nbsp;亲缘选择与汉密尔顿法则&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
