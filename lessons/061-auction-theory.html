@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№061 拍卖理论 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 经济 · 市场设计</span>
+    <span class="lesson-no">№ 061</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 061 · ECONOMICS</div>
+    <h1 class="lesson-title">拍卖理论</h1>
+    <div class="lesson-title-en">Auction Theory · 赢了这件事本身，就是坏消息</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>维克里 / 威尔逊 / 米尔格罗姆</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1961 / 1969 / 1982</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>经济 · 市场设计 · 信息</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>诺奖</dt><dd>2020（威尔逊与米尔格罗姆）</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 卖东西的人不知道它值多少</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>经济学里绝大多数模型都从一个方便的假设起步：<em>有一个价格。</em>可现实里最要紧的那些交易恰恰没有价格——一块海底油田、一段无线电频谱、一家没上过市的公司、一份工程标的、一个搜索关键词旁边那半秒钟的注意力。这些东西没有市价，因为它们独一无二；而卖的人往往<strong>比买的人更不知道它值多少</strong>。</p>
+
+    <p>于是人类发明了一种很古老的办法：<em>让想要的人互相喊价。</em>希罗多德记载过巴比伦的婚配拍卖，罗马人拍卖过战利品（据说也拍卖过一次帝位），伦敦的苏富比开张于 1744 年。但两千多年里，拍卖一直是<strong>习俗</strong>，不是<strong>理论</strong>——没有人认真问过：为什么是这套规则而不是另一套？换一套规则，同一批人会怎么改出价？卖方拿到的钱会变吗？</p>
+
+    <p>第一次把它当数学问题来问的，是<strong>威廉·维克里</strong>。1961 年，他在《金融学杂志》上写了一篇后来被引到发亮的文章，里面有个古怪的建议：<em>让出价最高的人拿走东西，但只付第二高的那个价。</em>初听像是卖方犯傻，实则不然——因为你的出价只决定"你赢不赢"，不决定"你付多少"，于是<strong>如实报出你心里的数，成了严格占优的策略</strong>。骗人再无好处。</p>
+
+    <p>八年后，斯坦福的<strong>罗伯特·威尔逊</strong>接上了另一半问题。维克里那套讲的是"每个人心里各有各的估值"（一幅画你喜欢它就值），可油田不是这样——<em>油田里的油对谁都一样多</em>，只是没人知道到底有多少。1969 年，威尔逊在《管理科学》上给出了这类"共同价值"拍卖里第一份严格的均衡刻画，并推出一个此后再没人绕得开的结论：<strong>理性的人应当把出价压到自己最好的估计之下。</strong></p>
+
+    <p>而在学术界之外，几乎同时，三个石油工程师用完全不同的路径撞上了同一件事——那件事后来被叫作<em>赢家的诅咒</em>。1982 年，<strong>保罗·米尔格罗姆</strong>与罗伯特·韦伯把私人价值与共同价值缝进同一个框架；2020 年，威尔逊与米尔格罗姆共同获得诺贝尔经济学奖，理由里明确写着一件事：他们不仅解释了拍卖，还<strong>设计了拍卖</strong>。</p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典 · 两块地基</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <p>拍卖理论的地基有两块。第一块告诉你"形式其实没那么重要"，第二块告诉你"形式为什么其实很重要"——它们不矛盾，第二块正好长在第一块的裂缝里。</p>
+
+    <div class="theorem">
+      <div class="theorem-label">VICKREY, 1961 · 四种形式与收入等价</div>
+      <div class="theorem-body">
+        <strong>四种基本形式</strong>：<em>英式</em>（公开升价，价高者得）／<em>荷式</em>（公开降价，先应者得）／<em>一价密封</em>（暗标，最高者得并付自己的价）／<em>二价密封</em>（暗标，最高者得但只付第二高价，即"维克里拍卖"）。<br><br>
+        <strong>收入等价定理</strong>：若竞标者的估值<em>相互独立</em>、来自<em>同一分布</em>、皆<em>风险中性</em>、无预算约束、无合谋，且拍卖总是把东西给估值最高的人、并让估值最低者收益为零——那么<strong>这四种形式给卖方带来的期望收入完全相同。</strong>
+      </div>
+      <div class="theorem-cite">
+        William Vickrey《Counterspeculation, Auctions, and Competitive Sealed Tenders》<em>The Journal of Finance</em> 16(1), 1961, pp.8–37；一般化的表述见 Roger Myerson《Optimal Auction Design》<em>Mathematics of Operations Research</em> 6(1), 1981, pp.58–73 与 John Riley &amp; William Samuelson《Optimal Auctions》<em>American Economic Review</em> 71(3), 1981, pp.381–392。（文意转述）
+      </div>
+    </div>
+
+    <div class="theorem">
+      <div class="theorem-label">WILSON, 1969 / MILGROM &amp; WEBER, 1982 · 共同价值与联结</div>
+      <div class="theorem-body">
+        当物品对所有人价值<strong>相同但未知</strong>（油田、频谱、公司），每个人手里只有一份带噪声的估计。此时<em>赢下拍卖这件事本身携带坏消息</em>：你之所以赢，正因为你的估计是全场最乐观的那一份。<strong>理性的投标者必须把出价压到自己估计之下，且竞争者越多，压得越狠。</strong><br><br>
+        <strong>联结原理（linkage principle）</strong>：当竞标者的信息彼此<em>关联</em>时，收入排序不再相等，而是——<strong>英式（公开升价）≥ 二价密封 ≥ 一价密封／荷式</strong>。并且卖方<em>主动公开</em>关于标的的信息（鉴定、检测、专家评估），会<strong>抬高</strong>而不是压低成交价。
+      </div>
+      <div class="theorem-cite">
+        Robert B. Wilson《Competitive Bidding with Disparate Information》<em>Management Science</em> 15(7), 1969, pp.446–452；Paul Milgrom &amp; Robert Weber《A Theory of Auctions and Competitive Bidding》<em>Econometrica</em> 50(5), 1982, pp.1089–1122。（文意转述）
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 拍卖卖的不是东西，是信息</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>先把这门学问最容易被漏掉的那一句摆出来：<strong>拍卖真正在处理的问题不是"怎么把东西卖掉"，是"怎么把散在很多人脑子里的私人信息，逼成一个公开的数字"。</strong>卖方不知道东西值多少，买方各知道一点。价格不是被拍卖师定出来的，是被这些互相不通气的估计<em>竞争</em>出来的。</p>
+
+    <p>顺着这一句，第一块地基就好懂了。<strong>收入等价定理</strong>说：在那一长串理想条件下，四种形式收上来的钱一样多。这听起来像是在说"形式不重要"，实际用法恰恰相反——<em>它是一把尺子</em>。现实里不同形式的差别常常大得惊人，而定理告诉你差别只可能从一个地方来：<strong>它假设的那几条里，被打破的是哪一条。</strong></p>
+
+    <p class="quote-inline">竞标者风险规避 → 一价拍卖收得更多（怕输，愿多付一点买保险）。<br>估值彼此关联 → 英式拍卖收得更多（看见别人加价，你敢跟）。<br>有人可以串通 → 公开升价反而最便宜（暗号好打，报复好使）。<br>有人根本没来 → 上面全部作废。</p>
+
+    <p>第二块地基更贵，因为它反直觉。一群人对一块油田各自估值，估计有高有低、平均而言不偏。现在拍卖开始——<strong>赢的那个人，几乎按定义就是估得最高的那个人。</strong>他赢的不是运气，是自己那份误差最大的乐观。这就是<em>赢家的诅咒</em>：在共同价值的场合，<strong>"我赢了"是一条你在开标前就该预料到的坏消息</strong>，理性的做法是提前把这份坏消息折算进出价里。</p>
+
+    <p>而且这里有一处几乎所有人第一遍都会读反的地方：<strong>竞争者越多，你越该往下压价，而不是往上抬。</strong>因为人越多，"全场最乐观的那一份估计"就越离谱——你要战胜的不是别人，是你自己那份必然偏高的判断。</p>
+
+    <p>最后一句，是联结原理带来的、卖方最不愿意相信的建议：<em>把你知道的都说出来。</em>买家之所以保守出价，是因为怕自己不知道的事；你替他消掉一部分未知，他就敢往上加。<strong>藏着信息卖，通常卖不出高价——不是道德问题，是算术问题。</strong></p>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">罗伯特·威尔逊</span>
+          <span class="comm-tag">1969 / 1987 · 共同价值与稳健性</span>
+        </div>
+        <p><strong>罗伯特·威尔逊</strong>做的第一件事，是把"大家其实在争同一样东西"这件事写成数学。1969 年那篇不长的文章处理的是：所有人对同一个未知量各持一份带噪声的估计，均衡里他们会怎么出价。答案是<em>系统性地低于自己的估计</em>——不是因为怯懦，是因为把"赢了"这条信息也算了进去。</p>
+        <p>他还留下了一条更适用于所有机制设计者的告诫，后来被称作<strong>威尔逊批判</strong>：<em>一个好机制不应该依赖对参与者信念、分布、共同知识的精细假设。</em>因为那些假设你既测不准，也没法保证明年还成立。</p>
+        <p class="muted">现实里该追求的通常不是"最优"，是<strong>不容易坏</strong>。这句话后来长成了整整一支"稳健机制设计"的文献。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">保罗·米尔格罗姆与罗伯特·韦伯</span>
+          <span class="comm-tag">1982 · 一般理论</span>
+        </div>
+        <p>维克里的世界里估值互相独立，威尔逊的世界里估值完全相同。<strong>米尔格罗姆与韦伯</strong>1982 年把两者装进一个连续的框架：允许估值<em>部分地互相关联</em>——你的判断对我有信息含量，但我们要的东西又不完全是同一件。</p>
+        <p>这一步立刻推出了收入等价定理之外的<strong>收入排序</strong>：关联价值下，公开升价的英式拍卖收得最多，密封一价最少。原因干净——<em>公开的加价过程本身在往外释放信息</em>，减轻了每个人对赢家诅咒的恐惧，于是大家都敢出得更高。</p>
+        <p class="muted">同一逻辑的另一面就是<strong>联结原理</strong>：卖方主动披露鉴定信息可以抬价。它把"要不要透明"从伦理问题变成了收益计算题。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">麦卡菲与麦克米兰</span>
+          <span class="comm-tag">1987 · 从理论到政策</span>
+        </div>
+        <p><strong>R. 普雷斯顿·麦卡菲</strong>与<strong>约翰·麦克米兰</strong>1987 年在《经济文献杂志》上写了那篇让整代人入门的综述。他们做的第二件事更要紧：把这门学问带出了期刊——麦卡菲后来是 1994 年美国频谱拍卖设计的三位主要顾问之一。</p>
+        <p>他们反复强调的一点，在今天读来仍然像是对所有"机制爱好者"的提醒：<em>真实拍卖的成败，常常不取决于均衡的精妙，而取决于几个极其笨拙的问题</em>——有几个人真的会来？他们能不能串通？输了的人会不会去打官司？规则解释得清楚吗？</p>
+        <p class="muted">这条线索一路通到本篇第六节：拍卖设计里最致命的失误，几乎从来不是数学错了。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">埃德尔曼、奥斯特洛夫斯基与施瓦茨</span>
+          <span class="comm-tag">2007 · 互联网上的那场拍卖</span>
+        </div>
+        <p>2007 年，<strong>本杰明·埃德尔曼、迈克尔·奥斯特洛夫斯基与迈克尔·施瓦茨</strong>（同年另有哈尔·瓦里安的平行工作）把显微镜对准了当时世界上运行次数最多的拍卖：搜索引擎旁边的广告位。</p>
+        <p>他们指出：这套被叫作<strong>广义第二价格（GSP）</strong>的规则<em>看起来</em>像维克里拍卖的多物品版本——每个人付的是下一名的价——但它<strong>不是</strong>。在多个位置的场合，"如实出价"不再是占优策略，均衡结构与 VCG 完全不同。</p>
+        <p class="muted">一个长得像诚实机制、却不诚实的机制，每天运行几十亿次，决定着一个庞大行业的收入分配。<em>形式相似不等于性质相同</em>——这是拍卖理论给工程师最贵的一课。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">三个石油工程师算出了一条经济学定理</span>
+          <span class="case-when">1971 · 墨西哥湾</span>
+        </div>
+        <p>1971 年，阿科石油公司的三位工程师——<strong>爱德华·卡彭、罗伯特·克拉普与威廉·坎贝尔</strong>——在《石油技术杂志》上发表了一篇不像经济学论文的经济学论文。他们要解释一件公司内部的怪事：外大陆架的油气区块租约拍卖，<em>年复一年，中标者的回报低得反常。</em></p>
+        <p>他们的诊断是：油就在那里，数量对谁都一样；各家公司只是估得高低不同。而<strong>能赢下区块的，恰恰是那家估得最离谱的公司。</strong>于是"赢"与"估高了"几乎是同一件事——赢家不是被人骗了，是被自己的乐观选中了。</p>
+        <p>据后来的记述，这项研究的直接起因很具体：此前有一次租约出售，阿科几乎把自己投的每一块都拿了下来，公司的预算因此紧张了好几年。</p>
+        <div class="case-insight">经济学界要到威尔逊的模型出来才把这件事讲清楚，而现场的工程师用亏损的账单先算了出来。<strong>很多重要的规律最先出现在付了学费的人手里，而不是论文里。</strong></div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">一罐硬币，和它教出来的一课</span>
+          <span class="case-when">1983 · 波士顿大学</span>
+        </div>
+        <p><strong>马克斯·巴泽曼与威廉·萨缪尔森</strong>把一件事做成了实验室里的标准演示。他们在十二个微观经济学班上让 MBA 学生对若干装满硬币或回形针的罐子出价，每罐的真实价值都是 <strong>8.00 美元</strong>。</p>
+        <p>结果分成两半，而分歧正在两半之间：<em>全体估值的平均数是 5.13 美元</em>——比真值低了近三美元，人们整体上是保守的。<em>而平均中标价是 10.01 美元</em>——赢家平均每罐亏 2.01 美元。</p>
+        <p>没有人愚蠢。分布的中间是清醒的，可决定成交的从来不是中间，<strong>是那条最右边的尾巴。</strong></p>
+        <div class="case-insight">这是赢家诅咒最干净的一次显影：<em>群体不偏，赢家必偏。</em>——顺带一提，这篇实验的第二作者威廉·萨缪尔森，正是同年那篇给出收入等价一般表述的《最优拍卖》的作者之一。他先写下了理性该怎么做，再测量了人实际怎么做。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">出价十万，付了六块</span>
+          <span class="case-when">1990 · 新西兰</span>
+        </div>
+        <p>1990 年，新西兰政府决定用<strong>二价密封拍卖</strong>出售无线电频谱牌照——理论上无懈可击的选择：说真话是占优策略，效率最优。政府预计收入约 <strong>2.5 亿新西兰元</strong>。</p>
+        <p>实收 <strong>3600 万</strong>。</p>
+        <p>更要命的是几个被反复引用的数字：某张牌照最高出价 <strong>10 万</strong>新西兰元，而按规则只需付第二高价——<strong>6 新西兰元</strong>；另一张最高价 <strong>700 万</strong>，成交价 <strong>5000</strong>。当竞争稀薄时，"只付第二价"这条规则会把成交价打到地板上。次年，新西兰改回了一价拍卖。</p>
+        <div class="case-insight">机制设计的约束条件里，<strong>政治与舆论的可接受性和数学一样硬。</strong>一个能上报纸头条的荒唐数字，足以让一套占优策略诚实的机制在现实中活不过一年——而这与它是否"最优"毫无关系。<span class="muted">同一处麻烦的另一面见 <a href="054-mechanism-design.html">№054</a>。</span></div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">经济学家第一次当了工程师</span>
+          <span class="case-when">1994 · 华盛顿，FCC</span>
+        </div>
+        <p>美国联邦通信委员会要卖频谱，难题不在定价，在<strong>牌照之间彼此相关</strong>——一家运营商要的往往是"能拼成一片"的几张，单独一张几乎没用。逐个卖，等于逼所有人赌博。</p>
+        <p>1994 年 3 月，FCC 采纳了由<strong>米尔格罗姆、威尔逊与麦卡菲</strong>提出的新形式：<strong>同时多轮升价拍卖（SMRA）</strong>——所有牌照同时开卖，多轮报价、逐轮公开，任何人可以随时改变自己要拼哪一片。信息一轮轮释放，组合一轮轮重构。</p>
+        <p>同年 7 月的第一场（全国性窄带 PCS），历时五天，十张牌照成交 <strong>6.17 亿美元</strong>。此后二十多年，这套形式的各种变体被几十个国家用来分配频谱、电力、排放权、机场时刻。</p>
+        <div class="case-insight">这是本篇的转折点：<strong>一门解释性的学问变成了一门建造性的学问。</strong>此前经济学家研究市场，此后他们开始<em>制造</em>市场——2020 年的诺奖，颁的正是这件事。</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">你每天都在参加的那场拍卖</span>
+          <span class="case-when">2002 至今 · 互联网</span>
+        </div>
+        <p>你每一次搜索、每一次打开网页，都会在几十毫秒内触发一场拍卖：广告位卖给谁、卖多少钱。这可能是人类历史上运行次数最多的机制，规则叫<strong>广义第二价格（GSP）</strong>——排序按出价（与质量分），每个人付的是刚好压过下一名所需的价。</p>
+        <p>它借了维克里"付第二价"的形式，却没继承维克里的性质：在多位置场合，如实出价不再是占优策略（埃德尔曼等 2007）。于是整个行业长出了一层专门用来<em>猜别人怎么猜</em>的自动出价工业。</p>
+        <p>2019 年 9 月，谷歌把 Ad Manager 的展示广告从二价改为<strong>一价</strong>。公开理由是简化与透明——在层层竞价、外部交易平台并存的环境里，二价的"第二价"到底是谁的价已经算不清楚，而平台自己因为能"最后看一眼"而处在一个尴尬的位置上。</p>
+        <div class="case-insight">教科书说二价更"干净"，现实却在往一价走。<strong>因为一旦把单场拍卖放进一个由多个平台、多层中介、自动出价机器人组成的系统里，"谁付第二价"这个概念本身就不再良定义了。</strong>规则的优劣，从来只在它被嵌进去的那个系统里才有意义。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>这一节里，第一条说明"最漂亮的定理其实是把尺子"，第三条是这门学问在现实中最常翻车的地方，第四条是它自己给出的、最不像理论的忠告。</p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 收入等价定理的前提，现实里几乎从不成立</strong>独立估值、同一分布、风险中性、无预算约束、无合谋、竞标者数目固定——这六条里，一场真实拍卖能满足两三条就算运气好。<br>所以它不是一个预言，是一个<em>基准</em>：现实里一价与二价、密封与公开的收入差异往往很大，而定理的用处正是逼你指认<strong>差异来自哪一条假设的破裂</strong>。把它当"形式无所谓"来用，是最常见的误读。
+      </div>
+      <div class="critique-item">
+        <strong>② 理论上占优的策略，真人不照着做</strong>二价拍卖里如实出价是占优策略——这在数学上没有争议。可实验室里几十年反复观察到：<em>相当一部分人出价高于自己的真实估值</em>，且这种偏离并不随着解释与练习完全消失。共同价值的实验里，赢家诅咒同样顽固：讲清楚原理之后，很多受试者仍然会掉进去。<br>更狠的一击来自现实：新西兰 1990 年那场拍卖在数学上完美，在报纸上灾难。<strong>一个机制若在最坏情形下会产出一个让公众无法接受的数字，它的"最优"就是纸面上的。</strong>
+      </div>
+      <div class="critique-item">
+        <strong>③ 合谋比理论想象的容易得多，而公开拍卖尤其方便合谋</strong>联结原理说公开升价能抬价，但同一个"公开"也让串通变得轻而易举——因为每一轮的出价都是可以互相看见的<em>信号</em>。<br>教科书级现场：1996 年 8 月至 1997 年 1 月，美国 DEF 段频谱拍卖中出现了所谓<strong>暗号出价（code bidding）</strong>——把想要的关联牌照的市场编号，藏进自己出价的末几位数字里，等于当众说"这块归我，那块归你"，谁不服就用报复性出价惩罚。克拉姆顿与施瓦茨的研究给出了代价：使用这类信号与报复策略的只是少数投标者，却拿下 1479 张牌照中的 476 张、覆盖人口超过四成，而且<strong>单位人口出价明显更低（约 2.50 美元对 4.34 美元）</strong>。<br><span class="muted">规则一上线就被逆向工程——这是 <a href="005-goodharts-law.html">№005</a> 在拍卖场里的化身。</span>
+      </div>
+      <div class="critique-item">
+        <strong>④ 参与者的数量，通常比规则的精巧更重要</strong>这是这门学问最诚实、也最扫兴的一条自我评价。布洛与克莱姆佩勒 1996 年证明了一个干净的结果：<em>一场没有保留价的普通英式拍卖，只要多来一个竞标者，收入就不低于少一个竞标者时那个"最优设计"的机制。</em><br>换句话说：<strong>多拉来一个真实的竞争者，胜过任何一次机制上的精雕细琢。</strong>而真实拍卖失败的头号原因，也正是"该来的人没来"——进入门槛太高、在位者太强、新玩家算得出自己赢不了。<span class="muted">2000 年欧洲 3G 频谱拍卖里各国收入相差几十倍，主因并非机制细节，而是有几个新进入者敢报名，见 <a href="054-mechanism-design.html">№054</a>。</span>
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 最优不等于可用：VCG 的孤独，以及"效率"这个词的边界</strong>把维克里推广到多物品的 VCG 机制在理论上极其漂亮（如实申报占优、配置有效），但在高价值的组合拍卖里几乎没人敢用：收入可能低得离谱、输家串谋即可压低赢家付款、诱使参与者拆分身份分别报价。奥苏贝尔与米尔格罗姆干脆把论文题目写成《可爱却孤单的维克里拍卖》。<br>另一层边界更该记住：拍卖优化的是<em>把东西给出价最高的人</em>，而出价最高常常只意味着<strong>钱最多或最乐观</strong>，未必是"用得最好"。当标的是公共资源——频谱、水权、排放权、土地——"效率"这个词里究竟包含哪些人的福利，是拍卖理论本身回答不了的问题。<span class="muted">机制能算出给定目标下的最优规则，但答不了目标该是什么，见 <a href="051-arrow-impossibility.html">№051</a>。</span>
+      </div>
+    </div>
+
+    <p class="muted"><strong>正确的姿势</strong>：把它当一副看清"这场竞争到底在争什么信息"的眼镜，而不是一台能榨出最高价的机器。真正上手时，顺序几乎总是这样——<em>先想办法多拉一个人来，再想办法防合谋，最后才轮到调规则的参数。</em><br>而它最硬的一课只有一句：<strong>在大家争同一样东西的场合，"我赢了"从来不是好消息的开头，是坏消息的开头。</strong></p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">机制设计</div>
+        <div class="conn-name-en">Mechanism Design · Hurwicz, 1972</div>
+        <div class="conn-rel">⟸ 母体上游</div>
+        <div class="conn-desc">拍卖是机制设计最成功、也最常被真的拿去用的一支：不要求参与者高尚，只让"说真话"在账面上占优。<a href="054-mechanism-design.html">№054</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">赢家的诅咒</div>
+        <div class="conn-name-en">Winner's Curse</div>
+        <div class="conn-rel">⟹ 核心推论</div>
+        <div class="conn-desc">共同价值下，赢本身是关于"你估高了"的证据。它不只出现在拍卖里——并购溢价、竞标工程、抢 offer、抢房，凡是"价高者得"的地方都在场。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">VCG 机制</div>
+        <div class="conn-name-en">Vickrey–Clarke–Groves</div>
+        <div class="conn-rel">↔ 同体系延伸</div>
+        <div class="conn-desc">二价拍卖的多物品一般化：每个人付的是"自己的存在给别人造成的损失"。理论上诚实且有效，实践中因收入脆弱与易被操纵而罕用。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">柠檬市场</div>
+        <div class="conn-name-en">Market for Lemons · Akerlof, 1970</div>
+        <div class="conn-rel">↔ 信息经济的另一面</div>
+        <div class="conn-desc">柠檬市场里买家分不清货色；拍卖里卖家不知道该要多少钱。同一类信息不对称，从两个方向被处理——一个靠信号与筛选，一个靠竞争。<a href="035-market-for-lemons.html">№035</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">效率市场假说</div>
+        <div class="conn-name-en">Efficient Market Hypothesis · Fama, 1970</div>
+        <div class="conn-rel">⚖ 根本对照</div>
+        <div class="conn-desc">EMH 问"价格是否已经吸收了信息"；拍卖理论问"用什么规则才能把信息榨出来变成价格"。一个把价格发现当结果，一个把它当工程。<a href="060-efficient-market-hypothesis.html">№060</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">纳什均衡</div>
+        <div class="conn-name-en">Nash Equilibrium · Nash, 1950</div>
+        <div class="conn-rel">⟸ 数学骨架</div>
+        <div class="conn-desc">拍卖里的"最优出价"全部是<em>贝叶斯纳什均衡</em>：在别人按其策略出价的前提下，我改不改主意都占不到便宜。<a href="022-nash-equilibrium.html">№022</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">古德哈特定律</div>
+        <div class="conn-name-en">Goodhart's Law</div>
+        <div class="conn-rel">⚠ 误用警示</div>
+        <div class="conn-desc">任何规则一旦上线，就成了被优化的对象：暗号出价、拆分身份、机器人抢拍、刷单托价。设计者必须先扮演一次钻空子的人。<a href="005-goodharts-law.html">№005</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">阿罗不可能定理</div>
+        <div class="conn-name-en">Arrow's Impossibility Theorem</div>
+        <div class="conn-rel">⟷ 边界对照</div>
+        <div class="conn-desc">投票世界里没有"货币转移"这个自由度，于是完美的偏好聚合不存在；拍卖之所以还能做事，很大程度正因为它允许人用钱表达强度。<a href="051-arrow-impossibility.html">№051</a></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>先立边界：下面五条里，第一条与第二条有严格结论支撑，其余是判断习惯。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">出价：先判断这是"私人价值"还是"共同价值"</div>
+        <div class="usage-text">判据只有一句：<strong>如果别人的估价对我有信息含量，那就是共同价值。</strong>一幅你喜欢的画、一张演唱会门票，别人出多少与它对你值多少无关——私人价值，按心里的数出即可。<br>而一块地、一家公司、一个项目、一份工程标，<em>别人肯出多少本身就是关于它值多少的证据</em>——共同价值，赢家诅咒在场。此时必须先从自己的估计里减去一块，<strong>而且参与的人越多，减得越多</strong>。这一条与直觉正好相反，也是最值得记住的一条。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">卖东西／招标：拉人来，比设计规则重要得多</div>
+        <div class="usage-text">布洛与克莱姆佩勒的结论可以粗暴地翻译成：<em>多一个真实的竞争者，胜过一次精巧的机制优化。</em>所以卖房、卖公司、发标之前，力气应当先花在<strong>降低参与门槛、扩大真实竞争者的名单</strong>上，而不是琢磨底价与加价梯度。<br>其次才是联结原理：<strong>主动披露</strong>检测报告、真实数据、第三方鉴定，通常抬价而不是压价——你替对方消掉的每一分未知，都会变成他敢加的价。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">设计规则前，先扮演一次钻空子的人</div>
+        <div class="usage-text">把自己分别当成：最想偷懒的人、最会算的人、以及<em>抱团的那两个人</em>，各跑一遍你的规则。重点问三件事——能不能用出价本身传暗号？能不能拆成几个身份分别报价？输的人有没有办法惩罚不听话的人？<br><strong>真实拍卖翻车，几乎从来不是数学错了，是这三个问题没问。</strong></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">谈判与抢购：分清你在跟谁竞争</div>
+        <div class="usage-text">抢房、抢 offer、限时秒杀、法拍——凡是"价高者得"的场合，先问三句：<em>我在跟几个人竞争？规则是一价（付自己的价）还是二价（付下一名的价）？我掌握的信息与别人重叠多少？</em><br>尤其小心那种"人越多我越急"的生理反应：在共同价值的场合，<strong>人多是要你更保守的信号，不是更激进的信号</strong>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">识别：你身边多的是没被叫作拍卖的拍卖</div>
+        <div class="usage-text">升职的名额、有限的预算、会议室的时段、平台上的曝光位、家里那台只有一个的电视——都是"多人争一物"的分配问题。<em>看清它是一场拍卖，你就会开始问对的问题</em>：规则是谁定的？它奖励的是真实需要，还是嗓门与耐力？<br>顺带一句最实用的家用版：分东西时，与其争论谁更需要，不如先把规则定下来再分——<strong>规则要在还没人知道自己会分到哪一份之前定下来</strong>，这是它唯一有效的时刻。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我最近一次"抢到"的东西——房子、名额、订单、offer——是私人价值还是共同价值？如果是后者，我出价时有没有为"赢本身是坏消息"留出折扣？</div>
+      <div class="q">上一次我因为竞争者变多而加价，事后回看，人多究竟意味着这东西更值钱，还是只意味着最乐观的那份估计更离谱？</div>
+      <div class="q">我参与的分配里，规则是谁定的？如果换一套规则，赢的人会不会换？如果会，那么此刻这个"结果"里，有多少是实力，有多少是规则？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">William Vickrey《Counterspeculation, Auctions, and Competitive Sealed Tenders》</span>
+        <span class="further-meta">The Journal of Finance 16(1), 1961, pp.8–37 — 一切的起点；二价拍卖与收入等价的原始出处</span>
+      </li>
+      <li>
+        <span class="further-title">Robert B. Wilson《Competitive Bidding with Disparate Information》</span>
+        <span class="further-meta">Management Science 15(7), 1969, pp.446–452 — 共同价值下均衡出价的第一份严格刻画，篇幅极短</span>
+      </li>
+      <li>
+        <span class="further-title">Paul Milgrom &amp; Robert Weber《A Theory of Auctions and Competitive Bidding》</span>
+        <span class="further-meta">Econometrica 50(5), 1982, pp.1089–1122 — 关联价值、收入排序与联结原理；本篇第二块地基</span>
+      </li>
+      <li>
+        <span class="further-title">Capen, Clapp &amp; Campbell《Competitive Bidding in High-Risk Situations》</span>
+        <span class="further-meta">Journal of Petroleum Technology 23(6), 1971, pp.641–653 — 赢家诅咒的现场版，作者是三位石油工程师</span>
+      </li>
+      <li>
+        <span class="further-title">R. Preston McAfee &amp; John McMillan《Auctions and Bidding》</span>
+        <span class="further-meta">Journal of Economic Literature 25(2), 1987, pp.699–738 — 最好的一篇入门综述，也是理论走向政策的转折</span>
+      </li>
+      <li>
+        <span class="further-title">Paul Milgrom《Putting Auction Theory to Work》</span>
+        <span class="further-meta">Cambridge University Press, 2004 — 设计者本人写的实战之书；频谱拍卖的来龙去脉在这里</span>
+      </li>
+      <li>
+        <span class="further-title">Paul Klemperer《Auctions: Theory and Practice》</span>
+        <span class="further-meta">Princeton University Press, 2004 — 反复强调"防合谋与拉人来场"胜过精巧机制的那一派</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Auction theory</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Auction_theory" target="_blank">en.wikipedia.org/wiki/Auction_theory</a> — 形式分类与文献索引</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="060-efficient-market-hypothesis.html">
+      <small>← PREVIOUS</small>
+      №060 效率市场假说
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;061&nbsp;·&nbsp;拍卖理论&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
