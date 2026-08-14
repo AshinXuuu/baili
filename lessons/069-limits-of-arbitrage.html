@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№069 套利的限度 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 金融 · 市场 · 代理</span>
+    <span class="lesson-no">№ 069</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 069 · FINANCE</div>
+    <h1 class="lesson-title">套利的限度</h1>
+    <div class="lesson-title-en">The Limits of Arbitrage · 为什么一个明显错的价格，可以一直错下去</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>安德烈·施莱弗 &amp; 罗伯特·维什尼</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1997</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>金融 · 市场 · 代理</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>核心机制</dt><dd>绩效驱动的套利（PBA）</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 挡在门口的那一句话</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>八十年代到九十年代初，行为金融的每一次进攻，最后都撞在同一句话上。</p>
+
+    <p>你可以拿出一叠证据证明人会犯错——过度自信、损失厌恶、跟风、算不清概率。主流经济学家会点头听完，然后说一句几乎无法反驳的话：</p>
+
+    <p class="quote-inline">就算大多数人会犯错，那又如何？<br>只要有<strong>一些</strong>理性的人，他们就会买进被低估的、卖出被高估的，<br>把价格纠回去——顺便把犯错的人的钱赚走。</p>
+
+    <p>这句话有一个古老的出处。<strong>米尔顿·弗里德曼</strong>在《实证经济学论文集》（1953）里论证过：那些把价格推离基本面的投机者，按定义就是在高买低卖，因此他们会亏钱、会被淘汰；<em>市场自己就有一台清除非理性的机器。</em>这条论证是效率市场假说（<a href="060-efficient-market-hypothesis.html">№060</a>）最后一道防线——它甚至不需要假设人人理性，只需要假设<strong>逐利者会把可赚的钱赚光</strong>。</p>
+
+    <p><strong>安德烈·施莱弗</strong>（Andrei Shleifer，哈佛）与<strong>罗伯特·维什尼</strong>（Robert W. Vishny，芝加哥）没有再去证明人不理性。他们换了一个方向，去问一个此前几乎没人认真问过的、很冷的问题：</p>
+
+    <p class="quote-inline"><strong>那些"会把价格纠回去"的人，究竟是谁？<br>他们有多少钱？那些钱是谁的？<br>如果他们暂时亏了，会发生什么？</strong></p>
+
+    <p>这三问一提出来，那道防线就漏了。因为答案是：真正在做套利的，是极少数高度专业化的人；他们几乎全部在用<strong>别人的钱</strong>；而出钱的人只能看见一样东西——最近的业绩。</p>
+
+    <p class="muted">一个不该省略的细节：写这篇论文的人自己就在管别人的钱。1994 年，维什尼与施莱弗和芝加哥的约瑟夫·拉科尼肖克（Josef Lakonishok）一起创办了一家做价值投资的资产管理公司（LSV）。<em>这不是象牙塔里的推演，是被真实的赎回电话教出来的。</em></p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典 · 教科书的套利与现实的套利</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <p>论文的第一段就把话说完了，此后二十页只是在算这一段的后果。</p>
+
+    <div class="theorem">
+      <div class="theorem-label">SHLEIFER &amp; VISHNY, 1997 · 开篇</div>
+      <div class="theorem-body">
+        "<strong>教科书里的套利，不需要资本，也不承担风险。</strong><br><br>
+        而在现实中，几乎所有的套利都需要资本，而且通常是有风险的。此外，<em>专业的套利是由相对少数高度专业化的投资者，用别人的钱在做的。</em><br><br>
+        这样的专业套利，对证券定价有若干有意思的含义，其中包括：<strong>在极端情况下——也就是价格偏离基本价值最远的时候——套利可能反而变得无效。</strong>"
+      </div>
+      <div class="theorem-cite">
+        Andrei Shleifer &amp; Robert W. Vishny《The Limits of Arbitrage》The Journal of Finance 52(1), March 1997, pp.35–55。以上为原文摘要开头的中译。
+      </div>
+    </div>
+
+    <p>而全篇的发动机是一个机制，他们给它取名<strong>绩效驱动的套利</strong>（performance-based arbitrage, PBA）：</p>
+
+    <div class="theorem">
+      <div class="theorem-label">PBA · 那个把因果接反的回路</div>
+      <div class="theorem-body">
+        套利者管的是别人的钱。出钱的人不懂那笔交易，也没法判断它对不对，<strong>他们只能用一样东西来评价：最近的净值。</strong><br><br>
+        于是链条是这样的：<br>
+        价格偏离 → 套利者建仓 → <em>价格继续偏离（这完全可能）</em> → 净值难看 → 出资人赎回、经纪商追加保证金 → <strong>套利者被迫在价格最错的那一刻卖出</strong> → 价格偏离得更远。<br><br>
+        <strong>结论是反直觉的：套利资本的供给，在最需要它的区间里，是错价幅度的<em>减函数</em>。</strong><br><br>
+        而且这个结论有一个事前推论：一个理性的套利者<em>预见到</em>自己会被清盘，因此在一开始就不会满仓下注。<strong>他会主动避开波动最大的那些机会——也就是错得最离谱、赔率最好的那些机会。</strong>
+      </div>
+      <div class="theorem-cite">
+        同上，为论文核心模型的转述。原文另有两条推论：套利者会集中在自己有比较优势的少数市场；因此异常最容易长期存在于那些高度专业化、外部资本难以进入的角落。
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 地上确实有一百块，但梯子是借的</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>本站在 <a href="060-efficient-market-hypothesis.html">№060</a> 里用过一个譬喻：效率市场说的不是"地上从来没有一百块钱"，而是"钱不会久留，因为你不是唯一低头走路的人"。</p>
+
+    <p>套利的限度接着这个譬喻往下讲，而且讲得很不客气：</p>
+
+    <p class="quote-inline">地上确实有一百块。<br>但它挂在三米高的地方，<strong>你得先借一把梯子</strong>；<br>借梯子的人每隔一小时来看一眼，<br>如果他觉得你姿势难看，<strong>他会当场把梯子抽走</strong>——<br>而他最可能抽走梯子的时刻，<br>正是那张钞票飘得更高、也更值钱的时刻。</p>
+
+    <p>拆开来是三层，第三层才是这篇论文真正的贡献：</p>
+
+    <p><strong>第一层：套利需要资本。</strong>教科书里的套利是"同时买进卖出、净投入为零、无风险赚差价"。现实里你要付保证金、要借券、要占用信用额度。资本不是无限的，而且它有价格。</p>
+
+    <p><strong>第二层：套利有风险。</strong>不只是"我可能判断错了"（基本面风险），还有一种更阴险的：<em>我判断对了，但价格可以先往错的方向走得更远、走得更久。</em>德朗等人 1990 年给它起了名字——<strong>噪声交易者风险</strong>。你赌的不是价值，你赌的是"别人的错误会在我撑得住的时间内被纠正"。</p>
+
+    <p><strong>第三层：套利是代理的。</strong>这一层是全篇的钥匙。做判断的人和承担后果的人，中间隔着一份合同、一个赎回条款、一张月度净值表。而出资人手里唯一能用的信号——最近亏了多少——恰恰在最该加仓的时候最难看。</p>
+
+    <p>于是全篇最该带走的一句话是：</p>
+
+    <p class="quote-inline"><strong>错价越大，机会越好；<br>而恰恰在那一刻，套利者手里的钱最少。</strong></p>
+
+    <p>这句话把效率市场那台自我纠错的机器<strong>反接了一次</strong>。EMH 默认：偏差越大，纠错的力量越强，所以偏差不会太大。施莱弗与维什尼证明：在极端处，纠错的力量反而<em>减弱</em>——因为纠错者本人正在被清盘。</p>
+
+    <p>最后必须立刻补一句校准，否则这一篇会被读反。<strong>这套理论的第一推论不是"去抄底"，而是"下更小的注"。</strong>一个知道自己会被强平的人，理性的做法是事前就把仓位压小。它是一份关于<em>为什么要减杠杆</em>的论证，不是一张"市场是错的所以我能赚钱"的许可证。第六节⑤会把这一点再钉一次。</p>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">德朗、萨默斯与瓦尔德曼</span>
+          <span class="comm-tag">1990 · 思想先声：犯错的人未必会被淘汰</span>
+        </div>
+        <p><strong>布拉德福德·德朗</strong>（J. Bradford De Long）、<strong>劳伦斯·萨默斯</strong>（Lawrence H. Summers）与<strong>罗伯特·瓦尔德曼</strong>（Robert J. Waldmann）在《金融市场中的噪声交易者风险》（Journal of Political Economy 98(4), 1990, pp.703–738）里，正面拆掉了弗里德曼那条"非理性者会亏光出局"的论证。</p>
+        <p>他们的模型里有一批"噪声交易者"，抱着随机波动的错误信念。关键的一步是：<em>这些信念的波动本身，构成了一种风险。</em>理性套利者即便完全看穿了错价，也不敢重仓——因为在他平仓之前，那些人的情绪可能变得更极端。<strong>于是错价可以在完全没有基本面风险的情况下长期存在。</strong></p>
+        <p>更刺痛人的是模型的第二个结论：噪声交易者因为承担了自己制造出来的这份风险，<strong>预期收益反而可能更高</strong>。他们不但不会被自动淘汰，还可能长期活得比谨慎的人好。</p>
+        <p class="muted">这篇是 1997 年那篇的直接前身（施莱弗是两篇的共同作者）。两者的分工很清楚：<em>1990 年那篇说的是"套利者不敢"，1997 年那篇说的是"套利者不能"</em>——前者是风险，后者是资本与代理。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">格罗姆与瓦亚诺斯</span>
+          <span class="comm-tag">2002 / 2010 · 把一个比喻变成一张清单</span>
+        </div>
+        <p><strong>丹尼斯·格罗姆</strong>（Denis Gromb）与<strong>迪米特里·瓦亚诺斯</strong>（Dimitri Vayanos）先做了形式化模型，又在《套利的限度》（Annual Review of Financial Economics 2, 2010, pp.251–275）里把这十几年的文献收成了一张摩擦清单：</p>
+        <p><em>资本约束</em>（套利者手里的钱有限）、<em>保证金与融资约束</em>（且它们在坏时候更严）、<em>代理摩擦</em>（出资人与操盘者的分离，即 PBA）、<em>卖空成本与借券约束</em>（案例 02 的主角）、<em>搜寻与参与成本</em>（很多人根本进不了那个市场）。</p>
+        <p>他们指出这条线正在长成一个更大的纲领：<strong>不再是"给效率市场打补丁"，而是"金融中介的资产负债表本身就是资产价格的决定因素之一"。</strong>谁有钱、谁的钱能撑多久，成了定价方程里的变量。</p>
+        <p class="muted">这一卡也给出了本篇最诚实的一处自陈：<strong>理论解释力很强，但对"一个错价能有多大、能持续多久"几乎给不出定量预测。</strong>而这恰恰是使用者最想知道的那个数——见反例②。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">布伦纳梅尔与佩德森</span>
+          <span class="comm-tag">2009 · 从"我的出资人抽钱"到"所有人同时被抽钱"</span>
+        </div>
+        <p><strong>马库斯·布伦纳梅尔</strong>（Markus K. Brunnermeier）与<strong>拉斯·佩德森</strong>（Lasse Heje Pedersen）在《市场流动性与融资流动性》（Review of Financial Studies 22(6), 2009, pp.2201–2238）里把 PBA 从"一个基金的麻烦"升级成"整个系统的动力学"。</p>
+        <p>他们的核心洞见是：<strong>保证金是顺周期的。</strong>价格一跌、波动一起，风控模型就要求更高的保证金；更高的保证金逼交易者减仓；减仓压低价格；价格再跌又推高保证金。<em>市场流动性与融资流动性互为因果，于是形成"流动性螺旋"。</em></p>
+        <p>这解释了施莱弗与维什尼没解释的一件事：<strong>为什么坏事总是同时发生在所有人身上。</strong>不需要有人恐慌，也不需要有人愚蠢——只要大家的融资方式相似，风控规则就会让他们在同一天被迫做同一个动作。</p>
+        <p class="muted">同一个布伦纳梅尔，还写过一篇让这套温情叙事很难堪的论文：科网泡沫期间对冲基金并没有做空高估的股票，而是骑着泡沫走（见反例④）。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">达雷尔·达菲</span>
+          <span class="comm-tag">2010 · 慢速移动的资本</span>
+        </div>
+        <p><strong>达雷尔·达菲</strong>（Darrell Duffie）在美国金融学会主席演讲《慢速移动的资本下的资产价格动态》（The Journal of Finance 65(4), 2010）里补上了另一半：<em>就算没有人被强平，资本本身也需要时间才能走到机会所在的地方。</em></p>
+        <p>要找到对手方、要募到钱、要开账户、要过风控与合规、要说服投委会——每一步都要时间。于是价格对供需冲击的典型反应不是"瞬间跳到正确水平"，而是<strong>先剧烈过冲，然后在数周甚至数月里缓慢回复</strong>。</p>
+        <p>这条对整套框架的意义在于：<strong>"价格会立刻回到正确水平"这个假设，在现实里连物理上都不成立。</strong>它不需要任何人非理性，也不需要任何人被清盘——只需要资本不是瞬移的。</p>
+        <p class="muted">达菲这一卡最适合用来校准期望：错价的修复常常有一个可辨认的形状——<em>猛烈的偏离，缓慢的回归</em>。而绝大多数人的资金期限，撑不完那个"缓慢"。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-title">一道挂了几十年的算术题</span>
+          <span class="case-when">1907–2005 · 阿姆斯特丹 / 伦敦</span>
+        </div>
+        <p>1907 年，荷兰皇家石油与壳牌运输贸易合并，但两家公司的股票<strong>分别</strong>在阿姆斯特丹和伦敦继续挂牌。合并章程写死了一件事：<em>两家分享的现金流，永远按 60 : 40 的比例分配。</em></p>
+        <p>这意味着一个近乎实验室条件的检验：这两只股票的市值之比，理论上必须恒等于 60 : 40。这里<strong>没有基本面风险</strong>——分配比例不是估出来的，是写在文件里的。</p>
+        <p><strong>肯尼斯·弗鲁特</strong>（Kenneth Froot）与<strong>埃米尔·达博拉</strong>（Emil Dabora）在《股价如何受到交易地点的影响？》（Journal of Financial Economics 53(2), 1999）里记录了这条比例的实际走势：<em>偏离平价可以达到三成以上，有时溢价，有时折价，而且一挂就是好几年。</em>更妙的一个发现是：当美国市场相对英国市场上涨时，在纽约交易更多的那一只，就相对于另一只上涨——<strong>价格跟着钱在哪里跑，而不是跟着现金流跑。</strong></p>
+        <div class="case-insight">教科书里的"套利"这个词，默认了一个瞬间。<br>而这里，一道小学生都能验算的算术题，<strong>错了几十年</strong>，就摆在全世界流动性最好的两个交易所里。<br><em>没有基本面风险，不等于没有风险——你还要活到收敛的那一天。</em><span class="muted">诚实补充：也有研究认为税收待遇、指数归属等真实差异可以解释其中一部分价差。这条线索请接着读反例③。</span></div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-title">市场算不出减法：3Com 与 Palm</span>
+          <span class="case-when">2000 年 3 月 · 纳斯达克</span>
+        </div>
+        <p>2000 年 3 月 2 日，3Com 把子公司 Palm 分拆上市，只卖出一小部分股份，自己保留约 95%，并公开承诺：<em>几个月后把手里的 Palm 股票分给 3Com 股东，每股 3Com 大约能分到 1.5 股 Palm。</em></p>
+        <p>于是有一条硬约束：3Com 的股价，至少应该等于它手里那些 Palm 的价值。而实际上——Palm 首日收于 <strong>95.06 美元</strong>，3Com 收于 <strong>81.81 美元</strong>。按 1.5 倍算，3Com 手里的 Palm 就值 144 美元。</p>
+        <p>把两个数相减：市场给 3Com 剩下的全部业务（包括近十亿美元现金）定的价格是<strong>每股约 −63 美元，合计约 −220 亿美元</strong>。<em>一家公司的其余部分，被定了一个负价格。</em></p>
+        <p>为什么没有人套利（买 3Com、卖空 Palm）？因为 Palm 借不到券，卖空成本高到吃掉全部利润。<strong>欧文·拉蒙特</strong>（Owen Lamont）与<strong>理查德·塞勒</strong>（Richard Thaler）在《市场会做加减法吗？》（Journal of Political Economy 111(2), 2003）里给出了完整的样本：除 Palm 之外，还有五起同样明确的负估值案例，全部是科技股（UBID、Retek、PFSWeb、Xpedior、Stratos Lightwave）。</p>
+        <div class="case-insight">这是全篇最干净的一个证据，因为<strong>它排除了"无知"这个解释</strong>：错价是公开的、算术级明显的、每一个人都看得见的，而且被写进了报纸。<br>它照样存在了几个月。<br><em>挡住套利的不是不懂，是一条借不到的券。</em></div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-title">算对了，然后被清盘了</span>
+          <span class="case-when">1998 年秋 · 格林尼治，康涅狄格州</span>
+        </div>
+        <p>长期资本管理公司（LTCM）的仓位几乎全部是同一类：<em>收敛交易</em>——找到两个应该趋同却暂时分开的价格，做多便宜的那个，做空贵的那个，等它们收窄。价差很薄，于是用极高的杠杆放大。</p>
+        <p>1998 年 8 月俄罗斯违约之后，发生的事情正是 PBA 那条链条：<strong>价差不但没有收窄，反而急剧扩大。</strong>净值暴跌，保证金追缴到来，交易对手要求更多抵押品，可平仓的只有那些最流动的仓位——<em>而它们恰恰是当时预期收益最高的仓位。</em>9 月，美联储纽约分行召集十几家华尔街机构，凑出约 36 亿美元接管了这家基金。</p>
+        <p class="muted">施莱弗与维什尼的论文发表于 1997 年 3 月，比这件事早了一年半。他们在论文里写下的每一步——净值下跌、资本外流、被迫在最好的价格上卖出——一年后被逐条演了一遍。</p>
+        <div class="case-insight">这个案例常被读成"套利有风险，所以别做"。<strong>那是读反了。</strong>它真正说的是：<br><em>在一段足够长的时间里，你的钱能撑多久，比你的判断对不对更决定结果。</em><br>LTCM 的很多头寸后来确实收敛了——只是那时候基金已经不在了。<span class="muted">本站在 <a href="038-minsky.html">№038</a> 讲过同一件事的另一面：杠杆如何在平静期悄悄积累。这里讲的是它如何在崩塌期决定谁能活着。</span></div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-title">三天，一场没有原因的地震</span>
+          <span class="case-when">2007 年 8 月 7–9 日 · 全球量化基金</span>
+        </div>
+        <p>2007 年 8 月的那一周，一大批量化多空股票基金遭遇了它们历史上从未见过的亏损。<strong>阿米尔·汉达尼</strong>（Amir Khandani）与<strong>安德鲁·罗</strong>（Andrew W. Lo）在《2007 年 8 月量化基金出了什么事？》里做了复盘：一个标准的量化多空策略，在 <strong>8 月 7 日至 9 日三个交易日里回撤约 4%–7%</strong>；而 8 月 10 日，它又大幅反弹了回去。</p>
+        <p>他们的假说是：某个大机构（很可能是一家多策略基金或自营台）因为<em>别的原因</em>——很可能是次贷相关的保证金压力——被迫快速平掉一个大型量化中性组合。这个平仓的价格冲击，砸在所有持有相似仓位的基金账上；他们的止损与去杠杆规则被触发，于是继续卖；于是继续砸。</p>
+        <p>最值得琢磨的是那次反弹。<strong>基本面什么也没有变</strong>——三天之内公司没有变差，模型没有变笨。变的只有一件事：谁手里还有钱。</p>
+        <div class="case-insight">这些基金彼此不认识、不通气，也没有任何共谋。<strong>他们唯一的共同点，是持有了相似的仓位、并且用相似的方式借钱。</strong><br><em>当资本是借来的、而且大家借的方式相似时，"我分散了"这件事是假的。</em>你以为你在赌一百件不相关的事，其实你和另外五十个人在赌同一件事：<strong>没有人被强平。</strong></div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-title">连国债都套不动了</span>
+          <span class="case-when">2020 年 3 月 · 美国国债市场</span>
+        </div>
+        <p>有一类交易叫"基差交易"：做多美国国债现券，同时做空对应的国债期货，赚那个极薄的价差。因为价差极薄，它必须靠很高的杠杆放大——回购融资的折扣极低，期货保证金也不高。</p>
+        <p>2020 年 3 月，疫情冲击到来。<strong>期货保证金被上调，回购融资变贵，投资者要现金。</strong>于是这类交易被大规模平掉：卖出现券、买回期货。结果是全世界最深、最流动的市场出现了不该出现的景象——买卖价差异常扩大，现券与期货、新发券与老券之间的价差反常地拉开。最后是美联储的大规模干预把这个螺旋按了下去。</p>
+        <p>请注意这里没有任何"非理性"。持有基差交易的人判断得完全正确（那个价差最终确实收敛了），他们只是<em>在融资端被掐断了</em>。</p>
+        <div class="case-insight">如果连美国国债——地球上流动性最好的资产——都会因为融资条件而错价，<strong>那么"总会有人来把价格纠回去"这句话，在任何一个市场里都不该被当作免费的保证。</strong><br><em>套利的限度不是一个关于冷门小市场的理论，它在世界的中心也成立。</em><span class="muted">另一半故事请接 <a href="036-moral-hazard.html">№036</a>：干预止住了这次螺旋，同时也留下了关于下一次的预期。</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>这套理论的麻烦，几乎全部来自同一个源头：<strong>它太好用了。</strong></p>
+
+    <div class="critique-list">
+      <div class="critique-item">
+        <strong>① 它几乎可以解释一切，因而很难被证伪</strong>任何一个持续存在的错价，都能被说成"套利有限度"；任何一次没被纠正的偏差，都能归因于资本约束。<em>一个能解释所有结果的框架，预测不了任何一个具体的事。</em><br>要严谨地用它，只有一个办法：<strong>指出具体的那条绳子。</strong>是借不到券？是保证金要求？是基金合同不许买这个评级？是指数不包含它、所以指数基金不能买？是没人愿意承担跟踪误差？<span class="muted">说不出具体机制的时候，"套利有限度"只是给"我看不懂为什么"取了一个体面的学名。</span>
+      </div>
+      <div class="critique-item">
+        <strong>② 它说不出"多久"，也说不出"多大"</strong>格罗姆与瓦亚诺斯自己在综述里承认：这套理论对错价的<em>幅度</em>与<em>持续时间</em>基本给不出定量预测。而这恰恰是使用者最需要的那个数——你要押多重、要准备撑几年，全靠它答不出的那两个量。<br><span class="muted">顺带清理一句常被挂在凯恩斯名下的话："市场保持非理性的时间，可以长过你保持不破产的时间。"这句话概括本篇极准，<em>但它的出处一直没能被可靠地考证出来</em>（本站在 <a href="060-efficient-market-hypothesis.html">№060</a> 已标过一次）。道理对，作者存疑。</span>
+      </div>
+      <div class="critique-item">
+        <strong>③ 有些"错价"根本不是错价</strong>这是 <a href="060-efficient-market-hypothesis.html">№060</a> 那个联合假设问题的原样重演：<em>你说 A 与 B 应该等价，那是你的模型说的。</em>皇家荷兰／壳牌的价差里，有税收待遇、指数归属、投票权、投资者构成与流动性上的真实差异；大量"异常"在换一个风险模型之后就消失了。<br><span class="muted"><strong>"套利有限度"很容易变成一句体面的话，用来说"我的定价模型没有错，是世界不配合"。</strong>每次用它之前，先把"我可能算错了"这个可能性认真放在桌上一次。</span>
+      </div>
+      <div class="critique-item">
+        <strong>④ 套利者不总是纠错的一方，有时候他们是放大的一方</strong>这是对整套温情叙事最难堪的一击，而且来自这个领域内部。<strong>布伦纳梅尔与纳格尔</strong>（Journal of Finance 59(5), 2004, pp.2013–2040）查了科网泡沫期间对冲基金的实际持仓，结论是：<em>他们并没有做空被高估的科技股，而是重仓持有、骑着泡沫走，并且在个股见顶前减仓离场。</em>他们捕捉了上涨，躲过了大部分下跌。<br>这与阿布鲁与布伦纳梅尔 2003 年提出的<em>同步风险</em>一致：理性套利者知道泡沫会破，但不知道别人什么时候动手；在这种情况下，先跟着涨常常才是最优策略。<span class="muted">这一条是双刃的：它支持"套利力量不会自动纠正价格"，同时否掉了"套利者是好人，只是手被绑住了"这个说法。<strong>有时候手是自由的，只是他选择了另一边。</strong></span>
+      </div>
+      <div class="critique-item">
+        <strong>⑤ 最贵的两种误用，方向正好相反</strong><em>其一，拿它给自己的亏损开脱。</em>"我是对的，只是市场非理性。"——而这套理论的第一推论恰恰相反：<strong>一个预见到自己可能被清盘的人，事前就应该下更小的注。</strong>它是一份关于减杠杆的论证，被拿去当加杠杆的借口，是把作者的结论整个反过来读。<br><em>其二，拿它论证"所以异常会永远存在，可以稳定地赚"。</em>限度是真的，但限度也会收窄：McLean 与 Pontiff（2016）发现已发表的可预测性在论文发表之后显著衰减（见 <a href="060-efficient-market-hypothesis.html">№060</a>）。<span class="muted"><strong>正确的读法只有一句：限度是真的，它给了机会；限度也在动，它不给你保证。</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论网络</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">效率市场假说</div>
+        <div class="conn-name-en">Efficient Market Hypothesis · Fama, 1970</div>
+        <div class="conn-rel">⚠ 最直接的对手，也是它的补丁</div>
+        <div class="conn-desc">EMH 不假设人人理性，它只假设<em>逐利者会把可赚的钱赚光</em>。本篇说的是：这台机器的功率有限，而且它在最需要它的时候功率最低。<strong>两者的分歧不在"人会不会犯错"，在"纠错的人有多少钱、那些钱能撑多久"。</strong><a href="060-efficient-market-hypothesis.html">№060</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">噪声交易者风险</div>
+        <div class="conn-name-en">Noise Trader Risk · DSSW, 1990</div>
+        <div class="conn-rel">⟸ 因果上游</div>
+        <div class="conn-desc">在资本与代理之前，先有一层更基本的障碍：<em>价格可以先往更错的方向走。</em>光是这一点就足以让理性者不敢重仓——而且它还推出一个刺人的结论：犯错的人未必会被市场淘汰。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">金融不稳定假说</div>
+        <div class="conn-name-en">Financial Instability Hypothesis · Minsky</div>
+        <div class="conn-rel">↔ 同一枚硬币的两面</div>
+        <div class="conn-desc">明斯基讲的是杠杆如何在漫长的平静里悄悄堆积；本篇讲的是同一笔杠杆如何在崩塌那几天决定谁能留在场上。<em>一个讲火药怎么攒起来，一个讲爆炸时谁站得离门最近。</em><a href="038-minsky.html">№038</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">临界转变与临界慢化</div>
+        <div class="conn-name-en">Critical Transitions</div>
+        <div class="conn-rel">↔ 结构同构</div>
+        <div class="conn-desc">保证金—价格的那条回路，就是一条标准的正反馈：跌 → 保证金升 → 被迫卖 → 再跌。它把系统推过临界点的方式，与生态系统翻面是同一套数学。<a href="064-critical-transitions.html">№064</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">道德风险与委托代理</div>
+        <div class="conn-name-en">Moral Hazard &amp; Principal-Agent</div>
+        <div class="conn-rel">⟶ 发动机那一层</div>
+        <div class="conn-desc">PBA 本质上是一个委托代理问题：出钱的人看不见操盘者在做什么，只看得见净值。<strong>整篇论文其实是把一份信息不对称，翻译成了一条价格规律。</strong><a href="036-moral-hazard.html">№036</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">古德哈特定律</div>
+        <div class="conn-name-en">Goodhart's Law</div>
+        <div class="conn-rel">⟶ 为什么考核会造出顺周期</div>
+        <div class="conn-desc">用季度净值考核一个三年才兑现的判断，你会系统性地得到"在最该加仓时减仓"的行为。这不是人品问题，是<em>考核周期与策略周期不匹配</em>。<a href="005-goodharts-law.html">№005</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">凯利公式</div>
+        <div class="conn-name-en">Kelly Criterion</div>
+        <div class="conn-rel">⚖ 仓位那一层</div>
+        <div class="conn-desc">凯利已经说过：概率算对了，注码错了照样出局。本篇添了第二个减仓的理由——<em>你的资金不完全属于你</em>。凯利给的是数学上限，代理约束要求你再往下压一档。<a href="008-kelly-criterion.html">№008</a></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">反脆弱</div>
+        <div class="conn-name-en">Antifragility</div>
+        <div class="conn-rel">⟶ 处方一侧</div>
+        <div class="conn-desc">这套理论最实用的结论是关于<em>存活</em>而不是关于<em>判断</em>的：能穿过尾部的人，往往不是看得最准的人，而是被强平概率最低的人。杠杆几乎就是脆弱的定义。<a href="002-antifragility.html">№002</a></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p>先立边界：本节不构成投资建议。<strong>只有第二条是从模型直接推出来的</strong>（事前减仓是原论文的正式推论），其余四条是从这套结构里长出来的判断习惯。</p>
+
+    <div class="usage">
+      <div class="usage-item">
+        <div class="usage-key">投资：先问"我的钱能撑多久"，再问"我判断得对不对"</div>
+        <div class="usage-text">这是本篇最实际的一次顺序颠倒。在下注之前，先把三个问题问完：<br>· <em>这笔钱会不会被赎回？</em>（是我的，还是客户的、家里的、下半年要用的）<br>· <em>会不会被追加保证金？</em>（有杠杆就有别人替你决定你什么时候出局）<br>· <em>我自己会不会因为回撤而认输？</em>（这一条最常被忽略，而它同样是一条绳子）<br><strong>没有期限的资金，是散户身上唯一真正稀缺、而且机构常常没有的优势。</strong><span class="muted">反过来说：如果这三问里有任何一个答案是"会"，那你押的其实不是那个判断，而是"它不会先往反方向走太久"。</span></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">仓位：正因为你可能被迫平仓，事前就该下更小的注</div>
+        <div class="usage-text">这是原论文的正式推论，也是最反直觉的一条：<em>预见到自己可能被清盘的套利者，最优策略是一开始就少下注。</em><br>可操作的版本：<strong>不要按"预期收益"定仓位，按"最坏的三个月"定仓位。</strong>先问"如果这个头寸先亏 40% 再回来，我还在不在场上、还睡不睡得着"，再决定下多少。<br>凯利公式（<a href="008-kelly-criterion.html">№008</a>）给的是数学上限，本篇要求你在那个上限之下再留一档——留出来的那一档，买的是<em>不被别人替你决定出场时间</em>。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">看到便宜货：先找那条绳子，找不到就别下注</div>
+        <div class="usage-text">面对任何"这么明显的便宜，为什么还在？"，只有三个可能的答案：<br>· <strong>它根本不便宜</strong>——你的模型错了（反例③，这是概率最高的一个）；<br>· <strong>有人被制度挡住了</strong>——借不到券、基金合同不许买、评级不够、不在指数里、机构承受不了跟踪误差；<br>· <strong>它确实便宜，但需要熬</strong>——而熬需要期限匹配的钱。<br><strong>只有后两种是机会，而第三种要求你先诚实地答完上一条。</strong><span class="muted">最值得练的一个动作是：把那条绳子的名字说出来。说不出名字的"机会"，通常是第一种。</span></div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">管理：考核周期决定了你实际买到的是哪个策略</div>
+        <div class="usage-text">这一条已经完全离开金融了。如果你用季度指标考核一个需要三年才见效的事——渠道建设、技术重构、品牌、科研——你会系统性地得到<em>顺周期行为</em>：在最该坚持的低谷期，下面的人主动减仓、换方向、做更容易看见的事。<br><strong>这不是执行力问题，是期限不匹配。</strong>要么把评价周期与事情的周期对齐（并接受中间几期的难看），要么承认你买到的其实是另一个策略。<a href="005-goodharts-law.html">№005</a> 讲的是指标怎么被扭曲，这里讲的是<em>期限</em>怎么把人的行为扭曲成另一个形状。</div>
+      </div>
+      <div class="usage-item">
+        <div class="usage-key">心态：这句话是减仓的理由，不是加仓的理由</div>
+        <div class="usage-text">"市场可以在错误上停留很久"——绝大多数人把这句话记反了，用它来解释自己为什么还没赢。<br>正确的读法只有一个方向：<strong>既然错误可以持续得比你能承受的时间更久，那么任何依赖"它很快就会纠正"的仓位、任何借来的钱、任何不能忍受难看的资金，都应该更小。</strong><br><em>这套理论提供的不是抄底的勇气，是活到那一天的纪律。</em></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我现在最有把握的那个判断——如果价格先往反方向走 40%、走上两年再回来，我还在场上吗？如果不在，那我真正押的其实是什么？</div>
+      <div class="q">我看到的这个"明显的错价"，究竟是哪一条绳子挡住了其他人？我说得出它的名字吗？</div>
+      <div class="q">我现在在用谁的钱、谁的耐心？出钱的那个人（老板、客户、家人，或者几个月后的我自己）能容忍多长时间的难看？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Andrei Shleifer &amp; Robert W. Vishny《The Limits of Arbitrage》</span>
+        <span class="further-meta">The Journal of Finance 52(1), 1997, pp.35–55 — 原典；只有二十页，摘要的第一句就值回票价</span>
+      </li>
+      <li>
+        <span class="further-title">J. B. De Long, A. Shleifer, L. H. Summers &amp; R. J. Waldmann《Noise Trader Risk in Financial Markets》</span>
+        <span class="further-meta">Journal of Political Economy 98(4), 1990, pp.703–738 — 思想前身；拆掉"非理性者会被淘汰"这条老论证的那一篇</span>
+      </li>
+      <li>
+        <span class="further-title">Owen A. Lamont &amp; Richard H. Thaler《Can the Market Add and Subtract? Mispricing in Tech Stock Carve-Outs》</span>
+        <span class="further-meta">Journal of Political Economy 111(2), 2003, pp.227–268 — 案例 02 的完整版；负估值样本、借券成本与期权价格证据都在这里</span>
+      </li>
+      <li>
+        <span class="further-title">Kenneth A. Froot &amp; Emil M. Dabora《How Are Stock Prices Affected by the Location of Trade?》</span>
+        <span class="further-meta">Journal of Financial Economics 53(2), 1999 — 皇家荷兰／壳牌与另外两对"连体股"的长期偏离数据</span>
+      </li>
+      <li>
+        <span class="further-title">Denis Gromb &amp; Dimitri Vayanos《Limits of Arbitrage》</span>
+        <span class="further-meta">Annual Review of Financial Economics 2, 2010, pp.251–275 — 最好的一份综述；也是最诚实地承认这套理论预测力边界的一份</span>
+      </li>
+      <li>
+        <span class="further-title">Markus K. Brunnermeier &amp; Lasse Heje Pedersen《Market Liquidity and Funding Liquidity》</span>
+        <span class="further-meta">The Review of Financial Studies 22(6), 2009, pp.2201–2238 — 流动性螺旋与顺周期保证金；读它才懂为什么坏事总是同时发生</span>
+      </li>
+      <li>
+        <span class="further-title">Markus K. Brunnermeier &amp; Stefan Nagel《Hedge Funds and the Technology Bubble》</span>
+        <span class="further-meta">The Journal of Finance 59(5), 2004, pp.2013–2040 — 请与上面几条对照着读；套利者骑泡沫的那一篇</span>
+      </li>
+      <li>
+        <span class="further-title">Andrei Shleifer《Inefficient Markets: An Introduction to Behavioral Finance》</span>
+        <span class="further-meta">Oxford University Press, 2000 — 作者本人把这条线索从头讲了一遍，适合作为整套框架的入口</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Limits to arbitrage</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Limits_to_arbitrage" target="_blank">en.wikipedia.org/wiki/Limits_to_arbitrage</a> — 概念索引与文献入口</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="068-linguistic-relativity.html">
+      <small>← PREVIOUS</small>
+      №068 语言相对论
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;069&nbsp;·&nbsp;套利的限度&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
