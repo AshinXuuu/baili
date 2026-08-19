@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>№073 诺特定理与对称性 · 百里路</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <span><a href="../index.html">百里路</a> &nbsp;/&nbsp; 物理 · 数学 · 对称性</span>
+    <span class="lesson-no">№ 073</span>
+  </div>
+
+  <!-- ====== Hero ====== -->
+  <section class="lesson-hero">
+    <div class="lesson-num">LESSON 073 · PHYSICS</div>
+    <h1 class="lesson-title">诺特定理与对称性</h1>
+    <div class="lesson-title-en">Noether's Theorem · 每一条守恒律背后，都站着一个"什么都没变"</div>
+
+    <dl class="lesson-meta">
+      <span class="lesson-meta-item">
+        <dt>提出者</dt><dd>埃米·诺特 Emmy Noether</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>年份</dt><dd>1918</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>领域</dt><dd>物理 · 数学 · 对称性</dd>
+      </span>
+      <span class="lesson-meta-item">
+        <dt>核心命题</dt><dd>对称性 ⟷ 守恒量</dd>
+      </span>
+    </dl>
+  </section>
+
+  <!-- ====== 一、缘起 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">一</span>
+      <span class="sec-title">缘起 · 广义相对论里，能量好像不守恒了</span>
+      <span class="sec-en">ORIGIN</span>
+    </div>
+
+    <p>1915 年冬天，爱因斯坦刚把广义相对论写完，哥廷根就出了麻烦。</p>
+
+    <p>问题听起来简单，却让当时最好的几个脑袋都不安：<strong>在广义相对论里，能量守恒定律似乎写不出来。</strong>牛顿力学里能量守恒是一条干净的等式；电磁学里也是；可一旦把时空本身变成会弯曲、会伸缩的东西，那条等式就变了形——它不再是"某个量的总和不变"，而变成一个带着额外项、依赖坐标选取、怎么摆弄都不像"守恒律"的东西。</p>
+
+    <p>希尔伯特在 1918 年初干脆断言：在广义相对论里，<strong>那种意义上的能量方程根本就不存在。</strong>他说得斩钉截铁，却给不出证明。克莱因不服，写信跟爱因斯坦来回争论；爱因斯坦本人则一边为自己的理论辩护，一边也说不清那些多出来的项到底算什么。</p>
+
+    <p>而在同一座城市里，有一个人被请来正是为了这件事——她叫<strong>埃米·诺特</strong>。</p>
+
+    <p>1915 年，克莱因与希尔伯特把她从埃尔朗根请到哥廷根，看中的是她在<em>不变量理论</em>上的功夫：正好是"什么东西在变换下保持不变"这门学问。可这所大学不肯给她一个教职。她在 1915 年 7 月申请任教资格（Habilitation），哲学系反对，理由是她是女人。希尔伯特在教务会上说了那句后来被反复引用的话——<em>"我看不出候选人的性别构成反对她担任编外讲师的理由。毕竟，我们这里是一所大学，不是一间澡堂。"</em></p>
+
+    <p class="muted">这句话没起作用。此后<strong>四年</strong>，诺特的课在课表上挂着希尔伯特的名字，由她来讲，没有薪水。她的任教资格要等到 1919 年才被批准。</p>
+
+    <p>1918 年 7 月 26 日，因为她本人不是学会成员，她的论文由<strong>克莱因代为宣读</strong>于哥廷根科学学会，随后发表在学会的《通报》上，题为《不变的变分问题》。这篇论文解决了哥廷根那场争论，顺带回答了一个比它大得多的问题——</p>
+
+    <p class="quote-inline">为什么<strong>会有</strong>守恒律？<br>能量、动量、角动量、电荷……<br>这些东西<em>凭什么</em>不多不少地守着？</p>
+
+    <p>爱因斯坦读完，写信给希尔伯特：昨天收到诺特小姐一篇关于不变量的很有意思的论文，<em>能从这样一般的角度把这些事情看清楚，让我很受触动。</em></p>
+  </section>
+
+  <!-- ====== 二、原典 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">二</span>
+      <span class="sec-title">原典 · 两条定理</span>
+      <span class="sec-en">THE PRIMARY TEXT</span>
+    </div>
+
+    <p>这篇论文里其实有<strong>两条</strong>定理。今天几乎所有人说"诺特定理"时只指第一条；而当年被请来解决的那个问题，是第二条答的。</p>
+
+    <div class="theorem">
+      <div class="theorem-label">NOETHER, 1918 · 第一定理</div>
+      <div class="theorem-body">
+        若一个物理系统的<strong>作用量</strong>（拉格朗日量对时间的积分）在某个<strong>连续对称变换</strong>下保持不变，则该系统必然存在一个对应的<strong>守恒量</strong>——它随时间的变化率恒为零。<br><br>
+        对称群里有几个独立的连续参数，就对应几个守恒量。<br><br>
+        <strong>而且反过来也成立：</strong>每一个这样的守恒量，都对应着一个连续对称性。两者不是"一个导致另一个"，而是同一件事的两种说法。
+      </div>
+      <div class="theorem-cite">
+        Emmy Noether《Invariante Variationsprobleme》，Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse, 1918, pp.235–257。1918 年 7 月 26 日由克莱因代为宣读，论文题献给克莱因的博士学位五十周年。上为核心结论的转述，非逐字翻译。
+      </div>
+    </div>
+
+    <p>这条定理立刻兑出了一张对照表，它是整个理论物理的骨架：</p>
+
+    <div class="theorem">
+      <div class="theorem-label">对照表 · 什么不变 ⟷ 什么守恒</div>
+      <div class="theorem-body">
+        <strong>物理定律在不同时刻相同</strong>（时间平移不变）&nbsp;⟷&nbsp; <strong>能量守恒</strong><br>
+        <strong>物理定律在不同地点相同</strong>（空间平移不变）&nbsp;⟷&nbsp; <strong>动量守恒</strong><br>
+        <strong>物理定律在不同朝向相同</strong>（转动不变）&nbsp;⟷&nbsp; <strong>角动量守恒</strong><br>
+        <strong>量子波函数的相位可以整体旋转而不影响任何观测</strong>（U(1) 相位不变）&nbsp;⟷&nbsp; <strong>电荷守恒</strong><br><br>
+        换句话说：<em>能量之所以守恒，是因为今天的物理定律和明天的物理定律是同一套。</em>
+      </div>
+      <div class="theorem-cite">
+        上述对应是第一定理的标准应用，见于任何一本分析力学或场论教材。
+      </div>
+    </div>
+
+    <p>第二条定理很少被讲，但它才是哥廷根那场争论的答案：</p>
+
+    <div class="theorem">
+      <div class="theorem-label">NOETHER, 1918 · 第二定理</div>
+      <div class="theorem-body">
+        若作用量在一个<strong>无穷维的局部对称群</strong>下不变——也就是说，变换的参数可以是<em>随时空点任意变化的函数</em>（今天称为<strong>规范对称性</strong>）——那么你得到的<strong>不是</strong>一条通常意义的守恒律，而是一组<strong>恒等式</strong>：运动方程之间本来就存在依赖关系。<br><br>
+        推论：在广义相对论这类理论里，那条"能量守恒"是<strong>非正常的（improper）</strong>——它不是一条独立的物理约束，而是理论内部的一个恒等式。<em>希尔伯特猜对了，而诺特证明了他为什么对。</em>
+      </div>
+      <div class="theorem-cite">
+        同上论文。这条定理沉睡了近半个世纪，直到二十世纪六七十年代规范场论兴起，人们才发现它一直是这门学问的地基。
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 三、释义 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">三</span>
+      <span class="sec-title">释义 · 守恒律不是规矩，是影子</span>
+      <span class="sec-en">PLAIN MEANING</span>
+    </div>
+
+    <p>在诺特之前，守恒律是<strong>被发现的经验事实</strong>。人们发现能量总量不变，就把它写成定律；发现动量总量不变，再写一条。它们像一堆各自独立的规矩，谁也说不清为什么会有它们，也说不清一共有几条。</p>
+
+    <p>诺特把这堆规矩<strong>整个换了一层地基</strong>。她说：<em>它们不是规矩，它们是影子。</em>每一条守恒律，都是某样"什么都没变"投下的影子。</p>
+
+    <p>先说清"对称"在这里是什么意思——它跟蝴蝶翅膀左右一样没什么关系。<strong>物理学里的对称，是"做一件事，什么都没发生"。</strong>你把整套实验往东挪三米，结果一模一样；你把它推迟到明天做，结果一模一样；你把整个装置转四十五度，结果还是一模一样。<em>什么都没发生——这就是一个对称性。</em></p>
+
+    <p>诺特证明的是：<strong>每一件"做了等于没做"的事，都必然对应一个"你怎么折腾它都不变"的数。</strong></p>
+
+    <p>这个跨越大得吓人。原本要问的问题是"这个宇宙里有哪些守恒量"，要靠一代代人一个一个去找；现在这个问题变成了"这个宇宙有哪些对称性"，而对称性是可以<em>写下来、分类、甚至凭空假设</em>的东西。</p>
+
+    <p>由此得到那个最漂亮也最反直觉的翻译：</p>
+
+    <p class="quote-inline">能量之所以守恒，<br>不是因为宇宙有什么记账的癖好，<br>而是因为——<strong>物理定律昨天和今天一样。</strong></p>
+
+    <p>最后一层，也是最容易被讲反的一层：<strong>它是一个"⟷"，不是一个"→"。</strong>诺特没有说"因为有对称性，所以有守恒律"。她说的是：在一个能写出作用量的系统里，这两件事<em>互相蕴含、可以互推</em>。它给出的不是因果，是<strong>身份证明</strong>——原来这两样东西是同一件事的两个名字。</p>
+
+    <p class="muted">而这也意味着：反过来用同样成立。如果你在实验里发现某个量顽固地守恒，那你几乎就是在说——<em>这个世界上有一件事，做了等于没做，只是你还没找出它是什么。</em>这一条后来救了物理学至少一次，见案例 02。</p>
+  </section>
+
+  <!-- ====== 四、后人之论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">四</span>
+      <span class="sec-title">后人之论</span>
+      <span class="sec-en">LATER INTERPRETATIONS</span>
+    </div>
+
+    <div class="commentary">
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">费利克斯·克莱因</span>
+          <span class="comm-tag">1918 · 提出问题的人，与代为宣读的人</span>
+        </div>
+        <p>这条定理不是从纯数学的兴趣里长出来的，是被一个具体的麻烦逼出来的：广义相对论里那条不像守恒律的守恒律，到底算什么。</p>
+        <p>克莱因是那场争论里最不肯罢休的一个。他和爱因斯坦、希尔伯特反复通信，而每一轮讨论他都去问同一个人的意见——那个当时还没有薪水、连宣读论文的资格都没有的编外讲师。</p>
+        <p>1918 年 7 月 26 日，是他把《不变的变分问题》念给哥廷根科学学会听的。<strong>这件事本身值得记住：一个几乎无法被听见的人，通过一个愿意替她开口的人，回答了那个时代最好的几个物理学家答不上来的问题。</strong></p>
+        <p class="muted">诚实注明：希尔伯特此前已经断言过 GR 里"能量方程根本不存在"，但没有证明。诺特第二定理证明的正是这个断言，并把它推广到了一整类理论。功劳该怎么分，历史学界至今仍在讨论——但那个证明是她给的。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">尤金·维格纳</span>
+          <span class="comm-tag">1930s–1960s · 把对称性抬成第一原理</span>
+        </div>
+        <p>诺特给出的是一条定理；把它变成整门学问的<em>组织方式</em>的，是维格纳。</p>
+        <p>他做的关键一步，是把"对称性"和"自然律"的层级关系重新排了一遍：自然律解释一个个现象，而<strong>对称性是关于自然律本身的规律</strong>——它们不描述任何具体事件，只规定"任何自然律都必须长成什么形状"。</p>
+        <p>由此他把群论搬进量子力学（1939 年那篇关于庞加莱群表示的论文，直接给出了"粒子"这个概念的数学定义：一个基本粒子就是时空对称群的一个不可约表示，它的质量与自旋正是这个表示的两个标签）。1963 年他因此获诺贝尔物理学奖。</p>
+        <p class="muted">这一步的代价也该说：一旦对称性被抬到"自然律之上"，它就很容易变成一种<em>审美</em>而非一种可检验的主张。二十世纪后半叶物理学里若干条走不通的路，正是从"这套理论太美了，它一定对"开始的。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">杨振宁与罗伯特·米尔斯</span>
+          <span class="comm-tag">1954 · 从"发现对称性"到"用对称性造理论"</span>
+        </div>
+        <p>诺特的世界里，对称性是被<em>发现</em>的：你先有一套物理定律，再去看它在什么变换下不变。杨振宁与米尔斯把这个顺序整个倒了过来。</p>
+        <p>他们的做法是：先<strong>要求</strong>某个对称性在每一个时空点上都可以独立成立（即把整体对称性"局部化"），然后问——要让这件事在数学上说得通，理论里必须多出什么？</p>
+        <p>答案是：必须多出一种场。<em>而那个被逼出来的场，就是力。</em>电磁力、弱力、强力，后来都是这样从一个对称性要求里被"写"出来的——这正是诺特第二定理管辖的那个世界。</p>
+        <p class="muted">这是本篇最该记住的一次身份转变：<strong>对称性从一种被观察到的性质，变成了一张用来画理论的图纸。</strong>标准模型不是先有实验再总结出来的，它有相当大一部分是先选定对称群、再把理论推导出来、最后才去撞击机里找证据的。</p>
+      </div>
+
+      <div class="commentary-card">
+        <div class="comm-author">
+          <span class="comm-name">伊冯娜·科斯曼-施瓦茨巴赫</span>
+          <span class="comm-tag">2011 · 这条定理是怎么被读的，又被漏掉了什么</span>
+        </div>
+        <p>科斯曼-施瓦茨巴赫做了一件别人没做的事：她不去讲这条定理有多深刻，而是去追查<strong>它在此后一百年里究竟是怎么被引用的。</strong></p>
+        <p>结果并不体面。这篇 1918 年的论文在此后几十年里被引用得极少，且大量引用者<em>显然没有读过原文</em>——他们引的是别人的转述。更要紧的是：所谓"诺特定理"在绝大多数场合只指第一定理，而<strong>第二定理被整整忽略了半个世纪</strong>，直到规范场论把它逼回台面。</p>
+        <p>她还指出一件常被含糊过去的事：诺特原文的一般性远超今天教科书里那个版本——她处理的是任意阶导数、任意维度的一般变分问题，而教科书往往只留下最简单的那个特例。</p>
+        <p class="muted">这一卡的价值不只在诺特身上。它是一份关于<strong>思想如何被接收</strong>的病例报告：一个结果的重要性，与它被读懂的速度之间，可以隔着五十年；而决定这个速度的，往往不是结果本身有多好。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 五、案例 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">五</span>
+      <span class="sec-title">案例</span>
+      <span class="sec-en">CASE STUDIES</span>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 01</span>
+          <span class="case-when">1918 · 哥廷根</span>
+        </div>
+        <div class="case-title">一场关于"能量到底守不守恒"的危机，和它的收场</div>
+        <p>这场危机的实质是：广义相对论把时空本身变成了动力学的对象，于是"在什么背景下谈守恒"这个问题失去了固定答案。你可以写出一个看起来像能量的东西，但它依赖坐标系的选择——换一套坐标，它就变了。</p>
+        <p>诺特的两条定理一次把两件事都说清楚了：<strong>第一定理</strong>告诉你，凡是有整体连续对称性的系统，守恒律必然存在且形式确定；<strong>第二定理</strong>告诉你，广义相对论的对称群是无穷维的局部群（任意坐标变换），因此它给出的"守恒律"是恒等式而非独立约束。</p>
+        <p>换句话说：广义相对论里能量的麻烦，<em>不是理论有毛病，也不是人算得不够仔细</em>，而是这类理论的对称性结构必然导致的结果。</p>
+        <div class="case-insight">
+          <strong>启示：</strong>本篇最该注意的一件事——<strong>同一条定理，一头给了物理学最强的一件工具，另一头给出了这件工具失效的确切边界。</strong>能给自己划出适用范围的定理很少，而这恰恰是它比"对称性是宇宙的语言"这类口号可靠得多的原因。
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 02</span>
+          <span class="case-when">1930-12-04 · 一封写给"放射性女士们先生们"的信</span>
+        </div>
+        <div class="case-title">账对不上，于是他发明了一个粒子</div>
+        <p>二十年代末，β 衰变把物理学逼到了墙角：原子核放出电子时，能量的账<strong>对不上</strong>。它不是差一个固定值——那还好办——而是电子的能量呈连续分布，好像每次都随机丢掉一部分。</p>
+        <p>玻尔的反应是准备放弃：也许在这么小的尺度上，<em>能量守恒只是统计意义上成立</em>。这在当时并非荒唐——毕竟守恒律本来就是经验总结。</p>
+        <p>泡利选了另一条路。1930 年 12 月 4 日，他给一场物理学会议写了那封著名的信，开头是"亲爱的放射性女士们先生们"，信里说他想出了一个"<em>拼命的办法</em>"：<strong>假设有一个还没被看见的、电中性的、极轻的粒子把那部分能量带走了。</strong>他自己都觉得心虚——提出一个原则上探测不到的粒子，是件很难为情的事。</p>
+        <p>二十六年后，这个粒子被找到了（1956 年，考恩与莱因斯）。它叫中微子。</p>
+        <div class="case-insight">
+          <strong>启示：</strong>这是守恒律最锋利的一种用法——<strong>当作账本。</strong>账对不上时你有两个选择：改规则，或者相信规则并去找那笔没记上的钱。诺特定理把天平压向了后者：能量守恒不是一条随时可以商量的经验总结，它<em>等价于"物理定律不随时间改变"</em>，而放弃它意味着放弃后者。<em>泡利赌的是这个，他赌赢了。</em>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 03</span>
+          <span class="case-when">1956–1957 · 哥伦比亚大学与国家标准局</span>
+        </div>
+        <div class="case-title">一条所有人都相信的对称性，被一个低温实验打翻了</div>
+        <p>宇称（parity）说的是：把一个物理过程整个做成镜像，它应该同样可以发生。这听起来天经地义，而且在强作用与电磁作用里被反复验证过。</p>
+        <p>1956 年，李政道与杨振宁指出：在<strong>弱相互作用</strong>里，这件事其实<em>从来没有被真正检验过</em>，并提出了几个可以检验它的实验。</p>
+        <p>吴健雄接下了其中一个。她把钴-60 冷却到接近绝对零度，用磁场把原子核的自旋整齐排列，然后数它放出的电子往哪边飞。<strong>如果宇称守恒，两个方向应该一样多。</strong>结果是：不一样多，而且差得很明显。1957 年 2 月 15 日，结果发表在《物理评论》上。</p>
+        <p class="muted">李政道与杨振宁当年即获诺贝尔奖，吴健雄没有——这是诺贝尔奖历史上最常被提起的一次遗漏。</p>
+        <div class="case-insight">
+          <strong>启示：</strong>这个案例同时给出两件事。其一是本篇的边界：<strong>宇称是离散对称性，不是连续的，因此它压根不在诺特第一定理的管辖范围内</strong>——它的破缺不会"违反"任何守恒律，也不需要诺特来解释。其二更普遍：<em>一条从没被检验过的对称性，和一条被检验过的对称性，在直觉里长得一模一样。</em>而这两者之间的区别，值一座诺贝尔奖。
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 04</span>
+          <span class="case-when">1960s–2012 · 对称性可以躲起来</span>
+        </div>
+        <div class="case-title">定律是对称的，世界不是</div>
+        <p>标准模型有一个尴尬：用规范对称性写出来的力，要求传递它的粒子<strong>没有质量</strong>。这对光子没问题，可传递弱力的粒子偏偏很重。要么理论错了，要么对称性错了。</p>
+        <p>南部阳一郎、戈德斯通、希格斯等人给出的第三条路是：<strong>对称性可以完好无损地留在定律里，却不出现在世界的状态里。</strong>——这叫自发对称性破缺。</p>
+        <p>最省事的比喻是一支立在桌面上的铅笔：它周围三百六十度完全对称，可它一旦倒下，就必然指向<em>某一个</em>方向。定律对称，结果不对称，而<strong>那个"选了一个方向"的动作本身，会在理论里留下一个可观测的东西</strong>——2012 年 7 月 4 日，欧洲核子中心宣布找到了它，希格斯玻色子。</p>
+        <div class="case-insight">
+          <strong>启示：</strong>这是对"对称性⟷守恒量"这条对照最重要的一次校准：<strong>你不能通过观察世界的样子，直接读出定律的对称性。</strong>一个高度不对称的世界，完全可能由一套高度对称的定律生成。反过来说——<em>凡是"本该对称却看起来不对称"的地方，往往不是定律的例外，而是有什么东西选定了一个方向，而那件事本身可以被找出来。</em>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-meta">
+          <span class="case-num">CASE 05</span>
+          <span class="case-when">当代宇宙学 · 一个几乎没人愿意大声说的推论</span>
+        </div>
+        <div class="case-title">在膨胀的宇宙里，能量不守恒</div>
+        <p>把这条定理反过来读一遍：<strong>能量守恒来自时间平移不变性</strong>——物理定律今天和明天一样。那么，如果一个系统<em>本身</em>随时间在变呢？</p>
+        <p>宇宙正是这样。它在膨胀，度规随时间变化，因此整个时空<strong>没有时间平移不变性</strong>。按诺特定理，就不该指望有一个良定义的、守恒的总能量。</p>
+        <p>这不是玄学，它有一个可以直接测量的后果：<strong>从遥远星系飞来的光子，波长被拉长了。</strong>波长变长意味着能量变低。那部分能量去哪儿了？答案是：<em>它没有"去"任何地方，问题本身就问错了。</em>在广义相对论中，"宇宙的总能量"根本不是一个良定义的量（这正是案例 01 里那条第二定理的结论）。</p>
+        <div class="case-insight">
+          <strong>启示：</strong>大多数人心里的"能量守恒"是一条<em>宇宙铁律</em>；而诺特定理告诉你它是<strong>有条件的</strong>——条件叫"定律不随时间改变"。在这个条件成立的一切地方（也就是你日常遇到的一切地方）它绝对可靠；在条件不成立的地方它不成立。<em>知道一条定律的条件，和知道这条定律，是两种不同的知识。</em>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 六、反例与限制 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">六</span>
+      <span class="sec-title">反例与限制</span>
+      <span class="sec-en">CRITIQUE &amp; LIMITS</span>
+    </div>
+
+    <p>诺特定理是一条被严格证明的数学定理，它不会错。<strong>会错的是它被使用的方式</strong>——尤其是那句流传最广的口号"每一个对称性都对应一个守恒量"，它漏掉了三个前提，而每一个都能把结论掀翻。</p>
+
+    <ul class="critique-list">
+      <li class="critique-item">
+        <strong>① 它要求系统能写出作用量。</strong>这是最常被忽略的一条前提。诺特定理管的是可以由<em>变分原理</em>描述的系统——存在一个拉格朗日量，运动方程由它取极值得到。<strong>而大量真实系统写不出来：</strong>带摩擦的、耗散的、有反馈的、与环境交换物质与能量的开放系统。你当然可以把环境也算进来重新写出一个更大的封闭系统，但那往往等于承认<em>你原来关心的那个系统本身不受这条定理管辖</em>。桌上滑动的木块因摩擦停下来，不是因为它缺少某种对称性，而是因为你从一开始就没把它当成一个可以用作用量描述的东西。
+      </li>
+      <li class="critique-item">
+        <strong>② 它只管连续对称性。</strong>宇称、时间反演、电荷共轭——这些是<em>离散</em>对称性，你没法"变换一点点"。它们不落在第一定理的管辖内，也不产生守恒流。<strong>这一条把一整类流行说法排除在外：</strong>"宇称不守恒违反了诺特定理"是彻底的误解，两者根本没有交集。（在量子力学中，离散对称性给出的是乘性量子数，那是另一套故事。）而 1957 年的实验提醒的是更冷的一件事：<em>一条对称性是否成立，是经验问题，不是逻辑问题。</em>
+      </li>
+      <li class="critique-item">
+        <strong>③ 在广义相对论里，"能量守恒"不是你以为的那个意思。</strong>这是本篇最不舒服的一条，而且它是诺特自己证的。局部规范/坐标对称性给出的是恒等式而非独立守恒律；在一般的弯曲时空里，<strong>不存在良定义的全局能量</strong>。教科书里"能量既不会凭空产生也不会凭空消失"是在<em>时间平移不变</em>这个前提下成立的陈述，而这个前提在宇宙尺度上就不成立（案例 05）。把它当成无条件的宇宙铁律，是把一条有前提的定理读成了一句格言。
+      </li>
+      <li class="critique-item">
+        <strong>④ 因果方向常被讲反，而且它不解释对称性本身从哪来。</strong>严格地说，诺特给的是一个<em>双向</em>的对应，不是"对称性导致守恒律"；把它讲成因果，会让人以为对称性是更基本、更本原的东西。<strong>更要紧的是：它对"这个宇宙为什么恰好有这些对称性"完全沉默。</strong>它是一台翻译机，不是一个解释——你输入对称性，它输出守恒量；至于那些对称性凭什么存在，它一个字也没说。<em>把它当成"宇宙为什么如此"的答案，是把翻译当成了原文。</em>
+      </li>
+      <li class="critique-item">
+        <strong>⑤ 最贵的误用：把它搬进社会、组织和人生。</strong>"每一种不变性都对应一个守恒量""保持核心价值观不变，就会守住某样东西"——这类说法听起来像在引用物理学，实际上什么也没引用到。<strong>定理的每一个零件在这里都不存在：</strong>没有作用量，没有变分原理，没有连续参数群，也没有任何被守恒的量可供检验。它可以当一个<em>提问方式</em>来用（"这里什么是不变的？"确实是个好问题，见第八节），但它不再是那条定理，也不携带那条定理的任何保证。<em>物理学里的类比，价值往往和它借来的权威成反比。</em>
+      </li>
+    </ul>
+
+    <p class="muted">还有一条不算反例但值得写下来：这条定理长期被<strong>低估</strong>而非高估。原论文几十年里少有人真读，第二定理更是沉睡了半个世纪。今天满世界的"诺特定理"引用，是一次迟到了太久的补偿——而补偿常常用力过猛。</p>
+  </section>
+
+  <!-- ====== 七、相关理论 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">七</span>
+      <span class="sec-title">相关理论</span>
+      <span class="sec-en">CONNECTIONS</span>
+    </div>
+
+    <div class="connections">
+
+      <div class="conn-item">
+        <div class="conn-name">熵增与热力学第二定律<span class="conn-name-en">№025 Entropy</span></div>
+        <div class="conn-rel">⚠ 最该切开的对照</div>
+        <div class="conn-desc">热力学第一定律（能量守恒）由诺特定理给出，它是一条<strong>等式</strong>；第二定律不是守恒律，它是一条<strong>不等式</strong>，而且不来自任何对称性——恰恰相反，它<em>标出了一个方向</em>。<a href="025-entropy.html">№025</a> 与本篇合起来才是完整的图景：<strong>对称性告诉你什么不变，熵告诉你什么只能朝一边变。</strong></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">海森堡不确定性原理<span class="conn-name-en">№047 Uncertainty Principle</span></div>
+        <div class="conn-rel">↔ 同一批配对的第二次出现</div>
+        <div class="conn-desc">位置↔动量、能量↔时间——<a href="047-uncertainty-principle.html">№047</a> 里那些"不能同时确定"的共轭对，正是本篇里"对称性↔守恒量"的同一批配对。这不是巧合：在量子力学中，守恒量本身就是那个对称变换的<em>生成元</em>，而生成元与它所平移的量天然构成共轭对。<strong>同一组数学结构，一次给出守恒律，一次给出测不准。</strong></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">规范对称性与标准模型<span class="conn-name-en">Gauge Symmetry</span></div>
+        <div class="conn-rel">⟹ 直系产物</div>
+        <div class="conn-desc">诺特第二定理管辖的那个世界。杨-米尔斯把对称性局部化，逼出了传递力的场；电磁、弱、强三种作用力今天都写成"某个对称群的规范理论"。<strong>这是本篇在现实里最沉重的一次兑现：现代物理学不是先观察再总结，而是先选定对称群，再把理论推导出来。</strong></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">自发对称性破缺与希格斯机制<span class="conn-name-en">Spontaneous Symmetry Breaking</span></div>
+        <div class="conn-rel">⟶ 最重要的修正</div>
+        <div class="conn-desc">定律对称而状态不对称。它没有推翻诺特定理（对称性仍在作用量里，守恒律仍然成立），但它彻底改变了怎么<em>使用</em>这条定理：<strong>你不能从世界的样子直接读出定律的对称性。</strong>见案例 04。</div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">哥德尔不完备定理<span class="conn-name-en">№040 Incompleteness</span></div>
+        <div class="conn-rel">⚖ 边界对照</div>
+        <div class="conn-desc">两条都是"关于结构本身"的定理，但方向相反。<a href="040-godel-incompleteness.html">№040</a> 划出的是一堵墙：有些真理证不出来。诺特定理给出的是一座桥：两类看起来不相干的东西其实是同一样。<em>一个说"到此为止"，一个说"这两边是通的"——数学里最有力的结果通常是这两种之一。</em></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">奥卡姆剃刀<span class="conn-name-en">№014 Occam's Razor</span></div>
+        <div class="conn-rel">⟷ 方法论姻亲</div>
+        <div class="conn-desc">对称性是现代物理学挑选理论的主要剃刀：在两套同样能拟合数据的理论里，选对称性更高的那一套。这条剃刀极其管用，也极其危险——<a href="014-occams-razor.html">№014</a> 的第一条反例（最简未必最真）在这里原样成立，<strong>而且它有个更漂亮的名字：优美。</strong></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">涌现<span class="conn-name-en">№041 Emergence</span></div>
+        <div class="conn-rel">↔ 相反方向的两把刀</div>
+        <div class="conn-desc"><a href="041-emergence.html">№041</a> 讲的是宏观性质如何从微观互动里<em>自下而上</em>长出来；对称性讲的是宏观约束如何<em>自上而下</em>限制一切可能的定律。有意思的是两者在同一处交汇：<strong>自发对称性破缺既是涌现现象，又完全由对称性描述。</strong></div>
+      </div>
+
+      <div class="conn-item">
+        <div class="conn-name">守恒量作为约束与账本<span class="conn-name-en">Conservation as Bookkeeping</span></div>
+        <div class="conn-rel">⟶ 最可迁移的一层</div>
+        <div class="conn-desc">守恒律在实践中最大的用处从来不是"解释"，而是<strong>排除</strong>：它一句话砍掉绝大多数本来要逐个检验的可能性，而且不需要你知道过程的细节。这一层是本篇少数几个可以离开物理学而不变质的东西（第八节第二条）。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 八、致用 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">八</span>
+      <span class="sec-title">致用</span>
+      <span class="sec-en">APPLICATION</span>
+    </div>
+
+    <p class="muted">开门见山地划一条线：<strong>第一、二条是这条定理的真实推论</strong>（第二条在任何有守恒量的领域里都严格成立）；<strong>第三、四条是提问方式，不是定理的推论</strong>；第五条是边界提醒。第六节反例⑤对这里全部有效。</p>
+
+    <ul class="usage">
+      <li class="usage-item">
+        <span class="usage-key">先找不变量，再找规律</span>
+        <span class="usage-text">这是这条定理给科学与工程的实际工作方法：<strong>面对一个复杂系统，与其去追踪每一个部件怎么动，不如先问"整套东西在什么操作下保持不变"。</strong>找到那个操作，你就白得一个守恒量，而守恒量是不需要解运动方程就能用的。物理系学生学到的第一件省力的事就是这个——<em>用能量守恒解题，往往比用牛顿方程解题短十倍</em>，因为你绕过了整个过程，只看两头。</span>
+      </li>
+      <li class="usage-item">
+        <span class="usage-key">守恒量当账本用：对不上就说明少算了东西</span>
+        <span class="usage-text">这是泡利那一手，也是本篇最可迁移的一条。<strong>凡是存在守恒量的地方，"账对不上"就是一条硬信息</strong>：要么你的模型错了，要么有一样东西没被算进来。财务对账、库存盘点、物料平衡、数据管道里进出条数不等、系统里内存只增不减——<em>处理方式完全一样：先别急着调参数去凑，去找那笔没记上的钱。</em>而这条之所以硬，正因为它不依赖你对过程细节的了解。</span>
+      </li>
+      <li class="usage-item">
+        <span class="usage-key">设计时先问"我希望什么保持不变"</span>
+        <span class="usage-text">杨-米尔斯那一步的类比版：<strong>与其枚举所有场景写规则，不如先定下"无论怎么变，这一条必须成立"。</strong>接口设计里的向后兼容、系统设计里的不变式（invariant）、组织里的少数几条底线原则——它们的作用都是<em>先划定不可动的东西，再让其余部分自由生长</em>。<em>标明为类比：</em>这里没有作用量也没有守恒定理，但"先定不变式"确实是一种成熟的设计习惯，而且它的收益与物理学里同源——不变式越少越强，能砍掉的可能性越多。</span>
+      </li>
+      <li class="usage-item">
+        <span class="usage-key">对称性破缺的地方，藏着机制</span>
+        <span class="usage-text">案例 03 与 04 的合并教训，也是一条很好用的判断习惯：<strong>凡是"本该对称却不对称"的地方，几乎总有一个具体的原因在那里，而且它通常比现象本身更值得研究。</strong>两个条件几乎相同的门店业绩差三倍、两个同期上线的功能留存差一截、同一份材料在两个班级效果不同——<em>不要先去解释那个差异，先去找是什么打破了对称。</em>那个东西往往就是真正的自变量。</span>
+      </li>
+      <li class="usage-item">
+        <span class="usage-key">听到"根据诺特定理"就查那三个前提</span>
+        <span class="usage-text">这条定理是被科普借用得最狠的定理之一，而绝大多数借用在第一步就失效了。<strong>三问：有没有作用量？对称性是连续的吗？边界条件成立吗？</strong>三个里缺一个，那句话就只是修辞。<em>尤其警惕那种从物理定理直接跳到人生格言的说法——中间那一步永远是偷的，而它偷的正是"这句话是被证明过的"这份信用。</em></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ====== 九、反观三问 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">九</span>
+      <span class="sec-title">反观三问</span>
+      <span class="sec-en">THREE QUESTIONS</span>
+    </div>
+
+    <div class="reflect">
+      <div class="q">我手上这个反复出问题的系统，有没有一个我一直没写下来的<strong>不变量</strong>？如果我把它写下来，有多少现在正在逐个排查的可能性会被一次性砍掉？</div>
+      <div class="q">最近一次"数字对不上"，我是去调整了模型让它对上，还是去找了那笔没被记录的东西？<strong>我当时凭什么认为账本可以将就？</strong></div>
+      <div class="q">我在某处观察到的差异，是真的差异，还是<strong>某个我没注意到的东西打破了对称</strong>——那两边真的可比吗？</div>
+    </div>
+  </section>
+
+  <!-- ====== 十、延伸阅读 ====== -->
+  <section class="section">
+    <div class="section-head">
+      <span class="sec-num">十</span>
+      <span class="sec-title">延伸阅读</span>
+      <span class="sec-en">FURTHER READING</span>
+    </div>
+
+    <ul class="further">
+      <li>
+        <span class="further-title">Emmy Noether《Invariante Variationsprobleme》</span>
+        <span class="further-meta">Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, Math.-Phys. Klasse, 1918, pp.235–257 — 原典；两条定理都在这十几页里</span>
+      </li>
+      <li>
+        <span class="further-title">Emmy Noether《Invariant Variation Problems》(M. A. Tavel 英译)</span>
+        <span class="further-meta">Transport Theory and Statistical Physics 1(3), 1971, pp.186–207 — 流传最广的英译本；原文发表五十三年后才有</span>
+      </li>
+      <li>
+        <span class="further-title">Yvonne Kosmann-Schwarzbach《The Noether Theorems: Invariance and Conservation Laws in the Twentieth Century》</span>
+        <span class="further-meta">Springer, 2011 — 含原文英译与一部完整的接收史；本篇第四节第四家的出处，也是最推荐的一本</span>
+      </li>
+      <li>
+        <span class="further-title">Nina Byers《E. Noether's Discovery of the Deep Connection Between Symmetries and Conservation Laws》</span>
+        <span class="further-meta">arXiv: physics/9807044, 1998 — 把 1918 年哥廷根那场争论的来龙去脉讲得最清楚的一篇短文</span>
+      </li>
+      <li>
+        <span class="further-title">Katherine Brading &amp; Elena Castellani (eds.)《Symmetries in Physics: Philosophical Reflections》</span>
+        <span class="further-meta">Cambridge University Press, 2003 — 关于"对称性到底解释了什么"的严肃讨论；本篇第六节④的主要依据</span>
+      </li>
+      <li>
+        <span class="further-title">Richard Feynman《The Character of Physical Law》</span>
+        <span class="further-meta">MIT Press, 1965 — 第四讲专讲物理定律中的对称性；不用一个公式讲清"对称性⟷守恒律"的最好范本</span>
+      </li>
+      <li>
+        <span class="further-title">Eugene Wigner《Symmetries and Reflections》</span>
+        <span class="further-meta">Indiana University Press, 1967 — "对称性是关于自然律的规律"这一层级观点的出处</span>
+      </li>
+      <li>
+        <span class="further-title">维基百科：Noether's theorem</span>
+        <span class="further-meta"><a href="https://en.wikipedia.org/wiki/Noether%27s_theorem" target="_blank">en.wikipedia.org/wiki/Noether's_theorem</a> — 数学表述、推导与各领域应用的完整索引</span>
+      </li>
+    </ul>
+
+    <p class="muted">尾注一则。1933 年 4 月，诺特因犹太人身份被普鲁士教育部解除哥廷根的教职；同年 10 月她赴美，在布林莫尔学院任教；1935 年 4 月 14 日因手术后并发症去世，终年五十三岁。爱因斯坦在当年 5 月致《纽约时报》的信中写道：<em>以在世最有资格的数学家们的判断，诺特女士是自女性获得高等教育以来所产生的最重要的创造性数学天才。</em></p>
+  </section>
+
+  <!-- 翻页 -->
+  <div class="pager">
+    <a href="072-cellular-automata.html">
+      <small>← PREVIOUS</small>
+      №072 元胞自动机与生命游戏
+    </a>
+    <a href="../index.html" style="flex:0.6; text-align:center;">
+      <small>HOME</small>
+      百里路
+    </a>
+    <a class="next disabled" href="#">
+      <small>NEXT →</small>
+      明日自动生成
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    №&nbsp;073&nbsp;·&nbsp;诺特定理与对称性&nbsp;·&nbsp;毕
+    <div class="small">A journey of a hundred theories</div>
+  </footer>
+
+</div>
+</body>
+</html>
